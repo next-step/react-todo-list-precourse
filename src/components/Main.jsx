@@ -1,16 +1,37 @@
 import "./styles/Main.css";
+import { todoContext } from "../page/TodoList";
+import { useContext, useState, useCallback } from "react";
+
 const Main = () => {
+  const [todoItems, setTodos] = useContext(todoContext);
+  const [inputValue, setInputValue] = useState("");
+
+  const currentKey = todoItems[todoItems.length - 1]
+    ? todoItems[todoItems.length - 1].key + 1
+    : 0;
+
+  const newTodo = useCallback(() => {
+    if (!inputValue.trim()) return;
+    setTodos({ key: currentKey, content: inputValue, done: false });
+    setInputValue("");
+  }, [setTodos, inputValue]);
+
   return (
     <div className="Main">
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
+      <div className="Main__container">
+        <div className="Main__input">
+          <input
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <button onClick={newTodo}>추가</button>
+        </div>
+        <div className="Main__todos">
+          {todoItems?.map((todo) => {
+            return <h1 key={todo.key}>{todo.content}</h1>;
+          })}
+        </div>
+      </div>
     </div>
   );
 };

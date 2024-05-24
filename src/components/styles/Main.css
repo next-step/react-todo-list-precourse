@@ -6,3 +6,32 @@
   align-items: center;
   flex-direction: column;
 }
+
+.Main__container {
+  max-width: 800px;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Main__input {
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.Main__input input {
+  width: 100%;
+  flex-grow: 1;
+  font-size: 25px;
+}
+.Main__input button {
+  min-width: 70px;
+}
+
+.Main__todos {
+  width: 100%;
+  background-color: blue;
+}
