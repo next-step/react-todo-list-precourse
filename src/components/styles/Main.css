@@ -30,8 +30,3 @@
 .Main__input button {
   min-width: 70px;
 }
-
-.Main__todos {
-  width: 100%;
-  background-color: blue;
-}

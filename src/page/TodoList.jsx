@@ -11,8 +11,16 @@ const TodoList = () => {
     setTodoItems((prveTodo) => [...prveTodo, todo]);
   };
 
+  const isTodoDone = (Key) => {
+    setTodoItems((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.key === Key ? { ...todo, isDone: !todo.isDone } : todo
+      )
+    );
+  };
+
   return (
-    <todoContext.Provider value={[todoItems, addTodos]}>
+    <todoContext.Provider value={[todoItems, addTodos, isTodoDone]}>
       <div className="TodoList">
         <Header />
         <Main />

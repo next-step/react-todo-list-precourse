@@ -1,6 +1,7 @@
 import "./styles/Main.css";
 import { todoContext } from "../page/TodoList";
 import { useContext, useState, useCallback } from "react";
+import TodoContainer from "./Main/TodoContainer";
 
 const Main = () => {
   const [todoItems, addTodos] = useContext(todoContext);
@@ -34,11 +35,7 @@ const Main = () => {
           />
           <button onClick={newTodo}>추가</button>
         </div>
-        <div className="Main__todos">
-          {todoItems?.map((todo) => {
-            return <h1 key={todo.key}>{todo.content}</h1>;
-          })}
-        </div>
+        <TodoContainer />
       </div>
     </div>
   );
