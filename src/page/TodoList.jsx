@@ -19,8 +19,18 @@ const TodoList = () => {
     );
   };
 
+  const allTodoDone = () => {
+    setTodoItems((prevTodos) =>
+      prevTodos.map((todo) => {
+        return { ...todo, isDone: true };
+      })
+    );
+  };
+
   return (
-    <todoContext.Provider value={[todoItems, addTodos, isTodoDone]}>
+    <todoContext.Provider
+      value={[todoItems, addTodos, isTodoDone, allTodoDone]}
+    >
       <div className="TodoList">
         <Header />
         <Main />
