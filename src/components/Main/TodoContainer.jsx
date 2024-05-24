@@ -12,7 +12,7 @@ const TodoContainer = () => {
       {todoItems?.map((todo) => {
         return <TodoItem key={todo.key} todo={todo} />;
       })}
-      <TodoFooter todoItems={todoItems} />
+      {todoItems.length > 0 ? <TodoFooter todoItems={todoItems} /> : ""}
     </div>
   );
 };
