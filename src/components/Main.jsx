@@ -3,21 +3,22 @@ import { todoContext } from "../page/TodoList";
 import { useContext, useState, useCallback } from "react";
 
 const Main = () => {
-  const [todoItems, setTodos] = useContext(todoContext);
+  const [todoItems, addTodos] = useContext(todoContext);
   const [inputValue, setInputValue] = useState("");
 
-  const currentKey = todoItems[todoItems.length - 1]
-    ? todoItems[todoItems.length - 1].key + 1
-    : 0;
+  const currentKey =
+    todoItems.length > 0 ? todoItems[todoItems.length - 1].key + 1 : 0;
 
   const newTodo = useCallback(() => {
     if (!inputValue.trim()) return;
-    setTodos({ key: currentKey, content: inputValue, isDone: false });
+    addTodos({ key: currentKey, content: inputValue, isDone: false });
     setInputValue("");
-  }, [setTodos, inputValue]);
+  }, [inputValue, currentKey]);
 
   const onKeyDown = (e) => {
-    if (e.key === "Enter") {
+    if (e.isComposing || e.keyCode === 229) return;
+    if (e.key === "Enter" && inputValue.trim()) {
+      e.preventDefault();
       newTodo();
     }
   };

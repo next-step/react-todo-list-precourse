@@ -7,12 +7,12 @@ export const todoContext = createContext();
 
 const TodoList = () => {
   const [todoItems, setTodoItems] = useState([]);
-  const setTodos = (todo) => {
-    setTodoItems((prevTodo) => [...prevTodo, todo]);
+  const addTodos = (todo) => {
+    setTodoItems((prveTodo) => [...prveTodo, todo]);
   };
 
   return (
-    <todoContext.Provider value={[todoItems, setTodos]}>
+    <todoContext.Provider value={[todoItems, addTodos]}>
       <div className="TodoList">
         <Header />
         <Main />
