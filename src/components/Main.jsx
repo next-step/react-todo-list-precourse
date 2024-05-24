@@ -12,9 +12,15 @@ const Main = () => {
 
   const newTodo = useCallback(() => {
     if (!inputValue.trim()) return;
-    setTodos({ key: currentKey, content: inputValue, done: false });
+    setTodos({ key: currentKey, content: inputValue, isDone: false });
     setInputValue("");
   }, [setTodos, inputValue]);
+
+  const onKeyDown = (e) => {
+    if (e.key === "Enter") {
+      newTodo();
+    }
+  };
 
   return (
     <div className="Main">
@@ -23,6 +29,7 @@ const Main = () => {
           <input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={onKeyDown}
           />
           <button onClick={newTodo}>추가</button>
         </div>
