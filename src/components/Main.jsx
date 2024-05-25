@@ -7,8 +7,7 @@ const Main = () => {
   const [todoItems, addTodos] = useContext(todoContext);
   const [inputValue, setInputValue] = useState("");
 
-  const currentKey =
-    todoItems.length > 0 ? todoItems[todoItems.length - 1].key + 1 : 0;
+  const currentKey = todoItems.length > 0 ? todoItems[todoItems.length - 1].key + 1 : 0;
 
   const newTodo = useCallback(() => {
     if (!inputValue.trim()) return;
@@ -28,11 +27,7 @@ const Main = () => {
     <div className="Main">
       <div className="Main__container">
         <div className="Main__input">
-          <input
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            onKeyDown={onKeyDown}
-          />
+          <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={onKeyDown} />
           <button onClick={newTodo}>추가</button>
         </div>
         <TodoContainer />

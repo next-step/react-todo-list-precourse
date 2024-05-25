@@ -24,8 +24,12 @@ const TodoList = () => {
     setTodoItems((prevTodos) => prevTodos.filter((todo) => todo.key !== Key));
   };
 
+  const deleteDoneTodo = () => {
+    setTodoItems((prevTodos) => prevTodos.filter((todo) => todo.isDone === false));
+  };
+
   return (
-    <todoContext.Provider value={[todoItems, addTodos, isTodoDone, allTodoDone, deleteTodo]}>
+    <todoContext.Provider value={[todoItems, addTodos, isTodoDone, allTodoDone, deleteTodo, deleteDoneTodo]}>
       <div className="TodoList">
         <Header />
         <Main />
