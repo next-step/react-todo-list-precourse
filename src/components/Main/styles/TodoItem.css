@@ -18,3 +18,8 @@
 .TodoItem p.true {
   text-decoration: line-through;
 }
+
+.TodoItem button.true {
+  pointer-events: none;
+  opacity: 0;
+}

@@ -7,30 +7,25 @@ export const todoContext = createContext();
 
 const TodoList = () => {
   const [todoItems, setTodoItems] = useState([]);
+
   const addTodos = (todo) => {
     setTodoItems((prveTodo) => [...prveTodo, todo]);
   };
 
   const isTodoDone = (Key) => {
-    setTodoItems((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.key === Key ? { ...todo, isDone: !todo.isDone } : todo
-      )
-    );
+    setTodoItems((prevTodos) => prevTodos.map((todo) => (todo.key === Key ? { ...todo, isDone: !todo.isDone } : todo)));
   };
 
   const allTodoDone = () => {
-    setTodoItems((prevTodos) =>
-      prevTodos.map((todo) => {
-        return { ...todo, isDone: true };
-      })
-    );
+    setTodoItems((prevTodos) => prevTodos.map((todo) => ({ ...todo, isDone: true })));
+  };
+
+  const deleteTodo = (Key) => {
+    setTodoItems((prevTodos) => prevTodos.filter((todo) => todo.key !== Key));
   };
 
   return (
-    <todoContext.Provider
-      value={[todoItems, addTodos, isTodoDone, allTodoDone]}
-    >
+    <todoContext.Provider value={[todoItems, addTodos, isTodoDone, allTodoDone, deleteTodo]}>
       <div className="TodoList">
         <Header />
         <Main />

@@ -3,18 +3,16 @@ import { todoContext } from "../../page/TodoList";
 import { useContext } from "react";
 
 const TodoItem = (todo) => {
-  const [, , isTodoDone] = useContext(todoContext);
+  const [, , isTodoDone, , deleteTodo] = useContext(todoContext);
   const { key, content, isDone } = todo.todo;
 
   return (
     <div className="TodoItem" key={key}>
-      <input
-        type="checkbox"
-        onChange={() => isTodoDone(key)}
-        checked={isDone}
-      />
+      <input type="checkbox" onChange={() => isTodoDone(key)} checked={isDone} />
       <p className={`${isDone}`}>{content}</p>
-      <button>X</button>
+      <button className={`${isDone}`} onClick={() => deleteTodo(key)}>
+        X
+      </button>
     </div>
   );
 };
