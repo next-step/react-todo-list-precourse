@@ -72,6 +72,7 @@ input:focus {outline: none;}
   position: relative;
 }
 .view {
+  position: relative;
   color: #111;
   font: 14px Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: 300;
@@ -80,18 +81,27 @@ input:focus {outline: none;}
   font-size: 24px;
 }
 .toggle {
-  list-style: none;
-  appearance: none;
-  border: none;
-  bottom: 0;
-  margin: auto 0;
-  opacity: 0;
   position: absolute;
-  text-align: center;
-  top: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-left: 8px;
   width: 40px;
-  background: none;
   height: 40px;
+  border-radius: 50%;
+  border: 1px solid #999;
+  appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
+.toggle:checked::after {
+  font-size: 40px;
+  margin-left: 8px;
+  /* border: 1px solid #999; */
+  /* background: none; */
+  color: #b83f45;
+  border: none;
+  content: ' \2713';
 }
 #todo-item-label {
   -webkit-font-smoothing: antialiased;
