@@ -1,12 +1,19 @@
 import "./TodoList.css";
 import { Header, Main, Footer } from "../components/index";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
+
+let initDate = window.localStorage.getItem("todos") ? JSON.parse(window.localStorage.getItem("todos")) : [];
 
 export const todoContext = createContext();
 
 const TodoList = () => {
-  const [todoItems, setTodoItems] = useState([]);
+  const [todoItems, setTodoItems] = useState(initDate);
+
+  useEffect(() => {
+    window.localStorage.setItem("todos", JSON.stringify(todoItems));
+    setTodoItems(JSON.parse(window.localStorage.getItem("todos")));
+  }, [todoItems]);
 
   const addTodos = (todo) => {
     setTodoItems((prveTodo) => [...prveTodo, todo]);
