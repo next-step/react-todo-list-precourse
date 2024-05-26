@@ -11,8 +11,11 @@ const TodoList = () => {
   const [todoItems, setTodoItems] = useState(initDate);
 
   useEffect(() => {
-    window.localStorage.setItem("todos", JSON.stringify(todoItems));
     setTodoItems(JSON.parse(window.localStorage.getItem("todos")));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("todos", JSON.stringify(todoItems));
   }, [todoItems]);
 
   const addTodos = (todo) => {
