@@ -11,7 +11,7 @@ const TodoItem = (todo) => {
       <input type="checkbox" onChange={() => isTodoDone(key)} checked={isDone} />
       <p className={`${isDone}`}>{content}</p>
       <button className={`${isDone}`} onClick={() => deleteTodo(key)}>
-        X
+        삭제
       </button>
     </div>
   );

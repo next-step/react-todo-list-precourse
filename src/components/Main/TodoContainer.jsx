@@ -38,6 +38,7 @@ const TodoContainer = () => {
           allTodoDone={allTodoDone}
           deleteDoneTodo={deleteDoneTodo}
           viewTodo={viewTodo}
+          selectTodo={selectTodo}
         />
       ) : (
         ""

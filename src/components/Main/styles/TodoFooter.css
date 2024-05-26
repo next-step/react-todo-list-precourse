@@ -3,4 +3,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.TodoFooter button {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 8px;
+  background: inherit;
+}
+.TodoFooter button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.TodoFooter__side1 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 5px;
+}
+
+.TodoFooter__side2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.TodoFooter__side2 p {
+  width: 50%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 20px;
+}
+
+.TodoFooter__side2 > div {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+}
+.TodoFooter__side2 > div > button {
+  margin-right: 15px;
+}
+
+.all-button.active,
+.yet-button.active,
+.done-button.active {
+  background-color: rgba(0, 0, 0, 0.1);
 }

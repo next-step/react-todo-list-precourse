@@ -27,7 +27,12 @@ const Main = () => {
     <div className="Main">
       <div className="Main__container">
         <div className="Main__input">
-          <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={onKeyDown} />
+          <input
+            placeholder="할 일 입력..."
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={onKeyDown}
+          />
           <button onClick={newTodo}>추가</button>
         </div>
         <TodoContainer />

@@ -1,22 +1,35 @@
 .TodoItem {
   font-size: 24px;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: aqua;
+  margin-bottom: 2px;
 }
 
 .TodoItem input {
   margin-left: 10px;
+  accent-color: lightgray;
+  transform: scale(1.5);
 }
 .TodoItem button {
   margin-right: 10px;
+  outline: none;
+  border: none;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: inherit;
+  font-size: 14px;
+}
+
+.TodoItem button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .TodoItem p.true {
   text-decoration: line-through;
+  color: lightgray;
 }
 
 .TodoItem button.true {
