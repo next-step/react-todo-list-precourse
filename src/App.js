@@ -1,7 +1,12 @@
 import "./App.css";
 import { useState } from "react";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 function App() {
+  
+  // const footer = document.querySelector('.footer');
   const [text, setText] = useState("");
   const [todoList, setTodoList] = useState([]);
 
@@ -33,40 +38,9 @@ function App() {
   return (
     <div id="root">
       <section className="todoapp">
-        <header className="header">
-          <h1>todos</h1>
-          <form onSubmit={onSubmit}>
-            <div className="input-container">
-              <input
-                className="new-todo"
-                id="todo-input"
-                type="text"
-                placeholder="what needs to be done?"
-                onChange={onChangeInput}
-                value={text}
-              ></input>
-              <button className="new-todo-add" type="submit">add</button>
-            </div>
-          </form>
-        </header>
-        <main className="main">
-          <ul className="todo-list">
-            {todoList.map((todoItem) => (
-              <li className="todo-item" key={todoItem.id}>
-                <div className="view">
-                  <input className="toggle" type="checkbox" id="todo-item-toggle"/>
-                  <label id="todo-item-label">{todoItem.text}</label>
-                  <button 
-                    className="destroy" 
-                    id="todo-item-button"
-                    onClick={() => onDelete(todoItem.id)}>
-                    X
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </main>
+        <Header text={text} onChangeInput={onChangeInput} onSubmit={onSubmit}/>
+        <Main todoList={todoList} onDelete={onDelete}/>
+        <Footer todoList={todoList}/>
       </section>
     </div>
   );
