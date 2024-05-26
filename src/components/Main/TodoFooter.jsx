@@ -1,5 +1,5 @@
 import "./styles/TodoFooter.css";
-const TodoFooter = ({ todoItems, allTodoDone, deleteDoneTodo }) => {
+const TodoFooter = ({ todoItems, allTodoDone, deleteDoneTodo, viewTodo }) => {
   const allClear = () => {
     allTodoDone();
   };
@@ -11,6 +11,16 @@ const TodoFooter = ({ todoItems, allTodoDone, deleteDoneTodo }) => {
       </button>
       <button className="doneTodoClear" onClick={deleteDoneTodo}>
         완료 목록 삭제
+      </button>
+      <button className="allTodos" onClick={() => viewTodo("all")}>
+        전체보기
+      </button>
+      <button className="" onClick={() => viewTodo("yet")}>
+        {" "}
+        남은 할 일
+      </button>
+      <button className="" onClick={() => viewTodo("done")}>
+        완료된 할 일
       </button>
     </div>
   );
