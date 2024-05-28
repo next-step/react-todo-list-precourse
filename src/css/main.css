@@ -1,3 +1,15 @@
 .main-container {
 
 }
+
+header {
+  height: 100px;
+  width: 100dvw;
+  text-align: center;
+}
+
+header h1 {
+  line-height: 100px;
+  font-size: 40px;
+  font-weight: 700;
+}
