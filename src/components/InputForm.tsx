@@ -14,6 +14,7 @@ const InputForm = ({ setTodos }: InputFormProps) => {
     setTodos(newTodo);
     setText("");
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <input
