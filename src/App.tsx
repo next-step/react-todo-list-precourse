@@ -1,17 +1,16 @@
 import { useState } from "react";
-import InputForm from "./components/InputForm";
-import TodoLists from "./components/TodoLists";
+import InputForm from "./components/InputForm/InputForm";
 import { Todo } from "./Modules/Todo";
+import TodoLists from "./components/TodoList/TodoLists";
+import "./App.css";
 
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   return (
-    <div>
+    <div id="App">
       <h1>todos</h1>
       <InputForm
-        setTodos={(newTodo: Todo) => {
-          setTodos((prev) => [...prev, newTodo]);
-        }}
+        setTodos={(newTodo: Todo) => setTodos((prev) => [...prev, newTodo])}
       />
       <TodoLists todos={todos} />
     </div>
