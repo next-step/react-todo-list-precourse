@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Todo } from "../Modules/Todo";
+import { Todo } from "../../Modules/Todo";
+import "./InputForm.css";
 
 interface InputFormProps {
   setTodos: (newTodo: Todo) => void;
@@ -16,7 +17,7 @@ const InputForm = ({ setTodos }: InputFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="InputForm">
       <input
         type="text"
         placeholder="What need to be done?"
