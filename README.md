@@ -41,3 +41,14 @@
   - 완료 여부를 변경할 수 있는 체크박스
   - hover시 우측에 x 버튼이 뜨도록 구현
   - x 버튼 클릭 시 할 일 제거
+
+### 기능 추가
+> 못 할 줄 알았는데..
+
+생각보다 할 만 할것같아서 하게 됐다..
+
+브라우저의 세션이 종료되기 전까지 데이터를 보존하면 되므로, 새로고침에만 영향을 받지 않는 sessionStorage를 사용하기로 했다.
+
+- MainContainer의 default State를 sessionStorage에서 json형태로 load
+- todos가 업데이트 될 때 sessionStorage에 JSON 형태로 저장
+- nextId의 경우 todo와는 별도의 공간에 저장
