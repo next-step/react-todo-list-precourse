@@ -1,5 +1,6 @@
 import Todo from '../../models/Todo.ts';
 import icon_close from '../../assets/icon_close.svg';
+import {ChangeEvent} from 'react';
 
 type TodoItemProps = {
   todo: Todo,
@@ -17,7 +18,7 @@ const TodoContentText = ({ content }: TodoContentTextProps) => {
   </div>
 };
 const TodoItem = ({ todo, removeTodo, handleToggleCompletion }: TodoItemProps) => {
-  const onCheckChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onCheckChange = (e: ChangeEvent<HTMLInputElement>) => {
     todo.isCompleted = e.target.checked;
   };
   return <div>
