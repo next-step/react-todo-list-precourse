@@ -20,7 +20,7 @@ const TodoContainer = () => {
     const todo = todos[id];
     const activeCountDelta = todo.isCompleted ? 0 : -1;
     setActiveCount(activeCount + activeCountDelta);
-    delete todos[id];
+    delete nextState[id];
     setTodos(nextState);
   }, [todos, activeCount]);
 
