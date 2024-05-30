@@ -14,3 +14,4 @@ const TodoInput = ({ addTodo }: TodoInputProps) => {
     <input ref={inputRef} onKeyDown={onKeyDown} />
   </div>
 };
+export default TodoInput;
