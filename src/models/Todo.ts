@@ -9,7 +9,7 @@ export default class Todo {
   public constructor(content: string) {
     this.id = Todo.nextId();
     this.content = content;
-    this.isCompleted = true;
+    this.isCompleted = false;
   }
   public toggleCompleted() {
     this.isCompleted = !this.isCompleted;
