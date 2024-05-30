@@ -32,6 +32,11 @@ const TodoContainer = () => {
     Object.values(todos).forEach(removeIfCompleted);
   }, [todos, removeIfCompleted]);
 
+  const handleToggleCompletion = useCallback((todo: Todo) => {
+    const activeCountDelta = todo.isCompleted ? -1 : 1;
+    setActiveCount(activeCount + activeCountDelta);
+  }, [activeCount]);
+
   return <></>;
 };
 export default TodoContainer;
