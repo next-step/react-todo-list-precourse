@@ -7,6 +7,8 @@ type TodoRepository = {
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState<TodoRepository>({});
+  const [activeCount, setActiveCount] = useState(0);
+
   const addTodo = useCallback((content: string) => {
     const todo = new Todo(content);
     setTodos({...todos, [todo.id]: todo});
