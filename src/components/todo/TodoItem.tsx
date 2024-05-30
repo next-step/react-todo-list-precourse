@@ -20,6 +20,7 @@ const TodoContentText = ({ content }: TodoContentTextProps) => {
 const TodoItem = ({ todo, removeTodo, handleToggleCompletion }: TodoItemProps) => {
   const onCheckChange = (e: ChangeEvent<HTMLInputElement>) => {
     todo.isCompleted = e.target.checked;
+    handleToggleCompletion(todo);
   };
   return <div>
     <input type='checkbox' defaultChecked={todo.isCompleted} onChange={onCheckChange}/>
