@@ -30,13 +30,24 @@ const TodoContainer = () => {
     setTodos(nextState);
   }, [todos, activeCount]);
 
-  const removeIfCompleted = useCallback((todo: Todo) => {
-    if(todo.isCompleted) removeTodo(todo.id);
-  }, [todos, removeTodo]);
+  const pushIdIfComplete = ((ids: number[], todo: Todo) => {
+    if(todo.isCompleted) ids.push(todo.id);
+  });
+
+  const getCompletedTodoIds = useCallback(() => {
+    const ret: number[] = [];
+    Object.values(todos).forEach((todo) => pushIdIfComplete(ret, todo));
+    return ret;
+  }, [todos]);
 
   const removeCompleteTodos = useCallback(() => {
-    Object.values(todos).forEach(removeIfCompleted);
-  }, [todos, removeIfCompleted]);
+    const todoIds = getCompletedTodoIds();
+    const completeCount = todoIds.length;
+    const nextState = {...todos};
+    todoIds.map((todoId) => { delete nextState[todoId]; });
+    setTodos(nextState);
+    setActiveCount(activeCount - completeCount);
+  }, [getCompletedTodoIds]);
 
   const handleToggleCompletion = useCallback((todo: Todo) => {
     const activeCountDelta = todo.isCompleted ? -1 : 1;
