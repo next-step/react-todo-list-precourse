@@ -12,10 +12,14 @@ const TodoContainer = () => {
   const addTodo = useCallback((content: string) => {
     const todo = new Todo(content);
     setTodos({...todos, [todo.id]: todo});
+    setActiveCount(activeCount + 1);
   }, []);
 
   const removeTodo = useCallback((id: number) => {
     const nextState = {...todos};
+    const todo = todos[id];
+    const activeCountDelta = todo.isCompleted ? 0 : -1;
+    setActiveCount(activeCount + activeCountDelta);
     delete todos[id];
     setTodos(nextState);
   }, []);
