@@ -1,5 +1,6 @@
 export default class Todo {
   public static TODO_LAST_ID_KEY = 'todo_last_id';
+  public static TODOS_JSON_KEY = 'todo_json';
   private static lastId: number = sessionStorage.getItem(Todo.TODO_LAST_ID_KEY)
     ? parseInt(sessionStorage.getItem(Todo.TODO_LAST_ID_KEY) as string) + 1
     : 0;
