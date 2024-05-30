@@ -81,3 +81,19 @@
 .todoItem:hover .todoCloseIcon {
   display: block;
 }
+.todoAddButton {
+  width: 100px;
+  height: 45px;
+  border: #0061cf 1px solid;
+  background-color: #0061cf;
+  margin-left: 5px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.todoAddButton:hover {
+  transition-duration: 0.2s;
+  background-color: #3a99ff;
+  border-color: #3a99ff;
+}
