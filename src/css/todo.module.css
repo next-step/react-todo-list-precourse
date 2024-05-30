@@ -28,3 +28,20 @@
 .todoInput:focus {
   outline: none;
 }
+.todoBtnBar {
+  display: flex;
+  justify-content: space-between;
+}
+.todoBtnContainer {
+  display: flex;
+  gap: 2px;
+}
+.todoBtn {
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.clearText {
+  cursor: pointer;
+}
