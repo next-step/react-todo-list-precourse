@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef, KeyboardEvent } from 'react';
 
 import styles from '../../css/todo.module.css';
 
@@ -7,7 +7,7 @@ type TodoInputProps = {
 };
 const TodoInput = ({ addTodo }: TodoInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const onKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+  const onKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter' || ! inputRef.current) return;
     const content = inputRef.current.value;
     inputRef.current.value = '';
