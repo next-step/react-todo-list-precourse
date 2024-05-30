@@ -1,5 +1,5 @@
 import Todo from '../../models/Todo.ts';
-import icon_close from '../../assets/icon_close.svg';
+import closeIcon from '../../assets/icon_close.svg';
 import { ChangeEvent } from 'react';
 
 import styles from '../../css/todo.module.css';
@@ -27,7 +27,7 @@ const TodoItem = ({ todo, removeTodo, handleToggleCompletion }: TodoItemProps) =
   return <div className={styles.todoItem}>
     <input type='checkbox' defaultChecked={todo.isCompleted} onChange={onCheckChange} className={styles.todoCheckbox}/>
     <TodoContentText content={todo.content} />
-    <img alt='close' src={icon_close} onClick={() => removeTodo(todo.id)} className={styles.todoCloseIcon}/>
+    <img alt='close' src={closeIcon} onClick={() => removeTodo(todo.id)} className={styles.todoCloseIcon}/>
   </div>
 };
 export default TodoItem;
