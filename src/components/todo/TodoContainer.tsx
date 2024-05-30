@@ -6,7 +6,7 @@ import TodoInput from './TodoInput';
 import TodoFilterEnum from '../../constants/TodoFilterEnum';
 import TodoButtonBar from './TodoButtonBar';
 import TodoBox from './TodoBox';
-import { loadTodos } from '../../utils/Utils';
+import { loadActiveCount, loadTodos } from '../../utils/Utils';
 import TodoStorageKeys from '../../constants/TodoStorageKeys';
 
 type TodoRepository = {
@@ -15,12 +15,16 @@ type TodoRepository = {
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState<TodoRepository>(loadTodos());
-  const [activeCount, setActiveCount] = useState(0);
+  const [activeCount, setActiveCount] = useState(loadActiveCount());
   const [filter, setFilter] = useState<TodoFilterEnum>(TodoFilterEnum.TODO_FILTER_ALL);
 
   useEffect(() => {
     sessionStorage.setItem(TodoStorageKeys.TODOS_JSON_KEY, JSON.stringify(todos));
   }, [todos]);
+
+  useEffect(() => {
+    sessionStorage.setItem(TodoStorageKeys.TODOS_ACTIVE_COUNT_KEY, activeCount.toString());
+  }, [activeCount]);
 
   const addTodo = useCallback((content: string) => {
     const todo = new Todo(content);
