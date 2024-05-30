@@ -18,7 +18,7 @@
   flex-grow: 1;
 }
 .todoInput {
-  width: 100%;
+  flex-grow: 1;
   height: 40px;
   font-size: 20px;
   padding-left: 15px;
