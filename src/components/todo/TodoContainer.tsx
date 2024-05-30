@@ -24,6 +24,14 @@ const TodoContainer = () => {
     setTodos(nextState);
   }, []);
 
+  const removeIfCompleted = useCallback((todo: Todo) => {
+    if(todo.isCompleted) removeTodo(todo.id);
+  }, []);
+
+  const removeCompleteTodos = useCallback(() => {
+    Object.values(todos).forEach(removeIfCompleted);
+  }, []);
+
   return <></>;
 };
 export default TodoContainer;
