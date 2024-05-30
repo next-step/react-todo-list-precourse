@@ -1,7 +1,7 @@
-import Todo from '../../models/Todo.ts';
-import TodoFilterEnum from '../../constants/TodoFilterEnum.ts';
+import Todo from '../../models/Todo';
+import TodoFilterEnum from '../../constants/TodoFilterEnum';
 import { useCallback } from 'react';
-import TodoItem from './TodoItem.tsx';
+import TodoItem from './TodoItem';
 
 type TodoRepository = {
   [id: number]: Todo;

@@ -4,8 +4,8 @@ import Todo from '../../models/Todo';
 import styles from '../../css/todo.module.css';
 import TodoInput from './TodoInput';
 import TodoFilterEnum from '../../constants/TodoFilterEnum';
-import TodoButtonBar from './TodoButtonBar.tsx';
-import TodoBox from './TodoBox.tsx';
+import TodoButtonBar from './TodoButtonBar';
+import TodoBox from './TodoBox';
 
 type TodoRepository = {
   [id: number]: Todo;

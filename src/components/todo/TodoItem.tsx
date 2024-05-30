@@ -1,4 +1,4 @@
-import Todo from '../../models/Todo.ts';
+import Todo from '../../models/Todo';
 import closeIcon from '../../assets/icon_close.svg';
 import { ChangeEvent } from 'react';
 
