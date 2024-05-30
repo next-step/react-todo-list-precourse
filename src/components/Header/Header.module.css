@@ -1,0 +1,10 @@
+.header {
+  display: block;
+}
+
+.title {
+  color: #b83f45;
+  font-size: 80px;
+  font-weight: 300;
+  text-align: center;
+}
