@@ -14,9 +14,13 @@ const TodoFilterButton = ({ setFilter, filterTarget }: TodoFilterButtonProps) =>
     { filterTarget }
   </button>
 }
-const TodoButtonBar = ({ activeCount, setFilter }: TodoButtonBarProps) => {
+const TodoButtonBar = ({ activeCount, setFilter, removeCompleteTodos }: TodoButtonBarProps) => {
   return <div>
     <p>{ activeCount } items left!</p>
+    <TodoFilterButton setFilter={setFilter} filterTarget={TodoFilterEnum.TODO_FILTER_ALL} />
+    <TodoFilterButton setFilter={setFilter} filterTarget={TodoFilterEnum.TODO_FILTER_ACTIVE} />
+    <TodoFilterButton setFilter={setFilter} filterTarget={TodoFilterEnum.TODO_FILTER_COMPLETED} />
+    <p onClick={removeCompleteTodos}>Clear completed</p>
   </div>
 };
 export default TodoButtonBar;
