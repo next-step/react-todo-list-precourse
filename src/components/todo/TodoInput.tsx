@@ -8,7 +8,7 @@ type TodoInputProps = {
 const TodoInput = ({ addTodo }: TodoInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const onKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key !== 'Enter' || ! inputRef.current) return;
+    if (e.key !== 'Enter' || ! inputRef.current || inputRef.current.value.length === 0) return;
     const content = inputRef.current.value;
     inputRef.current.value = '';
     addTodo(content);
