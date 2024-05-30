@@ -20,3 +20,9 @@ export const loadTodos = () => {
   Object.values<object>(todosObject).forEach(unwrappedTodo => appendWrappedTodo(ret, unwrappedTodo));
   return ret;
 };
+
+export const loadActiveCount = () => {
+  const countString = sessionStorage.getItem(TodoStorageKeys.TODOS_ACTIVE_COUNT_KEY);
+  if(! countString) return 0;
+  return parseInt(countString);
+}
