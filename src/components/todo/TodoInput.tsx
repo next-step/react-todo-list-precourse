@@ -14,9 +14,7 @@ const TodoInput = ({ addTodo }: TodoInputProps) => {
     addTodo(content);
   }, [addTodo]);
   return <div className={styles.inputContainer}>
-    <input ref={inputRef} onKeyDown={onKeyDown} className={styles.todoInput}
-      placeholder={'What needs to be done?'}
-    />
+    <input ref={inputRef} onKeyDown={onKeyDown} className={styles.todoInput} placeholder={'What needs to be done?'} />
   </div>
 };
 export default TodoInput;
