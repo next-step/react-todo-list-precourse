@@ -10,6 +10,7 @@ const TodoInput = ({ addTodo }: TodoInputProps) => {
   const onKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter' || ! inputRef.current) return;
     const content = inputRef.current.value;
+    inputRef.current.value = '';
     addTodo(content);
   }, [addTodo]);
   return <div className={styles.inputContainer}>
