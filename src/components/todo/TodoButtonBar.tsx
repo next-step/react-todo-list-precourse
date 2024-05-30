@@ -32,7 +32,7 @@ const TodoFilterButton = ({ filter, setFilter, filterTarget }: TodoFilterButtonP
 };
 const TodoButtonBar = ({ activeCount, filter, setFilter, removeCompleteTodos }: TodoButtonBarProps) => {
   return <div className={styles.todoBtnBar}>
-    <p>{ activeCount } items left!</p>
+    <p>{ activeCount } item(s) left!</p>
     <TodoButtonContainer filter={filter} setFilter={setFilter} />
     <p onClick={removeCompleteTodos} className={styles.clearText}>Clear completed</p>
   </div>
