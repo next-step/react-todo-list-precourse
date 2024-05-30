@@ -1,7 +1,9 @@
+import Header from './components/Header/Header';
+
 export default function App() {
   return (
     <>
-      <p>Hello World</p>
+      <Header title="todos" />
     </>
   );
 }
