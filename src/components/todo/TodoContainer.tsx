@@ -1,6 +1,9 @@
 import {useCallback, useState} from 'react';
 import Todo from '../../models/Todo.ts';
 
+import styles from '../../css/todo.module.css';
+import TodoInput from './TodoInput.tsx';
+
 type TodoRepository = {
   [id: number]: Todo;
 };
@@ -37,6 +40,8 @@ const TodoContainer = () => {
     setActiveCount(activeCount + activeCountDelta);
   }, [activeCount]);
 
-  return <></>;
+  return <div className={styles.container}>
+    <TodoInput addTodo={addTodo} />
+  </div>;
 };
 export default TodoContainer;
