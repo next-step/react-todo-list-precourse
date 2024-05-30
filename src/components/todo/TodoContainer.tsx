@@ -13,7 +13,7 @@ const TodoContainer = () => {
     const todo = new Todo(content);
     setTodos({...todos, [todo.id]: todo});
     setActiveCount(activeCount + 1);
-  }, []);
+  }, [todos, activeCount]);
 
   const removeTodo = useCallback((id: number) => {
     const nextState = {...todos};
@@ -22,15 +22,15 @@ const TodoContainer = () => {
     setActiveCount(activeCount + activeCountDelta);
     delete todos[id];
     setTodos(nextState);
-  }, []);
+  }, [todos, activeCount]);
 
   const removeIfCompleted = useCallback((todo: Todo) => {
     if(todo.isCompleted) removeTodo(todo.id);
-  }, []);
+  }, [todos, removeTodo]);
 
   const removeCompleteTodos = useCallback(() => {
     Object.values(todos).forEach(removeIfCompleted);
-  }, []);
+  }, [todos, removeIfCompleted]);
 
   return <></>;
 };
