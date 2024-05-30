@@ -1,5 +1,7 @@
 import {useCallback, useRef} from 'react';
 
+import styles from '../../css/todo.module.css';
+
 type TodoInputProps = {
   addTodo: (content: string) => void;
 };
@@ -10,8 +12,8 @@ const TodoInput = ({ addTodo }: TodoInputProps) => {
     const content = inputRef.current.value;
     addTodo(content);
   }, [addTodo]);
-  return <div>
-    <input ref={inputRef} onKeyDown={onKeyDown} />
+  return <div className={styles.inputContainer}>
+    <input ref={inputRef} onKeyDown={onKeyDown} className={styles.todoInput} />
   </div>
 };
 export default TodoInput;
