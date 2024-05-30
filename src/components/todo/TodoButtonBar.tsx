@@ -25,7 +25,8 @@ const TodoButtonContainer = ({ filter, setFilter }: TodoButtonContainerProps) =>
   </div>
 }
 const TodoFilterButton = ({ filter, setFilter, filterTarget }: TodoFilterButtonProps) => {
-  return <button onClick={() => setFilter(filterTarget)} className={filter === filterTarget ? styles.todoBtnSelected : styles.todoBtn}>
+  const btnClassName = filter === filterTarget ? `${styles.todoBtn} ${styles.todoBtnSelected}` : styles.todoBtn;
+  return <button onClick={() => setFilter(filterTarget)} className={btnClassName}>
     { filterTarget }
   </button>
 }

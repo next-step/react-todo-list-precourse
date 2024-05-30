@@ -56,7 +56,7 @@ const TodoContainer = () => {
 
   return <div className={styles.container}>
     <TodoInput addTodo={addTodo} />
-    <TodoButtonBar activeCount={activeCount} setFilter={setFilter} removeCompleteTodos={removeCompleteTodos} />
+    <TodoButtonBar activeCount={activeCount} setFilter={setFilter} removeCompleteTodos={removeCompleteTodos} filter={filter} />
   </div>;
 };
 export default TodoContainer;
