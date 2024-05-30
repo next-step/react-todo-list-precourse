@@ -1,14 +1,14 @@
+import TodoStorageKeys from '../constants/TodoStorageKeys';
+
 export default class Todo {
-  public static TODO_LAST_ID_KEY = 'todo_last_id';
-  public static TODOS_JSON_KEY = 'todo_json';
-  private static lastId: number = sessionStorage.getItem(Todo.TODO_LAST_ID_KEY)
-    ? parseInt(sessionStorage.getItem(Todo.TODO_LAST_ID_KEY) as string) + 1
+  private static lastId: number = sessionStorage.getItem(TodoStorageKeys.TODO_LAST_ID_KEY)
+    ? parseInt(sessionStorage.getItem(TodoStorageKeys.TODO_LAST_ID_KEY) as string) + 1
     : 0;
   public id: number;
   public content: string;
   public isCompleted: boolean;
   public static nextId() {
-    sessionStorage.setItem(Todo.TODO_LAST_ID_KEY, Todo.lastId.toString());
+    sessionStorage.setItem(TodoStorageKeys.TODO_LAST_ID_KEY, Todo.lastId.toString());
     return Todo.lastId++;
   }
   public constructor(content: string, id?: number) {

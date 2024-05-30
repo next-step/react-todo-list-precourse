@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Todo from '../../models/Todo';
 
 import styles from '../../css/todo.module.css';
@@ -6,15 +6,21 @@ import TodoInput from './TodoInput';
 import TodoFilterEnum from '../../constants/TodoFilterEnum';
 import TodoButtonBar from './TodoButtonBar';
 import TodoBox from './TodoBox';
+import { loadTodos } from '../../utils/Utils';
+import TodoStorageKeys from '../../constants/TodoStorageKeys';
 
 type TodoRepository = {
   [id: number]: Todo;
 };
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState<TodoRepository>({});
+  const [todos, setTodos] = useState<TodoRepository>(loadTodos());
   const [activeCount, setActiveCount] = useState(0);
   const [filter, setFilter] = useState<TodoFilterEnum>(TodoFilterEnum.TODO_FILTER_ALL);
+
+  useEffect(() => {
+    sessionStorage.setItem(TodoStorageKeys.TODOS_JSON_KEY, JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = useCallback((content: string) => {
     const todo = new Todo(content);
