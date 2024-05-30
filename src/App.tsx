@@ -2,26 +2,41 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [todos, setTodos] = useState<string[] | null>();
+  const [todos, setTodos] = useState<string[]>([]);
+  const [input, setInput] = useState<string | undefined>("");
 
   useEffect(() => {
     setTodos(["테스트1", "테스트2", "테스트3"]);
   }, []);
 
+  const addTodo = () => {
+    const inputValue = input?.trim();
+
+    if (inputValue) {
+      const newTodos = [...todos, inputValue];
+      setTodos(newTodos);
+    }
+    setInput("");
+  };
+
   return (
     <div className="container">
       <header>
         <h1>To Do List</h1>
-        <div className="input block">
-          <input placeholder="할 일을 입력해주세요." />
-          <button>추가</button>
-        </div>
+        <form onSubmit={(e) => e.preventDefault()} className="input block">
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="할 일을 입력해주세요."
+          />
+          <button onClick={addTodo}>추가</button>
+        </form>
       </header>
       <section>
         <div className="todo-list">
-          {todos?.map((todo) => {
+          {todos?.map((todo, index) => {
             return (
-              <div className="todo-item block">
+              <div key={index} className="todo-item block">
                 <input type="checkbox" />
                 <label>{todo}</label>
                 <button>제거</button>
