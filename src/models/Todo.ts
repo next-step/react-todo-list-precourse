@@ -14,4 +14,7 @@ export default class Todo {
   public toggleCompleted() {
     this.isCompleted = !this.isCompleted;
   }
+  public setContent(content: string) {
+    this.content = content;
+  }
 }
