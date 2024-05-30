@@ -57,6 +57,10 @@
   height: 60px;
   border: 1px solid #ececec;
   gap: 2px;
+  margin-bottom: 2px;
+}
+.todoItem:nth-last-child(2) {
+  margin-bottom: 0;
 }
 .todoCheckbox {
   margin: 0 10px 0 20px;
