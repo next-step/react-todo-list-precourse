@@ -1,9 +1,9 @@
 import {useCallback, useState} from 'react';
-import Todo from '../../models/Todo.ts';
+import Todo from '../../models/Todo';
 
 import styles from '../../css/todo.module.css';
-import TodoInput from './TodoInput.tsx';
-import TodoFilterEnum from '../../constants/TodoFilterEnum.ts';
+import TodoInput from './TodoInput';
+import TodoFilterEnum from '../../constants/TodoFilterEnum';
 
 type TodoRepository = {
   [id: number]: Todo;

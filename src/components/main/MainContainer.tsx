@@ -2,7 +2,7 @@ import MainHeader from './MainHeader';
 import MainFooter from './MainFooter';
 
 import '../../css/main.css'
-import TodoContainer from '../todo/TodoContainer.tsx';
+import TodoContainer from '../todo/TodoContainer';
 
 const MainContainer = () => {
   return <div className='main-container'>
