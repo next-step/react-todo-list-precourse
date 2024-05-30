@@ -1,5 +1,5 @@
 .container {
-  width: 800px;
+  width: 500px;
   max-width: calc(100dvw - 20px);
   min-height: calc(100dvh - 200px);
   margin: 0 auto;
@@ -41,6 +41,11 @@
   padding: 4px 8px;
   border-radius: 4px;
   cursor: pointer;
+  border: transparent 1px solid;
+  box-sizing: border-box;
+}
+.todoBtnSelected {
+  border: black 1px solid;
 }
 .clearText {
   cursor: pointer;
