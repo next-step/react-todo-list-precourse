@@ -1,6 +1,6 @@
 import Todo from '../../models/Todo.ts';
 import icon_close from '../../assets/icon_close.svg';
-import {ChangeEvent} from 'react';
+import { ChangeEvent } from 'react';
 
 import styles from '../../css/todo.module.css';
 

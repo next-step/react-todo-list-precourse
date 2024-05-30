@@ -1,6 +1,6 @@
 import Todo from '../../models/Todo.ts';
 import TodoFilterEnum from '../../constants/TodoFilterEnum.ts';
-import {useCallback} from 'react';
+import { useCallback } from 'react';
 import TodoItem from './TodoItem.tsx';
 
 type TodoRepository = {
