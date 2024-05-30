@@ -3,6 +3,7 @@ import Todo from '../../models/Todo.ts';
 
 import styles from '../../css/todo.module.css';
 import TodoInput from './TodoInput.tsx';
+import TodoFilterEnum from '../../constants/TodoFilterEnum.ts';
 
 type TodoRepository = {
   [id: number]: Todo;
@@ -11,6 +12,7 @@ type TodoRepository = {
 const TodoContainer = () => {
   const [todos, setTodos] = useState<TodoRepository>({});
   const [activeCount, setActiveCount] = useState(0);
+  const [filter, setFilter] = useState<TodoFilterEnum>(TodoFilterEnum.TODO_FILTER_ALL);
 
   const addTodo = useCallback((content: string) => {
     const todo = new Todo(content);
