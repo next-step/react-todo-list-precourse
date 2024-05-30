@@ -11,6 +11,13 @@ const TodoContainer = () => {
     const todo = new Todo(content);
     setTodos({...todos, [todo.id]: todo});
   }, []);
+
+  const removeTodo = useCallback((id: number) => {
+    const nextState = {...todos};
+    delete todos[id];
+    setTodos(nextState);
+  }, []);
+
   return <></>;
 };
 export default TodoContainer;
