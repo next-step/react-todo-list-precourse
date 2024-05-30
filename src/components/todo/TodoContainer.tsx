@@ -4,6 +4,7 @@ import Todo from '../../models/Todo';
 import styles from '../../css/todo.module.css';
 import TodoInput from './TodoInput';
 import TodoFilterEnum from '../../constants/TodoFilterEnum';
+import TodoButtonBar from './TodoButtonBar.tsx';
 
 type TodoRepository = {
   [id: number]: Todo;
@@ -44,6 +45,7 @@ const TodoContainer = () => {
 
   return <div className={styles.container}>
     <TodoInput addTodo={addTodo} />
+    <TodoButtonBar activeCount={activeCount} setFilter={setFilter} removeCompleteTodos={removeCompleteTodos} />
   </div>;
 };
 export default TodoContainer;
