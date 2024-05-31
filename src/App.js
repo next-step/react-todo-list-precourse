@@ -4,5 +4,5 @@ import { App } from './App.jsx';
 
 export function createApp() {
     const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(App());
+    root.render(React.createElement(App));
 }
