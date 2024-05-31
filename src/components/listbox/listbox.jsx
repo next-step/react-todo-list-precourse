@@ -4,7 +4,17 @@ import checkBox from "../../images/check_icon.svg";
 import circleBox from "../../images/circle_icon.svg";
 
 function Listbox({ todo, setTodos, index }) {
-  const handleToggle = () => {};
+  const handleToggle = () => {
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.map((item) => {
+        if (item === todo) {
+          return { ...item, checked: !item.checked };
+        }
+        return item;
+      });
+      return updatedTodos;
+    });
+  };
   const handleDelete = () => {
     setTodos((prevTodos) => prevTodos.filter((item) => item !== todo));
   };
