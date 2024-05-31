@@ -13,7 +13,12 @@
 
 ## 구현 순서
 
+
 - 먼저 List.js를 생성한다. 여기에서 TodoListItem을 담아준다.
 - TodoListItem을 담아줄 TodoInsert를 구현한다.
 - 여기서 TodoListItem의 checked 값에 따라 보여줄 Active 컴포넌트와 Completed 컴포넌트를 구현한다.
 - 각 컴포넌트 별로 버튼을 만들어 각각의 페이지로 이동할 수 있게 한다.
+- UI를 보여줄 화면을 구현한다. 여기서 각각의 페이지로 이동 가능하다.
+- UI를 render해줄 UIRender을 구현해 준다.
+- UI의 state를 관리해 줄 useToDoState를 구현한다.
+
