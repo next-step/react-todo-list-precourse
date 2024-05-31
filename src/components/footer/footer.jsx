@@ -7,7 +7,9 @@ function Footer({ todos, setTodos }) {
     return true;
   }).length;
 
-  function handleClear() {}
+  function handleClear() {
+    setTodos((prevTodos) => prevTodos.filter((todo) => !todo.checked));
+  }
   return (
     <div className="footer">
       <div className="left">
