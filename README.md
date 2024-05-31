@@ -30,11 +30,6 @@
 
 <br>
 
-<h2>🖥️ 실행 결과</h2>
-<img width="667" alt="스크린샷 2024-06-01 00 19 57" src="https://github.com/1oveydev/react-todo-list/assets/75007741/4a722c81-6b83-4715-a23b-bf11538b571c">
-
-<br>
-
 
 <h2>☑️ 과제 제출 전 체크 리스트</h2>
 
