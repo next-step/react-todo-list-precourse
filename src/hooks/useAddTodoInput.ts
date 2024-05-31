@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react';
 import { KeyboardEvent } from 'react';
 
-const useAddTodo = (addTodo: (content: string) => void) => {
+const useAddTodoInput = (addTodo: (content: string) => void) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const onButtonClick = useCallback(() => {
     if (!inputRef.current || inputRef.current.value.length === 0) return;
@@ -15,4 +15,4 @@ const useAddTodo = (addTodo: (content: string) => void) => {
   }, [addTodo]);
   return { inputRef, onButtonClick, onKeyDown }
 };
-export default useAddTodo;
+export default useAddTodoInput;
