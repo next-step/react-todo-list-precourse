@@ -1,5 +1,5 @@
 import "./listbox.css";
-import checkBox from "../../images/check_icon.svg";
+import checkBox from "../../images/check_all_icon.svg";
 import circleBox from "../../images/circle_icon.svg";
 
 function ListCheckbox({ todo, setTodos }) {

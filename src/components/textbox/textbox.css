@@ -11,10 +11,19 @@
   margin-bottom: 10px;
 }
 
-.select_all {
+.select {
   width: 22px;
   height: 22px;
   background-image: url("../../images/check_icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.select_all {
+  width: 22px;
+  height: 22px;
+  background-image: url("../../images/check_all_icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 10px;
