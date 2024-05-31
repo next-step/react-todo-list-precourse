@@ -9,3 +9,10 @@
   box-sizing: border-box;
   overflow-y: auto;
 }
+
+h1 {
+  color: #d79f9f;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
