@@ -1,23 +1,12 @@
-import React from "react";
 import "./footer.css";
+import FooterCount from "./footer_count";
+import FooterComplete from "./footer_complete";
 
 function Footer({ todos, setTodos }) {
-  let todo_length = todos.filter((todo) => {
-    if (todo.checked) return false;
-    return true;
-  }).length;
-
-  function handleClear() {
-    setTodos((prevTodos) => prevTodos.filter((todo) => !todo.checked));
-  }
   return (
     <div className="footer">
-      <div className="left">
-        {todo_length} item{todo_length == 1 ? "" : "s"} left!
-      </div>
-      <div className="clear" onClick={handleClear}>
-        Clear completed
-      </div>
+      <FooterCount todos={todos} />
+      <FooterComplete setTodos={setTodos} />
     </div>
   );
 }

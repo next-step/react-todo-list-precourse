@@ -8,7 +8,6 @@ import { useState } from "react";
 function App() {
   const [todos, setTodos] = useState([]);
   const [active, setActive] = useState(0);
-
   return (
     <div className="app">
       <h1>Todos</h1>

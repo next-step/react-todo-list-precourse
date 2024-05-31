@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./textbox.css";
+import TextboxCheck from "./textbox_check";
+import TextboxAdd from "./textbox_add";
+import TextboxInput from "./textbox_input";
 
 function Textbox({ setTodos, todos }) {
   const [text, setText] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text != "") {
@@ -11,26 +13,16 @@ function Textbox({ setTodos, todos }) {
       setText("");
     }
   };
-  const checkAll = () => {
-    const allChecked = todos.every((todo) => todo.checked);
-    setTodos(
-      todos.map((todo) => {
-        return { ...todo, checked: !allChecked };
-      })
-    );
-  };
-
   return (
     <form className="textbox" onSubmit={handleSubmit}>
-      <div className="select_all" onClick={checkAll}></div>
-      <input
-        type="text"
-        value={text}
-        className="input_box"
-        placeholder="What needs to be done?"
-        onChange={(e) => setText(e.target.value)}
+      <TextboxCheck todos={todos} setTodos={setTodos} />
+      <TextboxInput text={text} setText={setText} />
+      <TextboxAdd
+        setTodos={setTodos}
+        text={text}
+        setText={setText}
+        handleSubmit={handleSubmit}
       />
-      <div className="input_button" onClick={handleSubmit}></div>
     </form>
   );
 }
