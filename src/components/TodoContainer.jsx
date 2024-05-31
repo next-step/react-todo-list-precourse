@@ -22,7 +22,6 @@ const TodoContainer = () => {
   const [nextId, setNextId] = useState(0)
   const [active, setActive] = useState(0)
 
-  // 편집 중인지의 여부에 따라 렌더링을 달리하는 함수
   const renderTodoItems = (todos, editTask, toggleComplete, deleteTodo, editTodo) => {
     let filteredTodos = todos
 
