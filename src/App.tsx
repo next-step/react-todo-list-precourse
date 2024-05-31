@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-interface Todo {
-  text: string;
-}
-
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [input, setInput] = useState<string>("");
@@ -17,7 +13,13 @@ function App() {
 
     const parsedTodos: Todo[] = JSON.parse(storedTodos);
     parsedTodos.forEach((cur: Todo) => {
-      setTodos((todo) => [...todo, { text: cur.text }]);
+      setTodos((todo) => [
+        ...todo,
+        {
+          text: cur.text,
+          done: cur.done,
+        },
+      ]);
     });
   }, []);
 
@@ -28,9 +30,21 @@ function App() {
   const addTodo = () => {
     const inputValue = input?.trim();
     if (inputValue) {
-      setTodos((todo) => [...todo, { text: inputValue }]);
+      setTodos((todo) => [
+        ...todo,
+        {
+          text: inputValue,
+          done: false,
+        },
+      ]);
     }
     setInput("");
+  };
+
+  const toggleTodo = (id: number) => {
+    const newTodos = [...todos];
+    newTodos[id].done = !newTodos[id].done;
+    setTodos(newTodos);
   };
 
   return (
@@ -51,7 +65,11 @@ function App() {
           {todos?.map((todo, index) => {
             return (
               <div key={index} className="todo-item block">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  checked={todo.done}
+                  onChange={() => toggleTodo(index)}
+                />
                 <label>{todo.text}</label>
                 <button>제거</button>
               </div>
