@@ -19,8 +19,10 @@
      - [x] 필터: 모든 할 일, 완료된 할 일, 진행 중인 할 일
      - [x] 필터 버튼 클릭 시 필터링 된 할 일 반환하기
   7. 완료된 할 일 모두 삭제하기
-- [ ] 모듈화하기
+- [x] 모듈화하기
   - [x] Header
-  - [ ] TodoList
-  - [ ] Navigation
-- [ ] CSS 추가하기
+  - [x] TodoList
+  - [x] Navigation
+- [ ] 공통 UI 컴포넌트 만들기
+  - [ ] button
+  - [ ] input
