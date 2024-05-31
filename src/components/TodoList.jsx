@@ -1,4 +1,4 @@
-import { PATH_ALL } from "../constants.js";
+import {PATH_ACTIVE, PATH_ALL} from "../constants.js";
 import TodoHeader from "./todos/TodoHeader.jsx";
 import { TodoInput } from "./todos/TodoInput.jsx";
 import { useTodoList } from "../hooks/useTodoList.js";
@@ -12,15 +12,26 @@ export const createFilterName = (path) => {
     return path.charAt(0).toUpperCase() + path.slice(3);
 }
 
+const filterCompleted = (todos) => todos.filter(todo => todo.isDone === true);
+
+const filterActive = (todos) => todos.filter(todo => todo.isDone === false);
+
+const doFilter = (path, todos) => {
+    if (path === PATH_ALL) return todos;
+    if (path === PATH_ACTIVE) return filterActive(todos);
+    return filterCompleted(todos);
+}
+
 export function TodoList() {
     const { path, setPath } = usePath();
-    console.log('todolist', createFilterName(path));
     const { todos, addTodo, updateTodoState, deleteTodo } = useTodoList();
     return (
         <div>
             <TodoHeader updatePathName={setPath} />
             <TodoInput addTodo={addTodo} />
-            {todos.map(todo => <TodoItem key={todo.id} todo={todo} updateTodoState={updateTodoState} deleteTodo={deleteTodo} />)}
+            {doFilter(path, todos)
+                .map(todo => <TodoItem key={todo.id} todo={todo} updateTodoState={updateTodoState} deleteTodo={deleteTodo} />)
+            }
         </div>
     );
 }
