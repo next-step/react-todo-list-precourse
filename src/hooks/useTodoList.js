@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
-
+import {useCallback, useEffect, useState} from "react";
+// closure? 일단 전역 객체는 아님
 let id = 0;
 let activeCnt = 0;
 
@@ -27,14 +27,20 @@ const updateTodoStateImmutable = (todo, id) => {
     return newTodoInstance(todo.content, todo.id, !todo.isDone);
 }
 
-export function useTodoList() {
-    const [todos, setTodos] = useState([]);
+const cacheTodo = (todos) => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
 
+const readCache = () => JSON.parse(localStorage.getItem("todos"));
+
+export function useTodoList() {
+    const [todos, setTodos] = useState(readCache() ?? []);
     const addTodo = useCallback((todo) => setTodos(prev => [...prev, createTodoInstance(todo)]), []);
     const updateTodoState = useCallback(
         (id) => setTodos(prev => prev.map(todo => updateTodoStateImmutable(todo, id)))
         , []);
     const deleteTodo = useCallback((id) => setTodos(prev => prev.filter(todo => todo.id !== id)), []);
+    useEffect(() => cacheTodo(todos), [todos]);
 
     return { todos, addTodo, updateTodoState, deleteTodo, activeCnt };
 }
