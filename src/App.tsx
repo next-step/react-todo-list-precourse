@@ -47,6 +47,11 @@ function App() {
     setTodos(newTodos);
   };
 
+  const RemoveTodo = (id: number) => {
+    const newTodos = todos.filter((_, index) => index !== id);
+    setTodos(newTodos);
+  };
+
   return (
     <div className="container">
       <header>
@@ -71,7 +76,7 @@ function App() {
                   onChange={() => toggleTodo(index)}
                 />
                 <label>{todo.text}</label>
-                <button>제거</button>
+                <button onClick={() => RemoveTodo(index)}>제거</button>
               </div>
             );
           })}
