@@ -1,20 +1,34 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+interface Todo {
+  text: string;
+}
+
 function App() {
-  const [todos, setTodos] = useState<string[]>([]);
-  const [input, setInput] = useState<string | undefined>("");
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [input, setInput] = useState<string>("");
 
   useEffect(() => {
-    setTodos(["테스트1", "테스트2", "테스트3"]);
+    const storedTodos = localStorage.getItem("todos");
+    if (!storedTodos) {
+      return;
+    }
+
+    const parsedTodos: Todo[] = JSON.parse(storedTodos);
+    parsedTodos.forEach((cur: Todo) => {
+      setTodos((todo) => [...todo, { text: cur.text }]);
+    });
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = () => {
     const inputValue = input?.trim();
-
     if (inputValue) {
-      const newTodos = [...todos, inputValue];
-      setTodos(newTodos);
+      setTodos((todo) => [...todo, { text: inputValue }]);
     }
     setInput("");
   };
@@ -38,7 +52,7 @@ function App() {
             return (
               <div key={index} className="todo-item block">
                 <input type="checkbox" />
-                <label>{todo}</label>
+                <label>{todo.text}</label>
                 <button>제거</button>
               </div>
             );
