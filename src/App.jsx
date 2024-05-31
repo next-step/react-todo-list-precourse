@@ -3,11 +3,17 @@ import Footer from "./components/footer/footer";
 import Listbox from "./components/listbox/listbox";
 import Textbox from "./components/textbox/textbox";
 import "./styles/App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+  const [todos, setTodos] = useState(savedTodos);
   const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   return (
     <div className="app">
       <h1>Todos</h1>
