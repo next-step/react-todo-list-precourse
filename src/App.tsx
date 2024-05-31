@@ -10,21 +10,18 @@ function App() {
 
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");
-    if (!storedTodos) {
-      return;
-    }
+    if (!storedTodos) return;
 
     const parsedTodos: Todo[] = JSON.parse(storedTodos);
-    parsedTodos.forEach((cur: Todo) => {
-      setTodos((todo) => [
-        ...todo,
-        {
-          text: cur.text,
-          done: cur.done,
-        },
-      ]);
+    parsedTodos.forEach((curTodo: Todo) => {
+      setTodos((todo) => [...todo, restoreTodo(curTodo)]);
     });
   }, []);
+
+  const restoreTodo = (curTodo: Todo) => ({
+    text: curTodo.text,
+    done: curTodo.done,
+  });
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
