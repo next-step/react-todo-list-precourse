@@ -1,0 +1,9 @@
+.category {
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #d79f9f;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
