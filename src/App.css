@@ -1,17 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #434d7a;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .App {
@@ -19,17 +20,18 @@ body {
 }
 
 h1 {
-  color: #fff;
+  color: #000000b0;
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
 }
 
 .TodoContainer {
-  background: #1a1a40;
-  margin-top: 5rem;
+  background-color: #e4d5f8b4;
   padding: 2rem;
-  border-radius: 5px;
-  color: #fff;
+  border-radius: 10px;
+  color: #2e1c1c;
+  width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .TodoForm {
@@ -42,14 +44,13 @@ h1 {
   background: none;
   border: 1px solid #8758ff;
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
   margin-bottom: 2rem;
-  width: 500px;
-  color: #fff;
+  width: calc(100% - 60px);
+  box-sizing: border-box;
 }
 
 .todo-input::placeholder {
-  color: #d0ccccab;
+  color: #0000008a;
 }
 
 .todo-btn {
@@ -58,59 +59,164 @@ h1 {
   border: none;
   padding: 0.55rem;
   cursor: pointer;
+  width: 50px;
+  margin-left: 10px;
 }
 
 .TodoItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #5f78cf;
-  color: #fff;
+  border: 1px solid #8758ff;
+  color: #000000;
   padding: 0.75rem 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 1rem;
-}
-
-
-.incompleted {
-  color: #fff;
-  cursor: pointer;
+  background-color: #f8f9fa;
 }
 
 .completed {
   color: #0000003c;
   text-decoration: line-through;
-  cursor: pointer;
 }
 
-.toggle-box {
+.checkbox {
+  width: 22px;
+  height: 22px;
   margin-left: 10px;
   margin-right: 10px;
   transform: scale(1.7);
+  cursor: pointer;
 }
 
-.set-btn{
+.unchecked {
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('./images/uncheck.svg');
+}
+
+.checked {
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('./images/check.svg');
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #6c43c6;
+}
+
+.filter-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  cursor: pointer;
+  color: #692add;
+  margin: 12px 0;
+}
+
+.filter {
+  text-align: center;
+  width: 30%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.selected {
+  color: #fff;
+  background-color: #692add;
+}
+
+.select-all-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border: 1px solid #8758ff;
+  border-radius: 10px;
+  color: #000000cb;
+}
+
+.select-btn1 {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.select-btn1:hover {
+  color: #e33769;
+}
+
+.select-btn2 {
+  margin-right: 35px;
+  cursor: pointer;
+}
+
+.select-btn2:hover {
+  color: #e33769;
+}
+
+.delete-complete-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #692add;
+}
+
+.remain-todos-cnt {
+  margin-left: 20px;
+}
+
+.set-btn {
   display: flex;
   align-items: center;
   padding: 3px;
 }
 
 .edit-btn {
-  background: #5388f2;
+  background: #8758ff;
   color: #fff;
   border: none;
   padding: 0.55rem;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-right: 10px;
 }
 
-
 .delete-btn {
-  background: #5388f2;
+  background: #8758ff;
   color: #fff;
   border: none;
   padding: 0.55rem;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 10px;
+}
+
+.clear-btn {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  color: #e33769;
 }
