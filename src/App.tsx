@@ -60,6 +60,11 @@ function App() {
     setTodos(newTodos);
   };
 
+  const RemoveDoneTodo = () => {
+    const newTodos = todos.filter((todo) => !todo.done);
+    setTodos(newTodos);
+  };
+
   return (
     <div className="container">
       <header>
@@ -97,7 +102,7 @@ function App() {
             <button onClick={() => setFilter("완료")}>완료</button>
           </div>
           <div className="nav-item">
-            <button>완료된 할 일 제거하기</button>
+            <button onClick={RemoveDoneTodo}>완료된 할 일 제거하기</button>
           </div>
         </nav>
       </section>
