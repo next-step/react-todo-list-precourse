@@ -1,4 +1,5 @@
 import Category from "./components/category/category";
+import Footer from "./components/footer/footer";
 import Listbox from "./components/listbox/listbox";
 import Textbox from "./components/textbox/textbox";
 import "./styles/App.css";
@@ -22,6 +23,7 @@ function App() {
         .map((todo, index) => (
           <Listbox key={index} todo={todo} setTodos={setTodos} index={index} />
         ))}
+      <Footer todos={todos} setTodos={setTodos} />
     </div>
   );
 }
