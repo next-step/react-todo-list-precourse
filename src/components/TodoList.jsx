@@ -24,11 +24,12 @@ const doFilter = (path, todos) => {
 
 export function TodoList() {
     const { path, setPath } = usePath();
-    const { todos, addTodo, updateTodoState, deleteTodo } = useTodoList();
+    const { todos, addTodo, updateTodoState, deleteTodo, activeCnt } = useTodoList();
     return (
         <div>
             <TodoHeader updatePathName={setPath} />
             <TodoInput addTodo={addTodo} />
+            {activeCnt + "개 남음"}
             {doFilter(path, todos)
                 .map(todo => <TodoItem key={todo.id} todo={todo} updateTodoState={updateTodoState} deleteTodo={deleteTodo} />)
             }
