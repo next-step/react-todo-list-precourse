@@ -4,7 +4,13 @@ import "./textbox.css";
 function Textbox({ setTodos, todos }) {
   const [text, setText] = useState("");
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text != "") {
+      setTodos((prevTodos) => [...prevTodos, { text: text, checked: false }]);
+      setText("");
+    }
+  };
   const checkAll = () => {
     const allChecked = todos.every((todo) => todo.checked);
     setTodos(
