@@ -1,6 +1,9 @@
 import { Fragment, useState } from "react";
 
 const handleKeyDown = (e, addTodo, setValue) => {
+    if (e.target.value.trim().length === 0) {
+        return;
+    }
     if (e.keyCode === 13) {
         addTodo(e.target.value);
         e.target.value = "";
