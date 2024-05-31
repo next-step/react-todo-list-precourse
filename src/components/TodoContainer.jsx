@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import TodoForm from './TodoForm'
 import TodoItem from './TodoItem'
 import EditTodoForm from './EditTodoForm'
@@ -18,9 +18,14 @@ import {
 } from './Actions'
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState([])
+  const savedData = JSON.parse(localStorage.getItem('todos')) || []
+  const [todos, setTodos] = useState(savedData)
   const [nextId, setNextId] = useState(0)
   const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   const renderTodoItems = (todos, editTask, toggleComplete, deleteTodo, editTodo) => {
     let filteredTodos = todos
