@@ -1,14 +1,14 @@
-import "./footer.css";
-import FooterCount from "./footer_count";
-import FooterComplete from "./footer_complete";
+import "./Footer.css";
+import FooterCount from "./FooterCount";
+import FooterComplete from "./FooterComplete";
 
-function Footer({ todos, setTodos }) {
+const Footer = ({ todos, setTodos }) => {
   return (
     <div className="footer">
       <FooterCount todos={todos} />
       <FooterComplete setTodos={setTodos} />
     </div>
   );
-}
+};
 
 export default Footer;

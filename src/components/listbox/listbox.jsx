@@ -1,9 +1,9 @@
-import "./listbox.css";
-import ListCheckbox from "./listbox_checkbox";
-import ListboxDelete from "./listbox_delete";
-import ListboxText from "./listbox_text";
+import "./Listbox.css";
+import ListCheckbox from "./ListboxCheckbox";
+import ListboxDelete from "./ListboxDelete";
+import ListboxText from "./ListboxText";
 
-function Listbox({ todo, setTodos, index }) {
+const Listbox = ({ todo, setTodos, index }) => {
   return (
     <div className="list_box">
       <ListCheckbox todo={todo} setTodos={setTodos} />
@@ -11,6 +11,6 @@ function Listbox({ todo, setTodos, index }) {
       <ListboxDelete todo={todo} setTodos={setTodos} />
     </div>
   );
-}
+};
 
 export default Listbox;

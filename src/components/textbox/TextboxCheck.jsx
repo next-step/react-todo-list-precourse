@@ -1,6 +1,6 @@
-import "./textbox.css";
+import "./Textbox.css";
 
-function TextboxCheck({ todos, setTodos }) {
+const TextboxCheck = ({ todos, setTodos }) => {
   const checkAll = () => {
     const allChecked = todos.every((todo) => todo.checked);
     setTodos(
@@ -13,6 +13,6 @@ function TextboxCheck({ todos, setTodos }) {
   return (
     <div className={allChecked ? "select_all" : "select"} onClick={checkAll} />
   );
-}
+};
 
 export default TextboxCheck;

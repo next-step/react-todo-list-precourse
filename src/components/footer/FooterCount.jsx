@@ -1,6 +1,6 @@
-import "./footer.css";
+import "./Footer.css";
 
-function FooterCount({ todos }) {
+const FooterCount = ({ todos }) => {
   let todo_length = todos.filter((todo) => {
     if (todo.checked) return false;
     return true;
@@ -10,6 +10,6 @@ function FooterCount({ todos }) {
       {todo_length} item{todo_length == 1 ? "" : "s"} left!
     </div>
   );
-}
+};
 
 export default FooterCount;

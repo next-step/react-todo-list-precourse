@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./textbox.css";
-import TextboxCheck from "./textbox_check";
-import TextboxAdd from "./textbox_add";
-import TextboxInput from "./textbox_input";
+import "./Textbox.css";
+import TextboxCheck from "./TextboxCheck";
+import TextboxAdd from "./TextboxAdd";
+import TextboxInput from "./TextboxInput";
 
-function Textbox({ setTodos, todos }) {
+const Textbox = ({ setTodos, todos }) => {
   const [text, setText] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +25,6 @@ function Textbox({ setTodos, todos }) {
       />
     </form>
   );
-}
+};
 
 export default Textbox;

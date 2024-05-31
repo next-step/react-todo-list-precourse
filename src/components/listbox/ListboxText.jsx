@@ -1,6 +1,6 @@
-import "./listbox.css";
+import "./Listbox.css";
 
-function ListboxText({ todo }) {
+const ListboxText = ({ todo }) => {
   return (
     <div
       className="list"
@@ -12,6 +12,6 @@ function ListboxText({ todo }) {
       {todo.text}
     </div>
   );
-}
+};
 
 export default ListboxText;

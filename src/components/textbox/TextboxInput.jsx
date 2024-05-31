@@ -1,6 +1,6 @@
-import "./textbox.css";
+import "./Textbox.css";
 
-function TextboxInput({ text, setText }) {
+const TextboxInput = ({ text, setText }) => {
   return (
     <input
       type="text"
@@ -10,6 +10,6 @@ function TextboxInput({ text, setText }) {
       onChange={(e) => setText(e.target.value)}
     />
   );
-}
+};
 
 export default TextboxInput;
