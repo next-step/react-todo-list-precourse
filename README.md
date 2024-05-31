@@ -62,3 +62,7 @@
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)를 원칙으로 함
 - indent(인덴트, 들여쓰기) depth를 3이 넘지 않도록 구현 : 2까지만 허용
 - 함수(또는 메서드)의 길이가 15라인을 넘어가지 않도록 구현한다. 함수(또는 메서드)가 한 가지 일만 잘 하도록 구현한다.
+
+## 완성 화면
+<img width="373" alt="스크린샷 2024-05-31 오후 1 21 34" src="https://github.com/nnoonjy/react-todo-list-precourse/assets/102630375/087afa7f-e717-4205-a447-a7d78b0185f5">
+
