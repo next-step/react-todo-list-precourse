@@ -1,4 +1,4 @@
-import {PATH_ACTIVE, PATH_ALL} from "../constants.js";
+import { PATH_ACTIVE, PATH_ALL } from "../constants.js";
 import TodoHeader from "./todos/TodoHeader.jsx";
 import { TodoInput } from "./todos/TodoInput.jsx";
 import { useTodoList } from "../hooks/useTodoList.js";
@@ -9,7 +9,7 @@ export const createFilterName = (path) => {
     if (path === PATH_ALL) {
         return "All";
     }
-    return path.charAt(0).toUpperCase() + path.slice(3);
+    return path.charAt(0).toUpperCase() + path.slice(2);
 }
 
 const filterCompleted = (todos) => todos.filter(todo => todo.isDone === true);
