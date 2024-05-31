@@ -1,67 +1,45 @@
-import React, { useState } from "react";
-import TodoForm from "./TodoForm";
-import TodoItem from "./TodoItem";
-import EditTodoForm from "./EditTodoForm";
+import React, { useState } from 'react'
+import TodoForm from './TodoForm'
+import TodoItem from './TodoItem'
+import EditTodoForm from './EditTodoForm'
+import Filter from './Filter'
+import { addTodo, deleteTodo, toggleComplete, editTodo, editTask } from './Actions'
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 0,
-      task: "default",
-      completed: false,
-      isEditing: false,
-    },
-  ]);
+  const [todos, setTodos] = useState([])
+  const [nextId, setNextId] = useState(0)
+  const [active, setActive] = useState(0)
 
-  const [nextId, setNextId] = useState(1);
+  // 편집 중인지의 여부에 따라 렌더링을 달리하는 함수
+  const renderTodoItems = (todos, editTask, toggleComplete, deleteTodo, editTodo) => {
+    let filteredTodos = todos
 
-  const addTodo = (todo) => {
-    setTodos([...todos, { id: nextId, task: todo, completed: false, isEditing: false }]);
-    setNextId(nextId + 1);
-    console.log(todos);
-  };
-
-  const toggleComplete = (id) => {
-    setTodos(
-      todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
-    );
-  };
-
-  const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-
-  const editTodo = (id) => {
-    setTodos(
-      todos.map((todo) => (todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo))
-    );
-  };
-
-  const editTask = (task, id) => {
-    setTodos(
-      todos.map((todo) => (todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo))
-    );
-  };
+    if (active === 1) filteredTodos = todos.filter(todo => !todo.completed)
+    else if (active === 2) filteredTodos = todos.filter(todo => todo.completed)
+  
+    return filteredTodos.map((todo, index) =>
+      todo.isEditing ? (
+        <EditTodoForm editTodo={(task, id) => editTask(task, id, todos, setTodos)} task={todo} key={index} />
+      ) : (
+        <TodoItem
+          task={todo}
+          key={index}
+          toggleComplete={id => toggleComplete(id, todos, setTodos)}
+          deleteTodo={id => deleteTodo(id, todos, setTodos)}
+          editTodo={id => editTodo(id, todos, setTodos)}
+        />
+      )
+    )
+  }
 
   return (
-    <div className="TodoContainer">
+    <div className='TodoContainer'>
       <h1>Todo-List</h1>
-      <TodoForm addTodo={addTodo} />
-      {todos.map((todo, index) =>
-        todo.isEditing ? (
-          <EditTodoForm editTodo={editTask} task={todo} />
-        ) : (
-          <TodoItem
-            task={todo}
-            key={index}
-            toggleComplete={toggleComplete}
-            deleteTodo={deleteTodo}
-            editTodo={editTodo}
-          />
-        )
-      )}
+      <TodoForm addTodo={todo => addTodo(todo, todos, setTodos, nextId, setNextId)} />
+      <Filter active={active} setActive={setActive} />
+      {renderTodoItems(todos, editTask, toggleComplete, deleteTodo, editTodo)}
     </div>
-  );
-};
+  )
+}
 
-export default TodoContainer;
+export default TodoContainer
