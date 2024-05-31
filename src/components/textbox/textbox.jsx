@@ -5,7 +5,14 @@ function Textbox({ setTodos, todos }) {
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {};
-  const checkAll = () => {};
+  const checkAll = () => {
+    const allChecked = todos.every((todo) => todo.checked);
+    setTodos(
+      todos.map((todo) => {
+        return { ...todo, checked: !allChecked };
+      })
+    );
+  };
 
   return (
     <form className="textbox" onSubmit={handleSubmit}>
