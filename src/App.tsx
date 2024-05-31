@@ -30,10 +30,12 @@ function App() {
   return (
     <div className="container">
       <Header setTodos={setTodos} />
-      <section>
-        <TodoList todos={todos} setTodos={setTodos} filter={filter} />
-        <Navigation todos={todos} setTodos={setTodos} setFilter={setFilter} />
-      </section>
+      {todos.length > 0 && (
+        <section>
+          <TodoList todos={todos} setTodos={setTodos} filter={filter} />
+          <Navigation todos={todos} setTodos={setTodos} setFilter={setFilter} />
+        </section>
+      )}
     </div>
   );
 }
