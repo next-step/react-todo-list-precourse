@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [input, setInput] = useState<string>("");
+  const remainTodoNum = todos.filter((todo) => !todo.done).length;
 
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");
@@ -82,7 +83,7 @@ function App() {
           })}
         </div>
         <nav className="block">
-          <span className="nav-item">0 개</span>
+          <span className="nav-item">남은 할 일: {remainTodoNum} 개</span>
           <div className="nav-item">
             <button>모두</button>
             <button>진행중</button>
