@@ -2,6 +2,7 @@ import Todo from '../../models/Todo';
 import TodoFilterEnum from '../../constants/TodoFilterEnum';
 import { useCallback } from 'react';
 import TodoItem from './TodoItem';
+import useTodoFilter from '../../hooks/useTodoFilter.ts';
 
 type TodoRepository = {
   [id: number]: Todo;
@@ -13,15 +14,7 @@ type TodoBoxProps = {
   handleToggleCompletion: (todo: Todo) => void,
 };
 const TodoBox = ({ todos, filter, removeTodo, handleToggleCompletion }: TodoBoxProps) => {
-  const getAllTodos = useCallback(() => {
-    return Object.values(todos);
-  }, [todos]);
-  const getCompletedTodos = useCallback(() => {
-    return Object.values(todos).filter((todo) => todo.isCompleted);
-  }, [todos]);
-  const getActiveTodos = useCallback(() => {
-    return Object.values(todos).filter((todo) => ! todo.isCompleted);
-  }, [todos])
+  const { getAllTodos, getActiveTodos, getCompletedTodos } = useTodoFilter(todos);
   const getFilteredTodos = useCallback(() => {
     if(filter === TodoFilterEnum.TODO_FILTER_ALL) return getAllTodos();
     return filter === TodoFilterEnum.TODO_FILTER_ACTIVE ? getActiveTodos() : getCompletedTodos();
