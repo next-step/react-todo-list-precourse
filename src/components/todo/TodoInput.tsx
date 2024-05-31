@@ -1,5 +1,5 @@
 import styles from '../../css/todo.module.css';
-import useAddTodoInput from '../../hooks/useAddTodoInput.ts';
+import useAddTodoInput from '../../hooks/useAddTodoInput';
 
 type TodoInputProps = {
   addTodo: (content: string) => void;

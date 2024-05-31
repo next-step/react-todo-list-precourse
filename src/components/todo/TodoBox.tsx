@@ -2,7 +2,7 @@ import Todo from '../../models/Todo';
 import TodoFilterEnum from '../../constants/TodoFilterEnum';
 import { useCallback } from 'react';
 import TodoItem from './TodoItem';
-import useTodoFilter from '../../hooks/useTodoFilter.ts';
+import useTodoFilter from '../../hooks/useTodoFilter';
 
 type TodoRepository = {
   [id: number]: Todo;
