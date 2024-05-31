@@ -1,0 +1,41 @@
+.checked {
+  text-decoration: line-through;
+}
+
+.TodoListItem {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.text {
+  flex: 1;
+}
+
+.remove {
+  cursor: pointer;
+  color: red;
+}
+
+.checked .text {
+  text-decoration: line-through;
+  color: grey;
+}
+
+footer {
+  font-size: 30px;
+}
