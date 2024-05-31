@@ -3,6 +3,7 @@ import TodoHeader from "./todos/TodoHeader.jsx";
 import { TodoInput } from "./todos/TodoInput.jsx";
 import { useTodoList } from "../hooks/useTodoList.js";
 import { usePath } from "../hooks/usePath.js";
+import TodoItem from "./todos/TodoItem.jsx";
 
 export const createFilterName = (path) => {
     if (path === PATH_ALL) {
@@ -19,6 +20,7 @@ export function TodoList() {
         <div>
             <TodoHeader updatePathName={setPath} />
             <TodoInput addTodo={addTodo} />
+            {todos.map(todo => <TodoItem key={todo.id} todo={todo} updateTodoState={updateTodoState} deleteTodo={deleteTodo} />)}
         </div>
     );
 }
