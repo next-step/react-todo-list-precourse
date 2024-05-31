@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
+import { TodoList } from "./components/TodoList";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [filter, setFilter] = useState<Filter>("모두");
 
   const remainTodoNum = todos.filter((todo) => !todo.done).length;
-  const filterTodos = todos.filter((todo) => {
-    if (filter === "모두") return true;
-    if (filter === "진행중") return !todo.done;
-    if (filter === "완료") return todo.done;
-  });
 
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");
@@ -35,17 +31,6 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  const toggleTodo = (id: number) => {
-    const newTodos = [...todos];
-    newTodos[id].done = !newTodos[id].done;
-    setTodos(newTodos);
-  };
-
-  const RemoveTodo = (id: number) => {
-    const newTodos = todos.filter((_, index) => index !== id);
-    setTodos(newTodos);
-  };
-
   const RemoveDoneTodo = () => {
     const newTodos = todos.filter((todo) => !todo.done);
     setTodos(newTodos);
@@ -55,21 +40,7 @@ function App() {
     <div className="container">
       <Header setTodos={setTodos} />
       <section>
-        <div className="todo-list">
-          {filterTodos?.map((todo, index) => {
-            return (
-              <div key={index} className="todo-item block">
-                <input
-                  type="checkbox"
-                  checked={todo.done}
-                  onChange={() => toggleTodo(index)}
-                />
-                <label>{todo.text}</label>
-                <button onClick={() => RemoveTodo(index)}>제거</button>
-              </div>
-            );
-          })}
-        </div>
+        <TodoList todos={todos} setTodos={setTodos} filter={filter} />
         <nav className="block">
           <span className="nav-item">남은 할 일: {remainTodoNum} 개</span>
           <div className="nav-item">
