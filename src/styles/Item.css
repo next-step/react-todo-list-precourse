@@ -9,6 +9,10 @@
   font-size: 16px;
   text-align: start;
 }
+
 .item__text {
   margin-left: 5px;
+}
+.item__text.checked {
+  text-decoration: line-through;
 }

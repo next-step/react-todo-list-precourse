@@ -7,7 +7,7 @@ const ItemList = () => {
   return (
     <div>
       {todos?.map((todo) => (
-        <Item todo={todo.todo} />
+        <Item key={todo.id} todoItem={todo} />
       ))}
     </div>
   );
