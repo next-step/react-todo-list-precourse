@@ -1,16 +1,15 @@
 import "./styles/TodoContainer.css";
 import { TodoItem, TodoFooter } from "./TodoContainer/index";
-import { TodoContext } from "../../contexts/TodoContext";
-import { useContext } from "react";
+import { useFilterTodos } from "../../hooks/useFilterTodos";
+import { useState } from "react";
 
 const TodoContainer = () => {
-  const { todoItems } = useContext(TodoContext);
+  const [selectTodo, setSelectTodo] = useState("all");
+  const { renderTodo, length } = useFilterTodos(selectTodo);
   return (
     <div className="todoContainer">
-      {todoItems.map((todo) => (
-        <TodoItem key={todo.key} todo={todo} />
-      ))}
-      {todoItems.length > 0 ? <TodoFooter todoItems={todoItems} /> : ""}
+      {length > 0 ? renderTodo.map((todo) => <TodoItem key={todo.key} todo={todo} />) : ""}
+      {length > 0 ? <TodoFooter todoItems={renderTodo} setSelectTodo={setSelectTodo} /> : ""}
     </div>
   );
 };
