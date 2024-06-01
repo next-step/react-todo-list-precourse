@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from "react";
+import { useCallback, useEffect, useState } from "react";
 // closure? 일단 전역 객체는 아님
 let idCnt = -1;
 let activeCnt = 0;
@@ -38,7 +38,7 @@ const cacheOnInit = () => {
     cached.forEach((todo) => {
         idCnt = Math.max(idCnt, todo.id);
         activeCnt += todo.isDone ? 0 : 1;
-    })
+    });
     idCnt += 1;
     return cached;
 };
@@ -52,7 +52,7 @@ const filterAndDecreaseIfDone = (todo, id) => {
 }
 
 export function useTodoList() {
-    const [todos, setTodos] = useState(readCache() ?? []);
+    const [todos, setTodos] = useState(idCnt === -1 ? cacheOnInit() : readCache() ?? []);
     const addTodo = useCallback((todo) => setTodos(prev => [...prev, createTodoInstance(todo)]), []);
     const updateTodoState = useCallback(
         (id) => setTodos(prev => prev.map(todo => updateTodoStateImmutable(todo, id)))
