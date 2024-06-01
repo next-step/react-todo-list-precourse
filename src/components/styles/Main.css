@@ -1,6 +1,5 @@
 .main {
   width: 100%;
-  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,11 +7,44 @@
 }
 
 .mainContainer {
-  background-color: brown;
   max-width: 800px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.mainInput {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.mainInput input {
+  width: 100%;
+  flex-grow: 1;
+  font-size: 25px;
+  background: none;
+  border-radius: 7px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+.mainInput input:focus {
+  outline: none;
+}
+
+.mainInput button {
+  min-width: 70px;
+  border-radius: 7px;
+  outline: none;
+  background: none;
+  font-weight: 500;
+}
+
+.mainInput button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }

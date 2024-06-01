@@ -1,8 +1,25 @@
 .header {
   width: 100%;
-  background-color: aqua;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 20px;
+  margin: 20px 0;
+}
+.header::after {
+  content: "";
+  width: 100%;
+  background-color: lightgray;
+  height: 1px;
+}
+
+.header p:nth-child(1) {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.header p:nth-child(2) {
+  font-size: 25px;
+  font-weight: 700;
 }

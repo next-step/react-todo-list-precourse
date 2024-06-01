@@ -3,7 +3,7 @@ const footer = () => {
   return (
     <div className="footer">
       <p>Created by tteokbokki-master</p>
-      <p>kakao-tech-campus 2기</p>
+      <p>Kakao Tech Campus 2기</p>
     </div>
   );
 };

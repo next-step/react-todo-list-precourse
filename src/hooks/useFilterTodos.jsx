@@ -3,7 +3,6 @@ import { TodoContext } from "../contexts/TodoContext";
 
 const useFilterTodos = (select) => {
   const { todoItems } = useContext(TodoContext);
-  const length = todoItems.length;
   let renderTodo = todoItems;
   switch (select) {
     case "all":
@@ -19,7 +18,7 @@ const useFilterTodos = (select) => {
       renderTodo = [];
   }
 
-  return { renderTodo, length };
+  return { renderTodo, todoItems };
 };
 
 export { useFilterTodos };
