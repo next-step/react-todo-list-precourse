@@ -1,13 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "../styles/Input.css";
 import { TodosContext } from "../context/TodosContext";
 
 const Input = () => {
   const [todoText, setTodoText] = useState("");
   const { todos, setTodos } = useContext(TodosContext);
+  const nextId = useRef(3);
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      setTodos([{ todo: todoText, checked: false }, ...todos]);
+      setTodos([
+        { id: nextId.current, todo: todoText, checked: false },
+        ...todos,
+      ]);
+      nextId.current++;
       setTodoText("");
     }
   };
