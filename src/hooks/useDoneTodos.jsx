@@ -9,4 +9,12 @@ const useDoneTodos = () => {
   return doneTodo;
 };
 
-export { useDoneTodos };
+const useAllTodoDone = () => {
+  const { setTodoItems } = useContext(TodoContext);
+  const allTodoDone = () => {
+    setTodoItems((prevTodos) => prevTodos.map((todo) => ({ ...todo, done: true })));
+  };
+  return allTodoDone;
+};
+
+export { useDoneTodos, useAllTodoDone };

@@ -6,7 +6,7 @@ const TodoItem = ({ todo }) => {
 
   return (
     <div className="todoItem">
-      <input type="checkbox" onChange={() => doneTodos(todo.key)} />
+      <input type="checkbox" checked={todo.done} onChange={() => doneTodos(todo.key)} />
       <p className={`${todo.done}`}>{todo.content}</p>
       <button>X</button>
     </div>
