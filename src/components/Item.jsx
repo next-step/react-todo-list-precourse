@@ -12,10 +12,16 @@ const Item = ({ todoItem }) => {
       )
     );
   };
+  const removeItem = () => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
   return (
     <div className="item">
       <input type="checkbox" checked={checked} onChange={changeComplete} />
       <span className={`item__text ${checked ? "checked" : ""}`}>{todo}</span>
+      <span className="btn__remove" onClick={removeItem}>
+        X
+      </span>
     </div>
   );
 };
