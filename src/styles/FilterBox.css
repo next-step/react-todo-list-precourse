@@ -1,11 +1,16 @@
 .filter__box {
+  width: 400px;
+  margin: auto;
   display: flex;
   padding: 10px;
   font-size: 20px;
   gap: 10px;
-  justify-content: center;
+  justify-content: space-between;
 }
-.filter__box span {
+
+.filter__btn {
+  display: flex;
+  gap: 20px;
   cursor: pointer;
   color: cadetblue;
 }

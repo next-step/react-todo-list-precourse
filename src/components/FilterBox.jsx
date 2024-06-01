@@ -1,14 +1,24 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../styles/FilterBox.css";
 import { FilterContext } from "../context/FilterContext";
+import { TodosContext } from "../context/TodosContext";
 
 const FilterBox = () => {
-  const viewChange = (e) => {};
+  const { setViewState } = useContext(FilterContext);
+  const { todos } = useContext(TodosContext);
+  const viewChange = (e) => {
+    setViewState(e.target.innerText);
+  };
   return (
     <div className="filter__box">
-      <span onClick={viewChange}>All</span>
-      <span onClick={viewChange}>Active</span>
-      <span onClick={viewChange}>Completed</span>
+      <div>
+        TODO: {todos?.filter((todo) => todo.checked === false).length}개
+      </div>
+      <div className="filter__btn">
+        <span onClick={viewChange}>All</span>
+        <span onClick={viewChange}>Active</span>
+        <span onClick={viewChange}>Completed</span>
+      </div>
     </div>
   );
 };
