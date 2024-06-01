@@ -12,7 +12,11 @@ const FilterBox = () => {
   return (
     <div className="filter__box">
       <div>
-        TODO: {todos?.filter((todo) => todo.checked === false).length}개
+        TODO:{" "}
+        {todos?.length
+          ? todos?.filter((todo) => todo.checked === false).length
+          : 0}
+        개
       </div>
       <div className="filter__btn">
         <span onClick={viewChange}>All</span>

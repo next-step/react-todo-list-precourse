@@ -8,11 +8,9 @@ const CheckedDelete = () => {
     setTodos(todos.filter((todo) => !todo.checked));
   };
   return (
-    <div>
-      <button className="btn__delete" onClick={deleteComplete}>
-        완료한 일 삭제
-      </button>
-    </div>
+    <button className="btn__delete" onClick={deleteComplete}>
+      완료한 일 삭제
+    </button>
   );
 };
 
