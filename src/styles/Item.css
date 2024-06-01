@@ -1,0 +1,24 @@
+.item {
+  margin: auto;
+  width: 400px;
+  height: 30px;
+  border: 2px solid #d9d9d9;
+  border-top: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: start;
+  position: relative;
+}
+.item__text {
+  margin-left: 5px;
+}
+.item__text.checked {
+  text-decoration: line-through;
+}
+.btn__remove {
+  position: absolute;
+  right: 20px;
+  color: red;
+  cursor: pointer;
+}
