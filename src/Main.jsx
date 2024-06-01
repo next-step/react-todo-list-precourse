@@ -13,13 +13,18 @@ function App() {
   };
 
   const onSubmit = (e) => {
-    const nextTodoList = todoList.concat({
-      id: todoList.length,
-      text,
-      checked: false,
-    });
-    setTodoList(nextTodoList);
-    setText("");    
+    if (text === "") {
+      alert('할 일을 입력하세요.');
+      setTodoList(todoList);
+    } else {
+      const nextTodoList = todoList.concat({
+        id: todoList.length,
+        text,
+        checked: false,
+      });
+      setTodoList(nextTodoList);
+      setText("");
+    }
     e.preventDefault();
   };
   const onDelete = (id) => {
