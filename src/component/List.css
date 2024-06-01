@@ -1,0 +1,10 @@
+.List{
+    width: 100%;
+    padding-bottom: 20px;
+}
+.TodoThingsList{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}

@@ -1,0 +1,17 @@
+.TodoThing{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    
+}
+
+.TodoThing input{
+    width: 30px;
+}
+
+.TodoThing .item{
+    flex: 1;
+}

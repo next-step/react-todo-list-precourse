@@ -1,7 +1,8 @@
 .Maker input{
     display: flex;
-    flex :1;
+    width: 100%;
     padding : 20px;
     border: 1px solid lightblue;
     border-radius: 3px;
+    outline: none;
 }
