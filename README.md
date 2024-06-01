@@ -29,4 +29,4 @@
   - [x] navigation button
 - [ ] 리팩토링
   - UI
-    - [ ] Navigation UI 분리
+    - [x] Navigation UI 분리

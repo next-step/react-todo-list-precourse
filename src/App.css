@@ -43,10 +43,10 @@
   gap: 0.2rem;
 }
 
-/* section */
-section {
+/* nav */
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -59,14 +59,8 @@ section {
   align-items: center;
 }
 
-/* nav */
-nav {
-  align-items: center;
-}
-.nav-item {
-  flex: 1;
-}
-.nav-button {
+/* footer */
+footer {
   display: flex;
-  gap: 0.2rem;
+  justify-content: space-between;
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { TodoList } from "./components/TodoList";
+import { Footer } from "./components/Footer";
 import { Navigation } from "./components/Navigation";
 
 function App() {
@@ -31,15 +32,11 @@ function App() {
     <div className="container">
       <Header setTodos={setTodos} />
       {todos.length > 0 && (
-        <section>
+        <>
+          <Navigation curFilter={filter} setFilter={setFilter} />
           <TodoList todos={todos} setTodos={setTodos} filter={filter} />
-          <Navigation
-            filter={filter}
-            todos={todos}
-            setTodos={setTodos}
-            setFilter={setFilter}
-          />
-        </section>
+          <Footer todos={todos} setTodos={setTodos} />
+        </>
       )}
     </div>
   );
