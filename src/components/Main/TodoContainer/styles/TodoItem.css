@@ -1,0 +1,45 @@
+.todoItem {
+  font-size: 24px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.todoItem input {
+  margin-left: 10px;
+  accent-color: lightgray;
+  transform: scale(1.5);
+}
+.todoItem button {
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: inherit;
+  font-size: 16px;
+}
+
+.todoItem button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 0.1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 9px;
+  margin-left: -1px;
+}
+
+.todoItem p.true {
+  text-decoration: line-through;
+}
+
+.todoItem p.true {
+  text-decoration: line-through;
+  color: lightgray;
+}
+
+.todoItem button.true {
+  pointer-events: none;
+  opacity: 0;
+}

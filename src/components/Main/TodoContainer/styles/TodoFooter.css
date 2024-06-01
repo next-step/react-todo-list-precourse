@@ -1,0 +1,57 @@
+.todoFooter {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.todoFooter button {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 7px;
+  font-size: 14px;
+  border-radius: 8px;
+  background: inherit;
+}
+.todoFooter button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.todoFooterSide1 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 5px;
+}
+
+.todoFooterSide2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.todoFooterSide2 p {
+  width: 50%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 20px;
+}
+
+.todoFooterSide2 > div {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+}
+.todoFooterSide2 > div > button {
+  margin-right: 15px;
+}
+
+.allBtn.active,
+.yetBtn.active,
+.doneBtn.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
