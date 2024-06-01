@@ -1,10 +1,14 @@
 .List{
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    gap: 20px;
     padding-bottom: 20px;
 }
-.TodoThingsList{
+.List-wrapper{
     display: flex;
     flex-direction: column;
     gap: 10px;
+
 
 } 

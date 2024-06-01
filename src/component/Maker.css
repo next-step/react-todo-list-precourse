@@ -1,3 +1,7 @@
+.Maker{
+    display: flex;
+}
+
 .Maker input{
     display: flex;
     width: 100%;

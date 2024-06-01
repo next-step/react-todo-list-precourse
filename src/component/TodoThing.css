@@ -15,3 +15,7 @@
 .TodoThing .item{
     flex: 1;
 }
+.deletebtn{
+    border: 1px;
+    border-radius: 50px;
+}

@@ -40,7 +40,7 @@ function App(){
      <div className="App">
    <Header/>
    <Maker pushthing = {pushthing}/>
-   <button onClick={toggleCheckedList}>
+   <button className="checkbtn" onClick={toggleCheckedList}>
     {showChecked ? "모든 항목 보기" : "완료한 항목 보기"}
    </button>
    <List TodoList = {showChecked ? checkTodoList : TodoList} onRemove={onRemove} checkpush = {checkpush}/>

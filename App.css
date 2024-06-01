@@ -5,3 +5,10 @@
     flex-direction: column;
     gap: 20px;
 }
+
+.checkbtn{
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 10px;
+}

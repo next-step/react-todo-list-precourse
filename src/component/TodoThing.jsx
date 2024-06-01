@@ -15,7 +15,7 @@ const checkHandler = () => {
         <div className="TodoThing">
         <input type="checkbox" checked={isChecked} onChange={checkHandler} ></input>
         <div className="item">{todo.content}</div>
-        <button onClick={removeHandler}>삭제</button>
+        <button className="deletebtn"onClick={removeHandler}>삭제</button>
         </div>
     )
 }
