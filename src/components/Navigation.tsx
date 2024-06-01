@@ -11,8 +11,9 @@ export const Navigation = ({ curFilter, setFilter }: NavigationProps) => {
 
   return (
     <nav>
-      {filters.map((filter) => (
+      {filters.map((filter, index) => (
         <NavigationButon
+          key={index}
           curFilter={curFilter}
           filter={filter}
           setFilter={setFilter}
