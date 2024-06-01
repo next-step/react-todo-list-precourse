@@ -1,7 +1,10 @@
+import TodoList from "./pages/TodoList";
+import "./assets/reset.css";
+
 function App() {
   return (
     <>
-      <h1>하이</h1>
+      <TodoList />
     </>
   );
 }
