@@ -33,4 +33,4 @@
     - [x] Navigation UI 분리
     - [x] Header UI 분리
     - [ ] 기본 font size 키우기
-  - [ ] 함수 모듈 분리
+  - [x] 함수 모듈 분리
