@@ -7,23 +7,9 @@ import { TodoInput } from "./components/TodoInput";
 import { Text } from "./components/ui/Text";
 
 function App() {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const storedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
+  const [todos, setTodos] = useState<Todo[]>(storedTodos);
   const [filter, setFilter] = useState<Filter>("모두");
-
-  useEffect(() => {
-    const storedTodos = localStorage.getItem("todos");
-    if (!storedTodos) return;
-
-    const parsedTodos: Todo[] = JSON.parse(storedTodos);
-    parsedTodos.forEach((curTodo: Todo) => {
-      setTodos((todo) => [...todo, restoreTodo(curTodo)]);
-    });
-  }, []);
-
-  const restoreTodo = (curTodo: Todo) => ({
-    text: curTodo.text,
-    done: curTodo.done,
-  });
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
