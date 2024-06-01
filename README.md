@@ -26,4 +26,4 @@
 - [ ] 공통 UI 컴포넌트 만들기
   - [x] button
   - [x] input, input-checkbox
-  - [ ] navigation button
+  - [x] navigation button

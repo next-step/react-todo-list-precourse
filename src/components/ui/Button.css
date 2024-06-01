@@ -52,3 +52,7 @@
   width: 2rem;
   border-radius: 100%;
 }
+
+.btn-active-true {
+  background-color: var(--border-color);
+}

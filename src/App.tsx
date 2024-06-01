@@ -33,7 +33,12 @@ function App() {
       {todos.length > 0 && (
         <section>
           <TodoList todos={todos} setTodos={setTodos} filter={filter} />
-          <Navigation todos={todos} setTodos={setTodos} setFilter={setFilter} />
+          <Navigation
+            filter={filter}
+            todos={todos}
+            setTodos={setTodos}
+            setFilter={setFilter}
+          />
         </section>
       )}
     </div>

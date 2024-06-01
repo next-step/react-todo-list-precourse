@@ -4,6 +4,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "destructive" | "ghost";
   size?: "sm" | "md" | "round";
+  active?: boolean;
 }
 
 const Button = ({
@@ -11,9 +12,10 @@ const Button = ({
   onClick,
   variant = "default",
   size = "sm",
+  active,
   ...props
 }: ButtonProps) => {
-  const className = `btn btn-variant-${variant} btn-size-${size}`;
+  const className = `btn btn-variant-${variant} btn-size-${size} btn-active-${active}`;
 
   return (
     <button className={className} onClick={onClick} {...props}>

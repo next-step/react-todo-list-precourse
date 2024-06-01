@@ -66,3 +66,7 @@ nav {
 .nav-item {
   flex: 1;
 }
+.nav-button {
+  display: flex;
+  gap: 0.2rem;
+}
