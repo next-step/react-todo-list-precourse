@@ -1,9 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
-import { Button } from "./ui/Button";
-import { removeTodo, toggleTodo } from "../hooks/useTodos";
-import { Input } from "./ui/Input";
+import { TodoListItemContent } from "./TodoListItemContent";
+import { TodoListItemRemoveButton } from "./TodoListItemRemoveButton";
 
-interface TodoListITemProps {
+interface TodoListItemProps {
   todos: Todo[];
   setTodos: Dispatch<SetStateAction<Todo[]>>;
   todo: Todo;
@@ -15,28 +14,20 @@ export const TodoListItem = ({
   setTodos,
   todo,
   index,
-}: TodoListITemProps) => {
+}: TodoListItemProps) => {
   return (
     <div key={index} className="todo-item">
-      <Input
-        id={`checkbox-${index}`}
-        type="checkbox"
-        checked={todo.done}
-        onChange={() => toggleTodo(index, todos, setTodos)}
+      <TodoListItemContent
+        todos={todos}
+        setTodos={setTodos}
+        index={index}
+        todo={todo}
       />
-      <label
-        className={todo.done ? "done-todo" : ""}
-        htmlFor={`checkbox-${index}`}
-      >
-        {todo.text}
-      </label>
-      <Button
-        variant="destructive"
-        size="round"
-        onClick={() => removeTodo(index, todos, setTodos)}
-      >
-        X
-      </Button>
+      <TodoListItemRemoveButton
+        todos={todos}
+        setTodos={setTodos}
+        index={index}
+      />
     </div>
   );
 };

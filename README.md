@@ -29,8 +29,6 @@
   - [x] navigation button
   - [x] text
 - [x] 리팩토링
-  - UI
-    - [x] Navigation UI 분리
-    - [x] Header UI 분리
-    - [x] 기본 font size 키우기
+  - [x] UI 분리
   - [x] 함수 모듈 분리
+  - [ ] Context API로 todo 상태관리하기
