@@ -5,11 +5,15 @@ import { useState } from "react";
 
 const TodoContainer = () => {
   const [selectTodo, setSelectTodo] = useState("all");
-  const { renderTodo, length } = useFilterTodos(selectTodo);
+  const { renderTodo, todoItems } = useFilterTodos(selectTodo);
   return (
     <div className="todoContainer">
-      {length > 0 ? renderTodo.map((todo) => <TodoItem key={todo.key} todo={todo} />) : ""}
-      {length > 0 ? <TodoFooter todoItems={renderTodo} setSelectTodo={setSelectTodo} /> : ""}
+      {todoItems.length > 0 ? renderTodo.map((todo) => <TodoItem key={todo.key} todo={todo} />) : ""}
+      {todoItems.length > 0 ? (
+        <TodoFooter todoItems={todoItems} selectTodo={selectTodo} setSelectTodo={setSelectTodo} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };
