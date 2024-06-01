@@ -1,6 +1,3 @@
-import EditTodoForm from './EditTodoForm'
-import TodoItem from './TodoItem'
-
 // 할 일을 추가하는 함수
 export const addTodo = (todo, todos, setTodos, nextId, setNextId) => {
   setTodos([...todos, { id: nextId, task: todo, completed: false, isEditing: false }])
@@ -43,7 +40,6 @@ export const deleteCompletedTodos = (todos, setTodos) => {
 }
 
 // 완료되지 않은 할 일의 개수를 계산하는 함수
-export const getIncompleteCount = (todos) => {
-  return todos.filter(todo => !todo.completed).length;
-};
-
+export const getIncompleteCount = todos => {
+  return todos.filter(todo => !todo.completed).length
+}
