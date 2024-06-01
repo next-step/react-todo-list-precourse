@@ -7,6 +7,7 @@ function Main({ todoList, onDelete }) {
             {todoList.map((todoItem) => (
               <li className="todo-item" key={todoItem.id}>
                 <div className="view">
+                  <input className="toggle" type="checkbox" id="todo-item-toggle"/>
                   <label id="todo-item-label">{todoItem.text}</label>
                   <button 
                     className="destroy" 
