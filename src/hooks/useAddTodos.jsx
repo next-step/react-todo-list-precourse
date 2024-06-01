@@ -15,6 +15,7 @@ const useInputTodos = () => {
 const useAddTodos = (inputValue, currentKey, setInputValue) => {
   const { setTodoItems } = useContext(TodoContext);
   const addTodo = (event) => {
+    if (event.isComposing || event.keyCode === 229) return;
     if ((event.type === "click" || event.key === "Enter") && inputValue.trim() !== "") {
       setTodoItems((prevTodo) => [...prevTodo, { key: currentKey, content: inputValue, done: false }]);
       setInputValue("");
