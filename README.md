@@ -27,8 +27,9 @@
   - [x] button
   - [x] input, input-checkbox
   - [x] navigation button
-  - [ ] text
+  - [x] text
 - [ ] 리팩토링
   - UI
     - [x] Navigation UI 분리
     - [x] Header UI 분리
+    - [ ] 기본 font size 키우기

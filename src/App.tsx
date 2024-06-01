@@ -4,6 +4,7 @@ import { TodoList } from "./components/TodoList";
 import { Footer } from "./components/Footer";
 import { Navigation } from "./components/Navigation";
 import { TodoInput } from "./components/TodoInput";
+import { Text } from "./components/ui/Text";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -30,7 +31,7 @@ function App() {
 
   return (
     <div className="container">
-      <label>To Do List</label>
+      <Text size="2xl">To Do List</Text>
       <TodoInput setTodos={setTodos} />
       {todos.length > 0 && (
         <>
