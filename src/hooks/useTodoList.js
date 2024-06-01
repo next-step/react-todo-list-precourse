@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import {Todo} from "../utils/Todo.js";
 // closure? 일단 전역 객체는 아님
 let idCnt = -1;
 let activeCnt = 0;
@@ -8,7 +9,7 @@ const decreaseActiveCnt = () => activeCnt -= 1;
 
 const createTodoInstance = (todo) => {
     increaseActiveCnt();
-    return {id: idCnt++, content: todo, isDone: false};
+    return { id: idCnt++, content: todo, isDone: false };
 };
 
 const newTodoInstance = (todo, id, revertedIsDone) => {
@@ -19,12 +20,12 @@ const newTodoInstance = (todo, id, revertedIsDone) => {
         increaseActiveCnt();
     }
 
-    return {id: id, content: todo, isDone: revertedIsDone};
+    return { id: id, content: todo, isDone: revertedIsDone };
 };
 
-const updateTodoStateImmutable = (todo, id) => {
-    if (todo.id !== id) return todo;
-    return newTodoInstance(todo.content, todo.id, !todo.isDone);
+const updateTodoStateImmutable = (todo, target) => {
+    if (todo.id !== target.id) return todo;
+    return newTodoInstance(target.content, target.id, target.isDone);
 }
 
 const cacheTodo = (todos) => {
@@ -55,7 +56,7 @@ export function useTodoList() {
     const [todos, setTodos] = useState(idCnt === -1 ? cacheOnInit() : readCache() ?? []);
     const addTodo = useCallback((todo) => setTodos(prev => [...prev, createTodoInstance(todo)]), []);
     const updateTodoState = useCallback(
-        (id) => setTodos(prev => prev.map(todo => updateTodoStateImmutable(todo, id)))
+        (target) => setTodos(prev => prev.map(todo => updateTodoStateImmutable(todo, target)))
         , []);
     const deleteTodo = useCallback(
         (id) => setTodos(prev => prev.filter(todo => filterAndDecreaseIfDone(todo, id)))
