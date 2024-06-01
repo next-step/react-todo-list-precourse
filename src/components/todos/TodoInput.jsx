@@ -4,7 +4,7 @@ const handleKeyDown = (e, addTodo, setValue) => {
     if (e.target.value.trim().length === 0) {
         return;
     }
-    if (e.keyCode === 13) {
+    if (e.key === "Enter") {
         addTodo(e.target.value);
         e.target.value = "";
         setValue("");
