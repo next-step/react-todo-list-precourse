@@ -1,13 +1,18 @@
 import React from "react";
 
-function Main({ todoList, onDelete }) {
+function Main({ todoList, onDelete, onToggle }) {
     return (
         <main className="main">
           <ul className="todo-list">
             {todoList.map((todoItem) => (
               <li className="todo-item" key={todoItem.id}>
                 <div className="view">
-                  <input className="toggle" type="checkbox" id="todo-item-toggle"/>
+                  <input 
+                    className="toggle" 
+                    type="checkbox" 
+                    id="todo-item-toggle"
+                    checked={todoItem.checked || ""}
+                    onChange={() => onToggle(todoItem.id)}/>
                   <label id="todo-item-label">{todoItem.text}</label>
                   <button 
                     className="destroy" 
