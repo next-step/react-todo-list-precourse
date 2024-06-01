@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Header } from "./components/Header";
 import { TodoList } from "./components/TodoList";
 import { Footer } from "./components/Footer";
 import { Navigation } from "./components/Navigation";
+import { TodoInput } from "./components/TodoInput";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -30,7 +30,8 @@ function App() {
 
   return (
     <div className="container">
-      <Header setTodos={setTodos} />
+      <label>To Do List</label>
+      <TodoInput setTodos={setTodos} />
       {todos.length > 0 && (
         <>
           <Navigation curFilter={filter} setFilter={setFilter} />

@@ -38,8 +38,8 @@
   height: 2.5rem;
 }
 
-/* header */
-.todo-input {
+/* todo input */
+form {
   gap: 0.2rem;
 }
 

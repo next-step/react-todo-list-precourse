@@ -27,6 +27,8 @@
   - [x] button
   - [x] input, input-checkbox
   - [x] navigation button
+  - [ ] text
 - [ ] 리팩토링
   - UI
     - [x] Navigation UI 분리
+    - [x] Header UI 분리
