@@ -25,5 +25,5 @@
   - [x] Navigation
 - [ ] 공통 UI 컴포넌트 만들기
   - [x] button
-  - [ ] input
+  - [x] input, input-checkbox
   - [ ] label

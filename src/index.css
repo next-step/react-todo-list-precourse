@@ -8,6 +8,9 @@
 
   --primary-color-hover: #003655;
   --destructive-color-hover: #d34148;
+
+  --border-color: #e2e8f0;
+  --placeholder-color: #64748b;
 }
 
 body {

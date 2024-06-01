@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { Button } from "./ui/Button";
+import { Input } from "./ui/input";
 
 interface HeaderProps {
   setTodos: Dispatch<SetStateAction<Todo[]>>;
@@ -28,8 +29,8 @@ export const Header = ({ setTodos }: HeaderProps) => {
   return (
     <header>
       <h1>To Do List</h1>
-      <form onSubmit={(e) => e.preventDefault()} className="input block">
-        <input
+      <form onSubmit={(e) => e.preventDefault()} className="block todo-input">
+        <Input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="할 일을 입력해주세요."

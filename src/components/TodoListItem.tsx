@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { Button } from "./ui/Button";
+import { Input } from "./ui/input";
 
 interface TodoListITemProps {
   todos: Todo[];
@@ -27,12 +28,13 @@ export const TodoListItem = ({
 
   return (
     <div key={index} className="todo-item block">
-      <input
+      <Input
+        id={`checkbox-${index}`}
         type="checkbox"
         checked={todo.done}
         onChange={() => toggleTodo(index)}
       />
-      <label>{todo.text}</label>
+      <label htmlFor={`checkbox-${index}`}>{todo.text}</label>
       <Button
         variant="destructive"
         size="round"

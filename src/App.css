@@ -38,6 +38,11 @@
   height: 2.5rem;
 }
 
+/* header */
+.todo-input {
+  gap: 0.2rem;
+}
+
 /* section */
 section {
   display: flex;
@@ -50,8 +55,6 @@ section {
   flex-direction: column;
 }
 .todo-item {
-  height: 2.5rem;
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
