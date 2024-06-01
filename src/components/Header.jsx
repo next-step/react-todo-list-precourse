@@ -1,10 +1,13 @@
 import "./styles/Header.css";
+import useCurrentDate from "../hooks/useCurrentDate";
+
+const today = useCurrentDate();
 
 const Header = () => {
   return (
     <div className="header">
-      <h1>투두리스트</h1>
-      <h1>2023년 6월 1일</h1>
+      <p>TodoList</p>
+      <p>{today}</p>
     </div>
   );
 };
