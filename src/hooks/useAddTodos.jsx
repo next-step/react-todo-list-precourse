@@ -14,10 +14,12 @@ const useInputTodos = () => {
 
 const useAddTodos = (inputValue, currentKey, setInputValue) => {
   const { setTodoItems } = useContext(TodoContext);
-  const addTodo = () => {
-    if (inputValue.trim() === "") return;
-    setTodoItems((prevTodo) => [...prevTodo, { key: currentKey, content: inputValue, done: false }]);
-    setInputValue("");
+  const addTodo = (event) => {
+    if ((event.type === "click" || event.key === "Enter") && inputValue.trim() !== "") {
+      setTodoItems((prevTodo) => [...prevTodo, { key: currentKey, content: inputValue, done: false }]);
+      setInputValue("");
+      event.preventDefault();
+    }
   };
 
   return { addTodo };

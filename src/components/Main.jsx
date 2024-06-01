@@ -14,8 +14,8 @@ const Main = () => {
     <div className="main">
       <div className="mainContainer">
         <div className="mainInput">
-          <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-          <button onClick={() => addTodo()}>추가</button>
+          <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={(e) => addTodo(e)} />
+          <button onClick={(e) => addTodo(e)}>추가</button>
         </div>
         <div className="mainTodos"></div>
       </div>
