@@ -3,6 +3,7 @@ import "./App.css";
 import Input from "./components/Input";
 import ItemList from "./components/ItemList";
 import FilterBox from "./components/FilterBox";
+import CheckedDelete from "./components/CheckedDelete";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Input />
       <ItemList />
       <FilterBox />
+      <CheckedDelete />
     </div>
   );
 };

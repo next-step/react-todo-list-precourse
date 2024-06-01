@@ -1,0 +1,13 @@
+.btn__delete {
+  width: 400px;
+  height: 40px;
+  margin-top: 10px;
+  background-color: darkred;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn__delete:hover {
+  opacity: 0.8;
+}
