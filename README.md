@@ -23,7 +23,10 @@
   - [x] Header
   - [x] TodoList
   - [x] Navigation
-- [ ] 공통 UI 컴포넌트 만들기
+- [x] 공통 UI 컴포넌트 만들기
   - [x] button
   - [x] input, input-checkbox
   - [x] navigation button
+- [ ] 리팩토링
+  - UI
+    - [ ] Navigation UI 분리
