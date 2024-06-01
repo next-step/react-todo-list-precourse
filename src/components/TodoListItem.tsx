@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { Button } from "./ui/Button";
 
 interface TodoListITemProps {
   todos: Todo[];
@@ -32,7 +33,13 @@ export const TodoListItem = ({
         onChange={() => toggleTodo(index)}
       />
       <label>{todo.text}</label>
-      <button onClick={() => RemoveTodo(index)}>제거</button>
+      <Button
+        variant="destructive"
+        size="round"
+        onClick={() => RemoveTodo(index)}
+      >
+        X
+      </Button>
     </div>
   );
 };

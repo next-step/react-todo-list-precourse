@@ -1,0 +1,54 @@
+.btn {
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  color: white;
+
+  background-color: transparent;
+
+  transition-property: background-color;
+  transition-duration: 300ms;
+}
+
+/* button variant */
+.btn-variant-default {
+  background-color: var(--primary-color);
+}
+.btn-variant-default:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.btn-variant-destructive {
+  background-color: var(--destructive-color);
+}
+.btn-variant-destructive:hover {
+  background-color: var(--destructive-color-hover);
+}
+
+.btn-variant-ghost {
+  color: black;
+  background-color: transparent;
+}
+.btn-variant-ghost:hover {
+  background-color: #ededed;
+}
+
+/* button size */
+.btn-size-sm {
+  font-size: small;
+  padding: 0.3rem 1rem;
+}
+
+.btn-size-md {
+  font-size: medium;
+  padding: 0.5rem 2rem;
+}
+
+.btn-size-round {
+  font-size: small;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+}

@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { Button } from "./ui/Button";
 
 interface NavigationProps {
   todos: Todo[];
@@ -23,7 +24,9 @@ export const Navigation = ({ todos, setTodos, setFilter }: NavigationProps) => {
         <button onClick={() => setFilter("완료")}>완료</button>
       </div>
       <div className="nav-item">
-        <button onClick={RemoveDoneTodo}>완료된 할 일 제거하기</button>
+        <Button variant="ghost" onClick={RemoveDoneTodo}>
+          완료된 할 일 제거하기
+        </Button>
       </div>
     </nav>
   );

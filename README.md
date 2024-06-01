@@ -24,5 +24,6 @@
   - [x] TodoList
   - [x] Navigation
 - [ ] 공통 UI 컴포넌트 만들기
-  - [ ] button
+  - [x] button
   - [ ] input
+  - [ ] label

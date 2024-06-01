@@ -2,6 +2,12 @@
   font-family: Inter, system-ui, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  --primary-color: #004f70;
+  --destructive-color: #fa6466;
+
+  --primary-color-hover: #003655;
+  --destructive-color-hover: #d34148;
 }
 
 body {

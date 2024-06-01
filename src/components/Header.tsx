@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react";
+import { Button } from "./ui/Button";
 
 interface HeaderProps {
   setTodos: Dispatch<SetStateAction<Todo[]>>;
@@ -33,7 +34,9 @@ export const Header = ({ setTodos }: HeaderProps) => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="할 일을 입력해주세요."
         />
-        <button onClick={addTodo}>추가</button>
+        <Button size="md" onClick={addTodo}>
+          추가
+        </Button>
       </form>
     </header>
   );
