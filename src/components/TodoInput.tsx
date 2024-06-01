@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { Button } from "./ui/Button";
-import { Input } from "./ui/input";
+import { Input } from "./ui/Input";
 import { addTodo } from "../hooks/useTodos";
 
 interface TodoInputProps {
@@ -16,7 +16,7 @@ export const TodoInput = ({ setTodos }: TodoInputProps) => {
   };
 
   return (
-    <form onSubmit={(e) => e.preventDefault()} className="block">
+    <form onSubmit={(e) => e.preventDefault()}>
       <Input
         value={input}
         onChange={(e) => setInput(e.target.value)}

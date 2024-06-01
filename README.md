@@ -28,9 +28,9 @@
   - [x] input, input-checkbox
   - [x] navigation button
   - [x] text
-- [ ] 리팩토링
+- [x] 리팩토링
   - UI
     - [x] Navigation UI 분리
     - [x] Header UI 분리
-    - [ ] 기본 font size 키우기
+    - [x] 기본 font size 키우기
   - [x] 함수 모듈 분리

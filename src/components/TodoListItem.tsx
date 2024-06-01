@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { Button } from "./ui/Button";
-import { Input } from "./ui/input";
 import { removeTodo, toggleTodo } from "../hooks/useTodos";
+import { Input } from "./ui/Input";
 
 interface TodoListITemProps {
   todos: Todo[];
@@ -17,14 +17,19 @@ export const TodoListItem = ({
   index,
 }: TodoListITemProps) => {
   return (
-    <div key={index} className="todo-item block">
+    <div key={index} className="todo-item">
       <Input
         id={`checkbox-${index}`}
         type="checkbox"
         checked={todo.done}
         onChange={() => toggleTodo(index, todos, setTodos)}
       />
-      <label htmlFor={`checkbox-${index}`}>{todo.text}</label>
+      <label
+        className={todo.done ? "done-todo" : ""}
+        htmlFor={`checkbox-${index}`}
+      >
+        {todo.text}
+      </label>
       <Button
         variant="destructive"
         size="round"

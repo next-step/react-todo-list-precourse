@@ -1,9 +1,10 @@
 .input {
   display: flex;
   width: 100%;
-  border-radius: 0.3rem;
+  padding: 0 0.7rem;
   border: solid var(--border-color);
-  font-size: small;
+  border-radius: 0.3rem;
+  font-size: medium;
 }
 
 .input:focus-visible {
@@ -19,14 +20,15 @@
 .input-checkbox:not(:checked),
 .input-checkbox:checked {
   position: absolute;
-  opacity: 0;
   width: fit-content;
+  opacity: 0;
 }
 /* label에 체크박스 영역 설정*/
 .input-checkbox:not(:checked) + label,
 .input-checkbox:checked + label {
   position: relative;
-  padding-left: 2em;
+  padding-left: 2.5em;
+  line-height: 1.7;
   cursor: pointer;
 }
 /* label 앞에 checkbox ui 그리기 - 체크 전 */
@@ -37,13 +39,14 @@
   left: 0;
   width: 1.5em;
   height: 1.5em;
-  border: 1px solid var(--primary-color);
+  border: 1.5px solid var(--primary-color);
   border-radius: 0.2em;
 }
 /* label 앞에 checkbox ui 그리기 - 체크 후 */
 .input-checkbox:checked + label::before {
   content: "✓";
   font-weight: 600;
+  line-height: 1.5;
   color: var(--primary-color);
   background-color: var(--border-color);
 }

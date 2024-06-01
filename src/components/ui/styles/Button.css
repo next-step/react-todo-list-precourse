@@ -1,15 +1,14 @@
 .btn {
   border: none;
-  cursor: pointer;
-  white-space: nowrap;
   border-radius: 0.2rem;
-  font-size: 1rem;
-  color: white;
-
   background-color: transparent;
-
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap;
   transition-property: background-color;
   transition-duration: 300ms;
+  cursor: pointer;
 }
 
 /* button variant */
@@ -21,38 +20,39 @@
 }
 
 .btn-variant-destructive {
-  background-color: var(--destructive-color);
+  border: 1.5px solid;
+  color: var(--destructive-color);
 }
 .btn-variant-destructive:hover {
-  background-color: var(--destructive-color-hover);
+  color: var(--destructive-color-hover);
 }
 
 .btn-variant-ghost {
-  color: black;
   background-color: transparent;
+  color: var(--primary-color);
 }
-.btn-variant-ghost:hover {
-  background-color: #ededed;
+.btn-active-false.btn-variant-ghost:hover {
+  background-color: #ececec;
 }
 
 /* button size */
 .btn-size-sm {
-  font-size: small;
   padding: 0.3rem 1rem;
+  font-size: medium;
 }
 
 .btn-size-md {
-  font-size: medium;
   padding: 0.5rem 2rem;
+  font-size: medium;
 }
 
 .btn-size-round {
-  font-size: small;
-  height: 2rem;
   width: 2rem;
+  height: 2rem;
   border-radius: 100%;
 }
 
+/* active button */
 .btn-active-true {
   background-color: var(--border-color);
 }

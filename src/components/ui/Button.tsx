@@ -1,4 +1,4 @@
-import "./Button.css";
+import "./styles/Button.css";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,7 +12,7 @@ const Button = ({
   onClick,
   variant = "default",
   size = "sm",
-  active,
+  active = false,
   ...props
 }: ButtonProps) => {
   const className = `btn btn-variant-${variant} btn-size-${size} btn-active-${active}`;

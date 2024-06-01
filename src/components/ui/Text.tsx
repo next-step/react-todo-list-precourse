@@ -1,12 +1,13 @@
-import "./Text.css";
+import "./styles/Text.css";
 
 interface TextProps {
   children: React.ReactNode;
-  size?: "2xl" | "sm";
+  variant?: "default" | "primary";
+  size?: "sm" | "2xl";
 }
 
-const Text = ({ children, size = "sm" }: TextProps) => {
-  const className = `text-${size}`;
+const Text = ({ children, variant = "default", size = "sm" }: TextProps) => {
+  const className = `text-size-${size} text-variant-${variant}`;
 
   return <div className={className}>{children}</div>;
 };

@@ -17,14 +17,16 @@ function App() {
 
   return (
     <div className="container">
-      <Text size="2xl">To Do List</Text>
+      <Text variant="primary" size="2xl">
+        To Do List
+      </Text>
       <TodoInput setTodos={setTodos} />
       {todos.length > 0 && (
-        <>
+        <div className="todo-card">
           <Navigation curFilter={filter} setFilter={setFilter} />
           <TodoList todos={todos} setTodos={setTodos} filter={filter} />
           <Footer todos={todos} setTodos={setTodos} />
-        </>
+        </div>
       )}
     </div>
   );
