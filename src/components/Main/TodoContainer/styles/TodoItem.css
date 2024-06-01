@@ -1,0 +1,20 @@
+.todoItem {
+  font-size: 24px;
+  border-bottom: 1px solid black;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aqua;
+}
+
+.todoItem input {
+  margin-left: 10px;
+}
+.todoItem button {
+  margin-right: 10px;
+}
+
+.todoItem p.true {
+  text-decoration: line-through;
+}
