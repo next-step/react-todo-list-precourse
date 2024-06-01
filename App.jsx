@@ -4,24 +4,23 @@ import Header from "./src/component/Header"
 import List from "./src/component/List"
 import Maker from "./src/component/Maker"
 function App(){
-  const tododata = [
-    {id :0,
-    isDone : false, 
-    content : "asdf"},
-    {id :1,
-      isDone : false, 
-      content : "asdfasdf"},
-    {id :2,
-      isDone : false, 
-      content : "asdfasdfasdf"}
-    
-  ]
-  const [TodoList, setTodoList] = useState(tododata)
+
+
+
+  const [TodoList, setTodoList] = useState([])
+  const pushthing = (content)=> {
+    const newTodo = {
+      id:TodoList.length,
+      isDone : false,
+      content : content
+    };
+    setTodoList([...TodoList, newTodo])
+  }
     return (
      <div className="App">
    <Header/>
-   <Maker/>
-   <List/>
+   <Maker pushthing = {pushthing}/>
+   <List TodoList = {TodoList}/>
     </div>
     )
 }
