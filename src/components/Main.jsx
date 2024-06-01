@@ -1,16 +1,24 @@
 import "./styles/Main.css";
+import { useInputTodos, useAddTodos, getCurrentKey } from "../hooks/useAddTodos";
+import { TodoContext } from "../contexts/TodoContext";
+import { useContext } from "react";
 
 const Main = () => {
+  const currentKey = getCurrentKey();
+  const { todoItems } = useContext(TodoContext);
+  console.log(todoItems);
+  const { inputValue, setInputValue } = useInputTodos();
+  const { addTodo } = useAddTodos(inputValue, currentKey, setInputValue);
+
   return (
     <div className="main">
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
-      <p>메인</p>
+      <div className="mainContainer">
+        <div className="mainInput">
+          <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+          <button onClick={() => addTodo()}>추가</button>
+        </div>
+        <div className="mainTodos"></div>
+      </div>
     </div>
   );
 };
