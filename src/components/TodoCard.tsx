@@ -1,4 +1,4 @@
-import { FilterProvider } from "../contexts/filter/TodosProvider";
+import { FilterProvider } from "../contexts/filter/FilterProvider";
 import { Footer } from "./Footer";
 import { Navigation } from "./Navigation";
 import { TodoList } from "./TodoList";
