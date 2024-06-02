@@ -7,7 +7,7 @@ export default function FilterButtons({ setFilter, currentFilter }) {
 function createFilterButtons(setFilter, currentFilter) {
   return React.createElement(
     'div',
-    null,
+    { className: 'filter-btns' },
     createButton('진행 중', 'active', setFilter, currentFilter),
     createButton('완료', 'completed', setFilter, currentFilter),
     createButton('모두', 'all', setFilter, currentFilter)

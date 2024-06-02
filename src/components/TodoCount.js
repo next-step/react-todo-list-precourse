@@ -5,5 +5,9 @@ export default function TodoCount({ count }) {
 }
 
 function createTodoCount(count) {
-  return React.createElement('div', null, `해야할 일 : ${count}개`);
+  return React.createElement(
+    'div',
+    { className: 'todo-count'},
+    `해야할 일 : ${count}개`
+  );
 }

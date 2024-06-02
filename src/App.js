@@ -3,6 +3,7 @@ import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 import FilterButtons from './components/FilterButtons';
 import TodoCount from './components/TodoCount';
+import './main.css';
 
 export default function App() {
   const [todos, setTodos] = useState(() => {

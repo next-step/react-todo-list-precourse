@@ -22,8 +22,8 @@ function createTodoInput(input, handleChange, handleSubmit) {
       type: 'text',
       value: input,
       onChange: handleChange,
-      placeholder: '할 일을 입력해 주세요:)'
+      placeholder: '할 일을 입력해 주세요 :)'
     }),
-    React.createElement('button', { type: 'submit' }, '추가')
+    React.createElement('button', { type: 'submit' }, '+')
   );
 }
