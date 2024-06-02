@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import TodoForm from './TodoForm';
+import TodoList from './TodoList';
+
 
 
 const App = () => {
@@ -31,6 +33,7 @@ const App = () => {
       <Header />
       <div className='todoForm'>
         <TodoForm addTodo={addTodo} />
+        <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       </div>
       <Footer />
     </div>
