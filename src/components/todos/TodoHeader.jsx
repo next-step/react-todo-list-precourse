@@ -15,7 +15,6 @@ const checkDefaultOnMount = (refs) => () => { refs[0].current.checked = true };
 
 //TodoList로부터 path를 props로 받아오면 그냥 전부다 계속 리렌더됨
 function TodoHeader({ updatePathName }) {
-    console.log('header');
     const refs = [useRef(), useRef(), useRef()];
     useEffect(checkDefaultOnMount(refs), []);
     return (

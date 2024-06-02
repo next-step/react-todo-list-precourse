@@ -25,7 +25,6 @@ const handleClick = (pathTrigger) => (e) => {
 // function (Component)
 export const TodoFilterButton =  forwardRef(
     function ({ path, updatePathName, uncheckOthers } , ref) {
-        console.log(path);
         return (
             <label className={styles.filterButton}>
                 <input type="checkbox" name="filter" value={path} ref={ref}

@@ -81,7 +81,6 @@ const createStateText = (isDone) => {
 function TodoItem({ todo, updateTodoState, deleteTodo } ){
     const [isEditing, setIsEditing] = useState(false);
     const { id, content, isDone } = todo;
-    console.log(id);
     return (
         <div className={styles.todoItem}>
             <StateTodoButton updateTodoState={updateTodoState} todo={todo} isDone={isDone} />
