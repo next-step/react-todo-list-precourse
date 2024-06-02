@@ -32,8 +32,19 @@ function App() {
     };
   };
 
+  const toggleTodoCompletion = (id) => {
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
+  };
+
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
+  };
+
+  const handleToggleAll = () => {
+    const allCompleted = todos.every(todo => todo.completed);
+    setTodos(todos.map(todo => ({ ...todo, completed: !allCompleted })));
   };
 
   return (
@@ -41,6 +52,9 @@ function App() {
       <header className="header">
         <h1>todos</h1>
         <div className="input-container">
+          <div className="toggle-all" onClick={handleToggleAll}>
+            &#8744;
+          </div>
           <input
             className="new-todo"
             placeholder="What needs to be done?"
@@ -55,7 +69,8 @@ function App() {
           {todos.map(todo => (
             <TodoItem 
               key={todo.id} 
-              todo={todo}
+              todo={todo} 
+              toggleTodoCompletion={toggleTodoCompletion} 
               deleteTodo={deleteTodo} 
             />
           ))}
@@ -65,9 +80,12 @@ function App() {
   );
 }
 
-const TodoItem = ({ todo, deleteTodo }) => {
+const TodoItem = ({ todo, toggleTodoCompletion, deleteTodo }) => {
   return (
-    <li className="todo">
+    <li className={todo.completed ? 'todo completed' : 'todo'}>
+      <div className="checkbox" onClick={() => toggleTodoCompletion(todo.id)}>
+        {todo.completed ? '✔' : ''}
+      </div>
       <label>{todo.text}</label>
       <button className="destroy" onClick={() => deleteTodo(todo.id)}>×</button>
     </li>
