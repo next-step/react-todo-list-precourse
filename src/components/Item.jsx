@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 
-export default function Item({item, onDelete}) {
+export default function Item({item, onDelete, updateNumber}) {
   
   const [checked, setChecked] = useState(item.checked);
 
   const handleCheck = () => {
     setChecked(!checked);
     item.checked =!item.checked;
-    console.log(item.checked);
+    updateNumber();
+    // console.log(item.checked);
   }
   // console.log(item.id , item.checked, item.text)
   

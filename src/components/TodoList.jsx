@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Item from './Item'
 
-export default function TodoList({itemList,updateItemList, mode}) {
+export default function TodoList({itemList,updateItemList, mode, updateNumber}) {
     
     const [todoList, settodoList] = useState(itemList)
 
@@ -20,25 +20,28 @@ export default function TodoList({itemList,updateItemList, mode}) {
             return todoList.map(todoItem => (
                 <Item key={todoItem.id} 
                     item={todoItem} 
-                    onDelete={deleteItem}/>
+                    onDelete={deleteItem}
+                    updateNumber={updateNumber}/>
             ))
         }else if(mode === 2){ // active
             const active = todoList.filter(todoItem =>!todoItem.checked)
-            console.log('활성' , active)
+            // console.log('활성' , active)
 
             return active.map(todoItem => (
                 <Item key={todoItem.id} 
                     item={todoItem} 
-                    onDelete={deleteItem}/>
+                    onDelete={deleteItem}
+                    updateNumber={updateNumber}/>
             ))
         }else if(mode === 3){ // completed
             const completed = todoList.filter(todoItem => todoItem.checked)
-            console.log('완료', completed)
+            // console.log('완료', completed)
 
             return completed.map(todoItem => (
                 <Item key={todoItem.id} 
                     item={todoItem} 
-                    onDelete={deleteItem}/>
+                    onDelete={deleteItem}
+                    updateNumber={updateNumber}/>
             ))
         }
     }

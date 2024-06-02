@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import TodoList from "./components/TodoList";
 import Distribute from "./components/Distribute";
@@ -8,6 +8,7 @@ function App() {
   const [itemList, setItemList] = useState([]); // item list
   const [input, setInput] = useState(''); // input
   const [mode, setMode] = useState(1) // all
+  const [itemNum, setItemNum] = useState(0) 
 
   const addItem = (e) => {
     if(input.trim() !== ''){ // 아무것도 입력하지 않았을 때 방지.
@@ -16,9 +17,9 @@ function App() {
         text: input,
         checked : false,
       }
-
       setItemList([...itemList,item])
       setInput('');
+      setItemNum(itemNum+1)
       e.preventDefault(); // 페이지 새로고침해도 데이터 유지
       console.log(itemList)
     }
@@ -37,6 +38,11 @@ function App() {
     setMode(newMode);
   }
 
+  const updateNumber = () => {
+    const remainingItems = itemList.filter(item => item.checked !== true).length;
+    setItemNum(remainingItems);
+  }
+    
   return (
     <div className="app">
       <h3>To do List</h3>
@@ -45,8 +51,12 @@ function App() {
         <button className="btn-input" onClick={addItem}>Add</button>
       </div>
       <Distribute modeChange={modeChange} />
-      <TodoList itemList={itemList} updateItemList={updateItemList} mode={mode}/>
+      <TodoList itemList={itemList} 
+                updateItemList={updateItemList} 
+                mode={mode}
+                updateNumber={updateNumber} />
       <div className='footer'>
+        <div className='item-infor'>{itemNum} items left!</div>
         <button className='deleteCompleted' onClick={deleteCompleted}>Delete Completed Item</button>
       </div>
       
