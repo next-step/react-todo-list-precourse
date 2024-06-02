@@ -5,7 +5,6 @@ import Distribute from "./components/Distribute";
 
 function App() {
   const savedData = JSON.parse(localStorage.getItem('itemList')) || [];
-  const savedData2 = JSON.parse(localStorage.getItem('infor')) || [];
   const [itemList, setItemList] = useState(savedData); // item list
   const [input, setInput] = useState(''); // input
   const [mode, setMode] = useState(1); // all
@@ -27,7 +26,7 @@ function App() {
       setItemList([...itemList, item]);
       setInput('');
       setItemNum(itemNum + 1);
-      console.log(itemList);
+      // console.log(itemList);
     }
   };
 
