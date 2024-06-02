@@ -14,12 +14,19 @@ const ToDoInput = ({ addTodo }) => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleAddClick();
+    }
+  };
+
   return (
     <div>
       <input
         type="text"
         value={inputValue}
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
         placeholder="What needs to be done?"
       />
       <button onClick={handleAddClick}>Add</button>
