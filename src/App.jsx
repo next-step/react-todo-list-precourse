@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import TodoList from "./components/TodoList";
+import Distribute from "./components/Distribute";
 
 function App() {
 
   const [itemList, setItemList] = useState([]); // item list
   const [input, setInput] = useState(''); // input
+  const [mode, setMode] = useState(1) // all
 
   const addItem = (e) => {
     if(input.trim() !== ''){ // 아무것도 입력하지 않았을 때 방지.
@@ -23,12 +25,16 @@ function App() {
   }
 
   const updateItemList = (newItemList) => {
-    setItemList(newItemList);
+    setItemList(newItemList); // 업데이트된 리스트
   };
 
   const deleteCompleted = (checked) => {
     const newItemList = itemList.filter(item => item.checked !== true);
     setItemList(newItemList);
+  }
+
+  const modeChange = (newMode) => {
+    setMode(newMode);
   }
 
   return (
@@ -38,8 +44,12 @@ function App() {
         <input className="inputItem" placeholder="할 일을 추가하세요!" value={input} onChange={e => setInput(e.target.value)}></input>
         <button className="btn-input" onClick={addItem}>Add</button>
       </div>
-      <TodoList itemList={itemList}  updateItemList={updateItemList}/>
-      <button className='deleteCompleted' onClick={deleteCompleted}>Delete Completed Item</button>
+      <Distribute modeChange={modeChange} />
+      <TodoList itemList={itemList} updateItemList={updateItemList} mode={mode}/>
+      <div className='footer'>
+        <button className='deleteCompleted' onClick={deleteCompleted}>Delete Completed Item</button>
+      </div>
+      
     </div>
   );
 }
