@@ -4,7 +4,15 @@ import FilterTodo from './components/FilterTodo'
 import TodoList from './components/TodoList'
 
 export default function App() {
-   const [todos, setTodos] = useState([])
+   const [todos, setTodos] = useState(() => {
+      const storedData = localStorage.getItem('todos')
+      return storedData ? JSON.parse(storedData) : []
+   })
+
+   useEffect(() => {
+      localStorage.setItem('todos', JSON.stringify(todos))
+   }, [todos])
+
    const [filterOption, setFilterOption] = useState('all')
 
    const addTodo = (text) => {
