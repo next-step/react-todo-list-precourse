@@ -96,6 +96,13 @@
     position: relative;
 }
 
+.done {
+    background-color: rgba(33, 150, 243, .7);
+    text-decoration: line-through;
+    text-decoration-color: black;
+    text-decoration-style: solid;
+}
+
 .todoItem button:first-of-type {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;

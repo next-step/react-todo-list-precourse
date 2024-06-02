@@ -59,13 +59,28 @@ function TodoButton({ handleOnClick, text }) {
     );
 }
 
+function StateTodoButton({ updateTodoState, todo, isDone }) {
+    return (
+        <button
+            className={`${styles.todoItem__VC__button} ${isDone ? styles.done : null}`}
+            onClick={triggerUpdate(updateTodoState, todo, isDone)}
+        >
+            {createStateText(isDone)}
+        </button>
+    );
+}
+
+const createStateText = (isDone) => {
+    return isDone ? "Completed" : "Active";
+}
+
 function TodoItem({ todo, updateTodoState, deleteTodo } ){
     const [isEditing, setIsEditing] = useState(false);
     const { id, content, isDone } = todo;
     console.log(id);
     return (
         <div className={styles.todoItem}>
-            <TodoButton handleOnClick={triggerUpdate(updateTodoState, todo, isDone)} text={isDone ? 'isDone!' : 'notYet!'} />
+            <StateTodoButton updateTodoState={updateTodoState} todo={todo} isDone={isDone} />
             {isEditing
                 ? <VariableContent updateTodoState={updateTodoState} todo={todo} setIsEditing={setIsEditing} />
                 : <Content isDone={isDone} setIsEditing={setIsEditing} content={content} />
