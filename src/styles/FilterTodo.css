@@ -1,0 +1,22 @@
+.filtering {
+   display: flex;
+   gap: 10px;
+   margin: 20px auto;
+   justify-content: center;
+}
+
+.filtering button {
+   padding: 10px 15px;
+   background-color: #fff;
+   color: var(--main-color);
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s, border-color 0.3s;
+   font-weight: bold;
+}
+
+.filtering button:hover {
+   background-color: var(--main-color);
+   color: white;
+}
