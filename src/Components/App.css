@@ -1,0 +1,125 @@
+body{
+  width: 100%;
+  height: 1000px;
+  position: relative;
+}
+
+
+header{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1{
+  font: 50px "Fira Sans", serif;
+  color: rgb(231, 83, 83);
+}
+
+.todoForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .003);
+  width: 300px;
+  margin: auto;
+  padding: 0;
+}
+.insert{
+  width: 250px;
+  height: 50px;
+  padding: 0px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid lightgrey;
+  background-color: white; 
+  box-shadow: none; 
+  outline: none;
+}
+
+.toDoList{
+  margin-bottom: 1px;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+  
+  width: 250px;
+}
+.toDoList li{
+  width: 100%;
+  border: 1px solid lightgrey;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1px;
+}
+
+.insert:focus {
+  border: 1px solid red; /* 포커스 시 파란색 테두리를 추가합니다 */
+}
+
+#listBtn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 20px; /* 아이콘 크기를 조정합니다 */
+  display: flex;
+  align-items: center;
+}
+
+#listBtn .material-icons {
+  color: red; /* 아이콘 색상 설정 */
+  text-decoration: none;
+}
+
+#todoFilter{
+  width: 250px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#todoFilter span {
+  background: none;
+  border: none;
+  font-size: 8px;
+  display: flex;
+}
+
+#filterbtns{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#filterbtns button {
+  background: none;
+  border: none;
+  font-size: 8px;
+}
+#clearbtn{
+  background: none;
+  border: none;
+  font-size: 8px;
+}
+
+footer{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer p{
+  font-size: 10px;
+}
+.material-icons{
+  background: none;
+  font-size: 10px;
+}
+
