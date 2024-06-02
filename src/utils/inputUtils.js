@@ -4,3 +4,8 @@ export const handleAddTodo = (input, addTodo, setInput) => {
   setInput('');
 };
 
+export const handleKeyPress = (e, handleAddTodo) => {
+  if (e.key === 'Enter') {
+    handleAddTodo();
+  }
+};
