@@ -1,9 +1,9 @@
 import React from "react";
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, toggleDone }) => {
     return (
-        <li>
-            <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+        <li onClick={() => toggleDone(todo)} className={todo.done ? 'done' : ''}>
+            <span style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>
                 {todo.text}
             </span>
         </li>

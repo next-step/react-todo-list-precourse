@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import TodoForm from "./components/TodoForm.jsx";
 import TodoList from "./components/TodoList.jsx";
+import { TodoToggle } from "./components/TodoToggle.jsx";
 
 const App = () => {
 
-    const [todos, setTodos] = useState([]);
-
-    const addTodo = (newTodo) => {
-        setTodos([...todos, { text: newTodo, done: false }]);
-    };
+    const { todos, addTodo, toggleDone } = TodoToggle();
 
     return (
         <div className="App">
             <h1>Todo List</h1>
             <TodoForm addTodo={addTodo} />
-            <TodoList todos={todos} />
+            <TodoList todos={todos} toggleDone={toggleDone}/>
         </div>
     );
 };
