@@ -5,7 +5,7 @@ export default function TodoList({ todos, toggleCompletion, deleteTodo }) {
    return (
       <div>
          {todos.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} toggleCompletion={toggleCompletion} />
+            <TodoItem key={todo.id} todo={todo} toggleCompletion={toggleCompletion} deleteTodo={deleteTodo} />
          ))}
       </div>
    )
