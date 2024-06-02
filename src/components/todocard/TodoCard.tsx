@@ -1,7 +1,7 @@
-import { FilterProvider } from "../contexts/filter/FilterProvider";
+import { FilterProvider } from "../../contexts/filter/FilterProvider";
 import { Footer } from "./Footer";
-import { Navigation } from "./Navigation";
-import { TodoList } from "./TodoList";
+import { Navigation } from "./navigation/Navigation";
+import { TodoList } from "./todolist/TodoList";
 
 export const TodoCard = () => {
   return (

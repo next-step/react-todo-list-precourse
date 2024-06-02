@@ -1,8 +1,8 @@
 import "./App.css";
 import { useTodos } from "./contexts/todos/useTodos";
-import { TodoInput } from "./components/TodoInput";
 import { Text } from "./components/ui/Text";
-import { TodoCard } from "./components/TodoCard";
+import { TodoInput } from "./components/TodoInput";
+import { TodoCard } from "./components/todocard/TodoCard";
 
 function App() {
   const { todos } = useTodos();

@@ -1,5 +1,5 @@
-import { useTodoActions } from "../hooks/useTodoActions";
-import { Button } from "./ui/Button";
+import { useTodoActions } from "../../../hooks/useTodoActions";
+import { Button } from "../../ui/Button";
 
 interface TodoListItemRemoveButtonProps {
   index: number;

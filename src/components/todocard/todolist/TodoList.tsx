@@ -1,5 +1,5 @@
-import { useFilter } from "../contexts/filter/useFilter";
-import { useTodos } from "../contexts/todos/useTodos";
+import { useFilter } from "../../../contexts/filter/useFilter";
+import { useTodos } from "../../../contexts/todos/useTodos";
 import { TodoListItem } from "./TodoListItem";
 
 export const TodoList = () => {

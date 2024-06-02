@@ -1,5 +1,5 @@
-import { useTodoActions } from "../hooks/useTodoActions";
-import { Input } from "./ui/Input";
+import { useTodoActions } from "../../../hooks/useTodoActions";
+import { Input } from "../../ui/Input";
 
 interface TodoListItemContentProps {
   todo: Todo;

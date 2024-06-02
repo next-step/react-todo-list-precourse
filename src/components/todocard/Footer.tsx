@@ -1,7 +1,7 @@
-import { useTodos } from "../contexts/todos/useTodos";
-import { useTodoActions } from "../hooks/useTodoActions";
-import { Button } from "./ui/Button";
-import { Text } from "./ui/Text";
+import { useTodos } from "../../contexts/todos/useTodos";
+import { useTodoActions } from "../../hooks/useTodoActions";
+import { Button } from "../ui/Button";
+import { Text } from "../ui/Text";
 
 export const Footer = () => {
   const { todos } = useTodos();

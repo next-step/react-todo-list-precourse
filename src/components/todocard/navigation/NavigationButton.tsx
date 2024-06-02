@@ -1,5 +1,5 @@
-import { useFilter } from "../contexts/filter/useFilter";
-import { Button } from "./ui/Button";
+import { useFilter } from "../../../contexts/filter/useFilter";
+import { Button } from "../../ui/Button";
 
 interface NavigationButonprops {
   curFilter: Filter;
