@@ -1,11 +1,38 @@
 .todoItem {
     width: 500px;
     height: 60px;
-    font-size: 25px;
     border: 1px solid gainsboro;
-    padding-left: 50px;
+    padding-left: 7px;
     box-sizing: border-box;
-    color: #797979;
     display: flex;
     align-items: center;
 }
+
+.toggleIcon {
+    font-size: 40px;
+    font-variation-settings: 'wght' 200;
+    cursor: pointer;
+}
+
+.iconFalse {
+    color: #30A03C;
+}
+
+.iconTrue {
+    color: darkgray;
+}
+
+.todoText {
+    padding-left: 15px;
+    font-size: 25px;
+}
+
+.checkedTrue {
+    color: #575757;
+}
+
+.checkedFalse {
+    color: darkgray;
+    text-decoration: line-through;
+}
+

@@ -3,8 +3,10 @@ import './TodoItem.css'
 
 const TodoItem = ({ todo, toggleTodo }) => {
   return (
-    <div>
-        <li className='todoItem' onClick={() => toggleTodo(todo.id)}>{todo.text}</li>
+    <div className='todoItem'>
+        <span className={`material-symbols-outlined toggleIcon ${todo.checked ? 'iconFalse' : 'iconTrue'}`} onClick={() => toggleTodo(todo.id)}>{todo.checked ? 'check_circle' : 'circle'}</span>
+        <li className={`todoText ${todo.checked ? 'checkedFalse' : 'checkedTrue'}`}>{todo.text}</li>
+
     </div>
   )
 }
