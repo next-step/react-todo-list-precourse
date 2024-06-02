@@ -1,32 +1,33 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import styles from "../../styles/todos/TodoInput.module.css";
 
-const handleChange = (e, addTodo, setValue) => {
-    if (e.target.value.trim().length === 0) {
-        return;
-    }
-    setValue(e.target.value);
-}
-
-const handleSubmit = (e, addTodo, setValue, inputRef) => {
+const handleSubmit = (e, addTodo, inputRef) => {
     e.preventDefault();
     if ((inputRef?.current?.value?.trim()?.length ?? 0) === 0) {
         return;
     }
     addTodo(inputRef.current.value);
-    setValue("");
     inputRef.current.value = "";
+    inputRef.current.blur();
 }
 
-// 자주 리렌더 되는건 묶어 놓는게 효과적
+const handleBlur = (e) => {
+    e.preventDefault();
+    e.target.value = "";
+}
+
 export function TodoInput({ addTodo }) {
-    const [value, setValue] = useState("");
     const inputRef = useRef();
     return (
-        <form onSubmit={(e) => handleSubmit(e, addTodo, setValue, inputRef)}>
-            {/*<label className={styles.input__monitor} htmlFor={"input_id"}>{value}</label>*/}
-            {/*<div className={styles.input__monitor}>{value}</div>*/}
-            <input id={"input_id"} ref={inputRef} onChange={(e) => handleChange(e, addTodo, setValue)}/>
-            <button >add</button>
+        <form className={styles.todoInput} onSubmit={(e) => handleSubmit(e, addTodo, inputRef)}>
+            <input
+                className={styles.todoInput__type}
+                id={"input_id"}
+                ref={inputRef}
+                onBlur={handleBlur}
+            />
+            <label htmlFor={"input_id"}>Type Here: </label>
+            <button className={styles.todoSubmitButton} >add</button>
         </form>
     );
 }

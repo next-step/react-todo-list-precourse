@@ -1,0 +1,92 @@
+.todoInput {
+    position: relative;
+    height: max-content;
+    display: flex;
+    align-items: center;
+}
+
+.todoInput__type {
+    display: inline-block;
+    width: 400px;
+    padding: 10px 0 10px 15px;
+    font-weight: 400;
+    background: #efefef;
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
+    text-indent: 65px;
+    transition: all .3s ease-in-out;
+    height: 22px;
+    font-size: 30px;
+}
+
+.todoInput__type + label {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 15px;
+    text-shadow: 0 1px 0 rgba(33, 150, 243, .4);
+    color: white;
+    background: #2196F3;
+    transition: all .4s ease-in-out;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    transform-origin: left bottom;
+    z-index: 99;
+}
+
+.todoInput__type + label:before,
+.todoInput__type + label:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+    background: #2196F3;
+    transform-origin: left bottom;
+    transition: all .4s ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.todoInput__type + label:before {
+    background: rgba(3, 36, 41, .2);
+    z-index: -2;
+    right: 20%;
+}
+
+.todoInput__type:focus,
+.todoInput__type:active {
+    text-indent: 0;
+    background: #fff;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.todoInput__type:focus + label,
+.todoInput__type:active + label {
+    transform: rotate(-66deg);
+    border-radius: 3px;
+}
+
+.todoInput__type:focus + label:before,
+.todoInput__type:active + label:before {
+    transform: rotate(10deg);
+}
+
+.todoSubmitButton {
+    height: 42px;
+    background-color: rgba(33, 150, 243, .4);
+    color: white;
+    border: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 0 5px;
+}
+
+.todoSubmitButton:hover {
+    background-color: #2196F3;
+}
