@@ -14,3 +14,8 @@ export const deleteTodo = (todos, setTodos, index) => { //투두 삭제
   const newTodos = todos.filter((_, i) => i !== index);
   setTodos(newTodos);
 };
+
+export const deleteCompleted = (todos, setTodos) => { // 완료된 투두 삭제
+  const newTodos = todos.filter(todo => !todo.completed);
+  setTodos(newTodos);
+};
