@@ -31,7 +31,7 @@ function TodoInput({ onAddTodo }) {
         onKeyDown={handleKeyDown}
         placeholder="What needs to be done?"
       />
-      <button onClick={handleSubmit}>추가</button>
+      <button onClick={handleSubmit} className="add-button">추가</button>
     </div>
   );
 }
