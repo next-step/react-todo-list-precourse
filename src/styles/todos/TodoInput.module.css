@@ -61,7 +61,7 @@
 .todoInput__type:focus,
 .todoInput__type:active {
     text-indent: 0;
-    background: #fff;
+    background: white;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }
@@ -79,11 +79,11 @@
 
 .todoSubmitButton {
     height: 42px;
-    background-color: rgba(33, 150, 243, .4);
+    background-color: rgba(33, 150, 243, .9);
     color: white;
     border: 0;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     padding: 0 5px;
 }
 
