@@ -47,7 +47,14 @@ function App() {
     <div className="app">
       <h3>To do List</h3>
       <div className='inputWrapper'>
-        <input className="inputItem" placeholder="할 일을 추가하세요!" value={input} onChange={e => setInput(e.target.value)}></input>
+        <input className="inputItem" 
+                placeholder="할 일을 추가하세요!" 
+                value={input} 
+                onChange={e => setInput(e.target.value)} 
+                onKeyDown={e => {
+                  if(e.key === 'Enter') {
+                    addItem(e);  
+                }}} />
         <button className="btn-input" onClick={addItem}>Add</button>
       </div>
       <Distribute modeChange={modeChange} />
