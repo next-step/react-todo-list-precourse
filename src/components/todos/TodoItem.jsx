@@ -1,5 +1,6 @@
-import { memo, useState} from "react";
+import { memo, useRef, useState } from "react";
 import styles from "../../styles/todos/TodoItem.module.css";
+import { useTypingEffect } from "../../hooks/useTypingEffect.js";
 
 const switchToInput = (setIsEditing, isDone) => {
     if (isDone) {
@@ -9,11 +10,14 @@ const switchToInput = (setIsEditing, isDone) => {
 }
 
 function Content({ isDone, setIsEditing, content }) {
+    const divRef = useRef();
+    useTypingEffect(divRef, isDone, content);
     return (
         <div
-            className={styles.content}
+            className={`${styles.content} ${isDone ? styles.stop : null}`}
             onDoubleClick={() => switchToInput(setIsEditing, isDone)}
             title={isDone ? "not allowed to change content when task is done!" : ""}
+            ref={divRef}
         >
             {content}
         </div>
