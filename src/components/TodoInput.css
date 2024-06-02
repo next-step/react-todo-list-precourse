@@ -1,0 +1,19 @@
+.input-group {
+  position: relative;
+}
+.input-group .input {
+  width: 30%;
+  border-radius: 8px;
+  transition: .3s;
+  font-size: 20px;
+  vertical-align: middle;
+  font-family: serif, Helvetica, sans-serif;
+}
+.input-group .input:focus {
+  box-shadow: 5px 5px 3px #666;
+  outline: none;
+}
+.input-group .btn-add {
+  vertical-align: middle;
+  position: absolute;
+}
