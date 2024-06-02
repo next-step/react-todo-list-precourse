@@ -13,6 +13,14 @@ const App = () => {
     console.log('Adding todo:', newTodo);
     setTodos([...todos, newTodo]);
   };
+  
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
 
   return (
     <div>
