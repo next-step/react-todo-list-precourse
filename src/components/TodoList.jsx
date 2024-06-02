@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Item from './Item';
+import './todoList.css';
 
 export default function TodoList({ itemList, updateItemList, mode, updateNumber }) {
   const [todoList, setTodoList] = useState(itemList);

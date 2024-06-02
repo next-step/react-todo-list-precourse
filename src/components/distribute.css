@@ -1,0 +1,31 @@
+.dis-wrapper {
+    display : flex;
+    justify-content: space-around;
+    width : 100%;
+    /* border : 1px solid #000; */
+    margin-top : 10px;
+}
+
+.dis-wrapper .all,.active, .completed {
+    border : none;
+    width : 120px;
+    height : 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.dis-wrapper .all:hover, .active:hover, .completed:hover{
+    background-color: #6e3737;
+    color : #fff;
+    transition: .5s;
+}
+
+.dis-wrapper .all {
+    margin-left : 5px;
+}
+
+.dis-wrapper .all .selected{
+    background-color: #6e3737;
+    color : #fff;
+}
+

@@ -1,4 +1,5 @@
 import React from 'react';
+import './item.css';
 
 export default function Item({ item, updateItem, onDelete, updateNumber }) {
   const handleCheck = () => {
@@ -9,9 +10,10 @@ export default function Item({ item, updateItem, onDelete, updateNumber }) {
 
   return (
     <div className='item'>
-      <input type='checkbox' checked={item.checked} onChange={handleCheck} />
-      <span>{item.text}</span>
-      <button onClick={() => onDelete(item.id)}>삭제</button>
+      <input className='check-box' type='checkbox' checked={item.checked} onChange={handleCheck} />
+      <span className={`${item.checked ? 'checked' : 'unchecked'}`}>{item.text}</span>
+      <button className='btnDelete' onClick={() => onDelete(item.id)}>삭제</button>
     </div>
   );
 }
+
