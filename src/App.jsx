@@ -3,6 +3,7 @@ import ToDoInput from './components/ToDoInput';
 import ToDoList from './components/ToDoList';
 import FilterButtons from './components/FilterButtons';
 import TaskCounter from './components/TaskCounter';
+import ClearCompleted from './components/ClearCompleted';
 
 const App = () => {
 	const [todos, setTodos] = useState([]);
@@ -24,8 +25,9 @@ const App = () => {
 		setTodos(newTodos);
 	};
 
-	const clearTodos = () => {
-		setTodos([]);
+	const clearCompleted = () => {
+		const newTodos = todos.filter(todo => !todo.completed);
+		setTodos(newTodos);
 	};
 
 	const filteredTodos = todos.filter((todo) => {
@@ -47,7 +49,7 @@ const App = () => {
 			<ToDoList todos={filteredTodos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
 			<FilterButtons setFilter={setFilter} />
 			<TaskCounter todos={todos} />
-			<button onClick={clearTodos}>Clear completed</button>
+			<ClearCompleted todos={todos} setTodos={setTodos} />
 		</div>
 	);
 };
