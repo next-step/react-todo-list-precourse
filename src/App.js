@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 import FilterButtons from './components/FilterButtons';
+import TodoCount from './components/TodoCount';
 
 export default function App() {
   const [todos, setTodos] = useState([]);
@@ -55,6 +56,9 @@ function createApp(todos, setTodos, filter, setFilter) {
       todos: getFilteredTodos(todos, filter),
       deleteTodo: id => deleteTodo(id, todos, setTodos),
       toggleComplete: id => toggleComplete(id, todos, setTodos)
+    }),
+    React.createElement(TodoCount, {
+      count: todos.filter(todo => !todo.completed).length
     })
   );
 }
