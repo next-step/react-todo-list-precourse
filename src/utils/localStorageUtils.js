@@ -8,3 +8,11 @@ export const getStoredValue = (key, initialValue) => {
     return initialValue;
   }
 };
+
+export const setStoredValue = (key, value) => {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    console.error('Error setting localStorage key “' + key + '”:', error);
+  }
+};
