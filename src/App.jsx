@@ -4,6 +4,7 @@ import './index.css';
 function App() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
+  const [filter, setFilter] = useState('all');
 
   const handleNewTodoChange = (e) => {
     setNewTodo(e.target.value);
@@ -42,10 +43,23 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  const clearCompletedTodos = () => {
+    setTodos(todos.filter(todo => !todo.completed));
+  };
+
   const handleToggleAll = () => {
     const allCompleted = todos.every(todo => todo.completed);
     setTodos(todos.map(todo => ({ ...todo, completed: !allCompleted })));
   };
+
+  const filterTodos = (todo) => {
+    if (filter === 'all') return true;
+    if (filter === 'active') return !todo.completed;
+    if (filter === 'completed') return todo.completed;
+    return true;
+  };
+
+  const filteredTodos = todos.filter(filterTodos);
 
   return (
     <div className="todoapp">
@@ -66,7 +80,7 @@ function App() {
       </header>
       <section className="main">
         <ul className="todo-list">
-          {todos.map(todo => (
+          {filteredTodos.map(todo => (
             <TodoItem 
               key={todo.id} 
               todo={todo} 
@@ -76,6 +90,12 @@ function App() {
           ))}
         </ul>
       </section>
+      <footer className="footer">
+        <Filters setFilter={setFilter} filter={filter} />
+        <button className="clear-completed" onClick={clearCompletedTodos}>
+          Clear completed
+        </button>
+      </footer>
     </div>
   );
 }
@@ -89,6 +109,37 @@ const TodoItem = ({ todo, toggleTodoCompletion, deleteTodo }) => {
       <label>{todo.text}</label>
       <button className="destroy" onClick={() => deleteTodo(todo.id)}>×</button>
     </li>
+  );
+};
+
+const Filters = ({ setFilter, filter }) => {
+  return (
+    <ul className="filters">
+      <li>
+        <button
+          className={filter === 'all' ? 'selected' : ''}
+          onClick={() => setFilter('all')}
+        >
+          All
+        </button>
+      </li>
+      <li>
+        <button
+          className={filter === 'active' ? 'selected' : ''}
+          onClick={() => setFilter('active')}
+        >
+          Active
+        </button>
+      </li>
+      <li>
+        <button
+          className={filter === 'completed' ? 'selected' : ''}
+          onClick={() => setFilter('completed')}
+        >
+          Completed
+        </button>
+      </li>
+    </ul>
   );
 };
 
