@@ -5,15 +5,24 @@ import ToDoList from './components/ToDoList';
 const App = () => {
 	const [todos, setTodos] = useState([]);
 
-	const addTodo = (todo) => {
-		setTodos([...todos, todo]);
+	const addTodo = (text) => {
+		const newTodo = { text, completed: false };
+		setTodos([...todos, newTodo]);
+	};
+
+	const toggleComplete = (index) => {
+
+	};
+
+	const deleteTodo = (index) => {
+
 	};
 
 	return (
 		<div>
 			<h1>To-Do List</h1>
 			<ToDoInput addTodo={addTodo} />
-			<ToDoList todos={todos} />
+			<ToDoList todos={todos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
 		</div>
 	);
 };
