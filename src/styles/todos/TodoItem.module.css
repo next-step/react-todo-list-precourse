@@ -22,6 +22,33 @@
     transition: all .3s ease-in-out;
 }
 
+.content {
+    position: relative;
+}
+
+.content:after {
+    position: absolute;
+    content: "";
+    background-color: black;
+    height: 100%;
+    width: 2px;
+    display: inline-block;
+    animation: blink .75s step-end infinite;
+}
+
+.stop {
+    animation: none;
+}
+
+.stop:after {
+    display: none;
+}
+
+@keyframes blink {
+    from, to { background-color: transparent }
+    50% { background-color: black; }
+}
+
 .todoItem__VC__input {
     display: inline-block;
     background: rgba(33, 150, 243, .4);
