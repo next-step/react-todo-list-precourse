@@ -1,16 +1,30 @@
 import { PATH_ACTIVE, PATH_ALL, PATH_COMPLETED } from "../../constants.js";
 import { TodoFilterButton } from "./TodoFilterButton.jsx";
-import { memo } from "react";
+import { memo, useRef } from "react";
 import styles from "../../styles/todos/TodoHeader.module.css"
 
 const paths = [PATH_ALL, PATH_ACTIVE, PATH_COMPLETED];
 
-function TodoHeader({ currentPath, updatePathName }) {
+const uncheckOthers= (refs) => (me) => refs.forEach((ref, i) => {
+    if (me !== paths[i]) {
+        refs[i].current.checked = false;
+    }
+})
+
+//TodoList로부터 path를 props로 받아오면 그냥 전부다 계속 리렌더됨
+function TodoHeader({ updatePathName }) {
     console.log('header');
+    const refs = [useRef(), useRef(), useRef()];
     return (
-        <ul className={styles.filter}>
-            {paths.map(path => <TodoFilterButton path={path} updatePathName={updatePathName} />)}
-        </ul>
+        <div className={styles.filter}>
+            {paths.map((path, i) => <TodoFilterButton
+                key={path}
+                path={path}
+                updatePathName={updatePathName}
+                ref={refs[i]}
+                uncheckOthers={uncheckOthers(refs)}/>)
+            }
+        </div>
     );
 }
 
