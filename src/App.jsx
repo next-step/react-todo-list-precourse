@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from 'react';
+import ToDoInput from './components/ToDoInput';
 
-function App() {
+const App = () => {
+	const [todos, setTodos] = useState([]);
+
+	const addTodo = (todo) => {
+		setTodos([...todos, todo]);
+	};
+
 	return (
-		<div className="App">
-			<h1>Hello CodeSandbox</h1>
-			<h2>Start editing to see some magic happen!</h2>
+		<div>
+			<h1>To-Do List</h1>
+			<ToDoInput addTodo={addTodo} />
 		</div>
 	);
-}
+};
 
 export default App;
