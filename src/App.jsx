@@ -2,48 +2,27 @@ import React, { useState, useEffect } from 'react'
 import AddTodo from './components/AddTodo'
 import FilterTodo from './components/FilterTodo'
 import TodoList from './components/TodoList'
+import { getStoredTodos, saveTodos, getFilteredTodos } from './utils/utils'
 
 export default function App() {
-   const [todos, setTodos] = useState(() => {
-      const storedData = localStorage.getItem('todos')
-      return storedData ? JSON.parse(storedData) : []
-   })
-
-   useEffect(() => {
-      localStorage.setItem('todos', JSON.stringify(todos))
-   }, [todos])
-
+   const [todos, setTodos] = useState(getStoredTodos)
    const [filterOption, setFilterOption] = useState('all')
+   useEffect(() => saveTodos(todos), [todos])
 
-   const addTodo = (text) => {
-      const newData = { id: Date.now(), text, isCompleted: false }
-      setTodos([...todos, newData])
-   }
-
-   const toggleCompletion = (id) => {
+   const addTodo = (text) => setTodos([...todos, { id: Date.now(), text, isCompleted: false }])
+   const toggleCompletion = (id) =>
       setTodos(todos.map((todo) => (todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo)))
-   }
-
-   const deleteTodo = (id) => {
-      setTodos(todos.filter((todo) => todo.id !== id))
-   }
-
-   const getFilteredTodos = () => {
-      switch (filterOption) {
-         case 'active':
-            return todos.filter((todo) => !todo.isCompleted)
-         case 'completed':
-            return todos.filter((todo) => todo.isCompleted)
-         default:
-            return todos
-      }
-   }
+   const deleteTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id))
 
    return (
       <div>
          <AddTodo addTodo={addTodo} />
          <FilterTodo setFilterOption={setFilterOption} />
-         <TodoList todos={getFilteredTodos()} toggleCompletion={toggleCompletion} deleteTodo={deleteTodo} />
+         <TodoList
+            todos={getFilteredTodos(todos, filterOption)}
+            toggleCompletion={toggleCompletion}
+            deleteTodo={deleteTodo}
+         />
          <div>{todos.filter((todo) => !todo.isCompleted).length} items left!</div>
       </div>
    )

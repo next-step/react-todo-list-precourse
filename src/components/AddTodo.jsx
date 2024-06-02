@@ -5,10 +5,7 @@ export default function AddTodo({ addTodo }) {
 
    const handleSubmit = (e) => {
       e.preventDefault()
-      if (!value.trim()) {
-         alert('내용을 입력해 주세요.')
-         return
-      }
+      if (!value.trim()) return alert('내용을 입력해 주세요.')
       addTodo(value)
       setValue('')
    }
