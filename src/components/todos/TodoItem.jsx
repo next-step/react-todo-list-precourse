@@ -1,4 +1,5 @@
-import { memo, useState } from "react";
+import { memo, useState} from "react";
+import styles from "../../styles/todos/TodoItem.module.css";
 
 const switchToInput = (setIsEditing, isDone) => {
     if (isDone) {
@@ -10,8 +11,9 @@ const switchToInput = (setIsEditing, isDone) => {
 function Content({ isDone, setIsEditing, content }) {
     return (
         <div
-            style={{textDecoration: isDone ? "line-through" : ""}}
+            className={styles.content}
             onDoubleClick={() => switchToInput(setIsEditing, isDone)}
+            title={isDone ? "not allowed to change content when task is done!" : ""}
         >
             {content}
         </div>
@@ -34,12 +36,16 @@ const handleBlue = (e, setIsEditing) => {
 
 function VariableContent({ updateTodoState, todo, setIsEditing}) {
     return (
-        <input
-            autoFocus={true}
-            onKeyDown={(e) => handleKeyDown(e, updateTodoState, todo, setIsEditing)}
-            onBlur={(e) => handleBlue(e, setIsEditing)}
-            title="press enter to submit"
-        />
+        <div className={styles.todoItem__VC}>
+            <input
+                className={styles.todoItem__VC__input}
+                autoFocus={true}
+                onKeyDown={(e) => handleKeyDown(e, updateTodoState, todo, setIsEditing)}
+                onBlur={(e) => handleBlue(e, setIsEditing)}
+                id={todo.id}
+            />
+            <label htmlFor={todo.id}>Press Enter to Submit</label>
+        </div>
     );
 }
 
@@ -49,7 +55,7 @@ const triggerDelete = (deleteTodo, id) => () => deleteTodo(id)
 
 function TodoButton({ handleOnClick, text }) {
     return (
-        <button onClick={handleOnClick}>{text}</button>
+        <button className={styles.todoItem__VC__button} onClick={handleOnClick}>{text}</button>
     );
 }
 
@@ -58,12 +64,12 @@ function TodoItem({ todo, updateTodoState, deleteTodo } ){
     const { id, content, isDone } = todo;
     console.log(id);
     return (
-        <div>
+        <div className={styles.todoItem}>
+            <TodoButton handleOnClick={triggerUpdate(updateTodoState, todo, isDone)} text={isDone ? 'isDone!' : 'notYet!'} />
             {isEditing
                 ? <VariableContent updateTodoState={updateTodoState} todo={todo} setIsEditing={setIsEditing} />
                 : <Content isDone={isDone} setIsEditing={setIsEditing} content={content} />
             }
-            <TodoButton handleOnClick={triggerUpdate(updateTodoState, todo, isDone)} text={isDone ? 'isDone!' : 'notYet!'} />
             <TodoButton handleOnClick={triggerDelete(deleteTodo, id)} text="delete" />
         </div>
     );
