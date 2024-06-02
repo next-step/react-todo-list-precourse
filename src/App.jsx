@@ -5,10 +5,17 @@ import Distribute from "./components/Distribute";
 
 function App() {
 
-  const [itemList, setItemList] = useState([]); // item list
+  const savedData = JSON.parse(localStorage.getItem('itemList')) || []
+  const savedData2 = JSON.parse(localStorage.getItem('infor')) || []
+  const [itemList, setItemList] = useState(savedData); // item list
   const [input, setInput] = useState(''); // input
   const [mode, setMode] = useState(1) // all
-  const [itemNum, setItemNum] = useState(0) 
+  const [itemNum, setItemNum] = useState(itemList.filter(item => item.checked !== true).length);
+
+  // 로컬 스토리지에서 데이터 불러오기
+  useEffect(() => {
+    localStorage.setItem('itemList', JSON.stringify(itemList));
+  }, [itemList]);
 
   const addItem = (e) => {
     if(input.trim() !== ''){ // 아무것도 입력하지 않았을 때 방지.
