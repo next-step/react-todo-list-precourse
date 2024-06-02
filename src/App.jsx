@@ -10,6 +10,7 @@ function App() {
   const [input, setInput] = useState(''); // input
   const [mode, setMode] = useState(1); // all
   const [itemNum, setItemNum] = useState(itemList.filter(item => item.checked !== true).length);
+  const [isComposing, setIsComposing] = useState(false); // IME 입력 상태
 
   // 로컬 스토리지에서 데이터 불러오기
   useEffect(() => {
@@ -57,11 +58,13 @@ function App() {
           value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => {
-            if (e.key === 'Enter') {
+            if (!isComposing && e.key === 'Enter') {
               addItem(input);
               e.preventDefault(); // prevent the default action
             }
-          }} />
+          }}
+          onCompositionStart={() => setIsComposing(true)}
+          onCompositionEnd={() => setIsComposing(false)} />
         <button className="btn-input" onClick={() => addItem(input)}>Add</button>
       </div>
       <div className='distribute-Wrapper'><Distribute modeChange={modeChange} /></div>
