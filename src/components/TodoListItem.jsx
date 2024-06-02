@@ -6,17 +6,12 @@ const TodoListItem = ({ todo, onRemove, onTouched }) => {
   return (
     <div className="TodoListItem" onClick={() => onTouched(id)}>
       <div className={`item ${checked ? "checked" : ""}`}>
-        {" "}
-        {/* 'item' 클래스 추가 */}
         <div className="text">{text}</div>
-        <div
-          className="remove"
+        <div className="remove"
           onClick={(e) => {
-            e.stopPropagation() // 이벤트 버블링 방지
+            e.stopPropagation() 
             onRemove(id)
-          }}
-        >
-          <MdRemoveCircleOutline />
+          }} > <MdRemoveCircleOutline />
         </div>
       </div>
     </div>

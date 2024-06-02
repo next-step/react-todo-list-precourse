@@ -14,6 +14,6 @@ const TodoListInsert = ({ onInsert }) => {
     <form className="TodoInsert" onSubmit={onSubmit}>
       <input onChange={onChange} value={value} placeholder="What needs to be done?" />
     </form>
-  )
-}
+  )}
+  
 export default TodoListInsert
