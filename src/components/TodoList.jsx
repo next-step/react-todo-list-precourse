@@ -4,13 +4,7 @@ import { TodoInput } from "./todos/TodoInput.jsx";
 import { useTodoList } from "../hooks/useTodoList.js";
 import { usePath } from "../hooks/usePath.js";
 import TodoItem from "./todos/TodoItem.jsx";
-
-export const createFilterName = (path) => {
-    if (path === PATH_ALL) {
-        return "All";
-    }
-    return path.charAt(0).toUpperCase() + path.slice(2);
-}
+import styles from "../styles/TodoList.module.css"
 
 const filterCompleted = (todos) => todos.filter(todo => todo.isDone === true);
 
@@ -26,7 +20,7 @@ export function TodoList() {
     const { path, setPath } = usePath();
     const { todos, addTodo, updateTodoState, deleteTodo, activeCnt } = useTodoList();
     return (
-        <div>
+        <div className={styles.todolist}>
             <TodoHeader updatePathName={setPath} />
             <TodoInput addTodo={addTodo} />
             {activeCnt + "개 남음"}
