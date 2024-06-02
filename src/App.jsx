@@ -6,9 +6,9 @@ import TaskCounter from './components/TaskCounter';
 
 const App = () => {
 	const [todos, setTodos] = useState([]);
+	const [filter, setFilter] = useState('all');
 
 	const addTodo = (text) => {
-		console.log("Adding todo:", text); // 디버깅용 로그 추가
 		const newTodo = { text, completed: false };
 		setTodos([...todos, newTodo]);
 	};
@@ -28,15 +28,26 @@ const App = () => {
 		setTodos([]);
 	};
 
+	const filteredTodos = todos.filter((todo) => {
+        if (filter === 'all') {
+            return true;
+        } else if (filter === 'active') {
+            return !todo.completed;
+        } else if (filter === 'completed') {
+            return todo.completed;
+        }
+        return true;
+    });
+
 
 	return (
 		<div>
-			<h1>To-Do List</h1>
+			<h1>todos</h1>
 			<ToDoInput addTodo={addTodo} />
-			<ToDoList todos={todos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
+			<ToDoList todos={filteredTodos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
 			<FilterButtons setFilter={setFilter} />
 			<TaskCounter todos={todos} />
-			<button onClick={clearTodos}>모두 지우기</button>
+			<button onClick={clearTodos}>Clear completed</button>
 		</div>
 	);
 };
