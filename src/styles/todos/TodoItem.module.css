@@ -29,15 +29,15 @@
 .content:after {
     position: absolute;
     content: "";
-    background-color: black;
+    background-color: transparent;
     height: 100%;
     width: 2px;
     display: inline-block;
     animation: blink .75s step-end infinite;
+    animation-iteration-count: 7;
 }
 
 .stop {
-    animation: none;
 }
 
 .stop:after {
