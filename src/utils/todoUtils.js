@@ -19,3 +19,14 @@ export const deleteCompleted = (todos, setTodos) => { // 완료된 투두 삭제
   const newTodos = todos.filter(todo => !todo.completed);
   setTodos(newTodos);
 };
+
+export const filteredTodos = (todos, filter) => { // 투두 필터링 
+  switch (filter) {
+    case 'active':
+      return todos.filter(todo => !todo.completed);
+    case 'completed':
+      return todos.filter(todo => todo.completed);
+    default:
+      return todos;
+  }
+};
