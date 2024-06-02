@@ -7,6 +7,10 @@ const createFilterName = (path) => {
     return path.charAt(2).toUpperCase() + path.slice(3);
 }
 
-export function RouteButton({ path, updatePathName }) {
-    return <button onClick={() => updatePathName(path)}>{createFilterName(path)}</button>
+export function ListButton({ path, updatePathName }) {
+    return (
+        <li>
+            <button onClick={() => updatePathName(path)}>{createFilterName(path)}</button>
+        </li>
+    );
 }
