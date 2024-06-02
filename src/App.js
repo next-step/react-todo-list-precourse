@@ -49,24 +49,42 @@ function getFilteredTodos(todos, filter) {
 }
 
 function createApp(todos, setTodos, filter, setFilter) {
-  return React.createElement(
-    'div',
-    null,
+  return React.createElement('div', null,
     React.createElement('h1', null, 'Todo List'),
-    React.createElement(TodoInput, {
-      addTodo: todo => addTodo(todo, todos, setTodos)
-    }),
-    React.createElement(FilterButtons, {
-      setFilter: newFilter => setFilter(newFilter),
-      currentFilter: filter
-    }),
-    React.createElement(TodoList, {
-      todos: getFilteredTodos(todos, filter),
-      deleteTodo: id => deleteTodo(id, todos, setTodos),
-      toggleComplete: id => toggleComplete(id, todos, setTodos)
-    }),
-    React.createElement(TodoCount, {
-      count: todos.filter(todo => !todo.completed).length
-    })
+    createTodoInput(todos, setTodos),
+    createFilterButtons(setFilter, filter),
+    createTodoList(todos, filter, setTodos),
+    createTodoCount(todos)
   );
+}
+
+/* 입력란 생성 */
+function createTodoInput(todos, setTodos) {
+  return React.createElement(TodoInput, {
+    addTodo: todo => addTodo(todo, todos, setTodos)
+  });
+}
+
+/* 필터 버튼 생성 */
+function createFilterButtons(setFilter, filter) {
+  return React.createElement(FilterButtons, {
+    setFilter: newFilter => setFilter(newFilter),
+    currentFilter: filter
+  });
+}
+
+/* todo-list 생성 */
+function createTodoList(todos, filter, setTodos) {
+  return React.createElement(TodoList, {
+    todos: getFilteredTodos(todos, filter),
+    deleteTodo: id => deleteTodo(id, todos, setTodos),
+    toggleComplete: id => toggleComplete(id, todos, setTodos)
+  });
+}
+
+/* 해야할 일 생성 */
+function createTodoCount(todos) {
+  return React.createElement(TodoCount, {
+    count: todos.filter(todo => !todo.completed).length
+  });
 }
