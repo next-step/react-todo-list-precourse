@@ -1,11 +1,8 @@
 import "./App.css";
 import { useTodos } from "./contexts/todos/useTodos";
-import { TodoList } from "./components/TodoList";
-import { Footer } from "./components/Footer";
-import { Navigation } from "./components/Navigation";
 import { TodoInput } from "./components/TodoInput";
 import { Text } from "./components/ui/Text";
-import { FilterProvider } from "./contexts/filter/TodosProvider";
+import { TodoCard } from "./components/TodoCard";
 
 function App() {
   const { todos } = useTodos();
@@ -16,15 +13,7 @@ function App() {
         To Do List
       </Text>
       <TodoInput />
-      {todos.length > 0 && (
-        <FilterProvider>
-          <div className="todo-card">
-            <Navigation />
-            <TodoList />
-            <Footer />
-          </div>
-        </FilterProvider>
-      )}
+      {todos.length > 0 ? <TodoCard /> : null}
     </div>
   );
 }
