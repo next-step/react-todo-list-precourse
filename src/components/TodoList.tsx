@@ -1,12 +1,10 @@
+import { useFilter } from "../contexts/filter/useTodos";
 import { useTodos } from "../contexts/todos/useTodos";
 import { TodoListItem } from "./TodoListItem";
 
-interface TodoListProps {
-  filter: Filter;
-}
-
-export const TodoList = ({ filter }: TodoListProps) => {
+export const TodoList = () => {
   const { todos } = useTodos();
+  const { filter } = useFilter();
 
   const filterTodos = todos.filter((todo) => {
     if (filter === "모두") return true;

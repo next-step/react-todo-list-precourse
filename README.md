@@ -31,6 +31,6 @@
 - [x] 리팩토링
   - [x] UI 분리
   - [x] 함수 모듈 분리
-  - [ ] Context API 추가
+- [x] Context API 추가
   - [x] todos
-  - [ ] filter
+  - [x] filter

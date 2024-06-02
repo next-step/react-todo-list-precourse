@@ -1,26 +1,21 @@
-import { Dispatch, SetStateAction } from "react";
+import { useFilter } from "../contexts/filter/useTodos";
 import { Button } from "./ui/Button";
 
 interface NavigationButonprops {
   curFilter: Filter;
-  filter: Filter;
-  setFilter: Dispatch<SetStateAction<Filter>>;
 }
 
-export const NavigationButon = ({
-  curFilter,
-  filter,
-  setFilter,
-}: NavigationButonprops) => {
+export const NavigationButon = ({ curFilter }: NavigationButonprops) => {
+  const { filter, setFilter } = useFilter();
   const isCurFilter = curFilter === filter;
 
   return (
     <Button
-      onClick={() => setFilter(filter)}
+      onClick={() => setFilter(curFilter)}
       variant="ghost"
       active={isCurFilter}
     >
-      {filter}
+      {curFilter}
     </Button>
   );
 };

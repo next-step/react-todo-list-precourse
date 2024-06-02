@@ -7,6 +7,6 @@ export const useTodos = () => {
   if (context === undefined) {
     throw new Error("TodoProvider를 반드시 사용해야합니다.");
   }
-  
+
   return context;
 };

@@ -9,6 +9,7 @@ export const TodoListItemRemoveButton = ({
   index,
 }: TodoListItemRemoveButtonProps) => {
   const { removeTodo } = useTodoActions();
+
   return (
     <Button
       variant="destructive"
