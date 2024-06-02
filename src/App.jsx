@@ -91,6 +91,9 @@ function App() {
         </ul>
       </section>
       <footer className="footer">
+        <span className="todo-count">
+          {todos.filter(todo => !todo.completed).length} items left
+        </span>
         <Filters setFilter={setFilter} filter={filter} />
         <button className="clear-completed" onClick={clearCompletedTodos}>
           Clear completed
