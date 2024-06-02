@@ -8,29 +8,19 @@ function createFilterButtons(setFilter, currentFilter) {
   return React.createElement(
     'div',
     null,
-    React.createElement(
-      'button',
-      {
-        onClick: () => setFilter('active'),
-        disabled: currentFilter === 'active'
-      },
-      '진행 중'
-    ),
-    React.createElement(
-      'button',
-      {
-        onClick: () => setFilter('completed'),
-        disabled: currentFilter === 'completed'
-      },
-      '완료'
-    ),
-    React.createElement(
-      'button',
-      {
-        onClick: () => setFilter('all'),
-        disabled: currentFilter === 'all'
-      },
-      '모두'
-    ),
+    createButton('진행 중', 'active', setFilter, currentFilter),
+    createButton('완료', 'completed', setFilter, currentFilter),
+    createButton('모두', 'all', setFilter, currentFilter)
+  );
+}
+
+function createButton(text, filter, setFilter, currentFilter) {
+  return React.createElement(
+    'button',
+    {
+      onClick: () => setFilter(filter),
+      disabled: currentFilter === filter
+    },
+    text
   );
 }
