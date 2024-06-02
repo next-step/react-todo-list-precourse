@@ -24,8 +24,7 @@ const handleClick = (pathTrigger) => (e) => {
 
 // function (Component)
 export const TodoFilterButton =  forwardRef(
-    function (props, ref) {
-        const { path, updatePathName, uncheckOthers } = props;
+    function ({ path, updatePathName, uncheckOthers } , ref) {
         console.log(path);
         return (
             <label className={styles.filterButton}>
