@@ -23,11 +23,19 @@ const Main = () => {
     setTodos(todos.filter(todo => todo.id !== id))
   }
 
+  const editTodo = (id, newText) => {
+    setTodos(
+      todos.map(todo =>
+        todo.id === id ? { ...todo, text: newText } : todo
+      )
+    )
+  }
+
   return (
     <div className='Main'>
       <div className='title'>todos</div>
       <AddTodo addTodo={addTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} editTodo={editTodo} />
     </div>
   )
 }

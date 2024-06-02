@@ -2,7 +2,6 @@
     width: 500px;
     height: 60px;
     border: 1px solid gainsboro;
-    padding-left: 7px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -13,6 +12,8 @@
     font-size: 40px;
     font-variation-settings: 'wght' 200;
     cursor: pointer;
+    position: absolute;
+    padding-left: 7px;
 }
 
 .iconFalse {
@@ -24,8 +25,26 @@
 }
 
 .todoText {
-    padding-left: 15px;
     font-size: 25px;
+    position: absolute;
+    left: 60px;
+}
+
+.todoEdit {
+    width: 500px;
+    height: 60px;
+    font-size: 25px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    color: #797979;
+    box-sizing: border-box;
+    padding-left: 60px;
+}
+
+.todoEdit:focus {
+    border: 1px solid #F5A4A4;
+    outline: none;
+    box-shadow: 0 0 2px 2px #F5A4A4;
 }
 
 .checkedTrue {
