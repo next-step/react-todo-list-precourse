@@ -4,7 +4,6 @@ import './index.css';
 function App() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
-  const [filter, setFilter] = useState('all');
 
   const handleNewTodoChange = (e) => {
     setNewTodo(e.target.value);
@@ -33,6 +32,10 @@ function App() {
     };
   };
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
   return (
     <div className="todoapp">
       <header className="header">
@@ -50,12 +53,25 @@ function App() {
       <section className="main">
         <ul className="todo-list">
           {todos.map(todo => (
-            <li key={todo.id}>{todo.text}</li>
+            <TodoItem 
+              key={todo.id} 
+              todo={todo}
+              deleteTodo={deleteTodo} 
+            />
           ))}
         </ul>
       </section>
     </div>
   );
 }
+
+const TodoItem = ({ todo, deleteTodo }) => {
+  return (
+    <li className="todo">
+      <label>{todo.text}</label>
+      <button className="destroy" onClick={() => deleteTodo(todo.id)}>×</button>
+    </li>
+  );
+};
 
 export default App;

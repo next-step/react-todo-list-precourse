@@ -47,3 +47,75 @@ body {
   width: 100%;
   font-style: italic;
 }
+
+.todo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.todo label {
+  flex-grow: 1;
+  white-space: pre-line;
+  word-break: break-all;
+  display: block;
+  line-height: 1.2;
+  transition: color 0.4s;
+}
+
+.todo .destroy {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.todo:hover .destroy {
+  display: block;
+}
+
+.todo .destroy::after {
+  content: '×';
+  font-size: 30px;
+  color: #cc9a9a;
+  display: block;
+}
+
+.footer {
+  color: #777;
+  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+}
+
+.footer:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+              0 8px 0 -3px #f6f6f6,
+              0 9px 1px -3px rgba(0, 0, 0, 0.2),
+              0 16px 0 -6px #f6f6f6,
+              0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
