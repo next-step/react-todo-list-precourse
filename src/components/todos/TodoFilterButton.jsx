@@ -1,5 +1,5 @@
 import { PATH_ALL } from "../../constants.js";
-// import styles from "../../styles/todos/TodoFilterButton.module.css"
+import styles from "../../styles/todos/TodoFilterButton.module.css"
 
 const createFilterName = (path) => {
     if (path === PATH_ALL) {
@@ -21,16 +21,14 @@ const handleClick = (pathTrigger) => (e) => {
 export function TodoFilterButton({ path, updatePathName }) {
     console.log(path);
     return (
-            // <label className={styles.filterButton}>
-            <label >
+            <label className={styles.filterButton}>
                 <input
                     type="checkbox"
                     name="filter"
                     value={path}
                     onClick={handleClick(createPathTrigger(path, updatePathName))}
                 />
-                {/*<div className={styles.filterButton__checkmark}></div>*/}
-                <div></div>
+                <div className={styles.filterButton__checkmark}></div>
                 {createFilterName(path)}
             </label>
     );
