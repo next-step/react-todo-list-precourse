@@ -1,4 +1,4 @@
-import { useTodoAction } from "../hooks/useTodoAction";
+import { useTodoActions } from "../hooks/useTodoActions";
 import { Button } from "./ui/Button";
 
 interface TodoListItemRemoveButtonProps {
@@ -8,7 +8,7 @@ interface TodoListItemRemoveButtonProps {
 export const TodoListItemRemoveButton = ({
   index,
 }: TodoListItemRemoveButtonProps) => {
-  const { removeTodo } = useTodoAction();
+  const { removeTodo } = useTodoActions();
   return (
     <Button
       variant="destructive"

@@ -1,4 +1,4 @@
-import { useTodoAction } from "../hooks/useTodoAction";
+import { useTodoActions } from "../hooks/useTodoActions";
 import { Input } from "./ui/Input";
 
 interface TodoListItemContentProps {
@@ -10,7 +10,7 @@ export const TodoListItemContent = ({
   todo,
   index,
 }: TodoListItemContentProps) => {
-  const { toggleTodo } = useTodoAction();
+  const { toggleTodo } = useTodoActions();
 
   return (
     <div>

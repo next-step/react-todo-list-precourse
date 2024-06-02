@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useReducer } from "react";
-import { TodosContext } from "./TodosContext";
 import { todosReducer } from "./todosReducer";
+import { TodosContext } from "./TodosContext";
 
 export const TodosProvider = ({ children }: { children: ReactNode }) => {
   const storedTodos = JSON.parse(localStorage.getItem("todos") || "[]");

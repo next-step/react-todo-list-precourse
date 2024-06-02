@@ -1,6 +1,6 @@
-import { useTodos } from "./useTodo";
+import { useTodos } from "../contexts/todos/useTodos";
 
-export const useTodoAction = () => {
+export const useTodoActions = () => {
   const { dispatch } = useTodos();
 
   const addTodo = (text: string) => {
@@ -16,8 +16,9 @@ export const useTodoAction = () => {
     dispatch({ type: "REMOVE_TODO", id });
   };
 
-  const removeDoneTodo = () => {
+  const removeDoneTodos = () => {
     dispatch({ type: "REMOVE_DONE_TODOS" });
   };
-  return { addTodo, toggleTodo, removeTodo, removeDoneTodo };
+
+  return { addTodo, toggleTodo, removeTodo, removeDoneTodos };
 };

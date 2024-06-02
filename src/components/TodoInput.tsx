@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { useTodoActions } from "../hooks/useTodoActions";
 import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
-import { useTodoAction } from "../hooks/useTodoAction";
 
 export const TodoInput = () => {
   const [input, setInput] = useState<string>("");
-  const { addTodo } = useTodoAction();
+  const { addTodo } = useTodoActions();
 
   const handleAddTodoClick = () => {
     if (input.trim()) addTodo(input);
