@@ -11,6 +11,19 @@ import TodoFilter from './TodoFilter';
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('all');
+
+  useEffect(() => {
+    const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
+    if (Array.isArray(savedTodos)) {
+      setTodos(savedTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (todos.length > 0) {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }
+  }, [todos]); 
   
   const addTodo = (text) => {
     const newTodo = { text, completed: false, id: Date.now() };
