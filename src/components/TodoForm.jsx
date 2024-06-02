@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import useTodoForm from "./useTodoForm.jsx";
+import ErrorMessage from "./ErrorMessage.jsx";
 
 const TodoForm = () => {
-    const [value, setValue] = useState("");
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("New Task:", value);
-        setValue("");
-    };
+    const { value, error, handleChange, handleSubmit } = useTodoForm();
+
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder="할 일 작성" />
-            <button type="submit">등록</button>
+        <input
+            type="text"
+            value={value}
+            onChange={handleChange}
+            placeholder="할 일 작성"
+        />
+        <button type="submit">등록</button>
+        <ErrorMessage message={error} />
         </form>
     );
 };
