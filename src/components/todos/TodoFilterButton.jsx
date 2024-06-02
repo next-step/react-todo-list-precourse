@@ -1,4 +1,4 @@
-import { PATH_ALL } from "../constants.js";
+import { PATH_ALL } from "../../constants.js";
 
 const createFilterName = (path) => {
     if (path === PATH_ALL) {
@@ -7,7 +7,7 @@ const createFilterName = (path) => {
     return path.charAt(2).toUpperCase() + path.slice(3);
 }
 
-export function ListButton({ path, updatePathName }) {
+export function TodoFilterButton({ path, updatePathName }) {
     return (
         <li>
             <button onClick={() => updatePathName(path)}>{createFilterName(path)}</button>
