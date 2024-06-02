@@ -1,11 +1,11 @@
 import React from 'react';
 import TodoItem from './TodoItem'
 
-export default function TodoList({ todos, deleteTodo }) {
-  return createTodoList(todos, deleteTodo);
+export default function TodoList({ todos, deleteTodo, toggleComplete }) {
+  return createTodoList(todos, deleteTodo, toggleComplete);
 }
 
-function createTodoList(todos, deleteTodo) {
+function createTodoList(todos, deleteTodo, toggleComplete) {
   return React.createElement(
     'ul',
     null,
@@ -13,7 +13,8 @@ function createTodoList(todos, deleteTodo) {
       React.createElement(TodoItem, {
         key: todo.id,
         todo,
-        deleteTodo
+        deleteTodo,
+        toggleComplete
       })
     )
   );
