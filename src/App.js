@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
+import FilterButtons from './components/FilterButtons';
 
 export default function App() {
   const [todos, setTodos] = useState([]);
 
-  return createApp(todos, setTodos);
+  // 진행 중: active, 완료: completed, 모두: all
+  const [filter, setFilter] = useState('active')
+
+  return createApp(todos, setTodos, filter, setFilter);
 }
 
 /* 할 일 추가 */
@@ -26,7 +30,16 @@ function toggleComplete(id, todos, setTodos) {
   ));
 }
 
-function createApp(todos, setTodos) {
+/* 필터링 */
+function getFilteredTodos(todos, filter) {
+  if (filter === 'active')
+    return todos.filter(todo => !todo.completed);
+  else if (filter === 'completed')
+    return todos.filter(todo => todo.completed);
+  else return todos;
+}
+
+function createApp(todos, setTodos, filter, setFilter) {
   return React.createElement(
     'div',
     null,
@@ -34,10 +47,14 @@ function createApp(todos, setTodos) {
     React.createElement(TodoInput, {
       addTodo: todo => addTodo(todo, todos, setTodos)
     }),
+    React.createElement(FilterButtons, {
+      setFilter: newFilter => setFilter(newFilter),
+      currentFilter: filter
+    }),
     React.createElement(TodoList, {
-      todos,
+      todos: getFilteredTodos(todos, filter),
       deleteTodo: id => deleteTodo(id, todos, setTodos),
       toggleComplete: id => toggleComplete(id, todos, setTodos)
-    }),
+    })
   );
 }
