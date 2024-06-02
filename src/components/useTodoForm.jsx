@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useTodoForm = () => {
+const useTodoForm = (addTodo) => {
     const [value, setValue] = useState("");
     const [error, setError] = useState("");
 
@@ -8,10 +8,10 @@ const useTodoForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!value.trim()) {
-        setError("할 일을 입력하세요.");
-        return;
+            setError("할 일을 입력하세요.");
+            return;
         }
-        console.log("New Task:", value);
+        addTodo(value);
         setValue("");
         setError("");
     };
