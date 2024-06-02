@@ -16,16 +16,16 @@
     font-weight: 400;
     color: black;
     font-size: 18px;
-    height: 80%;
-    /*border-radius: 3px;*/
+    height: 85%;
     background-color: #efefef;
+    border-radius: 1px;
+    transition: all .3s ease-in-out;
 }
 
 .todoItem__VC__input {
     display: inline-block;
     background: rgba(33, 150, 243, .4);
     border: 0;
-    border-radius: 3px;
     outline: 0;
     text-indent: 60px;
     transition: all .3s ease-in-out;
@@ -49,7 +49,6 @@
     line-height: 100%;
     height: 12px;
     background: black;
-    /*background: rgba(33, 150, 243, .4);*/
 }
 
 .todoItem__VC__input + label:after {
