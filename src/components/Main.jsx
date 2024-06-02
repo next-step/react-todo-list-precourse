@@ -22,10 +22,8 @@ const Main = () => {
   return (
     <div className='Main'>
       <div className='title'>todos</div>
-      
       <AddTodo addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} />
-
     </div>
   )
 }
