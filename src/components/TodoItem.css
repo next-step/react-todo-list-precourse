@@ -6,6 +6,7 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .toggleIcon {
@@ -36,3 +37,14 @@
     text-decoration: line-through;
 }
 
+.delete {
+    opacity: 0;
+    position: absolute;
+    right: 20px;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.todoItem:hover .delete {
+    opacity: 1;
+}
