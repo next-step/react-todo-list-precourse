@@ -1,17 +1,14 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
-import { addTodo } from "../hooks/useTodos";
+import { useTodoAction } from "../hooks/useTodoAction";
 
-interface TodoInputProps {
-  setTodos: Dispatch<SetStateAction<Todo[]>>;
-}
-
-export const TodoInput = ({ setTodos }: TodoInputProps) => {
+export const TodoInput = () => {
   const [input, setInput] = useState<string>("");
+  const { addTodo } = useTodoAction();
 
   const handleAddTodoClick = () => {
-    if (input.trim()) addTodo(input.trim(), setTodos);
+    if (input.trim()) addTodo(input);
     setInput("");
   };
 

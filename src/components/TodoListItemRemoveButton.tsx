@@ -1,23 +1,19 @@
-import { Dispatch, SetStateAction } from "react";
+import { useTodoAction } from "../hooks/useTodoAction";
 import { Button } from "./ui/Button";
-import { removeTodo } from "../hooks/useTodos";
 
 interface TodoListItemRemoveButtonProps {
-  todos: Todo[];
-  setTodos: Dispatch<SetStateAction<Todo[]>>;
   index: number;
 }
 
 export const TodoListItemRemoveButton = ({
-  todos,
-  setTodos,
   index,
 }: TodoListItemRemoveButtonProps) => {
+  const { removeTodo } = useTodoAction();
   return (
     <Button
       variant="destructive"
       size="round"
-      onClick={() => removeTodo(index, todos, setTodos)}
+      onClick={() => removeTodo(index)}
     >
       X
     </Button>

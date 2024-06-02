@@ -31,4 +31,6 @@
 - [x] 리팩토링
   - [x] UI 분리
   - [x] 함수 모듈 분리
-  - [ ] Context API로 todo 상태관리하기
+  - [ ] Context API 추가
+  - [x] todos
+  - [ ] filter

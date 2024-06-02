@@ -1,27 +1,24 @@
-import { Dispatch, SetStateAction } from "react";
-import { toggleTodo } from "../hooks/useTodos";
+import { useTodoAction } from "../hooks/useTodoAction";
 import { Input } from "./ui/Input";
 
 interface TodoListItemContentProps {
-  todos: Todo[];
-  setTodos: Dispatch<SetStateAction<Todo[]>>;
   todo: Todo;
   index: number;
 }
 
 export const TodoListItemContent = ({
-  todos,
-  setTodos,
   todo,
   index,
 }: TodoListItemContentProps) => {
+  const { toggleTodo } = useTodoAction();
+
   return (
     <div>
       <Input
         id={`checkbox-${index}`}
         type="checkbox"
         checked={todo.done}
-        onChange={() => toggleTodo(index, todos, setTodos)}
+        onChange={() => toggleTodo(index)}
       />
       <label
         className={todo.done ? "done-todo" : ""}

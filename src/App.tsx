@@ -1,31 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { TodoList } from "./components/TodoList";
 import { Footer } from "./components/Footer";
 import { Navigation } from "./components/Navigation";
 import { TodoInput } from "./components/TodoInput";
 import { Text } from "./components/ui/Text";
+import { useTodos } from "./hooks/useTodo";
 
 function App() {
-  const storedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
-  const [todos, setTodos] = useState<Todo[]>(storedTodos);
   const [filter, setFilter] = useState<Filter>("모두");
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+  const { todos } = useTodos();
 
   return (
     <div className="container">
       <Text variant="primary" size="2xl">
         To Do List
       </Text>
-      <TodoInput setTodos={setTodos} />
+      <TodoInput />
       {todos.length > 0 && (
         <div className="todo-card">
           <Navigation curFilter={filter} setFilter={setFilter} />
-          <TodoList todos={todos} setTodos={setTodos} filter={filter} />
-          <Footer todos={todos} setTodos={setTodos} />
+          <TodoList filter={filter} />
+          <Footer />
         </div>
       )}
     </div>
