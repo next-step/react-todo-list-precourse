@@ -13,7 +13,7 @@ function TodoInput({ onAddTodo }) {
       return;
     }
     onAddTodo(input);
-    setInput(""); // 입력 필드 초기화
+    setInput(""); 
   };
 
   const handleKeyDown = (event) => {
@@ -30,6 +30,7 @@ function TodoInput({ onAddTodo }) {
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         placeholder="What needs to be done?"
+        className="todoInput"
       />
       <button onClick={handleSubmit} className="add-button">추가</button>
     </div>

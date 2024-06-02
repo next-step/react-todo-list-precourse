@@ -1,6 +1,5 @@
 .todo-item {
     display: flex;
-    justify-content: space-between; 
     align-items: center; 
     padding: 10px;
     border-bottom: 1px solid #ededed;
@@ -8,6 +7,10 @@
   
   .todo-text {
     flex-grow: 1; 
+    margin-left:10px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .delete-btn {
@@ -23,3 +26,7 @@
     background-color: none;
   }
   
+  .completed {
+    text-decoration: line-through; 
+    color: #ccc; 
+  }

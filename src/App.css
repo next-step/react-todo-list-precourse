@@ -18,7 +18,7 @@ body, html {
     color: rgba(175, 47, 47, 0.15);
   }
   
-  input {
+  .todoInput {
     width: 80%;
     padding: 16px;
     border: none;
@@ -26,7 +26,7 @@ body, html {
     font-size: 20px;
     box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
   }
-  input::placeholder {
+  .todoInput::placeholder {
     font-size:20px;
     color : #E4E4E4;
     font-style: italic;

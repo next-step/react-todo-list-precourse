@@ -1,11 +1,15 @@
-// TodoItem.js
 import React from 'react';
-import './TodoItem.css';  // CSS 파일 임포트
+import './TodoItem.css';
 
-function TodoItem({ todo, onDelete }) {
+function TodoItem({ todo, onToggle, onDelete }) {
   return (
     <div className="todo-item">
-      <span className="todo-text">{todo.text}</span>
+      <input
+        type="checkbox"
+        checked={todo.completed}
+        onChange={() => onToggle(todo.id)}
+      />
+      <span className={`todo-text ${todo.completed ? 'completed' : ''}`}>{todo.text}</span>
       <button onClick={() => onDelete(todo.id)} className="delete-btn">삭제</button>
     </div>
   );
