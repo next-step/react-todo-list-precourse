@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TodoForm from "./components/TodoForm.jsx";
+import TodoItem from "./components/TodoItem.jsx";
 
 const App = () => {
 
@@ -13,6 +14,11 @@ const App = () => {
         <div className="App">
             <h1>Todo List</h1>
             <TodoForm addTodo={addTodo} />
+            <ul>
+                {todos.map((todo, index) => (
+                    <TodoItem key={index} todo={todo} />
+                ))}
+            </ul>
         </div>
     );
 };
