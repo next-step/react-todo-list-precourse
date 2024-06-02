@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import TodoForm from './TodoForm';
+
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -15,6 +17,9 @@ const App = () => {
   return (
     <div>
       <Header />
+      <div className='todoForm'>
+        <TodoForm addTodo={addTodo} />
+      </div>
       <Footer />
     </div>
   );
