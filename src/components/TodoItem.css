@@ -1,0 +1,41 @@
+.todo-item {
+  box-shadow: 5px 5px 3px #666;
+  width: 70%;
+  transition: .3s;
+  padding: 3px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  word-break: break-all;
+  text-align: left;
+  border-radius: 8px;
+  background-color: aliceblue;
+}
+
+.todo-item.completed {
+  transition: .3s;
+  border-radius: 8px;
+  opacity: 0.5;
+}
+
+span {
+  margin: auto 0;
+}
+
+.btn-group {
+  display: flex;
+}
+.btn-group .btn-delete {
+  margin-right: 10px;
+}
+.btn-group .btn-delete:hover {
+  background-color: #666;
+  color: aliceblue;
+}
+.btn-group .btn-finished {
+  margin-right: 10px;
+}
+.btn-group .btn-finished:hover {
+  background-color: #666;
+  color: aliceblue;
+}

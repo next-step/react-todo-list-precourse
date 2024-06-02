@@ -1,0 +1,49 @@
+.app {
+  text-align: center;
+  padding: 20px;
+  
+}
+.app .Total {
+  margin-top: 10px;
+}
+
+h1 {
+  font-family: Serif, Courier, monospace;
+}
+
+.todo-list input {
+  margin-right: 10px;
+}
+
+.todo-item {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+}
+
+.todo-filters button {
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+.todo-filters .selected {
+  font-weight: bold;
+  background-color: aliceblue;
+}
+
+.btn {
+  background-color: transparent;
+  border-radius: 8px;
+  vertical-align: auto;
+  transition: .3s;
+  border: none;
+}
+.btn:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+  
+}
