@@ -9,3 +9,8 @@ export const addTodo = (todos, setTodos, text) => { // 투두 추가
   if (!text.trim()) return; // 내용물 없으면 추가 방지
   setTodos([...todos, { text, completed: false }]);
 };
+
+export const deleteTodo = (todos, setTodos, index) => { //투두 삭제
+  const newTodos = todos.filter((_, i) => i !== index);
+  setTodos(newTodos);
+};
