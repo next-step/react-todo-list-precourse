@@ -1,0 +1,35 @@
+.new-todo {
+   display: flex;
+}
+
+.new-todo input {
+   border: 1px solid var(--border-color);
+   box-sizing: border-box;
+   color: inherit;
+   font-family: inherit;
+   font-size: 24px;
+   font-weight: inherit;
+   line-height: 1.4em;
+   margin: 0;
+   padding: 6px;
+   position: relative;
+   width: 100%;
+   border-radius: 5px;
+}
+
+.new-todo input:focus {
+   outline: 2px solid var(--main-color);
+   border: none;
+}
+
+.new-todo button {
+   background-color: var(--main-color);
+   border: none;
+   color: #fff;
+   font-size: 1.5em;
+   width: 50px;
+   height: 50px;
+   cursor: pointer;
+   margin-left: 10px;
+   border-radius: 5px;
+}

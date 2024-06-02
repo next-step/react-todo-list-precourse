@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../styles/AddTodo.css'
 
 export default function AddTodo({ addTodo }) {
    const [value, setValue] = useState('')
@@ -11,7 +12,7 @@ export default function AddTodo({ addTodo }) {
    }
 
    return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="new-todo">
          <input
             type="text"
             value={value}

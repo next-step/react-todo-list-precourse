@@ -1,0 +1,32 @@
+.todo-item {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   margin: 10px 0;
+   background-color: #fff;
+   border: 1px solid var(--border-color);
+   border-radius: 5px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item .button-container {
+   display: flex;
+   gap: 10px;
+}
+
+.todo-item .button-container button {
+   padding: 5px 10px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 0.9em;
+   transition: background-color 0.3s, color 0.3s;
+   background-color: var(--main-color);
+   color: white;
+}
+
+.todo-item .button-container button:hover {
+   background-color: #fff;
+   color: var(--main-color);
+}
