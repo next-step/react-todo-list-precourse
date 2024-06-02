@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ToDoInput from './components/ToDoInput';
 import ToDoList from './components/ToDoList';
 import FilterButtons from './components/FilterButtons';
-import TaskCounter from './components/TaskCounter';
+import ToDoCounter from './components/TodoCounter';
 import ClearCompleted from './components/ClearCompleted';
 
 const App = () => {
@@ -36,6 +36,15 @@ const App = () => {
 		setTodos(newTodos);
 	};
 
+	const clearTodos = () => {
+		setTodos([]);
+	};
+
+	const clearCompleted = () => {
+		const newTodos = todos.filter(todo => !todo.completed);
+		setTodos(newTodos);
+	};
+
 	const filteredTodos = todos.filter((todo) => {
 		if (filter === 'all') {
 			return true;
@@ -47,14 +56,13 @@ const App = () => {
 		return true;
 	});
 
-
 	return (
 		<div>
-			<h1>todos</h1>
+			<h1>To-Do List</h1>
 			<ToDoInput addTodo={addTodo} />
 			<ToDoList todos={filteredTodos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
+			<ToDoCounter todos={todos} />
 			<FilterButtons setFilter={setFilter} />
-			<TaskCounter todos={todos} />
 			<ClearCompleted todos={todos} setTodos={setTodos} />
 		</div>
 	);

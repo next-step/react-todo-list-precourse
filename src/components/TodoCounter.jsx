@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TaskCounter = ({ todos }) => {
+const ToDoCounter = ({ todos }) => {
 	const activeCount = todos.filter(todo => !todo.completed).length;
 
 	return (
@@ -10,4 +10,4 @@ const TaskCounter = ({ todos }) => {
 	);
 };
 
-export default TaskCounter;
+export default ToDoCounter;
