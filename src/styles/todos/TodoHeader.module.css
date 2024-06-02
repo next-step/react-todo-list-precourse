@@ -5,4 +5,9 @@
     width: 50%;
     list-style: none;
     margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.filter input {
+    display: none;
 }
