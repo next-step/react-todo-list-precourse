@@ -23,3 +23,7 @@ export const loadActiveCount = () => {
   if(! countString) return 0;
   return parseInt(countString);
 }
+
+export const pushIdIfComplete = ((ids: number[], todo: Todo) => {
+  if(todo.isCompleted) ids.push(todo.id);
+});
