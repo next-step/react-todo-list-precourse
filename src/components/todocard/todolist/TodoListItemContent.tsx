@@ -13,7 +13,7 @@ export const TodoListItemContent = ({
   const { toggleTodo } = useTodoActions();
 
   return (
-    <div>
+    <div className="todo-content">
       <Input
         id={`checkbox-${index}`}
         type="checkbox"

@@ -20,7 +20,8 @@ header {
   gap: 0.5rem;
   padding-bottom: 1rem;
 }
-/* todo input */
+
+/* Todo Input */
 header form {
   display: flex;
   justify-content: center;
@@ -58,9 +59,20 @@ header form {
   justify-content: space-between;
   align-items: center;
   height: 2.5rem;
+  gap: 1rem;
 }
-.done-todo {
+.todo-item .todo-content {
+  flex: 1;
+  overflow: scroll;
+  display: flex;
+}
+.todo-item .todo-content .done-todo {
   color: var(--placeholder-color);
+}
+.todo-item .todo-remove-button {
+  flex: 1;
+  max-width: 2rem;
+  height: 2rem;
 }
 
 /* Footer */

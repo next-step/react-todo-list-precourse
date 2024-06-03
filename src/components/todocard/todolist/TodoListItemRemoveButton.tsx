@@ -15,6 +15,7 @@ export const TodoListItemRemoveButton = ({
       variant="destructive"
       size="round"
       onClick={() => removeTodo(index)}
+      className="todo-remove-button"
     >
       X
     </Button>

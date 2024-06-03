@@ -1,5 +1,6 @@
 .btn {
   border: none;
+  outline: none;
   border-radius: 0.2rem;
   background-color: transparent;
   color: white;
@@ -47,8 +48,6 @@
 }
 
 .btn-size-round {
-  width: 2rem;
-  height: 2rem;
   border-radius: 100%;
 }
 

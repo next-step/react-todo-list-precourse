@@ -8,6 +8,7 @@ export interface ButtonProps
 }
 
 const Button = ({
+  className,
   children,
   onClick,
   variant = "default",
@@ -15,10 +16,12 @@ const Button = ({
   active = false,
   ...props
 }: ButtonProps) => {
-  const className = `btn btn-variant-${variant} btn-size-${size} btn-active-${active}`;
+  const btnClassName =
+    `btn btn-variant-${variant} btn-size-${size} btn-active-${active}` +
+    ` ${className}`;
 
   return (
-    <button className={className} onClick={onClick} {...props}>
+    <button className={btnClassName} onClick={onClick} {...props}>
       {children}
     </button>
   );
