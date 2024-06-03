@@ -1,28 +1,28 @@
 import { type FC, useState } from "react";
+import { type TodoItem } from "../types/todoItem";
 import {
   Box,
   Checkbox,
   Stack,
   Typography,
-  FormGroup,
   FormControlLabel,
   IconButton,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 
-interface Props {
-  id: number;
-  label: string;
+interface Props extends TodoItem {
+  onToggleCompleted: (id: number) => void;
   onClick: (id: number) => void;
 }
 
-export const TodoCard: FC<Props> = ({ id, label, onClick }) => {
+export const TodoCard: FC<Props> = ({
+  id,
+  label,
+  completed,
+  onToggleCompleted,
+  onClick,
+}) => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
-  const [checked, setChecked] = useState<boolean>(false);
-
-  const handleCheckboxChange = () => {
-    setChecked(!checked);
-  };
 
   return (
     <Box>
@@ -34,13 +34,16 @@ export const TodoCard: FC<Props> = ({ id, label, onClick }) => {
       >
         <FormControlLabel
           control={
-            <Checkbox checked={checked} onChange={handleCheckboxChange} />
+            <Checkbox
+              checked={completed}
+              onChange={() => onToggleCompleted(id)}
+            />
           }
           label={
             <Typography
               sx={{
-                textDecoration: checked ? "line-through" : "none",
-                color: checked ? "gray" : "inherit",
+                textDecoration: completed ? "line-through" : "none",
+                color: completed ? "gray" : "inherit",
               }}
             >
               {label}
