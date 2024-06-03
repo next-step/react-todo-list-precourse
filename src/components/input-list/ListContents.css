@@ -1,0 +1,46 @@
+.ListLayout {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 3rem;
+	width: 40rem;
+	background-color: #fff;
+	color: #989898;
+}
+
+.ListLayout:focus {
+	border: 2px solid #b83f46;
+}
+
+.ListLayout button {
+	display: flex;
+	height: 80%;
+	width: 4rem;
+	align-items: center;
+	justify-content: center;
+	/* margin-right: 1rem; */
+	border: none;
+	background-color: #fff;
+}
+
+input.Input-Item {
+	display: flex;
+	width: 100%;
+	height: 80%;
+	margin-right: 0.5rem;
+	border: none;
+	font-size: 1.2rem;
+	font-weight: 100;
+}
+
+input.Input-Item::placeholder {
+	font-size: 1.2rem;
+	font-weight: 100;
+	font-style: italic;
+	color: #989898;
+}
+
+input.Input-Item:focus {
+	outline: none;
+}
