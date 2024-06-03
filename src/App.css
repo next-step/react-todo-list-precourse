@@ -1,7 +1,10 @@
+body {
+  background-color: #fce4ec;
+}
+
 .inner {
   width: 600px;
   margin: 0 auto;
-  background-color: pink;
 }
 
 h1 {
@@ -26,19 +29,23 @@ ul {
   padding: 0;
 }
 
-.list-row {
-  display: flex;
-  border-bottom: 1px solid black;
-}
-
-.list-row:last-child {
-  border: none;
-}
-
 li {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid black;
   list-style: none;
   flex-grow: 1;
   padding: 15px 0px 15px 20px;
+}
+
+li:last-child {
+  border: none;
+}
+
+li .todo {
+  margin: 7px 0px 7px 30px;
+  font-size: 30px;
+  font-weight: 200;
 }
 
 .completed .todo {
