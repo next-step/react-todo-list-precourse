@@ -7,15 +7,24 @@ const useTodoForm = (addTodo) => {
     const handleChange = (e) => setValue(e.target.value);
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!value.trim()) {
-            setError("할 일을 입력하세요.");
-            return;
-        }
-        addTodo(value);
-        setValue("");
-        setError("");
+        if (validateInput(value, setError)) addTodoAndClear(value, setValue, setError, addTodo);
     };
+
     return { value, error, handleChange, handleSubmit };
+};
+
+const validateInput = (input, setError) => {
+    if (!input.trim()) {
+        setError("할 일을 입력하세요.");
+        return false;
+    }
+    return true;
+};
+
+const addTodoAndClear = (newTodo, setValue, setError, addTodo) => {
+    addTodo(newTodo);
+    setValue("");
+    setError("");
 };
 
 export default useTodoForm;
