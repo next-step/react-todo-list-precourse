@@ -1,5 +1,5 @@
 import { type FC, useState, useRef, useEffect } from "react";
-import { type TodoItem } from "../types/todoItem";
+import { type TodoItem } from "../../types/todoItem";
 import {
   Box,
   Checkbox,
