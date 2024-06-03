@@ -38,7 +38,7 @@ const useTodoModification = ({ todos, setTodos, activeCount, setActiveCount }: T
   return { addTodo, removeTodo };
 };
 
-const useCompleteRemove = ({ todos, setTodos, activeCount, setActiveCount }: TodoModificationHookProps) => {
+const useCompleteRemove = ({ todos, setTodos }: TodoModificationHookProps) => {
   const getCompletedTodoIds = useCallback(() => {
     const ret: number[] = [];
     Object.values(todos).forEach((todo) => pushIdIfComplete(ret, todo));
@@ -46,11 +46,9 @@ const useCompleteRemove = ({ todos, setTodos, activeCount, setActiveCount }: Tod
   }, [todos]);
   const removeCompleteTodos = useCallback(() => {
     const todoIds = getCompletedTodoIds();
-    const completeCount = todoIds.length;
     const nextState = {...todos};
     todoIds.map((todoId) => { delete nextState[todoId]; });
     setTodos(nextState);
-    setActiveCount(activeCount - completeCount);
   }, [getCompletedTodoIds]);
   return { removeCompleteTodos };
 };
