@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+}
+  
+.down {
+    position: absolute;
+    font-size: 30px;
+    color: darkgray;
+    left: 10px;
+    top: 15px;
+}
+
+.down:hover {
+    cursor: pointer;
+}
+ 
+
+.input {
+    width: 500px;
+    height: 60px;
+    font-size: 25px;
+    border: 1px solid gainsboro;
+    padding-left: 60px;
+    box-sizing: border-box;
+    color: #797979;
+}
+
+.input:focus {
+    border: 1px solid #F5A4A4;
+    outline: none;
+    box-shadow: 0 0 2px 2px #F5A4A4;
+}

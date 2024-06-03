@@ -1,0 +1,69 @@
+.todoItem {
+    width: 500px;
+    height: 60px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.toggleIcon {
+    font-size: 40px;
+    font-variation-settings: 'wght' 200;
+    cursor: pointer;
+    position: absolute;
+    padding-left: 7px;
+}
+
+.iconFalse {
+    color: #30A03C;
+}
+
+.iconTrue {
+    color: darkgray;
+}
+
+.todoText {
+    font-size: 25px;
+    position: absolute;
+    left: 60px;
+}
+
+.todoEdit {
+    width: 500px;
+    height: 60px;
+    font-size: 25px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    color: #797979;
+    box-sizing: border-box;
+    padding-left: 60px;
+}
+
+.todoEdit:focus {
+    border: 1px solid #F5A4A4;
+    outline: none;
+    box-shadow: 0 0 2px 2px #F5A4A4;
+}
+
+.checkedTrue {
+    color: #575757;
+}
+
+.checkedFalse {
+    color: darkgray;
+    text-decoration: line-through;
+}
+
+.delete {
+    opacity: 0;
+    position: absolute;
+    right: 20px;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.todoItem:hover .delete {
+    opacity: 1;
+}
