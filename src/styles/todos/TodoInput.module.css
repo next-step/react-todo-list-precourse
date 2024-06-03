@@ -3,6 +3,8 @@
     height: max-content;
     display: flex;
     align-items: center;
+    border: 1px solid rgba(55, 53, 47, 0.16);
+    border-radius: 4px;
 }
 
 .todoInput__type {
@@ -10,7 +12,6 @@
     width: 400px;
     padding: 10px 0 10px 15px;
     font-weight: 400;
-    background: #efefef;
     border: 0;
     outline: 0;
     text-indent: 65px;
@@ -25,9 +26,7 @@
     top: 0;
     left: 0;
     padding: 10px 15px;
-    text-shadow: 0 1px 0 rgba(33, 150, 243, .4);
-    color: white;
-    background: #2196F3;
+    color: black;
     transition: all .4s ease-in-out;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -44,11 +43,13 @@
     bottom: 0;
     left: 0;
     border-radius: 3px;
-    background: #2196F3;
+    background: #f7f7f7;
+    height: 100%;
     transform-origin: left bottom;
     transition: all .4s ease-in-out;
     pointer-events: none;
     z-index: -1;
+    border: 1px solid rgba(55, 53, 47, 0.16);
 }
 
 .todoInput__type + label:before {
@@ -78,9 +79,8 @@
 
 .todoSubmitButton {
     height: 42px;
-    background-color: rgba(33, 150, 243, .9);
-    color: white;
-    border: 0;
+    background-color: #f7f7f7;
+    border: 1px solid rgba(55, 53, 47, 0.16);;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     padding: 0 5px;
@@ -88,5 +88,6 @@
 
 .todoSubmitButton:hover,
 .todoSubmitButton:focus{
-    background-color: #2196F3;
+    background-color: #efefef;
+    color: #2196F3;
 }

@@ -5,7 +5,6 @@
     font-size: 18px;
     user-select: none;
     margin-right: 15px;
-    line-height: 100%;
 }
 
 .filterButton__checkmark {
@@ -17,6 +16,7 @@
     background-color: #2196F300;
     border-radius: 0.25em;
     transition: all 0.25s;
+    margin-right: 2px;
 }
 
 .filterButton input:checked ~ .filterButton__checkmark {

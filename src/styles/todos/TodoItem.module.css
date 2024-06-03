@@ -1,8 +1,12 @@
 .todoItem {
-    width: 400px;
+    min-width: 400px;
+    width: max-content;
     height: 32px;
     display: flex;
     align-items: center;
+    border: 1px solid rgba(55, 53, 47, 0.16);
+    border-radius: 4px;
+    margin-bottom: 5px;
 }
 
 .todoItem__VC {
@@ -17,7 +21,9 @@
     color: black;
     font-size: 18px;
     height: 85%;
-    background-color: #efefef;
+    margin: 0;
+    border-left: 1px solid rgba(55, 53, 47, 0.16);
+    border-right: 1px solid rgba(55, 53, 47, 0.16);
     border-radius: 1px;
     transition: all .3s ease-in-out;
 }
@@ -30,8 +36,8 @@
     position: absolute;
     content: "";
     background-color: transparent;
-    height: 100%;
-    width: 2px;
+    height: 85%;
+    width: 1px;
     display: inline-block;
     animation: blink .75s step-end infinite;
     animation-iteration-count: 7;
@@ -51,8 +57,11 @@
 
 .todoItem__VC__input {
     display: inline-block;
-    background: rgba(33, 150, 243, .4);
+    background: lightblue;
+    height: 100%;
     border: 0;
+    border-left: 1px solid rgba(55, 53, 47, 0.16);
+    border-right: 1px solid rgba(55, 53, 47, 0.16);
     outline: 0;
     text-indent: 60px;
     transition: all .3s ease-in-out;
@@ -112,11 +121,11 @@
 }
 
 .todoItem__VC__button {
-    background-color: rgba(33, 150, 243, .9);
-    color: white;
+    background-color: white;
+    color: black;
     border: 0;
     border-radius: 0;
-    height: 80%;
+    height: 100%;
     width: max-content;
     padding: 8px 12px;
     line-height: 80%;
@@ -124,10 +133,7 @@
 }
 
 .done {
-    background-color: rgba(33, 150, 243, .7);
-    text-decoration: line-through;
-    text-decoration-color: black;
-    text-decoration-style: solid;
+    background-color: #f7f7f7;
 }
 
 .todoItem button:first-of-type {
@@ -140,22 +146,7 @@
     border-bottom-right-radius: 3px;
 }
 
-/*.todoItem button:last-of-type:after {*/
-/*    position: absolute;*/
-/*    content: "";*/
-/*    width: 0;*/
-/*    height: 0;*/
-/*    top: calc(100% - 6px);*/
-/*    left: 100%;*/
-/*    border-top: 2px solid transparent;*/
-/*    border-bottom: 2px solid white;*/
-/*    border-right: 0;*/
-/*    border-left: 3px solid rgba(33, 150, 243, .9);*/
-/*    !*border-top: 3px solid blue;*!*/
-/*    transition: all .3s ease-in-out;*/
-/*}*/
-
 .todoItem__VC__button:hover {
-    background-color: #2196F3;
+    background-color: #efefef;
 }
 
