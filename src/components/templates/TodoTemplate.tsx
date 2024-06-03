@@ -1,20 +1,38 @@
-import { type FC, useState } from "react";
+import { type FC, useState, useEffect } from "react";
 import { Input, Stack, Typography, Container, Button } from "@mui/material";
 import { TodoCard } from "../organisms/TodoCard";
 import { TodoResultCard } from "../organisms/TodoResultCard";
 import { type TodoItem } from "../types/todoItem";
 
+const todoStorage = {
+  load: (): TodoItem[] => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  },
+  save: (todos: TodoItem[]) => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  },
+};
+
 export const TodoTemplate: FC = () => {
-  const [todos, setTodos] = useState<TodoItem[]>([
-    { id: 1, label: "밥먹기", completed: false },
-    { id: 2, label: "운동하기", completed: false },
-  ]);
+  const [todos, setTodos] = useState<TodoItem[]>([]);
   const [newTodo, setNewTodo] = useState<string>("");
   const [filter, setFilter] = useState<string>("All");
 
   const handleDelete = (id: number) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
+
+  useEffect(() => {
+    const loadedTodos = todoStorage.load();
+    if (JSON.stringify(todos) !== JSON.stringify(loadedTodos)) {
+      setTodos(loadedTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    todoStorage.save(todos);
+  }, [todos]);
 
   const handleFilterChange = (newFilter: string) => {
     setFilter(newFilter);
