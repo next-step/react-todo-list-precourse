@@ -1,7 +1,7 @@
 import React from 'react'
 import './Filter.css'
 
-const Filter = ({ activeCount, setFilter, filter }) => {
+const Filter = ({ activeCount, setFilter, filter, clearCompleted }) => {
 
   return (
     <div className='filter'>
@@ -11,7 +11,7 @@ const Filter = ({ activeCount, setFilter, filter }) => {
             <button className={`btn btnFilter ${filter === 'active' ? 'selected' : 'unselected'}`} onClick={() => setFilter('active')}>Active</button>
             <button className={`btn btnFilter ${filter === 'completed' ? 'selected' : 'unselected'}`} onClick={() => setFilter('completed')}>Completed</button>
         </div>
-        <button className='clearCompleted btn'>Clear completed</button>
+        <button className='clearCompleted btn' onClick={clearCompleted}>Clear completed</button>
     </div>
   )
 }

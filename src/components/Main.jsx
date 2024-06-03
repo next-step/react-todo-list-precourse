@@ -35,12 +35,16 @@ const Main = () => {
   }
 
   const filteredTodo = (todos.filter(todo => {
-    if (filter === 'active') return todo.checked
-    else if (filter === 'completed') return !todo.checked
+    if (filter === 'active') return !todo.checked
+    else if (filter === 'completed') return todo.checked
     return true
   }
 
   ))
+
+  const clearCompleted = () => {
+    setTodos(todos.filter(todo => !todo.checked))
+  }
 
   
 
@@ -49,7 +53,7 @@ const Main = () => {
       <div className='title'>todos</div>
       <AddTodo addTodo={addTodo} />
       <TodoList todos={filteredTodo} toggleTodo={toggleTodo} deleteTodo={deleteTodo} editTodo={editTodo} />
-      <Filter activeCount={activeCount} setFilter={setFilter} filter={filter} />
+      <Filter activeCount={activeCount} setFilter={setFilter} filter={filter} clearCompleted={clearCompleted} />
     </div>
   )
 }
