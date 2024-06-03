@@ -1,4 +1,4 @@
-import Todo from '../models/Todo.ts';
+import Todo from '../models/Todo';
 import TodoStorageKeys from '../constants/TodoStorageKeys';
 import {TodoRepository} from './Types';
 

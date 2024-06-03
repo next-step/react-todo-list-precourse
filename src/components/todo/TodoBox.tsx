@@ -3,7 +3,7 @@ import TodoFilterEnum from '../../constants/TodoFilterEnum';
 import { useCallback } from 'react';
 import TodoItem from './TodoItem';
 import useTodoFilter from '../../hooks/useTodoFilter';
-import {TodoRepository} from '../../utils/Types';
+import { TodoRepository } from '../../utils/Types';
 
 type TodoBoxProps = {
   todos: TodoRepository,
