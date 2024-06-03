@@ -1,0 +1,19 @@
+.new-todo {
+	width: 100%;
+	padding: 16px 16px 16px 60px;
+	border: none;
+	background: rgba(0, 0, 0, 0.003);
+	font-size: 24px;
+	font-family: inherit;
+	font-weight: inherit;
+	line-height: 1.4em;
+	border: 1px solid #999;
+	box-sizing: border-box;
+	color: inherit;
+	margin-top: 70px;
+}
+
+.new-todo:focus {
+	outline: none;
+	border-color: rgba(175, 47, 47, 0.1);
+}

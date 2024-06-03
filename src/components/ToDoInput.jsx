@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import './ToDoInput.css';
 
 const ToDoInput = ({ addTodo }) => {
   const [inputValue, setInputValue] = useState('');
+  const [isComposing, setIsComposing] = useState(false); 
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -16,21 +18,22 @@ const ToDoInput = ({ addTodo }) => {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
+      if (isComposing) return;
       handleAddClick();
     }
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        onKeyDown={handleKeyDown}
-        placeholder="What needs to be done?"
-      />
-      <button onClick={handleAddClick}>Add</button>
-    </div>
+    <input
+      className="new-todo"
+      type="text"
+      value={inputValue}
+      onChange={handleInputChange}
+      onKeyDown={handleKeyDown}
+      placeholder="What needs to be done?"
+      onCompositionStart={() => setIsComposing(true)}
+      onCompositionEnd={() => setIsComposing(false)}
+    />
   );
 };
 

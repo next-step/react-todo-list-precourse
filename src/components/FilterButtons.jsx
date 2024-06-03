@@ -1,12 +1,34 @@
 import React from 'react';
+import './FilterButtons.css';
 
-const FilterButtons = ({ setFilter }) => {
+const FilterButtons = ({ setFilter, filter }) => {
 	return (
-		<div>
-			<button onClick={() => setFilter('all')}>All</button>
-			<button onClick={() => setFilter('active')}>Active</button>
-			<button onClick={() => setFilter('completed')}>Completed</button>
-		</div>
+		<>
+			<li>
+				<button
+					className={filter === 'all' ? 'selected' : ''}
+					onClick={() => setFilter('all')}
+				>
+					All
+				</button>
+			</li>
+			<li>
+				<button
+					className={filter === 'active' ? 'selected' : ''}
+					onClick={() => setFilter('active')}
+				>
+					Active
+				</button>
+			</li>
+			<li>
+				<button
+					className={filter === 'completed' ? 'selected' : ''}
+					onClick={() => setFilter('completed')}
+				>
+					Completed
+				</button>
+			</li>
+		</>
 	);
 };
 

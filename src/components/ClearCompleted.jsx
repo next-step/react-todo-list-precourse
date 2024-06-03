@@ -1,4 +1,5 @@
 import React from 'react';
+import './ClearCompleted.css';
 
 const ClearCompleted = ({ todos, setTodos }) => {
 	const clearCompleted = () => {
@@ -7,9 +8,9 @@ const ClearCompleted = ({ todos, setTodos }) => {
 	};
 
 	return (
-		<div>
-			<button onClick={clearCompleted}>Clear completed</button>
-		</div>
+		<button className="clear-completed" onClick={clearCompleted}>
+			Clear completed
+		</button>
 	);
 };
 

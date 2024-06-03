@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import ToDoInput from './components/ToDoInput';
 import ToDoList from './components/ToDoList';
 import FilterButtons from './components/FilterButtons';
-import ToDoCounter from './components/TodoCounter';
+import TodoCounter from './components/TodoCounter';
 import ClearCompleted from './components/ClearCompleted';
+import './App.css';
 
 const App = () => {
 	const [todos, setTodos] = useState([]);
@@ -36,15 +37,6 @@ const App = () => {
 		setTodos(newTodos);
 	};
 
-	const clearTodos = () => {
-		setTodos([]);
-	};
-
-	const clearCompleted = () => {
-		const newTodos = todos.filter(todo => !todo.completed);
-		setTodos(newTodos);
-	};
-
 	const filteredTodos = todos.filter((todo) => {
 		if (filter === 'all') {
 			return true;
@@ -57,13 +49,21 @@ const App = () => {
 	});
 
 	return (
-		<div>
-			<h1>To-Do List</h1>
-			<ToDoInput addTodo={addTodo} />
-			<ToDoList todos={filteredTodos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
-			<ToDoCounter todos={todos} />
-			<FilterButtons setFilter={setFilter} />
-			<ClearCompleted todos={todos} setTodos={setTodos} />
+		<div className="todoapp">
+			<header className="header">
+				<h1>todos</h1>
+				<ToDoInput addTodo={addTodo} />
+			</header>
+			<section className="main">
+				<ToDoList todos={filteredTodos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
+			</section>
+			<footer className="footer">
+				<TodoCounter todos={todos} />
+				<ul className="filters">
+					<FilterButtons setFilter={setFilter} filter={filter} />
+				</ul>
+				<ClearCompleted todos={todos} setTodos={setTodos} />
+			</footer>
 		</div>
 	);
 };

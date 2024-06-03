@@ -1,17 +1,21 @@
 import React from 'react';
+import './ToDoList.css';
 
 const ToDoList = ({ todos, toggleComplete, deleteTodo }) => {
 	return (
-		<ul>
+		<ul className="todo-list">
 			{todos.map((todo, index) => (
-				<li key={index} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-					<input
-						type="checkbox"
-						checked={todo.completed}
-						onChange={() => toggleComplete(index)}
-					/>
-					{todo.text}
-					<button onClick={() => deleteTodo(index)}>Delete</button>
+				<li key={index} className={todo.completed ? 'completed' : ''}>
+					<div className="view">
+						<input
+							className="toggle"
+							type="checkbox"
+							checked={todo.completed}
+							onChange={() => toggleComplete(index)}
+						/>
+						<label>{todo.text}</label>
+						<button className="destroy" onClick={() => deleteTodo(index)}></button>
+					</div>
 				</li>
 			))}
 		</ul>

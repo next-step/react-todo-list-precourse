@@ -1,13 +1,14 @@
 import React from 'react';
+import './TodoCounter.css';
 
-const ToDoCounter = ({ todos }) => {
+const TodoCounter = ({ todos }) => {
 	const activeCount = todos.filter(todo => !todo.completed).length;
 
 	return (
-		<div>
-			<span>{activeCount} item left</span>
-		</div>
+		<span className="todo-count">
+			<strong>{activeCount}</strong> item{activeCount !== 1 ? 's' : ''} left
+		</span>
 	);
 };
 
-export default ToDoCounter;
+export default TodoCounter;

@@ -1,0 +1,94 @@
+.todo-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.todo-list li {
+	position: relative;
+	font-size: 24px;
+	border-bottom: 1px solid #ededed;
+}
+
+.todo-list li:last-child {
+	border-bottom: none;
+}
+
+.todo-list li.completed .view label {
+	text-decoration: line-through;
+	color: #d9d9d9;
+}
+
+.todo-list li .view {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px;
+}
+
+.todo-list li .toggle {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 40px;
+	height: 40px;
+	border: 2px solid #d9d9d9;
+	background-color: #fff;
+	cursor: pointer;
+	position: relative;
+	outline: none;
+	border-radius: 100%;
+}
+
+.todo-list li .toggle:checked {
+	background-color: #bddad5;
+	border-color: #5dc2af;
+}
+
+.todo-list li .toggle:checked::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 20px;
+	height: 10px;
+	border: 2px solid #fff;
+	border-top: none;
+	border-right: none;
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.todo-list li .destroy {
+	display: inline-block;
+	background: none;
+	border: none;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	position: relative;
+}
+
+.todo-list li .destroy::before,
+.todo-list li .destroy::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 20px;
+	height: 2px;
+	background-color: #000;
+	transform-origin: center;
+}
+
+.todo-list li .destroy::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.todo-list li .destroy::after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.todo-list li .destroy:hover::before,
+.todo-list li .destroy:hover::after {
+	background-color: rgba(255, 0, 0, 0.7);
+}
