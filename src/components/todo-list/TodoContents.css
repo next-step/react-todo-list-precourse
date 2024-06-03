@@ -1,0 +1,79 @@
+.TodoLayout {
+	display: flex;
+	/* flex-direction: row; */
+	justify-content: flex-start;
+	align-items: center;
+	height: 4rem;
+	width: 40rem;
+	background-color: #fff;
+	font-size: 1.2rem;
+	color: #989898;
+}
+
+.TodoContainer {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 1rem;
+	align-items: center;
+	margin: 0 1rem;
+}
+
+input[type='checkbox'] {
+	display: none;
+}
+
+.checkbox_label {
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.checkbox_icon::before {
+	content: '';
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	background-color: transparent;
+	border: 2px solid #9da3a5;
+	border-radius: 50%;
+
+	cursor: pointer;
+}
+
+/* checked */
+.checkbox_label input:checked + .checkbox_icon::before {
+	display: inline-block;
+	transition: all 0.15s ease;
+	border-radius: 50%;
+	content: '✓';
+	font-size: 2rem;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	color: #03c75a;
+	border: 2px solid #64c48f;
+}
+
+.checkbox_text {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.TodoLayout .Image_container img {
+	opacity: 0;
+	align-items: center;
+	justify-content: center;
+}
+
+.TodoLayout:hover .Image_container img {
+	opacity: 1;
+	width: 1.2rem;
+	height: 1.2rem;
+	display: block;
+}
