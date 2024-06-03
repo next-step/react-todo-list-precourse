@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useTodoActions } from "../hooks/useTodoActions";
-import { Input } from "./ui/Input";
-import { Button } from "./ui/Button";
+import { useTodoActions } from "../../hooks/useTodoActions";
+import { Input } from "../ui/Input";
+import { Button } from "../ui/Button";
 
 export const TodoInput = () => {
   const [input, setInput] = useState<string>("");
