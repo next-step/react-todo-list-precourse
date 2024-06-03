@@ -1,0 +1,51 @@
+.filter {
+    width: 500px;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    align-items: center;
+    background-color: white;
+    border: 1px solid gainsboro;
+    color: #797979;
+
+}
+
+.activeCount {
+    padding: 20px;
+}
+
+.filterGroup {
+    padding: 45px;
+}
+
+.btn {
+    border: 0;
+    background-color: transparent;
+    margin: 0 3px;
+    cursor: pointer;
+    color: #797979;
+    border-radius: 5px;
+}
+
+.btnFilter:hover {
+    border: 1px solid #F29090;
+}
+
+.btnFilter.selected {
+    border: 1px solid brown;
+}
+
+.btnFilter.selected:hover {
+    border: 1px solid brown;
+}
+
+.clearCompleted {
+
+}
+
+.clearCompleted:hover{
+    text-decoration: underline;
+}
