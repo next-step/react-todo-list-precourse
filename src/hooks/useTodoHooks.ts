@@ -2,7 +2,7 @@ import {Dispatch, SetStateAction, useCallback, useEffect} from 'react';
 import TodoStorageKeys from '../constants/TodoStorageKeys';
 import { TodoRepository } from '../utils/Types';
 import Todo from '../models/Todo';
-import {pushIdIfComplete} from '../utils/Utils';
+import { pushIdIfComplete } from '../utils/Utils';
 
 type TodoModificationHookProps = {
   todos: TodoRepository,
