@@ -1,9 +1,5 @@
 import {useCallback} from 'react';
-import Todo from '../models/Todo.ts';
-
-type TodoRepository = {
-  [id: number]: Todo;
-};
+import {TodoRepository} from '../utils/Types';
 
 const useTodoFilter = (todos: TodoRepository) => {
   const getAllTodos = useCallback(() => {

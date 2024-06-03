@@ -1,9 +1,6 @@
 import Todo from '../models/Todo.ts';
 import TodoStorageKeys from '../constants/TodoStorageKeys';
-
-type TodoRepository = {
-  [id: number]: Todo;
-};
+import {TodoRepository} from './Types';
 
 const appendWrappedTodo = (repo: TodoRepository, unwrappedObject: object) => {
   const todo = Todo.fromUnwrappedObject(unwrappedObject);

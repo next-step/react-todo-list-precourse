@@ -8,10 +8,7 @@ import TodoButtonBar from './TodoButtonBar';
 import TodoBox from './TodoBox';
 import { loadActiveCount, loadTodos } from '../../utils/Utils';
 import TodoStorageKeys from '../../constants/TodoStorageKeys';
-
-type TodoRepository = {
-  [id: number]: Todo;
-};
+import {TodoRepository} from '../../utils/Types';
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState<TodoRepository>(loadTodos());
