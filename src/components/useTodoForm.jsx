@@ -3,14 +3,17 @@ import { useState } from "react";
 const useTodoForm = (addTodo) => {
     const [value, setValue] = useState("");
     const [error, setError] = useState("");
-
     const handleChange = (e) => setValue(e.target.value);
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validateInput(value, setError)) addTodoAndClear(value, setValue, setError, addTodo);
     };
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter')  handleSubmit(e);
+    };
 
-    return { value, error, handleChange, handleSubmit };
+    return { value, error, handleChange, handleSubmit, handleKeyPress };
 };
 
 const validateInput = (input, setError) => {
