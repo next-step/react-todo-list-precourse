@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { loadTodos, saveTodos } from "./localStorage.jsx";
 
 const filterTodos = (todos, filter) => {
     return todos.filter(todo => {
@@ -9,8 +10,12 @@ const filterTodos = (todos, filter) => {
 };
 
 const TodoToggle = () => {
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(loadTodos());
     const [filter, setFilter] = useState('all');
+
+    useEffect(() => {
+        saveTodos(todos);
+    }, [todos]);
 
     const addTodo = (newTodo) => {
         setTodos([...todos, { text: newTodo, done: false }]);
