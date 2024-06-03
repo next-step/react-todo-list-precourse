@@ -8,16 +8,10 @@ const TodoList = ({ todos }) => {
   return (
     <ul>
       {todos.map((todo, index) => (
-        <li
-          key={index}
-          className={completedTodos.includes(index) ? "completed" : ""}
-        >
+        <li key={index} className={completedTodos.includes(index) ? "completed" : ""}>
           <CheckBox
             isChecked={completedTodos.includes(index)}
-            onChange={() =>
-              toggleTodo(index, completedTodos, setCompletedTodos)
-            }
-          />
+            onChange={() => toggleTodo(index, completedTodos, setCompletedTodos)}/>
           <div className="todo">{todo}</div>
         </li>
       ))}

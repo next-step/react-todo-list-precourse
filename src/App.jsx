@@ -16,10 +16,7 @@ function App() {
       <Input
         value={inputValue}
         onChange={(e) => handleInputChange(e, setInputValue)}
-        onKeyPress={(e) =>
-          handleKeyPress(e, todos, setTodos, inputValue, setInputValue)
-        }
-      />
+        onKeyPress={(e) => handleKeyPress(e, todos, setTodos, inputValue, setInputValue)}/>
       <TodoList todos={todos} />
     </div>
   );
