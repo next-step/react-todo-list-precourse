@@ -10,11 +10,33 @@ h1 {
   text-align: center;
 }
 
-input {
+input#todoInput {
   display: block;
   width: 400px;
   height: 60px;
   padding: 0 50px;
   margin: 0 auto;
   font-size: 25px;
+}
+
+ul {
+  width: 500px;
+  margin: 20px auto;
+  border: 1px solid black;
+  padding: 0;
+}
+
+.list-row {
+  display: flex;
+  border-bottom: 1px solid black;
+}
+
+.list-row:last-child {
+  border: none;
+}
+
+li {
+  list-style: none;
+  flex-grow: 1;
+  padding: 15px 0px 15px 20px;
 }
