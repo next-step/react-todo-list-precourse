@@ -77,6 +77,7 @@ export const TodoTemplate: FC = () => {
       </Stack>
 
       <TodoResultCard
+        totalItems={todos.length}
         leftItem={todos.filter((todo) => !todo.completed).length}
         activeFilter={filter}
         onFilterChange={handleFilterChange}

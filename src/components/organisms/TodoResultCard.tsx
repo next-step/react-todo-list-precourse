@@ -1,19 +1,25 @@
-import { type FC, useState } from "react";
+import { type FC } from "react";
 import { Stack, Typography, Button } from "@mui/material";
 
 interface Props {
   leftItem: number;
+  activeFilter: string;
+  totalItems: number;
+  onFilterChange: (filter: string) => void;
 }
 
-export const TodoResultCard: FC<Props> = ({ leftItem }) => {
-  const [activeFilter, setActiveFilter] = useState<string>("All");
-
+export const TodoResultCard: FC<Props> = ({
+  leftItem,
+  activeFilter,
+  totalItems,
+  onFilterChange,
+}) => {
   const handleFilterClick = (filter: string) => {
-    setActiveFilter(filter);
+    onFilterChange(filter);
   };
 
   return (
-    leftItem && (
+    totalItems > 0 && (
       <Stack direction="row" justifyContent={"space-between"}>
         <Typography>{leftItem} items left!</Typography>
 
