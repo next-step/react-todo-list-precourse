@@ -1,7 +1,16 @@
 import { useState } from "react";
 
-export const TodoToggle = () => {
+const filterTodos = (todos, filter) => {
+    return todos.filter(todo => {
+        if (filter === 'active') return !todo.done;
+        if (filter === 'done') return todo.done;
+        return true;
+    });
+};
+
+const TodoToggle = () => {
     const [todos, setTodos] = useState([]);
+    const [filter, setFilter] = useState('all');
 
     const addTodo = (newTodo) => {
         setTodos([...todos, { text: newTodo, done: false }]);
@@ -13,5 +22,8 @@ export const TodoToggle = () => {
         ));
     };
 
-    return { todos, addTodo, toggleDone };
+    const filteredTodos = filterTodos(todos, filter);
+    return { todos: filteredTodos, addTodo, toggleDone, setFilter };
 };
+
+export default TodoToggle;
