@@ -68,6 +68,14 @@ export const TodoTemplate: FC = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => !todo.completed));
   };
 
+  const handleUpdateLabel = (id: number, newLabel: string) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, label: newLabel } : todo
+      )
+    );
+  };
+
   return (
     <Container>
       <Typography variant="h4">Todos</Typography>
@@ -94,6 +102,7 @@ export const TodoTemplate: FC = () => {
             completed={completed}
             onClick={handleDelete}
             onToggleCompleted={handleToggleCompleted}
+            onUpdateLabel={handleUpdateLabel}
           />
         ))}
       </Stack>
