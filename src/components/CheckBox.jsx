@@ -1,7 +1,15 @@
+import React from "react";
 import "./CheckBox.css";
 
-function CheckBox() {
-  return <input type="checkbox" id="checkbox" />;
-}
+const CheckBox = ({ isChecked, onChange }) => {
+  return (
+    <input
+      type="checkbox"
+      id="checkbox"
+      checked={isChecked}
+      onChange={onChange}
+    />
+  );
+};
 
 export default CheckBox;
