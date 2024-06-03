@@ -3,6 +3,7 @@ import TodoForm from "./components/TodoForm.jsx";
 import TodoList from "./components/TodoList.jsx";
 import TodoToggle from "./components/TodoToggle.jsx";
 import TodoFilter from "./components/TodoFilter.jsx";
+import TodoCount from "./components/TodoCount.jsx";
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
             <TodoForm addTodo={addTodo} />
             <TodoFilter setFilter={setFilter}/>
             <TodoList todos={todos} toggleDone={toggleDone}/>
+            <TodoCount count={todos.length} />
         </div>
     );
 };
