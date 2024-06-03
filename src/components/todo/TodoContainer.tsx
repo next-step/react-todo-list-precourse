@@ -21,7 +21,7 @@ const TodoContainer = () => {
   useSaveTodos(todos, activeCount);
   const { addTodo, removeTodo } = useTodoModification({ todos, setTodos, activeCount, setActiveCount });
   const { removeCompleteTodos } = useCompleteRemove({ todos, setTodos, activeCount, setActiveCount });
-  const { handleToggleCompletion } = useHandleCompletion({ activeCount, setActiveCount });
+  const { handleToggleCompletion } = useHandleCompletion({ todos, setTodos, activeCount, setActiveCount });
 
   return <div className={styles.container}>
     <TodoInput addTodo={addTodo} />

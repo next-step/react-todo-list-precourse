@@ -11,11 +11,6 @@ type TodoModificationHookProps = {
   setActiveCount: Dispatch<SetStateAction<number>>
 };
 
-type TodoCompletionHandlerProps = {
-  activeCount: number,
-  setActiveCount: Dispatch<SetStateAction<number>>
-};
-
 const useSaveTodos = (todos: TodoRepository, activeCount: number) => {
   useEffect(() => {
     sessionStorage.setItem(TodoStorageKeys.TODOS_JSON_KEY, JSON.stringify(todos));
@@ -60,10 +55,11 @@ const useCompleteRemove = ({ todos, setTodos, activeCount, setActiveCount }: Tod
   return { removeCompleteTodos };
 };
 
-const useHandleCompletion = ({ activeCount, setActiveCount }: TodoCompletionHandlerProps) => {
+const useHandleCompletion = ({ todos, setTodos, activeCount, setActiveCount }: TodoModificationHookProps) => {
   const handleToggleCompletion = useCallback((todo: Todo) => {
     const activeCountDelta = todo.isCompleted ? -1 : 1;
     setActiveCount(activeCount + activeCountDelta);
+    setTodos({...todos});
   }, [activeCount]);
   return { handleToggleCompletion }
 };
