@@ -46,6 +46,10 @@ export const TodoTemplate: FC = () => {
     return true;
   });
 
+  const handleClearCompleted = () => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => !todo.completed));
+  };
+
   return (
     <Container>
       <Typography variant="h4">Todos</Typography>
@@ -81,6 +85,7 @@ export const TodoTemplate: FC = () => {
         leftItem={todos.filter((todo) => !todo.completed).length}
         activeFilter={filter}
         onFilterChange={handleFilterChange}
+        onClearAll={handleClearCompleted}
       />
     </Container>
   );

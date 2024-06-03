@@ -6,6 +6,7 @@ interface Props {
   activeFilter: string;
   totalItems: number;
   onFilterChange: (filter: string) => void;
+  onClearAll: () => void;
 }
 
 export const TodoResultCard: FC<Props> = ({
@@ -13,6 +14,7 @@ export const TodoResultCard: FC<Props> = ({
   activeFilter,
   totalItems,
   onFilterChange,
+  onClearAll,
 }) => {
   const handleFilterClick = (filter: string) => {
     onFilterChange(filter);
@@ -48,6 +50,7 @@ export const TodoResultCard: FC<Props> = ({
               textDecoration: "underline",
             },
           }}
+          onClick={onClearAll}
         >
           Clear completed
         </Typography>
