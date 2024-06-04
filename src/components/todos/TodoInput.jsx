@@ -14,7 +14,6 @@ const TodoInputTyping = forwardRef(
             className={styles.todoInput__type}
             id={"input_id"}
             ref={ref}
-            onBlur={handleBlur}
         />
     )}
 );
