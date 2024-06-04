@@ -49,8 +49,8 @@ export function useDragAndDrop(rearrangeTodos) {
         if (dragAndDrop.isDragging) return;
         if (dragAndDrop.draggedFrom === null || dragAndDrop.draggedTo == null) return;
         if (dragAndDrop.draggedFrom === dragAndDrop.draggedTo) return;
-            rearrangeTodos(dragAndDrop.draggedFrom, dragAndDrop.draggedTo);
-            setDragAndDrop(initState);
+        rearrangeTodos(dragAndDrop.draggedFrom, dragAndDrop.draggedTo);
+        setDragAndDrop(initState);
     }, [dragAndDrop]);
     return { onDragStart, onDragOver, onDragEnd, portalRef };
 }
