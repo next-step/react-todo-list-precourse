@@ -11,3 +11,10 @@
 .filter input {
     display: none;
 }
+
+.todolist_dragDest {
+    width: 1000px;
+    height: 6px;
+    background-color: lightskyblue;
+    position: absolute;
+}

@@ -3,18 +3,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
 .todolist__itemWrap {
     display: flex;
     flex-direction: column;
     align-items: start;
-}
-
-.todolist_dragDest {
-    width: 1000px;
-    height: 5px;
-    background-color: lightskyblue;
-    position: absolute;
 }
