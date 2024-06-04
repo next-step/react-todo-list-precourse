@@ -65,6 +65,12 @@ input[type='checkbox'] {
 	width: 100%;
 }
 
+.checked {
+	text-decoration: line-through;
+	color: #d4d4d4;
+	transition: all 0.3s ease;
+}
+
 .TodoLayout .Image_container img {
 	opacity: 0;
 	align-items: center;
@@ -76,4 +82,5 @@ input[type='checkbox'] {
 	width: 1.2rem;
 	height: 1.2rem;
 	display: block;
+	transition: all 0.3s ease;
 }
