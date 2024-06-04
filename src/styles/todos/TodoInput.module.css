@@ -9,11 +9,11 @@
 
 .todoInput:hover::before {
     content: "";
-    width: 3px;
+    width: 4px;
     height: 100%;
     position: absolute;
     background-color: lightskyblue;
-    left: -6px;
+    left: -7px;
     top: 0;
 }
 
