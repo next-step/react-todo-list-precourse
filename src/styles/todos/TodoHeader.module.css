@@ -13,8 +13,9 @@
 }
 
 .todolist_dragDest {
-    width: 1000px;
+    width: 800px;
     height: 6px;
     background-color: lightskyblue;
     position: absolute;
+    top: -9999px;
 }
