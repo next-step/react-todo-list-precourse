@@ -7,6 +7,16 @@
     border-radius: 4px;
 }
 
+.todoInput:hover::before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    background-color: lightskyblue;
+    left: -6px;
+    top: 0;
+}
+
 .todoInput__type {
     display: inline-block;
     width: 400px;
@@ -89,5 +99,4 @@
 .todoSubmitButton:hover,
 .todoSubmitButton:focus{
     background-color: #efefef;
-    color: #2196F3;
 }
