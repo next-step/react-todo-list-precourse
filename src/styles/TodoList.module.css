@@ -4,3 +4,9 @@
     flex-direction: column;
     align-items: center;
 }
+
+.todolist__itemWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}

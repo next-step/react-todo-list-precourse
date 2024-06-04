@@ -24,9 +24,11 @@ export function TodoList() {
             <TodoHeader updatePathName={setPath} />
             <TodoInput addTodo={addTodo} />
             {activeCnt + "개 남음"}
-            {doFilter(path, todos)
-                .map(todo => <TodoItem key={todo.id} todo={todo} updateTodoState={updateTodoState} deleteTodo={deleteTodo} />)
-            }
+            <div className={styles.todolist__itemWrap}>
+                {doFilter(path, todos)
+                    .map(todo => <TodoItem key={todo.id} todo={todo} updateTodoState={updateTodoState} deleteTodo={deleteTodo} />)
+                }
+            </div>
         </div>
     );
 }
