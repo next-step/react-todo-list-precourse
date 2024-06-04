@@ -30,6 +30,7 @@ npm run start
   - [x] 새로고침을 하여도 이전에 작성한 데이터는 유지되어야 한다.
 - 추가 기능
   - [x] 대기중인 할 일을 수정할 수 있다.
+  - [x] 드래그앤드롭을 통해 할 일의 순서를 바꿀 수 있다.
 ## Credit
 **한재안**
 - GitHub : [@JaeanHan](https://github.com/JaeanHan)
