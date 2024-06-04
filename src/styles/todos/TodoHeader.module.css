@@ -18,4 +18,5 @@
     background-color: lightskyblue;
     position: absolute;
     top: -9999px;
+    transition: .1s;
 }
