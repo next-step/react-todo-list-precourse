@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import {Todo} from "../utils/Todo.js";
+
 // closure? 일단 전역 객체는 아님
 let idCnt = -1;
 let activeCnt = 0;
@@ -52,6 +52,24 @@ const filterAndDecreaseIfDone = (todo, id) => {
     return todo;
 }
 
+
+
+const swap = (setTodos) => (srcId, destId) => setTodos(prev => {
+    let temp, srcIdx, destIdx;
+    const copy = prev.map((todo, i) => {
+        if(todo.id === srcId) {
+            srcIdx = i;
+        } else if (todo.id === destId) {
+            destIdx = i;
+        }
+        return todo;
+    });
+    temp = copy[destIdx];
+    copy[destIdx] = copy[srcIdx];
+    copy[srcIdx] = temp;
+    return copy;
+});
+
 export function useTodoList() {
     const [todos, setTodos] = useState(idCnt === -1 ? cacheOnInit() : readCache() ?? []);
     const addTodo = useCallback((todo) => setTodos(prev => [...prev, createTodoInstance(todo)]), []);
@@ -61,7 +79,8 @@ export function useTodoList() {
     const deleteTodo = useCallback(
         (id) => setTodos(prev => prev.filter(todo => filterAndDecreaseIfDone(todo, id)))
         , []);
+    const rearrangeTodos = useCallback(swap(setTodos), []);
     useEffect(() => cacheTodo(todos), [todos]);
 
-    return { todos, addTodo, updateTodoState, deleteTodo, activeCnt };
+    return { todos, addTodo, updateTodoState, deleteTodo, activeCnt, rearrangeTodos };
 }
