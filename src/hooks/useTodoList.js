@@ -52,8 +52,6 @@ const filterAndDecreaseIfDone = (todo, id) => {
     return todo;
 }
 
-
-
 const swap = (setTodos) => (srcId, destId) => setTodos(prev => {
     let temp, srcIdx, destIdx;
     const copy = prev.map((todo, i) => {
@@ -70,6 +68,22 @@ const swap = (setTodos) => (srcId, destId) => setTodos(prev => {
     return copy;
 });
 
+const insertInto = (setTodos) => (srcId, destId) => setTodos(prev => {
+    let insertItem, destIdx;
+    let items = prev.reduce((acc, todo, i) => {
+        if(todo.id === srcId) {
+            insertItem = todo;
+            return acc;
+        } else if (todo.id === destId) {
+            destIdx = i;
+        }
+        acc.push(todo);
+        return acc;
+    }, []);
+    items.splice(destIdx, 0, insertItem);
+    return items;
+});
+
 export function useTodoList() {
     const [todos, setTodos] = useState(idCnt === -1 ? cacheOnInit() : readCache() ?? []);
     const addTodo = useCallback((todo) => setTodos(prev => [...prev, createTodoInstance(todo)]), []);
@@ -79,7 +93,7 @@ export function useTodoList() {
     const deleteTodo = useCallback(
         (id) => setTodos(prev => prev.filter(todo => filterAndDecreaseIfDone(todo, id)))
         , []);
-    const rearrangeTodos = useCallback(swap(setTodos), []);
+    const rearrangeTodos = useCallback(insertInto(setTodos), []);
     useEffect(() => cacheTodo(todos), [todos]);
 
     return { todos, addTodo, updateTodoState, deleteTodo, activeCnt, rearrangeTodos };
