@@ -4,9 +4,21 @@
     height: 32px;
     display: flex;
     align-items: center;
-    border: 1px solid rgba(55, 53, 47, 0.16);
+    /*border: 1px solid rgba(55, 53, 47, 0.16);*/
+    outline: 1px solid rgba(55, 53, 47, 0.16);
     border-radius: 4px;
     margin-bottom: 5px;
+    position: relative;
+}
+
+.todoItem:hover::before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    background-color: lightskyblue;
+    left: -6px;
+    top: 0;
 }
 
 .todoItem__VC {
@@ -15,8 +27,9 @@
 
 .content,
 .todoItem__VC__input {
-    width: 300px;
-    padding: 0 0 0 15px;
+    min-width: 300px;
+    width: max-content;
+    padding: 0 15px 0 15px;
     font-weight: 400;
     color: black;
     font-size: 18px;
@@ -57,7 +70,7 @@
 
 .todoItem__VC__input {
     display: inline-block;
-    background: lightblue;
+    background: lightskyblue;
     height: 100%;
     border: 0;
     border-left: 1px solid rgba(55, 53, 47, 0.16);
@@ -150,3 +163,12 @@
     background-color: #efefef;
 }
 
+.todoItem__VC__drag {
+    height: 90%;
+    opacity: .8;
+}
+
+.todoItem__VC__drag:hover {
+    opacity: 1;
+    cursor: grab;
+}
