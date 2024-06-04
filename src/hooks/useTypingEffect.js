@@ -14,12 +14,14 @@ const createSubString = (ref) => {
 };
 
 const startTyping = (ref) => () => {
-    const options = {
-        timing: chooseRandomTiming(),
-        draw: createSubString(ref),
-        duration: 2000,
+    if (ref.current) {
+        const options = {
+            timing: chooseRandomTiming(),
+            draw: createSubString(ref),
+            duration: 2000,
+        }
+        animate(options);
     }
-    animate(options);
 };
 
 export function useTypingEffect(ref, isDone = true, content = null) {
