@@ -63,6 +63,10 @@ function TodoButton({ handleOnClick, text }) {
     );
 }
 
+const createStateText = (isDone) => {
+    return isDone ? "Completed" : "Active";
+}
+
 function StateTodoButton({ updateTodoState, todo, isDone }) {
     return (
         <button
@@ -74,15 +78,23 @@ function StateTodoButton({ updateTodoState, todo, isDone }) {
     );
 }
 
-const createStateText = (isDone) => {
-    return isDone ? "Completed" : "Active";
+function DragButton() {
+    return (
+        <img
+            className={styles.todoItem__VC__drag}
+            src="/public/drag-handle-svgrepo-com.svg"
+            alt="drag and drop to rearrange"
+            draggable={false}
+        />
+    );
 }
 
 function TodoItem({ todo, updateTodoState, deleteTodo } ){
     const [isEditing, setIsEditing] = useState(false);
     const { id, content, isDone } = todo;
     return (
-        <div className={styles.todoItem}>
+        <div className={styles.todoItem} draggable={true}>
+            <DragButton />
             <StateTodoButton updateTodoState={updateTodoState} todo={todo} isDone={isDone} />
             {isEditing
                 ? <VariableContent updateTodoState={updateTodoState} todo={todo} setIsEditing={setIsEditing} />
