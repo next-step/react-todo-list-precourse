@@ -31,6 +31,12 @@ npm run start
 - 추가 기능
   - [x] 대기중인 할 일을 수정할 수 있다.
   - [x] 드래그앤드롭을 통해 할 일의 순서를 바꿀 수 있다.
+## 실행결과
+![1](./public/1.gif)
+<br/>
+![할 일 수정](./public/2.gif)
+<br/>
+![드래그앤드롭](./public/3.gif)
 ## Credit
 **한재안**
 - GitHub : [@JaeanHan](https://github.com/JaeanHan)
