@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const initState = {
     draggedFrom: null,
@@ -6,50 +6,51 @@ const initState = {
     isDragging: false,
 };
 
-const createDragStartHandler = (setDragAndDrop) => (itemId) => (e) => {
+const createDragStartHandler = (setDragAndDrop, ref) => (itemId) => (e) => {
     e.target.style.opacity = "0.4";
     e.dataTransfer.effectAllowed = 'move';
+    if (ref.current) {
+        const { width } = e.target.parentElement.getBoundingClientRect()
+        ref.current.style.width = `${width}px`;
+    }
     setDragAndDrop(prev => ({...prev, isDragging: true, draggedFrom: itemId}));
 };
 
-const createDragOverHandler = (setDragAndDrop) => (itemId) => {
+const createDragOverHandler = (setDragAndDrop, ref) => (itemId) => {
     let throttling = false;
-
     return (e) => {
         if (throttling) return;
-        /*
-        bottom: 325.966796875
-        height: 28.7890625
-        left: 386.845703125
-        right: 415.634765625
-        top: 297.177734375
-        width: 28.7890625
-        x: 386.845703125
-        y: 297.177734375
-         */
-        console.log(e.target.getBoundingClientRect());
+        if (ref.current) {
+            const { left, top, bottom, height } = e.target.parentElement.getBoundingClientRect();
+            ref.current.style.left = `${left}px`;
+            ref.current.style.top = `${top + height/2 > e.clientY ? top - 3 : bottom + 3}px`;
+        }
         setDragAndDrop(prev => ({...prev, draggedTo: itemId}));
-        setTimeout(() => throttling = false, 100);
+        setTimeout(() => throttling = false, 200);
     }
 }
 
-const createDragEndHandler = (setDragAndDrop) => (itemId) => (e) => {
+const createDragEndHandler = (setDragAndDrop, ref) => (itemId) => (e) => {
+    if (ref.current) {
+        ref.current.style.top = `-9999px`;
+        ref.current.style.width = "0px";
+    }
     e.target.style.opacity = "1";
-    // setDragAndDrop(initState);
-    setDragAndDrop(prev => ({...prev, isDragging: false}));
+    setDragAndDrop(prev => (prev.id === itemId ? initState : {...prev, isDragging: false}));
 }
 
 export function useDragAndDrop(rearrangeTodos) {
     const [dragAndDrop, setDragAndDrop] = useState(initState);
-    const onDragStart = useCallback(createDragStartHandler(setDragAndDrop), []);
-    const onDragOver = useCallback(createDragOverHandler(setDragAndDrop), []);
-    const onDragEnd = useCallback(createDragEndHandler(setDragAndDrop), []);
+    const portalRef = useRef();
+    const onDragStart = useCallback(createDragStartHandler(setDragAndDrop, portalRef), []);
+    const onDragOver = useCallback(createDragOverHandler(setDragAndDrop, portalRef), []);
+    const onDragEnd = useCallback(createDragEndHandler(setDragAndDrop, portalRef), []);
     useEffect(() => {
         if (dragAndDrop.isDragging) return;
-        if (dragAndDrop.draggedFrom !== null && dragAndDrop.draggedTo !== null) {
+        if (dragAndDrop.draggedFrom === null || dragAndDrop.draggedTo == null) return;
+        if (dragAndDrop.draggedFrom === dragAndDrop.draggedTo) return;
             rearrangeTodos(dragAndDrop.draggedFrom, dragAndDrop.draggedTo);
             setDragAndDrop(initState);
-        }
     }, [dragAndDrop]);
-    return { onDragStart, onDragOver, onDragEnd };
+    return { onDragStart, onDragOver, onDragEnd, portalRef };
 }
