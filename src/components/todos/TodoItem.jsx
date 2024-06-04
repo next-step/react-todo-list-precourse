@@ -89,11 +89,11 @@ function DragButton() {
     );
 }
 
-function TodoItem({ todo, updateTodoState, deleteTodo } ){
+function TodoItem({ todo, updateTodoState, deleteTodo, onDragStart, onDragOver, onDragEnd }){
     const [isEditing, setIsEditing] = useState(false);
     const { id, content, isDone } = todo;
     return (
-        <div className={styles.todoItem} draggable={true}>
+        <div className={styles.todoItem} draggable={true} onDragStart={onDragStart(id)} onDragOver={onDragOver(id)} onDragEnd={onDragEnd(id)}>
             <DragButton />
             <StateTodoButton updateTodoState={updateTodoState} todo={todo} isDone={isDone} />
             {isEditing
