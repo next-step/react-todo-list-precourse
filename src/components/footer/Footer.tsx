@@ -1,16 +1,23 @@
 import './Footer.css';
+import { FooterProps } from './types';
 
-const Footer = () => {
+const Footer: React.FC<FooterProps> = ({
+	number,
+	onFilterChange,
+	onClearCompleted,
+}) => {
 	return (
 		<div className="FooterLayout">
 			<div className="FooterContainer">
-				<div>0 items left!</div>
+				<div>{number} items left!</div>
 				<div className="StateContainer">
-					<button>All</button>
-					<button>Active</button>
-					<button>Completed</button>
+					<button onClick={() => onFilterChange('all')}>All</button>
+					<button onClick={() => onFilterChange('active')}>Active</button>
+					<button onClick={() => onFilterChange('completed')}>Completed</button>
 				</div>
-				<button id="Clear">Clear completed</button>
+				<button id="Clear" onClick={onClearCompleted}>
+					Clear completed
+				</button>
 			</div>
 		</div>
 	);
