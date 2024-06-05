@@ -1,5 +1,10 @@
+import { TodoProvider } from './context/TodoContext';
 import Todo from './routes/Todo';
 
 export default function App() {
-  return <Todo />;
+  return (
+    <TodoProvider>
+      <Todo />
+    </TodoProvider>
+  );
 }
