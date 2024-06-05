@@ -9,9 +9,9 @@ interface TodoListProps {
 const TodoLists = ({ todos, setIsCompleted }: TodoListProps) => {
   return (
     <ul id="TodoLists">
-      {todos.map(({ isCompleted, text }, i) => (
+      {todos.map(({ isCompleted, text, id }, i) => (
         <li key={`${i}-${text}-${isCompleted}`}>
-          <button onClick={() => setIsCompleted(i)}>
+          <button onClick={() => setIsCompleted(id)}>
             <input type="checkbox" checked={isCompleted} />
             <span>{text}</span>
           </button>

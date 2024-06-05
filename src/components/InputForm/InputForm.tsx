@@ -11,7 +11,9 @@ const InputForm = ({ setTodos }: InputFormProps) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newTodo: Todo = { text, status: "active" };
+    if (!text.trim()) return;
+    const id = new Date().getTime();
+    const newTodo: Todo = { id, isCompleted: false, text };
     setTodos(newTodo);
     setText("");
   };

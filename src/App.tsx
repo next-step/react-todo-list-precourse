@@ -12,12 +12,10 @@ const App = () => {
   const filteredTodos = filterTodos(todos, filterState);
   const leaseTodos = filteredTodos.length;
 
-  const setIsCompleted = (index: number) => {
+  const setIsCompleted = (id: number) => {
     setTodos((prev) =>
-      prev.map((todo, itemIndex) => {
-        if (itemIndex === index) {
-          return { ...todo, isCompleted: !todo.isCompleted } as Todo;
-        }
+      prev.map((todo) => {
+        if (todo.id === id) return { ...todo, isCompleted: !todo.isCompleted };
         return todo;
       })
     );
