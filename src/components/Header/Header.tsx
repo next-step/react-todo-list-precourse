@@ -19,6 +19,9 @@ const Header = ({ title }: HeaderProps) => {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
+      if (todo === '') {
+        return;
+      }
       value?.actions.addTodo(todo);
       resetInput();
     }
