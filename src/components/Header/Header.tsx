@@ -1,19 +1,19 @@
 import styles from './Header.module.css';
-import InputField from '../Input/InputField';
+import Input from '../Input/Input';
 
 interface HeaderProps {
   title: string;
 }
 
-const Header = ({ title }: HeaderProps) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-  };
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  console.log(e.target.value);
+};
 
+const Header = ({ title }: HeaderProps) => {
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>{title}</h1>
-      <InputField
+      <Input
         type="text"
         placeholder="What needs to be done?"
         label="todo-input"
