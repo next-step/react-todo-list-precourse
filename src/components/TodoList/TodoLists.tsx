@@ -1,17 +1,20 @@
-import { Todo } from "../../Modules/Todo";
+import { Todo } from "../../Model/Todo";
 import "./TodoLists.css";
 
 interface TodoListProps {
   todos: Todo[];
+  setIsCompleted: (index: number) => void;
 }
 
-const TodoLists = ({ todos }: TodoListProps) => {
+const TodoLists = ({ todos, setIsCompleted }: TodoListProps) => {
   return (
     <ul id="TodoLists">
-      {todos.map(({ status, text }, i) => (
-        <li key={`${i}-${text}-${status}`}>
-          <input type="checkbox" checked={status === "completed"} />
-          <span>{text}</span>
+      {todos.map(({ isCompleted, text }, i) => (
+        <li key={`${i}-${text}-${isCompleted}`}>
+          <button onClick={() => setIsCompleted(i)}>
+            <input type="checkbox" checked={isCompleted} />
+            <span>{text}</span>
+          </button>
         </li>
       ))}
     </ul>

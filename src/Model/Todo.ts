@@ -1,6 +1,6 @@
 export interface Todo {
   text: string;
-  status: "completed" | "active";
+  isCompleted: boolean;
 }
 
 export type FilterStateType = "all" | "active" | "completed";

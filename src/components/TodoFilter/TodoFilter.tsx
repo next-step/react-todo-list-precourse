@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FilterStateType } from "../../Modules/Todo";
+import { FilterStateType } from "../../Model/Todo";
 import "./TodoFilter.css";
 
 interface TodoFilterProps {

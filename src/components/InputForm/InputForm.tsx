@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Todo } from "../../Modules/Todo";
+import { Todo } from "../../Model/Todo";
 import "./InputForm.css";
 
 interface InputFormProps {
