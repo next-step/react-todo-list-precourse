@@ -1,0 +1,18 @@
+.todo-item {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    margin: 0 auto;
+    background-color: #fff;
+    width: 78%;
+}
+.todo-item span {
+    flex-grow: 1; 
+    margin-left: 10px;
+}
+.todo-item button {
+    margin-left: 10px; 
+}
