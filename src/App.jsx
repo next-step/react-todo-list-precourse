@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TodoBoard from "./components/TodoBoard";
 
 function App() {
@@ -7,11 +7,25 @@ function App() {
     const [filter, setFilter] = useState("all");
     const [totalTodos, setTotalTodos] = useState(0);
 
+    useEffect(() => {
+        const savedTodoList = JSON.parse(localStorage.getItem("todoList"));
+        if (savedTodoList) {
+            setTodoList(savedTodoList);
+            const remainingTodos = savedTodoList.filter(item => !item.completed).length;
+            setTotalTodos(remainingTodos);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("todoList", JSON.stringify(todoList));
+    }, [todoList]);
+
     const addItem = () => {
         if (inputValue.trim() === "") {
             return;
         }
         const newItem = { id: Date.now(), text: inputValue, completed: false };
+        setTodoList([...todoList, newItem]);
         setInputValue("");
         setTotalTodos(totalTodos + 1);
     };
