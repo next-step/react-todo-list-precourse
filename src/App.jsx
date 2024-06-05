@@ -4,7 +4,11 @@ import TodoBoard from "./components/TodoBoard";
 function App() {
     const [inputValue,setInputValue] = useState("")
     const [todoList,setTodoList]=useState([])
+
     const addItem =() =>{
+        if (inputValue.trim() == ""){
+            return;
+        }
         setTodoList([...todoList,inputValue])
         setInputValue("");
     }
