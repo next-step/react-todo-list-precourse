@@ -4,6 +4,7 @@ import TodoBoard from "./components/TodoBoard";
 function App() {
     const [inputValue, setInputValue] = useState("");
     const [todoList, setTodoList] = useState([]);
+    const [filter, setFilter] = useState("all"); // 추가: 필터 상태
 
     const addItem = () => {
         if (inputValue.trim() === "") {
@@ -26,6 +27,16 @@ function App() {
         setTodoList(newTodoList);
     };
 
+    const getFilteredTodoList = () => {
+        if (filter === "completed") {
+            return todoList.filter(item => item.completed);
+        } else if (filter === "active") {
+            return todoList.filter(item => !item.completed);
+        } else {
+            return todoList;
+        }
+    };
+
     return (
         <main>
             <input
@@ -34,8 +45,13 @@ function App() {
                 onChange={(event) => setInputValue(event.target.value)}
             />
             <button onClick={addItem}>추가</button>
+            <div>
+                <button onClick={() => setFilter("all")}>전체보기</button>
+                <button onClick={() => setFilter("active")}>남은 할일</button>
+                <button onClick={() => setFilter("completed")}>완료된 할일</button>
+            </div>
             <TodoBoard
-                todoList={todoList}
+                todoList={getFilteredTodoList()}
                 deleteItem={deleteItem}
                 toggleItemCompletion={toggleItemCompletion}
             />
