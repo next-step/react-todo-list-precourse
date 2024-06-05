@@ -1,13 +1,21 @@
 import React from "react";
 
-function TodoItem({ item, index, deleteItem, toggleItemCompletion }) {
+function TodoItem({ item, deleteItem, toggleItemCompletion }) {
+    const handleToggleCompletion = () => {
+        toggleItemCompletion(item.id);
+    };
+
+    const handleDeleteItem = () => {
+        deleteItem(item.id);
+    };
+
     return (
         <div style={{ textDecoration: item.completed ? "line-through" : "none" }}>
             {item.text}
-            <button onClick={() => toggleItemCompletion(index)}>
+            <button onClick={handleToggleCompletion}>
                 {item.completed ? "취소" : "완료"}
             </button>
-            <button onClick={() => deleteItem(index)}>삭제</button>
+            <button onClick={handleDeleteItem}>삭제</button>
         </div>
     );
 }

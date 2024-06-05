@@ -5,11 +5,10 @@ function TodoBoard({ todoList, deleteItem, toggleItemCompletion }) {
     return (
         <div>
             <h1>Todo List</h1>
-            {todoList.map((item, index) => (
+            {todoList.map((item) => (
                 <TodoItem
-                    key={index}
+                    key={item.id}
                     item={item}
-                    index={index}
                     deleteItem={deleteItem}
                     toggleItemCompletion={toggleItemCompletion}
                 />

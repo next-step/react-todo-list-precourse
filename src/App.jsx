@@ -4,26 +4,35 @@ import TodoBoard from "./components/TodoBoard";
 function App() {
     const [inputValue, setInputValue] = useState("");
     const [todoList, setTodoList] = useState([]);
-    const [filter, setFilter] = useState("all"); // 추가: 필터 상태
+    const [filter, setFilter] = useState("all");
+    const [totalTodos, setTotalTodos] = useState(0);
 
     const addItem = () => {
         if (inputValue.trim() === "") {
             return;
         }
-        const newItem = { text: inputValue, completed: false };
-        setTodoList([...todoList, newItem]);
+        const newItem = { id: Date.now(), text: inputValue, completed: false };
         setInputValue("");
+        setTotalTodos(totalTodos + 1);
     };
 
-    const deleteItem = (index) => {
-        const newTodoList = todoList.filter((_, i) => i !== index);
+    const deleteItem = (id) => {
+        const itemToDelete = todoList.find(item => item.id === id);
+        const newTodoList = todoList.filter(item => item.id !== id);
+        if (itemToDelete && !itemToDelete.completed) {
+            setTotalTodos(Math.max(totalTodos - 1, 0));
+        }
         setTodoList(newTodoList);
     };
 
-    const toggleItemCompletion = (index) => {
-        const newTodoList = todoList.map((item, i) =>
-            i === index ? { ...item, completed: !item.completed } : item
+    const toggleItemCompletion = (id) => {
+        const newTodoList = todoList.map(item =>
+            item.id === id ? { ...item, completed: !item.completed } : item
         );
+
+        const remainingTodos = newTodoList.filter(item => !item.completed).length;
+
+        setTotalTodos(remainingTodos);
         setTodoList(newTodoList);
     };
 
@@ -50,6 +59,7 @@ function App() {
                 <button onClick={() => setFilter("active")}>남은 할일</button>
                 <button onClick={() => setFilter("completed")}>완료된 할일</button>
             </div>
+            <p>남은 할 일 개수: {totalTodos}</p>
             <TodoBoard
                 todoList={getFilteredTodoList()}
                 deleteItem={deleteItem}
