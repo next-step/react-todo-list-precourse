@@ -8,7 +8,7 @@ const Todo = () => {
       <main>
         <TodoList />
       </main>
-    </section>
+  </section>
   );
 };
 
