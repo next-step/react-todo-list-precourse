@@ -1,11 +1,15 @@
 import React from "react";
 
-function TodoItem(props) {
+function TodoItem({ item, index, deleteItem, toggleItemCompletion }) {
     return (
-        <div>
-            {props.item}
-            <button onClick={() => props.deleteItem(props.index)}>삭제</button>
+        <div style={{ textDecoration: item.completed ? "line-through" : "none" }}>
+            {item.text}
+            <button onClick={() => toggleItemCompletion(index)}>
+                {item.completed ? "취소" : "완료"}
+            </button>
+            <button onClick={() => deleteItem(index)}>삭제</button>
         </div>
     );
 }
-export default TodoItem
+
+export default TodoItem;
