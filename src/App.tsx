@@ -1,10 +1,5 @@
-import Header from './components/Header/Header';
+import Todo from './routes/Todo';
 
 export default function App() {
-  return (
-    <section>
-      <Header title="todos" />
-      <main></main>
-    </section>
-  );
+  return <Todo />;
 }
