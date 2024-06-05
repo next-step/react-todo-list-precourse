@@ -10,6 +10,36 @@
   border-bottom: 1px solid #ededed;
 }
 
+.toggle {
+  display: none;
+}
+
+.toggle + label {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #707070;
+  border-radius: 50%;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.toggle:checked + label::after {
+  content: '✓';
+  font-size: 35px;
+  color: #707070;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+}
+
+.toggle.active {
+  display: block;
+}
+
 .todo-list-container {
   display: flex;
   width: 100%;
@@ -27,32 +57,6 @@
 
 .todo-label:disabled {
   background-color: #fff;
-}
-
-.toggle {
-  display: none;
-}
-
-.toggle + label {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #707070;
-  border-radius: 50%;
-}
-
-.toggle:checked + label::after {
-  content: '✓';
-  font-size: 35px;
-  color: #707070;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -45%);
-}
-
-.toggle.active {
-  display: block;
 }
 
 .destroy {

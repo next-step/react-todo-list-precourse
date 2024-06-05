@@ -2,6 +2,7 @@ import { createContext, useState } from 'react';
 import { ReactNode } from 'react';
 import { addTodo as addTodoAction } from './actions/addTodo';
 import { removeTodo as removeTodoAction } from './actions/removeTodo';
+import { toggleDone as toggleTodoAction } from './actions/toggleDone';
 
 export interface TodoListItemTypes {
   no: number;
@@ -14,6 +15,7 @@ export interface TodoListContextValueTypes {
   actions: {
     addTodo: (todo: string) => void;
     removeTodo: (no: number) => void;
+    toggleDone: (no: number) => void;
   };
 }
 
@@ -28,10 +30,11 @@ export const TodoProvider = ({ children }: TodoContextProviderProps) => {
 
   const addTodo = (todo: string) => addTodoAction(todoList, setTodoList, todo);
   const removeTodo = (no: number) => removeTodoAction(todoList, setTodoList, no);
+  const toggleDone = (no: number) => toggleTodoAction(todoList, setTodoList, no);
 
   const values = {
     state: { todoList },
-    actions: { addTodo, removeTodo },
+    actions: { addTodo, removeTodo, toggleDone },
   };
 
   return <TodoContext.Provider value={values}>{children}</TodoContext.Provider>;
