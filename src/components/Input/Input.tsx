@@ -5,15 +5,23 @@ interface InputProps {
   label: string;
   placeholder?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const Input = ({ type, placeholder, label, onChange }: InputProps) => {
+const Input = ({ type, placeholder, label, onChange, onKeyDown }: InputProps) => {
   return (
     <div>
       <label htmlFor={label} className={styles['sr-only']}>
         {label}
       </label>
-      <input type={type} placeholder={placeholder} id={label} onChange={onChange} className={styles.input} />
+      <input
+        type={type}
+        placeholder={placeholder}
+        id={label}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+        className={styles.input}
+      />
     </div>
   );
 };
