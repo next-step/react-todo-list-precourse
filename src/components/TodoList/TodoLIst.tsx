@@ -7,7 +7,6 @@ const TodoList = () => {
   const value = useContext(TodoContext);
   const todoList = value?.state.todoList;
 
-  console.log(value?.state.todoList);
   return (
     <ul className={styles['todo-list']}>
       {todoList?.map(todoListItem => (

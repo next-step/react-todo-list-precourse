@@ -18,7 +18,7 @@ const Header = ({ title }: HeaderProps) => {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
       if (todo === '') {
         return;
       }
