@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import TodoInput from './TodoInput'
 import TodoItemList from './TodoItemList'
-import CompletedCount from './CompletedCount'
+import IncompletedCount from './IncompletedCount'
 import '../src/main.css'
 
 export default function TodoList() {
@@ -25,7 +25,7 @@ export default function TodoList() {
         setTodos(newTodos);
     }
 
-    const completedCount = todos.filter(todo => todo.isCompleted).length
+    const incompletedTodosCount = todos.filter(todo => !todo.completed).length;
 
     const filteredTodos = todos.filter(todo => {
         if (filter === 'completed') return todo.isCompleted;
@@ -46,7 +46,7 @@ export default function TodoList() {
                     filter = {filter}
                     setFilter = {setFilter}
                 />
-                <CompletedCount completed = {completedCount} length = {todos.length}/>      
+                <IncompletedCount incompleted = {incompletedTodosCount} length = {todos.length}/>   
             </div>
         </div>
     )

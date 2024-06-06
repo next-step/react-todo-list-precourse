@@ -4,6 +4,7 @@ import Filter from './Filter'
 import '../src/main.css'
 
 export default function TodoItemList({todos, toggleTodo, removeTodo, filter, setFilter}) {
+    
     return (
         <>
             <Filter filter={filter} setFilter={setFilter}/>
