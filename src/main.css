@@ -20,7 +20,7 @@ h1 {
     transition: all 0.3s ease;
 }
 
-.list-wrapper.has-items {
+.list-wrapper {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -110,4 +110,29 @@ li > input {
 .filters button.active {
     background-color: #ddd;
     font-weight: bold;
+}
+
+.clearbtn{
+    margin: 0 5px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.clearbtn:hover{
+    background-color: #e0e0e0;
+}
+
+.notice-wrapper {
+    margin:0px 25px 0px;
+    display: flex;
+}
+
+.completed-count {
+    margin-left:10px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
 }

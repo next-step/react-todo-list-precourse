@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import TodoInput from './TodoInput'
 import TodoItemList from './TodoItemList'
 import IncompletedCount from './IncompletedCount'
+import ClearCompletedItem from './ClearCompletedItem'
 import '../src/main.css'
 
 export default function TodoList() {
@@ -25,7 +26,7 @@ export default function TodoList() {
         setTodos(newTodos);
     }
 
-    const incompletedTodosCount = todos.filter(todo => !todo.completed).length;
+    const incompletedTodosCount = todos.filter(todo => !todo.isCompleted).length;
 
     const filteredTodos = todos.filter(todo => {
         if (filter === 'completed') return todo.isCompleted;
@@ -33,12 +34,18 @@ export default function TodoList() {
         return true; 
     })
 
+    const clearCompletedItem = () => {
+        const newTodos = todos.filter(todo => !todo.isCompleted);
+        setTodos(newTodos);
+    }
+
     return (
         <div className="lists">
             <div className="input">
                 <TodoInput addTodo={addTodo} />
             </div>
-            <div className={`list-wrapper ${todos.length > 0 ? 'has-items' : ''}`}>
+            {todos.length > 0 && (
+                <div className="list-wrapper">
                 <TodoItemList 
                     todos={filteredTodos} 
                     toggleTodo = {toggleTodo} 
@@ -46,8 +53,14 @@ export default function TodoList() {
                     filter = {filter}
                     setFilter = {setFilter}
                 />
-                <IncompletedCount incompleted = {incompletedTodosCount} length = {todos.length}/>   
+                <div className="notice-wrapper">
+                    <IncompletedCount incompleted = {incompletedTodosCount} length = {todos.length}/>  
+                    <ClearCompletedItem clearCompletedItem={clearCompletedItem}/>
+                </div>
+                
             </div>
+            )}
+            
         </div>
     )
 }
