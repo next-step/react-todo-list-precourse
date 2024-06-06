@@ -13,7 +13,7 @@ function TodoInput({ onAddTodo }) {
       return;
     }
     onAddTodo(input);
-    setInput(""); 
+    setInput("");
   };
 
   const handleKeyDown = (event) => {
@@ -22,18 +22,25 @@ function TodoInput({ onAddTodo }) {
     }
   };
 
-  return (
-    <div>
-      <input
-        type="text"
-        value={input}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-        placeholder="What needs to be done?"
-        className="todoInput"
-      />
-      <button onClick={handleSubmit} className="add-button">추가</button>
-    </div>
+  return React.createElement(
+    "div",
+    null,
+    React.createElement("input", {
+      type: "text",
+      value: input,
+      onChange: handleChange,
+      onKeyDown: handleKeyDown,
+      placeholder: "What needs to be done?",
+      className: "todoInput",
+    }),
+    React.createElement(
+      "button",
+      {
+        onClick: handleSubmit,
+        className: "add-button",
+      },
+      "추가"
+    )
   );
 }
 
