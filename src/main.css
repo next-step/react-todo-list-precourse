@@ -2,75 +2,112 @@
     margin:0 auto;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
     box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    padding:40px;
+    font-weight: 300;
 }
 
 .lists {
    text-align: center;
-   margin : 80px;
 }
 
-.form {
+.list-wrapper {
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.list-wrapper.has-items {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    width:500px;
+}
+
+.todo-form {
     padding:0;
-    margin:0;
+    margin:10px;
     align-items: center;
 }
 
-.input {
-    width: 70%;
-    padding: 10px; 
+.todo-input {
+    width: 60%;
+    height:50px;
+    padding: 15px; 
     border-radius: 5px; 
     font-size: 16px; 
     outline: none;
     transition: border-color 0.3s;
+    box-shadow: 0px 2px 2px grey;
 }
 
-.input:focus {
+.todo-input:focus {
     border-color: #007BFF; 
 }
 
-.list-wrapper {
-    display: flex;
-    margin:0
+ul {
+    margin:10px;
 }
-
 
 li {
     display: flex; 
     justify-content: space-between;
     align-items: center;
-    width:35%;
+
+    width:90%;
     height:50px;
-    margin-bottom: 10px;
+    margin-bottom:10px;
+    margin-top:10px;
     padding: 5px 10px; 
-    border: 2px solid #007BFF; 
+
+    border: 0.5px solid grey; 
     border-radius: 5px; 
     font-size:15px;
 }
 
-.text {
-    flex-grow:1;
-    margin:10px;
-}
-
-.deleteButton {
-    padding: 5px;
+li > button {
     background-color:#fff;
     border:1px;
     border-radius:5px;
     margin-left: auto;
     display: flex;
     align-items: center; 
+    margin:2px;
 }
 
-.deleteButton:hover { 
+li > button:hover { 
     color:grey;
     cursor: pointer;
 }
 
-.toggle {
-    display: flex;
-    align-items: center; 
-    margin-right: 10px;
+li > input {
+    margin:2px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters button {
+    margin: 0 5px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+    background-color: #e0e0e0;
+}
+
+.filters button.active {
+    background-color: #ddd;
+    font-weight: bold;
 }

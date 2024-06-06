@@ -16,7 +16,8 @@ function TodoInput({ addTodo }) {
         type="text" 
         value={value} 
         onChange={(e) => setValue(e.target.value)} 
-        className="input" 
+        className="todo-input" 
+        placeholder='What needs to be done?'
       />
     </form>
   )

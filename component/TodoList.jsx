@@ -3,9 +3,10 @@ import TodoInput from './TodoInput'
 import TodoItem from './TodoItem'
 import '../src/main.css'
 
-
 function TodoList() {
     const [todos, setTodos] = useState([])
+    const [filter, setFilter] = useState('all');
+
     const addTodo = (text) => {
         const newTodos = [...todos, { text, isCompleted: false }];
         setTodos(newTodos);
@@ -25,15 +26,41 @@ function TodoList() {
 
     const completedCount = todos.filter(todo => todo.isCompleted).length;
 
+    const filteredTodos = todos.filter(todo => {
+        if (filter === 'completed') return todo.isCompleted;
+        if (filter === 'incomplete') return !todo.isCompleted;
+        return true; 
+    });
 
     return (
         <div className="lists">
-            <h1>TodoList</h1>
             <div className="input">
                 <TodoInput addTodo={addTodo} />
             </div>
-            <ul>
-                {todos.map((todo, index) => (
+            <div className={`list-wrapper ${todos.length > 0 ? 'has-items' : ''}`}>
+                <div className="filters">
+                    <button 
+                        className={filter === 'all' ? 'active' : ''}
+                        onClick={() => setFilter('all')}
+                    >
+                        All
+                    </button>
+                    <button 
+                        className={filter === 'completed' ? 'active' : ''}
+                        onClick={() => setFilter('completed')}
+                    >
+                        Completed
+                    </button>
+                    <button 
+                        className={filter === 'incomplete' ? 'active' : ''}
+                        onClick={() => setFilter('incomplete')}
+                    >
+                        Incomplete
+                    </button>
+                </div>
+
+                <ul>
+                {filteredTodos.map((todo, index) => (
                     <TodoItem 
                         key={index} 
                         todo={todo}
@@ -42,10 +69,15 @@ function TodoList() {
                         removeTodo={removeTodo}
                     />
                 ))}
-            </ul>
-            <div className="completed-count">
-                Completed Todos: {completedCount}
+                </ul>
+                {todos.length > 0 && (
+                    <div className="completed-count">
+                        Completed Todos: {completedCount}
+                    </div>
+                )}
             </div>
+
+            
         </div>
     );
 }
