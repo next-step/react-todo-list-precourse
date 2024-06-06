@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import TodoInput from './TodoInput'
+import TodoItem from './TodoItem'
 import '../src/main.css'
 
 
@@ -32,7 +33,15 @@ function TodoList() {
                 <TodoInput addTodo={addTodo} />
             </div>
             <ul>
-                <h1>Todo list!</h1>
+                {todos.map((todo, index) => (
+                    <TodoItem 
+                        key={index} 
+                        todo={todo}
+                        index={index} 
+                        toggleTodo={toggleTodo} 
+                        removeTodo={removeTodo}
+                    />
+                ))}
             </ul>
             <div className="completed-count">
                 Completed Todos: {completedCount}
