@@ -5,15 +5,15 @@ import TodoList from "./components/TodoList";
 import FilterButtons from "./components/FilterButtons";
 
 function App() {
-  const [todos, setTodos] = useState(() => {
-    const savedTodos = localStorage.getItem("todos");
-    return savedTodos ? JSON.parse(savedTodos) : [];
-  });
+  const [todos, setTodos] = useState(() =>
+    JSON.parse(localStorage.getItem("todos") || "[]")
+  );
   const [filter, setFilter] = useState("all");
 
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+  useEffect(
+    () => localStorage.setItem("todos", JSON.stringify(todos)),
+    [todos]
+  );
 
   const addTodo = (newTodo) => {
     if (!newTodo) {
@@ -24,31 +24,32 @@ function App() {
   };
 
   const toggleTodo = (id) => {
-    const newTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
     );
-    setTodos(newTodos);
   };
 
   const deleteTodo = (id) => {
-    const updatedTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(updatedTodos);
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const clearCompleted = () => {
-    const activeTodos = todos.filter((todo) => !todo.completed);
-    setTodos(activeTodos);
+    setTodos(todos.filter((todo) => !todo.completed));
   };
 
   const filterTodos = (newFilter) => {
     setFilter(newFilter);
   };
 
-  const filteredTodos = todos.filter((todo) => {
-    if (filter === "active") return !todo.completed;
-    if (filter === "completed") return todo.completed;
-    return true;
-  });
+  const getFilteredTodos = () => {
+    return todos.filter((todo) => {
+      if (filter === "active") return !todo.completed;
+      if (filter === "completed") return todo.completed;
+      return true;
+    });
+  };
 
   return React.createElement(
     "div",
@@ -59,7 +60,7 @@ function App() {
       { className: "app-container" },
       React.createElement(TodoInput, { onAddTodo: addTodo }),
       React.createElement(TodoList, {
-        todos: filteredTodos,
+        todos: getFilteredTodos(),
         onToggle: toggleTodo,
         onDeleteTodo: deleteTodo,
       }),

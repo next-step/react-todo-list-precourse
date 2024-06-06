@@ -3,9 +3,7 @@ import React, { useState } from "react";
 function TodoInput({ onAddTodo }) {
   const [input, setInput] = useState("");
 
-  const handleChange = (event) => {
-    setInput(event.target.value);
-  };
+  const handleChange = (event) => setInput(event.target.value);
 
   const handleSubmit = () => {
     if (!input.trim()) {
@@ -17,11 +15,7 @@ function TodoInput({ onAddTodo }) {
   };
 
   const handleKeyDown = (event) => {
-    if (event.isComposing || event.key === "Process") {
-      return;
-    }
-
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && !event.isComposing) {
       handleSubmit();
     }
   };
@@ -35,7 +29,7 @@ function TodoInput({ onAddTodo }) {
       onChange: handleChange,
       onKeyDown: handleKeyDown,
       placeholder: "What needs to be done?",
-      className: "todoInput",
+      className: "todo-input",
     }),
     React.createElement(
       "button",
