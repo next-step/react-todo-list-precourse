@@ -1,0 +1,32 @@
+.todo-item {
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+    border-bottom: 1px solid #ededed;
+  }
+  
+  .todo-text {
+    flex-grow: 1; 
+    margin-left:10px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .delete-btn {
+    margin-left: 10px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #cc9a9a;
+  }
+  
+  .delete-btn:hover {
+    color: #ff8989;
+    background-color: none;
+  }
+  
+  .completed {
+    text-decoration: line-through; 
+    color: #ccc; 
+  }
