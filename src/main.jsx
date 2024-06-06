@@ -1,8 +1,8 @@
-import Category from "./components/category/Category";
-import Footer from "./components/footer/Footer";
-import Listbox from "./components/listbox/Listbox";
-import Listboxes from "./components/listbox/Listboxes";
-import Textbox from "./components/textbox/Textbox";
+import Category from "./components/category/category";
+import Footer from "./components/footer/footer";
+import Listbox from "./components/listbox/listbox";
+import Listboxes from "./components/listbox/listboxes";
+import Textbox from "./components/textbox/textbox";
 import "./styles/Main.css";
 import { useState, useEffect } from "react";
 

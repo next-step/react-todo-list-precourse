@@ -1,6 +1,6 @@
-import "./Footer.css";
+import "./footer.css";
 
-const FooterComplete = ({ setTodos }) => {
+const footerComplete = ({ setTodos }) => {
   function handleClear() {
     setTodos((prevTodos) => prevTodos.filter((todo) => !todo.checked));
   }
@@ -11,4 +11,4 @@ const FooterComplete = ({ setTodos }) => {
   );
 };
 
-export default FooterComplete;
+export default footerComplete;

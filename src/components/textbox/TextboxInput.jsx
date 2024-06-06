@@ -1,6 +1,6 @@
-import "./Textbox.css";
+import "./textbox.css";
 
-const TextboxInput = ({ text, setText }) => {
+const textboxInput = ({ text, setText }) => {
   return (
     <input
       type="text"
@@ -12,4 +12,4 @@ const TextboxInput = ({ text, setText }) => {
   );
 };
 
-export default TextboxInput;
+export default textboxInput;

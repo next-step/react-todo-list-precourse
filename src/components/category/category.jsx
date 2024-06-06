@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./Category.css";
+import "./category.css";
 
-const Category = ({ setActive, active }) => {
+const category = ({ setActive, active }) => {
   const category = ["All", "Active", "Completed"];
   return (
     <div className="category">
@@ -29,4 +29,4 @@ const Category = ({ setActive, active }) => {
   );
 };
 
-export default Category;
+export default category;

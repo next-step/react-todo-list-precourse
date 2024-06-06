@@ -1,10 +1,10 @@
-import "./Listbox.css";
+import "./listbox.css";
 
-const ListboxDelete = ({ todo, setTodos }) => {
+const listboxDelete = ({ todo, setTodos }) => {
   const handleDelete = () => {
     setTodos((prevTodos) => prevTodos.filter((item) => item !== todo));
   };
   return <div className="delete" onClick={handleDelete} />;
 };
 
-export default ListboxDelete;
+export default listboxDelete;

@@ -1,8 +1,8 @@
-import "./Listbox.css";
+import "./listbox.css";
 import checkBox from "../../images/check_all_icon.svg";
 import circleBox from "../../images/circle_icon.svg";
 
-const ListCheckbox = ({ todo, setTodos }) => {
+const listCheckbox = ({ todo, setTodos }) => {
   const handleToggle = () => {
     setTodos((prevTodos) => {
       const updatedTodos = prevTodos.map((item) => {
@@ -29,4 +29,4 @@ const ListCheckbox = ({ todo, setTodos }) => {
   );
 };
 
-export default ListCheckbox;
+export default listCheckbox;

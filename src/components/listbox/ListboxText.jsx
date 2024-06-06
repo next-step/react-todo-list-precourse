@@ -1,6 +1,6 @@
-import "./Listbox.css";
+import "./listbox.css";
 
-const ListboxText = ({ todo }) => {
+const listboxText = ({ todo }) => {
   return (
     <div
       className="list"
@@ -14,4 +14,4 @@ const ListboxText = ({ todo }) => {
   );
 };
 
-export default ListboxText;
+export default listboxText;

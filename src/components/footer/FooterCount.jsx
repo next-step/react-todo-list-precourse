@@ -1,6 +1,6 @@
-import "./Footer.css";
+import "./footer.css";
 
-const FooterCount = ({ todos }) => {
+const footerCount = ({ todos }) => {
   let todo_length = todos.filter((todo) => {
     if (todo.checked) return false;
     return true;
@@ -12,4 +12,4 @@ const FooterCount = ({ todos }) => {
   );
 };
 
-export default FooterCount;
+export default footerCount;

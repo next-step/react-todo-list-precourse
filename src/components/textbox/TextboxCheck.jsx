@@ -1,6 +1,6 @@
-import "./Textbox.css";
+import "./textbox.css";
 
-const TextboxCheck = ({ todos, setTodos }) => {
+const textboxCheck = ({ todos, setTodos }) => {
   const checkAll = () => {
     const allChecked = todos.every((todo) => todo.checked);
     setTodos(
@@ -15,4 +15,4 @@ const TextboxCheck = ({ todos, setTodos }) => {
   );
 };
 
-export default TextboxCheck;
+export default textboxCheck;

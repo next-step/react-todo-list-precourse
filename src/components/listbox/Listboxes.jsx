@@ -1,6 +1,6 @@
-import Listbox from "./Listbox";
+import Listbox from "./listbox";
 
-const Listboxes = ({ todos, setTodos, active }) => {
+const listboxes = ({ todos, setTodos, active }) => {
   return (
     <>
       {todos
@@ -16,4 +16,4 @@ const Listboxes = ({ todos, setTodos, active }) => {
   );
 };
 
-export default Listboxes;
+export default listboxes;
