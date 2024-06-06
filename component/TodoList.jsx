@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TodoInput from './TodoInput'
 import TodoItem from './TodoItem'
+import Filter from './Filter'
 import '../src/main.css'
 
 function TodoList() {
@@ -38,26 +39,7 @@ function TodoList() {
                 <TodoInput addTodo={addTodo} />
             </div>
             <div className={`list-wrapper ${todos.length > 0 ? 'has-items' : ''}`}>
-                <div className="filters">
-                    <button 
-                        className={filter === 'all' ? 'active' : ''}
-                        onClick={() => setFilter('all')}
-                    >
-                        All
-                    </button>
-                    <button 
-                        className={filter === 'completed' ? 'active' : ''}
-                        onClick={() => setFilter('completed')}
-                    >
-                        Completed
-                    </button>
-                    <button 
-                        className={filter === 'incomplete' ? 'active' : ''}
-                        onClick={() => setFilter('incomplete')}
-                    >
-                        Incomplete
-                    </button>
-                </div>
+                <Filter filter={filter} setFilter={setFilter}/>
 
                 <ul>
                 {filteredTodos.map((todo, index) => (
