@@ -1,0 +1,14 @@
+header{
+    font-size: 100px;
+    color: #FFBBCC;
+}
+footer{
+    color: #686D76;
+}
+a{
+    text-decoration: none;
+    color: #686D76;
+}
+a:hover{
+    text-decoration: underline;
+}
