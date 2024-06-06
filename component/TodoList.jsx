@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import TodoInput from './TodoInput'
 import TodoItemList from './TodoItemList'
-import Filter from './Filter'
 import CompletedCount from './CompletedCount'
 import '../src/main.css'
 
@@ -40,8 +39,13 @@ export default function TodoList() {
                 <TodoInput addTodo={addTodo} />
             </div>
             <div className={`list-wrapper ${todos.length > 0 ? 'has-items' : ''}`}>
-                <Filter filter={filter} setFilter={setFilter}/>
-                <TodoItemList todos={filteredTodos} toggleTodo = {toggleTodo} removeTodo={removeTodo}/>
+                <TodoItemList 
+                    todos={filteredTodos} 
+                    toggleTodo = {toggleTodo} 
+                    removeTodo={removeTodo}
+                    filter = {filter}
+                    setFilter = {setFilter}
+                />
                 <CompletedCount completed = {completedCount} length = {todos.length}/>      
             </div>
         </div>
