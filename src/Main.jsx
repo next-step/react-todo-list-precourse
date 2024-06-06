@@ -3,31 +3,15 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
+import handleOnSubmit from "./components/handlers/handleOnSubmit";
 
 function App() {
-  console.log('test');
   const [text, setText] = useState("");
   const [todoList, setTodoList] = useState([]);
   const [filter, setFilter] = useState("all");
 
   const onChangeInput = (e) => {
     setText(e.target.value);
-  };
-
-  const onSubmit = (e) => {
-    if (text === "") {
-      alert('할 일을 입력하세요.');
-      setTodoList(todoList);
-    } else {
-      const nextTodoList = todoList.concat({
-        id: todoList.length,
-        text,
-        checked: false,
-      });
-      setTodoList(nextTodoList);
-      setText("");
-    }
-    e.preventDefault();
   };
   const onDelete = (id) => {
     setTodoList(todoList.filter(todoItem => 
@@ -51,7 +35,11 @@ function App() {
   return (
     <div id="root">
       <section className="todoapp">
-        <Header text={text} onChangeInput={onChangeInput} onSubmit={onSubmit}/>
+        <Header 
+          text={text} 
+          onChangeInput={onChangeInput} 
+          onSubmit={(e) => handleOnSubmit(e, text, todoList, setTodoList, setText)}
+        />
         <Body todoList={filteredTodoList} onDelete={onDelete} onToggle={onToggle}/>
         <Footer todoList={todoList} setFilter={setFilter}/>
       </section>
