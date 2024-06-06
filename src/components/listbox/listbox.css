@@ -1,0 +1,35 @@
+.list_box {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+.checkbox:hover {
+  cursor: pointer;
+}
+.list {
+  width: calc(100% - 60px);
+}
+.delete {
+  width: 15px;
+  height: 15px;
+  background-image: url("../../images/close_icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: 5px;
+}
+.delete:hover {
+  cursor: pointer;
+}

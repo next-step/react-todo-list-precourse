@@ -1,0 +1,19 @@
+.category {
+  display: flex;
+  width: 80vw;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #d79f9f;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.cat {
+  align-items: center;
+  text-align: center;
+  width: 22vw;
+  box-sizing: border-box;
+}
+.selected {
+  color: #e33769;
+  text-decoration: underline;
+}

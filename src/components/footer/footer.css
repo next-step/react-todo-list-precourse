@@ -1,0 +1,16 @@
+.footer {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 0 25px;
+  margin: 15px 0;
+  color: #d79f9f;
+}
+
+.clear:hover {
+  cursor: pointer;
+  color: #e33769;
+}
