@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import handleOnSubmit from "./components/handlers/handleOnSubmit";
+import handleOnDelete from "./components/handlers/handleOnDelete";
 
 function App() {
   const [text, setText] = useState("");
@@ -12,11 +13,6 @@ function App() {
 
   const onChangeInput = (e) => {
     setText(e.target.value);
-  };
-  const onDelete = (id) => {
-    setTodoList(todoList.filter(todoItem => 
-      todoItem.id !== id
-    ));
   };
   const onToggle = (id) => {
     setTodoList(
@@ -40,7 +36,10 @@ function App() {
           onChangeInput={onChangeInput} 
           onSubmit={(e) => handleOnSubmit(e, text, todoList, setTodoList, setText)}
         />
-        <Body todoList={filteredTodoList} onDelete={onDelete} onToggle={onToggle}/>
+        <Body 
+          todoList={filteredTodoList} 
+          onDelete={(id) => handleOnDelete(id, todoList, setTodoList)} 
+          onToggle={onToggle}/>
         <Footer todoList={todoList} setFilter={setFilter}/>
       </section>
     </div>
