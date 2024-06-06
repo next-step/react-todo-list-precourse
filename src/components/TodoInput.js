@@ -17,6 +17,10 @@ function TodoInput({ onAddTodo }) {
   };
 
   const handleKeyDown = (event) => {
+    if (event.isComposing || event.key === "Process") {
+      return;
+    }
+
     if (event.key === "Enter") {
       handleSubmit();
     }
