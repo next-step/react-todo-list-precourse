@@ -18,8 +18,10 @@ const Main: React.FC<MainProps> = ({
 }) => (
   <div className="main">
     <div className="toggle-all-container">
-      <input type="checkbox" className="toggle-all" onClick={toggleAllTodos} />
-      <label className="toggle-all-label">Toggle All Input</label>
+      <input type="checkbox" className="toggle-all" />
+      <label className="toggle-all-label" onClick={toggleAllTodos}>
+        Toggle All Input
+      </label>
     </div>
     <TodoList
       todos={filteredTodos}
