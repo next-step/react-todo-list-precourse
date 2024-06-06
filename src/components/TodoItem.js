@@ -9,10 +9,12 @@ function TodoItem({ todo, onToggle, onDelete }) {
       type: "checkbox",
       checked: todo.completed,
       onChange: () => onToggle(todo.id),
+      id: `todo-${todo.id}`,
     }),
     React.createElement(
-      "span",
+      "label",
       {
+        htmlFor: `todo-${todo.id}`,
         className: `todo-text ${todo.completed ? "completed" : ""}`,
       },
       todo.text
