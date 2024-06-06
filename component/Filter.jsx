@@ -1,7 +1,7 @@
 import React from 'react'
 import '../src/main.css'
 
-export default function FilterButtons({ filter, setFilter }) {
+export default function Filter({ filter, setFilter }) {
     return (
         <div className="filters">
             <button 

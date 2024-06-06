@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import '../src/main.css'
 
-function TodoItem({ todo, index, toggleTodo, removeTodo }) {
+export default function TodoItem({ todo, index, toggleTodo, removeTodo }) {
     return (
         <li className="todo-item">
           <input type="checkbox" checked={todo.isCompleted} onChange={() => toggleTodo(index)} />
@@ -12,6 +12,4 @@ function TodoItem({ todo, index, toggleTodo, removeTodo }) {
         </li>
       )
 }
-
-export default TodoItem
 
