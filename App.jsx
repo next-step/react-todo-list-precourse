@@ -4,7 +4,7 @@ import Main from '/src/main.jsx'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-    <BrowserRouter>
+    <React.StrictMode>
         <Main />
-    </BrowserRouter>
+    </React.StrictMode>
 )

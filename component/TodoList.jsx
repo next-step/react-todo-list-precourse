@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import TodoInput from './TodoInput'
 import '../src/main.css'
+
 
 function TodoList() {
     const [todos, setTodos] = useState([])
@@ -27,7 +29,7 @@ function TodoList() {
         <div className="lists">
             <h1>TodoList</h1>
             <div className="input">
-                <h1>Todo input!</h1>
+                <TodoInput addTodo={addTodo} />
             </div>
             <ul>
                 <h1>Todo list!</h1>
