@@ -1,28 +1,27 @@
 import { useContext } from 'react';
 import styles from './Filters.module.css';
 import FilterItem from './FilterItem/FilterItem';
-import TodoContext from '../../../context/TodoContext';
+import TodoContext, { FilterType } from '../../../context/TodoContext';
+
+const filters: Array<{ label: string; value: FilterType }> = [
+  { label: 'All', value: 'all' },
+  { label: 'Active', value: 'active' },
+  { label: 'Completed', value: 'completed' },
+];
 
 const Filters = () => {
   const value = useContext(TodoContext);
 
   return (
     <ul className={styles.filters}>
-      <FilterItem
-        onClick={() => value?.actions.selectFilter('all')}
-        selected={value?.state.filter === 'all'}
-        label="All"
-      />
-      <FilterItem
-        onClick={() => value?.actions.selectFilter('active')}
-        selected={value?.state.filter === 'active'}
-        label="Active"
-      />
-      <FilterItem
-        onClick={() => value?.actions.selectFilter('completed')}
-        selected={value?.state.filter === 'completed'}
-        label="Completed"
-      />
+      {filters.map(filter => (
+        <FilterItem
+          key={filter.value}
+          onClick={() => value?.actions.selectFilter(filter.value)}
+          selected={value?.state.filter === filter.value}
+          label={filter.label}
+        />
+      ))}
     </ul>
   );
 };
