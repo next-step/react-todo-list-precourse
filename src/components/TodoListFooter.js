@@ -1,5 +1,5 @@
 import React from 'react'
-import './TodoListFooter.css'
+import '../main.css'
 
 const TodoListFooter = ({ todolist, setFilter, clearCompleted }) => {
     let activeTodocount = 0

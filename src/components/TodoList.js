@@ -1,5 +1,5 @@
 import React from 'react'
-import './TodoList.css'
+import '../main.css'
 import TodoItem from './TodoItem'
 import TodoListFooter from './TodoListFooter'
 
