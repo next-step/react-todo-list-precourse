@@ -1,12 +1,15 @@
 import React from 'react';
 import '../styles/TodoForm.css';
-function TodoForm({value,setValue}) {
+
+function TodoForm({handleSubmit, value, setValue}) {
+
   const handleChange = (e) => {
     setValue(e.target.value);
   }
+
   return (
     <div className = "form-container">
-      <form>
+      <form onSubmit = {handleSubmit}>
         <input type = "text" 
         name = "value" 
         placeholder="해야 할 일을 입력하세요."

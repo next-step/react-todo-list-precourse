@@ -1,20 +1,25 @@
 import React from 'react';
 import '../styles/TodoList.css';
 
-function TodoList() {
+function TodoList({data, setTodoData}) {
+  const handleCompleteChange = (id) => {
+
+  }
+
+  const handleClick = (id) => {
+
+  }
   return (
     <div className="todoList">
       <div className="todo-item-wrapper">
-        <input type="checkbox" checked={false} />
-        <label className="todo-item">할일 내용 1</label>
-        <button>X</button>
-      </div>
-
-      {/* 줄바꿈 추가 */}
-      <div className="todo-item-wrapper">
-        <input type="checkbox" checked={false} />
-        <label className="todo-item">할일 내용 2</label>
-        <button>X</button>
+        <input type="checkbox"
+         checked={data.completed} 
+         onChange = {() => handleCompleteChange(data.id)}
+         />
+         {data.title}
+        <button
+          onClick = {() => handleClick(data.id)}>
+          X</button>
       </div>
     </div>
   );
