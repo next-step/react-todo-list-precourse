@@ -2,7 +2,7 @@ import React, {useCallback, useState} from "react"
 import "./App.css"
 import Header from "./src/component/Header"
 import List from "./src/component/List"
-import Maker from "./src/component/Maker"
+import Todomaker from "./src/component/Todomaker"
 function App(){
 
 
@@ -39,7 +39,7 @@ function App(){
     return (
      <div className="App">
    <Header/>
-   <Maker pushthing = {pushthing}/>
+   <Todomaker pushthing = {pushthing}/>
    <button className="checkbtn" onClick={toggleCheckedList}>
     {showChecked ? "모든 항목 보기" : "완료한 항목 보기"}
    </button>
