@@ -7,9 +7,24 @@
     <!-- Google Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>todo list</title>
+    <style>
+      #myVideo {
+        display: none;
+      }
+    </style>
   </head>
   <body>
+    <video id="myVideo" src="video.mp4" controls></video>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    
+    <script>
+      var videoElement = document.getElementById("myVideo");
+      window.addEventListener("beforeunload", function() {
+        videoElement.style.display = "none"; // 새로 고침할 때 비디오를 숨김
+      });
+    </script>
     <script type="module" src="/src/App.js"></script>
   </body>
+  
 </html>
