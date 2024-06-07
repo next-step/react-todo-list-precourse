@@ -1,5 +1,5 @@
 // Body.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import TodoFilters from './TodoFilters';
@@ -7,6 +7,11 @@ import TodoFilters from './TodoFilters';
 function Body() {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('all');
+  const [activeCount, setActiveCount] = useState(0);
+
+  useEffect(() => {
+    setActiveCount(todos.filter(todo => !todo.completed).length);
+  }, [todos]);
 
   const addTodo = (text) => {
     if (text === "") {
@@ -29,6 +34,11 @@ function Body() {
     setTodos(newTodos);
   };
 
+  const clearCompleted = () => {
+    const newTodos = todos.filter(todo => !todo.completed);
+    setTodos(newTodos);
+  };
+
   const changeFilter = (newFilter) => {
     setFilter(newFilter);
   };
@@ -43,7 +53,11 @@ function Body() {
     <section className="main">
       <TodoForm addTodo={addTodo} />
       <TodoList todos={filteredTodos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
-      <TodoFilters currentFilter={filter} changeFilter={changeFilter} />
+      <div className="footer">
+        <span className="todo-count"><strong>{activeCount}</strong> items left</span>
+        <TodoFilters currentFilter={filter} changeFilter={changeFilter} />
+        <a href="#/" className="clear-completed" onClick={(e) => { e.preventDefault(); clearCompleted(); }}>Clear completed</a>
+      </div>
     </section>
   );
 }
