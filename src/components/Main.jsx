@@ -7,8 +7,14 @@ import handleFormSubmit from '../utils/handleFormSubmit'
 function Main() {
   const [value, setValue] = useState("");
   const [todoData, setTodoData] = useState([]);
-  const handleSubmit = (e) => handleFormSubmit(e, value, setValue, setTodoData);
-  
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (value.trim() !== "") {
+    handleFormSubmit(setTodoData,value,setValue);
+    }
+  }
+
   return (
     <div className = "container">
       <div className = "title"> Todos </div>
