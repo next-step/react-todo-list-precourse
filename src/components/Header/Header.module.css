@@ -1,3 +1,7 @@
 .header {
   display: block;
 }
+
+.input-container {
+  position: relative;
+}

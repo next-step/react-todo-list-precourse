@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import Input from '../Input/Input';
+import InputField from '../Input/InputField/InputField';
 import { useState } from 'react';
 import { useContext } from 'react';
 import TodoContext from '../../context/TodoContext';
@@ -35,14 +35,16 @@ const Header = ({ title }: HeaderProps) => {
   return (
     <header className={styles.header}>
       <Title title={title} />
-      <Input
-        type="text"
-        placeholder="What needs to be done?"
-        label="todo-input"
-        value={todo}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-      />
+      <div className={styles['input-container']}>
+        <InputField
+          type="text"
+          placeholder="What needs to be done?"
+          label="todo-input"
+          value={todo}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+        />
+      </div>
     </header>
   );
 };

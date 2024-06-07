@@ -1,31 +1,31 @@
-import styles from './Input.module.css';
+import styles from './InputField.module.css';
+import TextInput from '../TextInput/TextInput';
 
-interface InputProps {
+export interface InputFieldProps {
   type: 'text';
   label: string;
   placeholder?: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const Input = ({ type, placeholder, label, value, onChange, onKeyDown }: InputProps) => {
+const InputField = ({ type, placeholder, label, value, onChange, onKeyDown }: InputFieldProps) => {
   return (
     <div>
       <label htmlFor={label} className={styles['sr-only']}>
         {label}
       </label>
-      <input
+      <TextInput
         type={type}
         placeholder={placeholder}
-        id={label}
+        label={label}
         value={value}
         onChange={onChange}
         onKeyDown={onKeyDown}
-        className={styles.input}
       />
     </div>
   );
 };
 
-export default Input;
+export default InputField;
