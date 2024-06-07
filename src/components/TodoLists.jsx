@@ -1,10 +1,9 @@
 import React from 'react'
 import TodoList from './TodoList.jsx'
 
-function TodoLists({todoData, setTodoData}) {
-  return (
+const TodoLists = ({todoData, setTodoData}) => (
     <div>
-      {todoData.map((data) => (
+      {todoData.map(data => (
         <TodoList 
         key = {data.id}
         data = {data}
@@ -12,7 +11,6 @@ function TodoLists({todoData, setTodoData}) {
         />
       ))}
     </div>
-  )
-}
+);
 
 export default TodoLists
