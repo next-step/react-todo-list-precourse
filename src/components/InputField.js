@@ -7,21 +7,21 @@ function InputField({addTodo}) {
 
   const inputChange = (event) => {
     setInputValue(event.target.value)
-  };
+  }
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       console.log('Enter key pressed!');
       todoSubmit()
     }
-  };
+  }
 
   const todoSubmit = () => {
     if (inputValue.trim()) {
       addTodo(inputValue);
       setInputValue('')
     }
-  };
+  }
 
   return React.createElement(
     'div',

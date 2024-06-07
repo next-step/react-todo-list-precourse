@@ -1,16 +1,19 @@
 import React from 'react'
 import './TodoList.css'
+import TodoItem from './TodoItem'
 
-function TodoList({todolist}) {
+function TodoList({todolist, toggleTodo, deleteTodo }) {
   return React.createElement('div',{className: 'todoListItemField'},
     React.createElement('ul',null,
-        todolist.map(todo => {
-          return React.createElement('li',{className: 'listItem'},
-            React.createElement('input', { className:'checkBox' ,type: 'checkbox' }),
-            React.createElement('span', null, todo),
-            React.createElement('button', {className: 'deleteButton'}, 'X')
-          )
-        })
+        todolist.map((todo, index) =>
+            React.createElement(TodoItem, {
+              key: index,
+              todo,
+              index,
+              toggleTodo,
+              deleteTodo
+            })
+        )
     )
   )
 }
