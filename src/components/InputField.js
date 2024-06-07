@@ -5,27 +5,21 @@ import './InputField.css'
 function InputField({addTodo}) {
   const [inputValue, setInputValue] = useState('')
 
-  const inputChange = (event) => {
-    setInputValue(event.target.value)
-  }
+  const inputChange = (event) => setInputValue(event.target.value)
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      console.log('Enter key pressed!');
-      todoSubmit()
-    }
+    if (event.key === 'Enter') todoSubmit()
   }
 
   const todoSubmit = () => {
     if (inputValue.trim()) {
-      addTodo(inputValue);
+      addTodo(inputValue)
       setInputValue('')
     }
   }
 
   return React.createElement(
-    'div',
-    {className: 'inputContainer' },
+    'div', {className: 'inputContainer' },
     React.createElement(Input, {
       inputValue, inputChange, handleKeyPress
     }),

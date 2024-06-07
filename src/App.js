@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react'
 import InputField from './components/InputField'
 import TodoList from './components/TodoList'
 import Footer from './components/Footer'
-import './App.css'
+import './main.css'
 
 function App() {
   const [todolist, setTodos] = useState([])
@@ -10,19 +10,16 @@ function App() {
 
   useEffect(() => {
     const storedTodos = localStorage.getItem('todolist');
-    if (storedTodos) {
-      setTodos(JSON.parse(storedTodos));
-    }
-  }, []);
+    if (storedTodos)
+      setTodos(JSON.parse(storedTodos))
+  }, [])
 
-  useEffect(() => {
-    localStorage.setItem('todolist', JSON.stringify(todolist));
-  }, [todolist]);
+  useEffect(() => localStorage.setItem('todolist', JSON.stringify(todolist)), [todolist])
 
   const addTodo = (todo) => setTodos([...todolist, {text : todo, completed:false}])
 
   const toggleTodo = (index) => {
-    const newTodos = [...todolist];
+    const newTodos = [...todolist]
     newTodos[index].completed =!newTodos[index].completed
     setTodos(newTodos)
   }
@@ -40,8 +37,8 @@ function App() {
   })
 
   const clearCompleted = () => {
-    const newTodos = todolist.filter(todo => !todo.completed);
-    setTodos(newTodos);
+    const newTodos = todolist.filter(todo => !todo.completed)
+    setTodos(newTodos)
   }
 
   return React.createElement(

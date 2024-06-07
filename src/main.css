@@ -3,3 +3,25 @@ body{
     background-color: #EEE;
     text-align: center;
 }
+header{
+    font-size: 100px;
+    color: #FFBBCC;
+}
+header p{
+    margin: 20px 0;
+}
+.todoListBody{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+footer{
+    color: #686D76;
+}
+a{
+    text-decoration: none;
+    color: #686D76;
+}
+a:hover{
+    text-decoration: underline;
+}
