@@ -1,26 +1,23 @@
 import { useState } from 'react';
 import styles from './Filters.module.css';
+import FilterItem from './FilterItem/FilterItem';
 
 const Filters = () => {
   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
 
   return (
     <ul className={styles.filters}>
-      <li onClick={() => setFilter('all')} className={filter === 'all' ? styles.selected : ''}>
-        All
-      </li>
-      <li
+      <FilterItem onClick={() => setFilter('all')} selected={filter === 'all'} label="All" />
+      <FilterItem
         onClick={() => setFilter('active')}
-        className={filter === 'active' ? styles.selected : ''}
-      >
-        Active
-      </li>
-      <li
+        selected={filter === 'active'}
+        label="Active"
+      />
+      <FilterItem
         onClick={() => setFilter('completed')}
-        className={filter === 'completed' ? styles.selected : ''}
-      >
-        Completed
-      </li>
+        selected={filter === 'completed'}
+        label="Completed"
+      />
     </ul>
   );
 };
