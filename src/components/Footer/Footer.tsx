@@ -5,12 +5,11 @@ import Filters from './Filters/Filters';
 
 const Footer = () => {
   const value = useContext(TodoContext);
-
-  const countIncompleteTodos = () => value?.state.todoList.filter(todo => !todo.done).length;
+  const countIncompleteTodos = value?.state.todoList.filter(todo => !todo.done).length;
 
   return (
     <footer className={styles.footer}>
-      <span>{countIncompleteTodos()} item left!</span>
+      <span>{countIncompleteTodos} item left!</span>
       <Filters />
       <button
         type="button"

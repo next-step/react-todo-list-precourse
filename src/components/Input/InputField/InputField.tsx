@@ -2,7 +2,7 @@ import styles from './InputField.module.css';
 import TextInput from '../TextInput/TextInput';
 
 export interface InputFieldProps {
-  type: 'text' | 'checkbox';
+  type: 'text';
   label: string;
   placeholder?: string;
   value?: string;
@@ -23,8 +23,8 @@ const InputField = ({ type, placeholder, label, value, onChange, onKeyDown }: In
           onKeyDown={onKeyDown}
         />
       )}
-      <label htmlFor={label} className={type === 'text' ? styles['sr-only'] : ''}>
-        {type === 'text' && label}
+      <label htmlFor={label} className={styles['sr-only']}>
+        {label}
       </label>
     </div>
   );
