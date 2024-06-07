@@ -1,3 +1,3 @@
 import { createApp } from "./App";
 
-createApp()
+createApp();
