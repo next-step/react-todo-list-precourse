@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useTodoActions } from "../../hooks/useTodoActions";
-import { Input } from "../ui/Input";
-import { Button } from "../ui/Button";
+import { TodoFormButton } from "./TodoFormButton";
+import { TodoFormInput } from "./TodoFormInput";
 
-export const TodoInput = () => {
+export const TodoForm = () => {
   const [input, setInput] = useState<string>("");
   const { addTodo } = useTodoActions();
 
@@ -14,14 +14,8 @@ export const TodoInput = () => {
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>
-      <Input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="할 일을 입력해주세요."
-      />
-      <Button size="md" onClick={handleAddTodoClick}>
-        추가
-      </Button>
+      <TodoFormInput input={input} setInput={setInput} />
+      <TodoFormButton onClick={handleAddTodoClick} />
     </form>
   );
 };

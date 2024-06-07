@@ -1,5 +1,5 @@
 import { Text } from "../ui/Text";
-import { TodoInput } from "./TodoInput";
+import { TodoForm } from "./TodoForm";
 
 export const Header = () => {
   return (
@@ -7,7 +7,7 @@ export const Header = () => {
       <Text variant="primary" size="2xl">
         To Do List
       </Text>
-      <TodoInput />
+      <TodoForm />
     </header>
   );
 };
