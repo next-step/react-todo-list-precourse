@@ -1,13 +1,11 @@
 import { useTodoActions } from "../../../hooks/useTodoActions";
 import { Button } from "../../ui/Button";
 
-interface TodoListItemRemoveButtonProps {
+interface TodoRemoveButtonProps {
   index: number;
 }
 
-export const TodoListItemRemoveButton = ({
-  index,
-}: TodoListItemRemoveButtonProps) => {
+export const TodoRemoveButton = ({ index }: TodoRemoveButtonProps) => {
   const { removeTodo } = useTodoActions();
 
   return (

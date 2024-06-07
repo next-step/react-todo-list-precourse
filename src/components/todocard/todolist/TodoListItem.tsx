@@ -1,5 +1,5 @@
 import { TodoListItemContent } from "./TodoListItemContent";
-import { TodoListItemRemoveButton } from "./TodoListItemRemoveButton";
+import { TodoRemoveButton } from "./TodoRemoveButton";
 
 interface TodoListItemProps {
   todo: Todo;
@@ -10,7 +10,7 @@ export const TodoListItem = ({ todo, index }: TodoListItemProps) => {
   return (
     <div key={index} className="todo-item">
       <TodoListItemContent index={index} todo={todo} />
-      <TodoListItemRemoveButton index={index} />
+      <TodoRemoveButton index={index} />
     </div>
   );
 };
