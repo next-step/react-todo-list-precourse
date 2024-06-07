@@ -1,9 +1,12 @@
 import React from 'react'
 import './InputField.css'
 
-const InputField = () => {
-  return (
-    React.createElement('input', {className: 'todoInputField', type: 'text', placeholder: 'What needs to be done?'}, null) 
+function InputField() {
+  return React.createElement(
+    'div',
+    {className: 'inputContainer' },
+    React.createElement('input', {type: 'text', placeholder: 'What needs to be done?'}, null),
+    React.createElement('button', {className: 'addButton'}, 'ADD')
   )
 }
 
