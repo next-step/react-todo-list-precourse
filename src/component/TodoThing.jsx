@@ -13,6 +13,7 @@ const checkHandler = () => {
 
     return (
         <div className="TodoThing">
+
         <input type="checkbox" checked={isChecked} onChange={checkHandler} ></input>
         <div className="item">{todo.content}</div>
         <button className="deletebtn"onClick={removeHandler}>삭제</button>
