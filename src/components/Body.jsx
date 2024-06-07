@@ -1,3 +1,4 @@
+// Body.jsx
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
@@ -6,8 +7,12 @@ function Body() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (text) => {
-    const newTodo = { text, completed: false };
-    setTodos([...todos, newTodo]);
+    if (text === "") {
+      alert('할 일을 입력하세요.');
+    } else {
+      const newTodo = { text, completed: false };
+      setTodos([...todos, newTodo]);
+    }
   };
 
   const toggleComplete = (index) => {

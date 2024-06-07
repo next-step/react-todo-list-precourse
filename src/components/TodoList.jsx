@@ -13,7 +13,8 @@ function TodoList({ todos, toggleComplete, deleteTodo }) {
               onChange={() => toggleComplete(index)}
             />
             <label>{todo.text}</label>
-            <button className="destroy" onClick={() => deleteTodo(index)}></button>
+            <button className="destroy"
+              onClick={() => deleteTodo(index)}>X</button>
           </div>
         </li>
       ))}

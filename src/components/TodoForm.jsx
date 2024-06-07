@@ -1,3 +1,4 @@
+// TodoForm.jsx
 import React, { useState } from 'react';
 
 function TodoForm({ addTodo }) {
@@ -16,15 +17,18 @@ function TodoForm({ addTodo }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="new-todo"
-        value={input}
-        onChange={handleChange}
-        placeholder="What needs to be done?"
-        autoFocus
-      />
+    <form onSubmit={handleSubmit} className="todo-form">
+      <div className="input-container">
+        <input
+          type="text"
+          className="new-todo"
+          value={input}
+          onChange={handleChange}
+          placeholder="What needs to be done?"
+          autoFocus
+        />
+        <button type="submit" className="add-todo">Add</button>
+      </div>
     </form>
   );
 }
