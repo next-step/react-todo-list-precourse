@@ -5,9 +5,11 @@ import TodoContext from '../../context/TodoContext';
 const Footer = () => {
   const value = useContext(TodoContext);
 
+  const countIncompleteTodos = () => value?.state.todoList.filter(todo => !todo.done).length;
+
   return (
     <footer className={styles.footer}>
-      <span>1 item left!</span>
+      <span>{countIncompleteTodos()} item left!</span>
       <ul className={styles.filters}>
         <li>All</li>
         <li>Active</li>
