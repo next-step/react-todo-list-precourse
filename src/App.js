@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './index.css';
+import React, { useState } from "react";
+import "./index.css";
 import { handleNewTodoChange, handleNewTodoKeyPress, addTodo, toggleTodoCompletion, deleteTodo, clearCompletedTodos, handleToggleAll, filterTodos } from './todoFunctions';
-import TodoItem from './TodoItem';
-import Filters from './Filters';
+import TodoItem from "./TodoItem";
+import Filters from "./Filters";
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState('');
-  const [filter, setFilter] = useState('all');
+  const [newTodo, setNewTodo] = useState("");
+  const [filter, setFilter] = useState("all");
 
   const filteredTodos = todos.filter(todo => filterTodos(todo, filter));
 
