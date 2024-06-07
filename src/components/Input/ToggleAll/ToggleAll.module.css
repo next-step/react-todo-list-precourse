@@ -1,0 +1,20 @@
+.toggle-all {
+  display: none;
+}
+
+.toggle-all + label {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 300px;
+  top: 125px;
+  width: 40px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.toggle-all + label::before {
+  content: '✅';
+  font-size: 30px;
+}
