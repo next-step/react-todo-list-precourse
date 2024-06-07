@@ -14,14 +14,7 @@ const InputField = ({ type, placeholder, label, value, onChange, onKeyDown }: In
   return (
     <div>
       {type === 'text' && (
-        <TextInput
-          type={type}
-          placeholder={placeholder}
-          label={label}
-          value={value}
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-        />
+        <TextInput {...{ type, placeholder, label, value, onChange, onKeyDown }} />
       )}
       <label htmlFor={label} className={styles['sr-only']}>
         {label}
