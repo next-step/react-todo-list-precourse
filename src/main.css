@@ -1,0 +1,181 @@
+html{
+    --color-primary: #FFBBCC;
+    --color-font:#686D76;
+    --color-white: #FFF;
+}
+body{
+    font-family: "Montserrat",sans-serif;
+    background-color: #EEE;
+    text-align: center;
+}
+
+/*Header*/
+header{
+    font-size: 100px;
+    color: var(--color-primary);
+}
+header p{
+    margin: 20px 0;
+}
+
+/*MainField*/
+.todoListBody{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+/*InputField*/
+.inputContainer {
+    position: relative;
+    width: 700px; 
+}
+.userInput{
+    width: 700px;
+    height: 80px;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    padding-left: 70px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.2);
+    box-sizing: border-box;
+}
+.userInput:focus{
+    box-shadow: 0 0 10px var(--color-primary);
+}
+.addButton {
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+    height: 40px; 
+    border: none;
+    background-color: #999;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+}
+.addButton:hover {
+    background-color: var(--color-primary);
+}
+
+/*TodoList*/
+.todoListItemField{
+    position: relative;
+    width: 700px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+}
+ul{
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    
+}
+.listItem{
+    position: relative;
+    width: 700px;
+    height: 80px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #DDD;
+}
+.checkBox{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+.checkBox:checked + span{
+    text-decoration: line-through;
+    color: var(--color-font);
+}
+.deleteButton{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right:20px;
+    border: none;
+    background-color: var(--color-white);
+    color: var(--color-font);
+    font-size: 20px;
+    font-weight: 700;
+}
+.deleteButton:hover{
+    cursor: pointer;
+    color: var(--color-primary)
+}
+
+
+/*TodoListFooter*/
+.todoListFooterDiv{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+.listStateBtnDiv {
+    display: flex;
+    justify-content: center;
+}
+.todoListFooterDiv button{
+    background-color: var(--color-white);
+    height: 40px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: "Montserrat";
+}
+.todoListFooterDiv button:hover{
+    cursor: pointer;
+}
+.listStateBtn{
+    margin-left: 10px;
+}
+.listStateBtn:hover,
+.listStateBtn:focus{
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+}
+.listStateBtn:focus{
+    box-shadow: 0 0 10px var(--color-primary);
+}
+.clearBtn:hover{
+    text-decoration: underline;
+}
+
+/*PageDeco*/
+.page1{
+    position: absolute;
+    width: 680px;
+    height: 30px;
+    bottom: -8px;
+    left: 10px;
+    z-index: -1;
+    background-color: var(--color-white);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+}
+.page2{
+    position: absolute;
+    width: 660px;
+    height: 30px;
+    bottom: -16px;
+    left: 18px;
+    z-index: -2;
+    background-color: var(--color-white);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+}
+
+/*Footer*/
+footer{
+    color: var(--color-font);
+}
+a{
+    text-decoration: none;
+    color: var(--color-font);
+}
+a:hover{
+    text-decoration: underline;
+}
