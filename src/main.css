@@ -1,6 +1,7 @@
 html{
     --color-primary: #FFBBCC;
     --color-font:#686D76;
+    --color-white: #FFF;
 }
 body{
     font-family: "Montserrat",sans-serif;
@@ -62,13 +63,16 @@ header p{
 
 /*TodoList*/
 .todoListItemField{
+    position: relative;
     width: 700px;
     box-sizing: border-box;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
 }
 ul{
-    background-color: #FFF;
+    background-color: var(--color-white);
     margin: 0;
     padding: 0;
+    
 }
 .listItem{
     position: relative;
@@ -94,12 +98,13 @@ ul{
     height: 50px;
     right:20px;
     border: none;
-    background-color: #FFF;
+    background-color: var(--color-white);
     color: var(--color-font);
     font-size: 20px;
     font-weight: 700;
 }
 .deleteButton:hover{
+    cursor: pointer;
     color: var(--color-primary)
 }
 
@@ -116,7 +121,7 @@ ul{
     justify-content: center;
 }
 .todoListFooterDiv button{
-    background-color: #FFF;
+    background-color: var(--color-white);
     height: 40px;
     border: 2px solid transparent;
     box-sizing: border-box;
@@ -141,6 +146,27 @@ ul{
     text-decoration: underline;
 }
 
+/*PageDeco*/
+.page1{
+    position: absolute;
+    width: 680px;
+    height: 30px;
+    bottom: -8px;
+    left: 10px;
+    z-index: -1;
+    background-color: var(--color-white);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+}
+.page2{
+    position: absolute;
+    width: 660px;
+    height: 30px;
+    bottom: -16px;
+    left: 18px;
+    z-index: -2;
+    background-color: var(--color-white);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+}
 
 /*Footer*/
 footer{

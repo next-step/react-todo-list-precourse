@@ -16,7 +16,8 @@ function TodoList({todolist, toggleTodo, deleteTodo,  setFilter, clearCompleted,
             })
         ),
         showFooter && React.createElement(TodoListFooter,{ setFilter, clearCompleted, fullTodoList })
-    )
+    ),showFooter && React.createElement('div',{className:'page1'},null),
+  showFooter && React.createElement('div',{className:'page2'},null)
   )
 }
 
