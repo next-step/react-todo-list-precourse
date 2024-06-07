@@ -1,10 +1,9 @@
 import React from 'react'
 import '../styles/TodoForm.css'
+import handleInputChange from '../utils/handleInputChange';
 
 function TodoForm({handleSubmit, value, setValue}) {
-    const handleChange = (e) => {
-    setValue(e.target.value);
-  }
+    const handleChange = (e) => handleInputChange(e,setValue);
 
   return (
     <div className = "form-container">
