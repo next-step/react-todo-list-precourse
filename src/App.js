@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import InputField from './components/InputField'
 import TodoList from './components/TodoList'
 import Footer from './components/Footer'
@@ -7,6 +7,17 @@ import './App.css'
 function App() {
   const [todolist, setTodos] = useState([])
   const [filter, setFilter] = useState('all')
+
+  useEffect(() => {
+    const storedTodos = localStorage.getItem('todolist');
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todolist', JSON.stringify(todolist));
+  }, [todolist]);
 
   const addTodo = (todo) => setTodos([...todolist, {text : todo, completed:false}])
 
