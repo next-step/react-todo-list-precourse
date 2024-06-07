@@ -5,3 +5,7 @@ export const getFilteredTodos = (todos: Todo[], filter: Filter) => {
     if (filter === "완료") return todo.done;
   });
 };
+
+export const getRemainTodosNum = (todos: Todo[]) => {
+  return todos.filter((todo) => !todo.done).length;
+};

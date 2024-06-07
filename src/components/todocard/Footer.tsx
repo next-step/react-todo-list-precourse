@@ -1,12 +1,13 @@
 import { useTodos } from "../../contexts/todos/useTodos";
 import { useTodoActions } from "../../hooks/useTodoActions";
+import { getRemainTodosNum } from "../../utils/filterTodo";
 import { Button } from "../ui/Button";
 import { Text } from "../ui/Text";
 
 export const Footer = () => {
   const { todos } = useTodos();
   const { removeDoneTodos } = useTodoActions();
-  const remainTodoNum = todos.filter((todo) => !todo.done).length;
+  const remainTodoNum = getRemainTodosNum(todos);
 
   return (
     <footer>
