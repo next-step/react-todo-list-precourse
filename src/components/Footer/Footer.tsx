@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import styles from './Footer.module.css';
 import TodoContext from '../../context/TodoContext';
+import Filters from './Filters/Filters';
 
 const Footer = () => {
   const value = useContext(TodoContext);
@@ -10,11 +11,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <span>{countIncompleteTodos()} item left!</span>
-      <ul className={styles.filters}>
-        <li>All</li>
-        <li>Active</li>
-        <li>Completed</li>
-      </ul>
+      <Filters />
       <button
         type="button"
         className={styles['clear-completed']}
