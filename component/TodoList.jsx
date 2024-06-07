@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import TodoInput from './TodoInput'
 import TodoItemList from './TodoItemList'
-import IncompletedCount from './IncompletedCount'
-import ClearCompletedItem from './ClearCompletedItem'
+import Footer from './Footer'
 import '../src/main.css'
 
 export default function TodoList() {
@@ -46,19 +45,15 @@ export default function TodoList() {
             </div>
             {todos.length > 0 && (
                 <div className="list-wrapper">
-                <TodoItemList 
-                    todos={filteredTodos} 
-                    toggleTodo = {toggleTodo} 
-                    removeTodo={removeTodo}
-                    filter = {filter}
-                    setFilter = {setFilter}
-                />
-                <div className="notice-wrapper">
-                    <IncompletedCount incompleted = {incompletedTodosCount} length = {todos.length}/>  
-                    <ClearCompletedItem clearCompletedItem={clearCompletedItem}/>
+                    <TodoItemList 
+                        todos={filteredTodos} 
+                        toggleTodo = {toggleTodo} 
+                        removeTodo={removeTodo}
+                        filter = {filter}
+                        setFilter = {setFilter}
+                    />
+                    <Footer incompleted = {incompletedTodosCount} clearCompletedItem={clearCompletedItem} length = {todos.length}/>
                 </div>
-                
-            </div>
             )}
             
         </div>
