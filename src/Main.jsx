@@ -1,10 +1,15 @@
 import "./Main.css";
+import React, { useState } from "react";
+import Header from "./components/Header";
 
 function App(){
+
     return (
-        <div className="App">
-            <h1>Todo List</h1>
-        </div>
+        <div id="root">
+            <section className="todoapp">
+                <Header/>
+            </section>
+      </div>
     );
 }
 
