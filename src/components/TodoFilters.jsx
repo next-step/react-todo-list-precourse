@@ -1,16 +1,35 @@
+// TodoFilters.jsx
 import React from 'react';
 
-function TodoFilters() {
+function TodoFilters({ currentFilter, changeFilter }) {
   return (
     <ul className="filters">
       <li>
-        <a href="#/" className="selected">All</a>
+        <a
+          href="#/"
+          className={currentFilter === 'all' ? 'selected' : ''}
+          onClick={() => changeFilter('all')}
+        >
+          All
+        </a>
       </li>
       <li>
-        <a href="#/active">Active</a>
+        <a
+          href="#/active"
+          className={currentFilter === 'active' ? 'selected' : ''}
+          onClick={() => changeFilter('active')}
+        >
+          Active
+        </a>
       </li>
       <li>
-        <a href="#/completed">Completed</a>
+        <a
+          href="#/completed"
+          className={currentFilter === 'completed' ? 'selected' : ''}
+          onClick={() => changeFilter('completed')}
+        >
+          Completed
+        </a>
       </li>
     </ul>
   );
