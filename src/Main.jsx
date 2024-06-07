@@ -1,16 +1,17 @@
 import "./Main.css";
-import React, { useState } from "react";
+import React from "react";
 import Header from "./components/Header";
+import Body from "./components/Body";
 
-function App(){
-
+function Main() {
     return (
         <div id="root">
             <section className="todoapp">
-                <Header/>
+                <Header />
+                <Body />
             </section>
-      </div>
+        </div>
     );
 }
 
-export default App;
+export default Main;
