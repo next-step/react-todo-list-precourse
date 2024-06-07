@@ -1,16 +1,13 @@
 import { useFilter } from "../../../contexts/filter/useFilter";
 import { useTodos } from "../../../contexts/todos/useTodos";
+import { getFilteredTodos } from "../../../utils/filterTodo";
 import { TodoListItem } from "./TodoListItem";
 
 export const TodoList = () => {
   const { todos } = useTodos();
   const { filter } = useFilter();
 
-  const filterTodos = todos.filter((todo) => {
-    if (filter === "모두") return true;
-    if (filter === "진행중") return !todo.done;
-    if (filter === "완료") return todo.done;
-  });
+  const filterTodos = getFilteredTodos(todos, filter);
 
   return (
     <div className="todo-list">
