@@ -4,11 +4,11 @@ export default function TodoInput({ addTodo }) {
   const [value, setValue] = useState('')
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!value) return;
-    addTodo(value);
-    setValue('');
-  };
+    e.preventDefault()
+    if (!value) return
+    addTodo(value)
+    setValue('')
+  }
 
   return (
     <form onSubmit={handleSubmit} className="todo-form">
