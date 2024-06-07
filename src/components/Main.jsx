@@ -10,9 +10,7 @@ function Main() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (value.trim() !== "") {
-    handleFormSubmit(setTodoData,value,setValue);
-    }
+    value.trim() !== "" ? handleFormSubmit(setTodoData,value,setValue) : alert("할 일을 입력해주세요!")
   }
 
   return (
