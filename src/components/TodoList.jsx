@@ -4,13 +4,16 @@ import '../styles/TodoList.css';
 function TodoList({data, setTodoData}) {
   const handleCompleteChange = (id) => {
 
+
   }
 
   const handleClick = (id) => {
+    setTodoData((prev) => prev.filter((data) => data.id !== id))
+
 
   }
   return (
-    <div className="todoList">
+    <div className="todoList" key = {data.id}>
       <div className="todo-item-wrapper">
         <input type="checkbox"
          checked={data.completed} 
