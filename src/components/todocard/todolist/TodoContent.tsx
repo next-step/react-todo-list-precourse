@@ -1,15 +1,12 @@
 import { TodoCheckbox } from "./TodoCheckbox";
 import { TodoLabel } from "./TodoLabel";
 
-interface TodoListItemContentProps {
+interface TodoContentProps {
   todo: Todo;
   index: number;
 }
 
-export const TodoListItemContent = ({
-  todo,
-  index,
-}: TodoListItemContentProps) => {
+export const TodoContent = ({ todo, index }: TodoContentProps) => {
   return (
     <div className="todo-content">
       <TodoCheckbox todo={todo} index={index} />
