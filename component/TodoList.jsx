@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import TodoInput from './TodoInput'
 import TodoItemList from './TodoItemList'
 import Footer from './Footer'
 import '../src/main.css'
 
 export default function TodoList() {
-    const [todos, setTodos] = useState([])
+    const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
+
+    const [todos, setTodos] = useState(savedTodos)
     const [filter, setFilter] = useState('all')
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos])
 
     const addTodo = (text) => {
         const newTodos = [...todos, { text, isCompleted: false }];
