@@ -11,6 +11,7 @@ const TodoList = () => {
   const filteredTodoList = todoList?.filter(todoListItem => {
     if (filter === 'all') return true;
     if (filter === 'active') return !todoListItem.done;
+    if (filter === 'completed') return todoListItem.done;
   });
 
   return (
