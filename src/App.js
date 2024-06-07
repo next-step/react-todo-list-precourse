@@ -20,20 +20,25 @@ function App() {
     const newTodos = [...todolist]
     newTodos.splice(index, 1)
     setTodos(newTodos)
-  };
+  }
 
   const getFilteredTodos = () => todolist.filter(todo => {
     if (filter === 'active') return !todo.completed
     if (filter === 'completed') return todo.completed
     return true
-  });
+  })
+
+  const clearCompleted = () => {
+    const newTodos = todolist.filter(todo => !todo.completed);
+    setTodos(newTodos);
+  }
 
   return React.createElement(
     'div', null,
     React.createElement('header', null, React.createElement('p', null, 'todos')),
       React.createElement('div', { className: 'todoListBody' },
         React.createElement(InputField, {addTodo}),
-        React.createElement(TodoList, {todolist: getFilteredTodos(), toggleTodo, deleteTodo})
+        React.createElement(TodoList, {todolist: getFilteredTodos(), toggleTodo, deleteTodo, setFilter, clearCompleted})
       ),
     React.createElement(Footer, null)
   )
