@@ -5,12 +5,15 @@
     padding-bottom: 20px;
     border: 1px solid lightblue;
     border-radius: 5px;
-    justify-content: space-between;
-    
+    justify-content: space-between;  
 }
 
 .TodoThing input{
+    cursor: pointer;
     width: 30px;
+}
+.TodoThing .item{
+    cursor : pointer;
 }
 
 .TodoThing .item{
@@ -19,5 +22,7 @@
 .deletebtn{
     border: 1px;
     border-radius: 50px;
-
+    background: transparent; 
+    border: none; 
+    cursor: pointer;
 }

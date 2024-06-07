@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./Maker.css"
 
 
-const Todomaker = ({pushthing}) => {
+const Todomaker = ({addNewTodo}) => {
 
     const [inputvalue, setinputvalue] = useState('')
 
@@ -11,7 +11,7 @@ const Todomaker = ({pushthing}) => {
       e.preventDefault();
       if (inputvalue === "")  alert("할 일을 입력하세요📝");
        else {
-        pushthing(inputvalue);
+        addNewTodo(inputvalue);
         setinputvalue("");
       }
     };

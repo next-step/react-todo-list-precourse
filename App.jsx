@@ -28,7 +28,7 @@ function App(){
     setShowChecked(!showChecked); // 버튼 클릭 이벤트 핸들링 함수
   };
 
-  const pushthing = (content)=> {
+  const addNewTodo = (content)=> {
     const newTodo = {
       id:TodoList.length,
       isDone : false,
@@ -39,7 +39,7 @@ function App(){
     return (
      <div className="App">
    <Header/>
-   <Todomaker pushthing = {pushthing}/>
+   <Todomaker addNewTodo = {addNewTodo}/>
    <button className="checkbtn" onClick={toggleCheckedList}>
     {showChecked ? "모든 항목 보기" : "완료한 항목 보기"}
    </button>
