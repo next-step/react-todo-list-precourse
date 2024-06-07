@@ -3,6 +3,7 @@ import Input from '../Input/Input';
 import { useState } from 'react';
 import { useContext } from 'react';
 import TodoContext from '../../context/TodoContext';
+import Title from './Title/Title';
 
 interface HeaderProps {
   title: string;
@@ -33,7 +34,7 @@ const Header = ({ title }: HeaderProps) => {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>{title}</h1>
+      <Title title={title} />
       <Input
         type="text"
         placeholder="What needs to be done?"
