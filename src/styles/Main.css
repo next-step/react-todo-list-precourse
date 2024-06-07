@@ -1,0 +1,17 @@
+body {
+    background-color:aliceblue;
+}
+.container {
+    margin: auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {   
+    margin: 20px 0;
+    justify-content: center;
+    font-size: 100px;
+    font-style: italic;
+    color: gainsboro;
+}

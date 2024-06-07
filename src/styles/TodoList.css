@@ -1,0 +1,26 @@
+.todoList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+}
+
+.todo-item-wrapper {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.todo-item {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.todoList button {
+    margin-right: 10px;
+    background-color: #fff;
+    border: none;
+    padding: 5px 9px;
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+}

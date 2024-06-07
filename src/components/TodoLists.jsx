@@ -1,8 +1,12 @@
 import React from 'react'
+import TodoList from './TodoList.jsx'
 
-export const TodoLists = () => {
+function TodoLists() {
   return (
-    <div>TodoLists</div>
+    <div>
+      <TodoList/>
+    </div>
   )
 }
-export default TodoLists;
+
+export default TodoLists
