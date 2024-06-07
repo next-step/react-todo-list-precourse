@@ -12,3 +12,5 @@
 6. Active상태의 개수 확인 가능한 기능
 7. 완료 상태로 전환할 수 있는 기능 생성
 8. Active, Completed 구분할 수 있는 상태 생성
+
+![완성]("C:\Users\강명준\Desktop\카테캠 과제 2.png")
