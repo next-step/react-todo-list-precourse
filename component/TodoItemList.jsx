@@ -1,6 +1,6 @@
 import React from 'react'
 import TodoItem from './TodoItem'
-import Filter from './Filter'
+import Filter from './TodoFilter'
 import '../src/main.css'
 
 export default function TodoItemList({todos, toggleTodo, removeTodo, filter, setFilter}) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../src/main.css'
 
-export default function Filter({ filter, setFilter }) {
+export default function TodoFilter({ filter, setFilter }) {
     return (
         <div className="filters">
             <button 
