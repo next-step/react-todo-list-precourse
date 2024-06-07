@@ -1,6 +1,6 @@
 import Header from '../components/Header/Header';
-import TodoList from '../components/TodoList/TodoLIst';
 import Footer from '../components/Footer/Footer';
+import TodoList from '../components/TodoList/TodoList';
 
 const Todo = () => {
   return (
