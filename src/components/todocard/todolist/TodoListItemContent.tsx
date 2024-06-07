@@ -1,5 +1,5 @@
-import { useTodoActions } from "../../../hooks/useTodoActions";
-import { Input } from "../../ui/Input";
+import { TodoCheckbox } from "./TodoCheckbox";
+import { TodoLabel } from "./TodoLabel";
 
 interface TodoListItemContentProps {
   todo: Todo;
@@ -10,22 +10,10 @@ export const TodoListItemContent = ({
   todo,
   index,
 }: TodoListItemContentProps) => {
-  const { toggleTodo } = useTodoActions();
-
   return (
     <div className="todo-content">
-      <Input
-        id={`checkbox-${index}`}
-        type="checkbox"
-        checked={todo.done}
-        onChange={() => toggleTodo(index)}
-      />
-      <label
-        className={todo.done ? "done-todo" : ""}
-        htmlFor={`checkbox-${index}`}
-      >
-        {todo.text}
-      </label>
+      <TodoCheckbox todo={todo} index={index} />
+      <TodoLabel todo={todo} index={index} />
     </div>
   );
 };
