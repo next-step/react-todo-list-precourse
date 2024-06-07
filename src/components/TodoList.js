@@ -3,7 +3,7 @@ import './TodoList.css'
 import TodoItem from './TodoItem'
 import TodoListFooter from './TodoListFooter'
 
-function TodoList({todolist, toggleTodo, deleteTodo,  setFilter, clearCompleted }) {
+function TodoList({todolist, toggleTodo, deleteTodo,  setFilter, clearCompleted, showFooter}) {
   return React.createElement('div',{className: 'todoListItemField'},
     React.createElement('ul',null,
         todolist.map((todo, index) =>
@@ -15,7 +15,7 @@ function TodoList({todolist, toggleTodo, deleteTodo,  setFilter, clearCompleted 
               deleteTodo
             })
         ),
-        todolist.length > 0 && React.createElement(TodoListFooter,{ todolist, setFilter, clearCompleted })
+        showFooter > 0 && React.createElement(TodoListFooter,{ todolist, setFilter, clearCompleted })
     )
   )
 }

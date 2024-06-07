@@ -38,7 +38,7 @@ function App() {
     React.createElement('header', null, React.createElement('p', null, 'todos')),
       React.createElement('div', { className: 'todoListBody' },
         React.createElement(InputField, {addTodo}),
-        React.createElement(TodoList, {todolist: getFilteredTodos(), toggleTodo, deleteTodo, setFilter, clearCompleted})
+        React.createElement(TodoList, {todolist: getFilteredTodos(), toggleTodo, deleteTodo, setFilter, clearCompleted, showFooter: todolist.length > 0})
       ),
     React.createElement(Footer, null)
   )
