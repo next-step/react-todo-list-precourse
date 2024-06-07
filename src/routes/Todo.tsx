@@ -1,5 +1,6 @@
 import Header from '../components/Header/Header';
 import TodoList from '../components/TodoList/TodoLIst';
+import Footer from '../components/Footer/Footer';
 
 const Todo = () => {
   return (
@@ -8,7 +9,8 @@ const Todo = () => {
       <main>
         <TodoList />
       </main>
-  </section>
+      <Footer />
+    </section>
   );
 };
 

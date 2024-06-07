@@ -1,0 +1,44 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 550px;
+  height: 50px;
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: 300;
+  color: #111111;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+}
+
+.filters li {
+  cursor: pointer;
+  margin: 3px;
+  padding: 3px 7px;
+}
+
+.filters li.selected {
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+
+.filters li:last-of-type {
+  margin-right: 0;
+}
+
+.clear-completed {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.clear-completed:hover {
+  text-decoration: underline;
+}
