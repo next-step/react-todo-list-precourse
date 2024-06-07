@@ -9,7 +9,7 @@ function main() {
   const [filter, setFilter] = useState('all')
 
   useEffect(() => {
-    const storedTodos = localStorage.getItem('todolist');
+    const storedTodos = localStorage.getItem('todolist')
     if (storedTodos)
       setTodos(JSON.parse(storedTodos))
   }, [])
@@ -46,10 +46,10 @@ function main() {
     React.createElement('header', null, React.createElement('p', null, 'todos')),
       React.createElement('div', { className: 'todoListBody' },
         React.createElement(InputField, {addTodo}),
-        React.createElement(TodoList, {todolist: getFilteredTodos(), toggleTodo, deleteTodo, setFilter, clearCompleted, showFooter: todolist.length > 0})
+        React.createElement(TodoList, {todolist: getFilteredTodos(), toggleTodo, deleteTodo, setFilter, clearCompleted, showFooter: todolist.length > 0, fullTodoList:todolist})
       ),
     React.createElement(Footer, null)
   )
 }
 
-export default main;
+export default main

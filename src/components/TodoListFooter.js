@@ -1,10 +1,10 @@
 import React from 'react'
 import '../main.css'
 
-const TodoListFooter = ({ todolist, setFilter, clearCompleted }) => {
+const TodoListFooter = ({setFilter, clearCompleted, fullTodoList }) => {
     let activeTodocount = 0
-    const activeTodo = todolist.filter(todo =>{
-        if (todo.completed === false)
+    const activeTodo = fullTodoList.filter(todo =>{
+        if (!todo.completed)
             activeTodocount += 1
         return activeTodocount
         }
