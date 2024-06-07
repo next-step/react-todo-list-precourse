@@ -15,7 +15,7 @@ function TodoList({todolist, toggleTodo, deleteTodo,  setFilter, clearCompleted 
               deleteTodo
             })
         ),
-        React.createElement(TodoListFooter,{ todolist, setFilter, clearCompleted })
+        todolist.length > 0 && React.createElement(TodoListFooter,{ todolist, setFilter, clearCompleted })
     )
   )
 }
