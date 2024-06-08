@@ -2,6 +2,7 @@ import { TodoListItemTypes } from '../../../context/TodoContext';
 import styles from './TodoListItem.module.css';
 import TodoContext from '../../../context/TodoContext';
 import { useContext } from 'react';
+import InputField from '../../Input/InputField/InputField';
 
 interface TodoListItemProps {
   todoListItem: TodoListItemTypes;
@@ -12,14 +13,12 @@ const TodoListItem = ({ todoListItem }: TodoListItemProps) => {
 
   return (
     <li className={styles['todo-list-item']}>
-      <input
+      <InputField
         type="checkbox"
-        className={styles.toggle}
-        id={`checkbox-${todoListItem.no}`}
+        label={`checkbox-${todoListItem.no}`}
         checked={todoListItem.done}
         onChange={() => value?.actions.toggleDone(todoListItem.no)}
       />
-      <label htmlFor={`checkbox-${todoListItem.no}`}></label>
       <div className={styles['todo-list-container']}>
         <input
           className={`${styles['todo-label']} ${todoListItem.done && styles['line-through']}`}
