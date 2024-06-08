@@ -8,13 +8,14 @@ function TodoList({data, setTodoData}) {
   const handleDelete = () => handleClick(setTodoData, data.id);
   
   return (
-    <div className="todoList" style = {{padding: "10px", textDecoration: data.completed ? "line-through" : "none"}} key = {data.id}>
+    <div className="todoList" key = {data.id}>
       <div className="todo-item-wrapper">
         <input type="checkbox" checked={data.completed} onChange = {handleComplete}/>
-         {data.title}
-        <button onClick = {handleDelete}>X</button>
-      </div>
+         <span className = "todo-item" style={{textDecoration: data.completed ? "line-through" : "none"}}>{data.title}</span>
+         <button onClick = {handleDelete}>X</button>
+         </div>
     </div>
+    
   )
 }
 
