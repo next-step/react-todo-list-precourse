@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Common/Header/Header";
+import InputContainer from "../../components/Common/Input/InputContainer";
 import TodoList from "../../components/Todo/TodoList/TodoList";
+import Filter from "../../components/Todo/Filters/Filter";
 import "./Main.css";
 
 const Main = () => {
@@ -30,6 +32,7 @@ const Main = () => {
   };
 
   const deleteTodo = (id) => {
+    const todoUpdate = todos.filter((todo) => todo.id !== id);
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
@@ -66,31 +69,18 @@ const Main = () => {
   return (
     <div className="wrapper">
       <Header />
-      <div className="inputContainer">
-        <input
-          type="text"
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-          onKeyDown={handleEnterPress}
-          placeholder="이것이 오늘의 할 일"
-          className="todoInputBox"
-        />
-        <button className="addTodoBtn" onClick={addTodo}>
-          추가!
-        </button>
-      </div>
-      <div className="filters">
-        <button className="filterBtn" onClick={() => filterTodos("all")}>
-          {" "}
-          전체 ({allCount})
-        </button>
-        <button className="filterBtn" onClick={() => filterTodos("complete")}>
-          완료 ({completeCount})
-        </button>
-        <button className="filterBtn" onClick={() => filterTodos("active")}>
-          진행중 ({activeCount})
-        </button>
-      </div>
+      <InputContainer
+        newTodo={newTodo}
+        setNewTodo={setNewTodo}
+        handleEnterPress={handleEnterPress}
+        addTodo={addTodo}
+      />
+      <Filter
+        filterTodos={filterTodos}
+        allCount={allCount}
+        completeCount={completeCount}
+        activeCount={activeCount}
+      />
       <TodoList
         todos={filteredTodos}
         deleteTodo={deleteTodo}

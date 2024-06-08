@@ -7,22 +7,3 @@
   min-height: 100vh;
   gap: 20px;
 }
-.todoInputBox {
-  width: 350px;
-  height: 50px;
-  border-style: none;
-  outline: none;
-  background-color: transparent;
-  border-bottom: 2px dotted var(--yellow);
-  font-size: 24px;
-  font-family: "HSGooltokki";
-  color: var(--yellow);
-}
-.addTodoBtn {
-  font-size: 24px;
-  color: var(--yellow);
-}
-.filterBtn {
-  color: var(--yellow);
-  font-size: 16px;
-}
