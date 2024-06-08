@@ -1,36 +1,17 @@
 import styles from './Header.module.css';
 import InputField from '../Input/InputField/InputField';
-import { useState } from 'react';
 import { useContext } from 'react';
 import TodoContext from '../../context/TodoContext';
 import Title from './Title/Title';
+import { useTodoInput } from '../../hooks/useTodoInput';
 
 interface HeaderProps {
   title: string;
 }
 
 const Header = ({ title }: HeaderProps) => {
-  const [todo, setTodo] = useState<string>('');
-
   const value = useContext(TodoContext);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTodo(e.target.value);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
-      if (todo === '') {
-        return;
-      }
-      value?.actions.addTodo(todo);
-      resetInput();
-    }
-  };
-
-  const resetInput = () => {
-    setTodo('');
-  };
+  const { todo, handleChange, handleKeyDown } = useTodoInput(value?.actions.addTodo);
 
   return (
     <header className={styles.header}>
