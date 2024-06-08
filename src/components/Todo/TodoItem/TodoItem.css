@@ -1,0 +1,32 @@
+.itemBox {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 5px;
+}
+.checkBox {
+  display: none;
+}
+.checkBox + label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.checkBox + label::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+.checkBox:checked + label::before {
+  /* background-color: #000; */
+}
+.todoText {
+  font-size: 24px;
+  font-family: "HSGooltokki";
+  font-weight: 400;
+}
