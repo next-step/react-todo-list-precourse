@@ -35,7 +35,7 @@
 - [x] 대기중인 할 일을 수정할 수 있다.
 - [x] 드래그앤드롭을 통해 할 일의 순서를 바꿀 수 있다.
 
-### Results
+## Results
 ![image1](./public/images/image1.png)
 ![image2](./public/images/image2.png)
 ![image3](./public/images/image3.png)
