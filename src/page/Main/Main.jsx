@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Common/Header/Header";
 import TodoList from "../../components/Todo/TodoList/TodoList";
 import "./Main.css";
+
 const Main = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
+  const [filter, setFilter] = useState("all");
+  const [allCount, setAllCount] = useState(0);
+  const [completeCount, setCompleteCount] = useState(0);
+  const [activeCount, setActiveCount] = useState(0);
+
+  useEffect(() => {
+    setAllCount(todos.length);
+    setCompleteCount(todos.filter((todo) => todo.isTodoCompleted).length);
+    setActiveCount(todos.filter((todo) => !todo.isTodoCompleted).length);
+  }, [todos]);
 
   const addTodo = () => {
     if (newTodo.trim() === "") {
@@ -37,6 +48,21 @@ const Main = () => {
       )
     );
   };
+
+  const filterTodos = (filter) => {
+    setFilter(filter);
+  };
+
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "complete") {
+      return todo.isTodoCompleted;
+    } else if (filter === "active") {
+      return !todo.isTodoCompleted;
+    } else {
+      return true;
+    }
+  });
+
   return (
     <div className="wrapper">
       <Header />
@@ -53,8 +79,20 @@ const Main = () => {
           추가!
         </button>
       </div>
+      <div className="filters">
+        <button className="filterBtn" onClick={() => filterTodos("all")}>
+          {" "}
+          전체 ({allCount})
+        </button>
+        <button className="filterBtn" onClick={() => filterTodos("complete")}>
+          완료 ({completeCount})
+        </button>
+        <button className="filterBtn" onClick={() => filterTodos("active")}>
+          진행중 ({activeCount})
+        </button>
+      </div>
       <TodoList
-        todos={todos}
+        todos={filteredTodos}
         deleteTodo={deleteTodo}
         checkTodoComplete={checkTodoComplete}
       />
