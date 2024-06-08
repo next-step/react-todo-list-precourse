@@ -3,10 +3,11 @@ import styles from './Footer.module.css';
 import TodoContext from '../../context/TodoContext';
 import Filters from './Filters/Filters';
 import ClearCompletedButton from './ClearCompletedButton/ClearCompletedButton';
+import { useIncompleteTodosCount } from '../../hooks/useIncompleteTodosCount';
 
 const Footer = () => {
   const value = useContext(TodoContext);
-  const countIncompleteTodos = value?.state.todoList.filter(todo => !todo.done).length;
+  const countIncompleteTodos = useIncompleteTodosCount();
 
   return (
     <footer className={styles.footer}>
