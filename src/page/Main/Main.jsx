@@ -10,6 +10,11 @@ const Main = () => {
     setTodos([...todos, { id: Date.now(), text: newTodo }]);
     setNewTodo("");
   };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   const handleEnterPress = (e) => {
     if (e.key === "Enter") {
       addTodo();
@@ -31,7 +36,7 @@ const Main = () => {
           추가!
         </button>
       </div>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
 };

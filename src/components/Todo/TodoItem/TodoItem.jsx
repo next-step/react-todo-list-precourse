@@ -1,11 +1,14 @@
 import React from "react";
 import "./TodoItem.css";
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, deleteTodo }) => {
   return (
     <div className="itemBox">
       <input type="checkbox" className="checkBox" />
       <label htmlFor={`투두: ${todo.id}`}></label>
       <h2 className="todoText">{todo.text}</h2>
+      <button className="deleteBtn" onClick={() => deleteTodo(todo.id)}>
+        삭제
+      </button>
     </div>
   );
 };

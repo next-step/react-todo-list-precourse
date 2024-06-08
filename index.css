@@ -21,9 +21,10 @@ body {
 }
 button {
   border-style: none;
-  font-family: "Pretendard-Regular";
   cursor: pointer;
   border-radius: 5px;
+  font-family: "HSGooltokki";
+  background-color: transparent;
 }
 
 h1 {

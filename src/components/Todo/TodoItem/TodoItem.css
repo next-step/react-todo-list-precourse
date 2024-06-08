@@ -1,8 +1,10 @@
 .itemBox {
   display: flex;
   flex-direction: row;
+  margin: 10px;
+  position: relative;
+  align-items: center;
   gap: 10px;
-  margin: 5px;
 }
 .checkBox {
   display: none;
@@ -29,4 +31,10 @@
   font-size: 24px;
   font-family: "HSGooltokki";
   font-weight: 400;
+}
+.deleteBtn {
+  font-size: 16px;
+  position: absolute;
+  right: 5px;
+  color: #00b499;
 }
