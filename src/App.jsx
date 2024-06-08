@@ -1,10 +1,9 @@
 import React from 'react';
+import TodoTemplate from './components/TodoTemplate';
 
 function App() {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <TodoTemplate/>
   );
 }
 
