@@ -1,0 +1,9 @@
+.title {
+  position: fixed;
+  top: 170px;
+  font-size: 50px;
+  font-family: "Courier New", Courier, monospace;
+  left: 50%;
+  transform: translateX(-50%);
+  user-select: none;
+}
