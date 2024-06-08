@@ -3,6 +3,7 @@ import styles from './TodoListItem.module.css';
 import TodoContext from '../../../context/TodoContext';
 import { useContext } from 'react';
 import InputField from '../../Input/InputField/InputField';
+import TodoContent from './TodoContent/TodoContent';
 
 interface TodoListItemProps {
   todoListItem: TodoListItemTypes;
@@ -19,21 +20,11 @@ const TodoListItem = ({ todoListItem }: TodoListItemProps) => {
         checked={todoListItem.done}
         onChange={() => value?.actions.toggleDone(todoListItem.no)}
       />
-      <div className={styles['todo-list-container']}>
-        <input
-          className={`${styles['todo-label']} ${todoListItem.done && styles['line-through']}`}
-          type="text"
-          value={todoListItem.todo}
-          disabled
-        />
-        <button
-          type="button"
-          className={styles.destroy}
-          onClick={() => value?.actions.removeTodo(todoListItem.no)}
-        >
-          x
-        </button>
-      </div>
+      <TodoContent
+        todo={todoListItem.todo}
+        done={todoListItem.done}
+        onRemove={() => value?.actions.removeTodo(todoListItem.no)}
+      />
     </li>
   );
 };
