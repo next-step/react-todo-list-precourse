@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState } from "react";
 
 function TodoInput() {
+    const [inputValue, setInputValue] = useState("");
+
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            console.log(inputValue);
+            setInputValue("");
+        }
+    };
 
     return(
-        <div>입력값 추가 칸</div>
+        <input 
+         type="text"
+         value={inputValue}
+         onChange={handleInputChange}
+         onKeyDown={handleKeyDown}
+        />
     );  
 }
 
