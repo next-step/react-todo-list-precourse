@@ -8,12 +8,8 @@ export interface TextInputProps extends InputFieldProps {
 const TextInput = ({ type, placeholder, label, value, onChange, onKeyDown }: TextInputProps) => {
   return (
     <input
-      type={type}
-      placeholder={placeholder}
+      {...{ type, placeholder, value, onChange, onKeyDown }}
       id={label}
-      value={value}
-      onChange={onChange}
-      onKeyDown={onKeyDown}
       className={styles['text-input']}
     />
   );
