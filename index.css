@@ -12,18 +12,22 @@
   font-weight: 400;
   font-style: normal;
 }
+
 * {
   margin: 0;
 }
-
+body {
+  background-color: #00b499;
+}
 button {
   border-style: none;
   font-family: "Pretendard-Regular";
   cursor: pointer;
   border-radius: 5px;
 }
-input {
-  border-style: none;
-  outline: none;
-  font-family: "Pretendard-Regular";
+
+h1 {
+  font-family: "HSGooltokki";
+  font-size: 42px;
+  color: #e51088;
 }
