@@ -7,8 +7,12 @@ const Main = () => {
   const [newTodo, setNewTodo] = useState("");
 
   const addTodo = () => {
-    setTodos([...todos, { id: Date.now(), text: newTodo }]);
-    setNewTodo("");
+    if (newTodo.trim() === "") {
+      alert("오늘 할 일을 작성해보자!");
+    } else {
+      setTodos([...todos, { id: Date.now(), text: newTodo }]);
+      setNewTodo("");
+    }
   };
 
   const deleteTodo = (id) => {
