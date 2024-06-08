@@ -17,16 +17,10 @@ const removeDoneTodos = (todos: Todo[]) => {
 };
 
 export const todosReducer = (todos: Todo[], action: TodosAction) => {
-  switch (action.type) {
-    case "ADD_TODO":
-      return addTodo(todos, action.text);
-    case "TOGGLE_TODO":
-      return toggleTodo(todos, action.id);
-    case "REMOVE_TODO":
-      return removeTodo(todos, action.id);
-    case "REMOVE_DONE_TODOS":
-      return removeDoneTodos(todos);
-    default:
-      return todos;
-  }
+  if (action.type === "ADD_TODO") return addTodo(todos, action.text);
+  if (action.type === "TOGGLE_TODO") return toggleTodo(todos, action.id);
+  if (action.type === "REMOVE_TODO") return removeTodo(todos, action.id);
+  if (action.type === "REMOVE_DONE_TODOS") return removeDoneTodos(todos);
+
+  return todos;
 };
