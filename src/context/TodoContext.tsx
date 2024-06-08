@@ -1,12 +1,8 @@
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 import { ReactNode } from 'react';
-import { addTodo as addTodoAction } from './actions/addTodo';
-import { removeTodo as removeTodoAction } from './actions/removeTodo';
-import { toggleDone as toggleTodoAction } from './actions/toggleDone';
-import { clearCompleted as clearCompletedAction } from './actions/clearCompleted';
-import { selectFilter as selectFilterAction } from './actions/selectFilter';
 import { TodoListContextValueTypes } from './types/TodoTypes';
 import { useTodoState } from '../hooks/useTodoState';
+import { useTodoActions } from '../hooks/useTodoActions';
 
 interface TodoContextProviderProps {
   children: ReactNode;
@@ -16,16 +12,11 @@ const TodoContext = createContext<TodoListContextValueTypes | null>(null);
 
 export const TodoProvider = ({ children }: TodoContextProviderProps) => {
   const { todoList, setTodoList, filter, setFilter } = useTodoState();
-
-  const addTodo = (todo: string) => addTodoAction(todoList, setTodoList, todo);
-  const removeTodo = (no: number) => removeTodoAction(todoList, setTodoList, no);
-  const toggleDone = (no: number) => toggleTodoAction(todoList, setTodoList, no);
-  const clearCompleted = () => clearCompletedAction(todoList, setTodoList);
-  const selectFilter = (filter: FilterType) => selectFilterAction(filter, setFilter);
+  const actions = useTodoActions(todoList, setTodoList, setFilter);
 
   const values = {
     state: { todoList, filter },
-    actions: { addTodo, removeTodo, toggleDone, clearCompleted, selectFilter },
+    actions,
   };
 
   return <TodoContext.Provider value={values}>{children}</TodoContext.Provider>;
