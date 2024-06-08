@@ -11,11 +11,17 @@ const App = () => {
     setTodos([...todos, newTodo]);
   };
 
+  const deleteTodo = (todoId) => {
+    setTodos(todos.filter(todo => todo.id !== todoId ));
+  };
+
   return (
     <div className="App">
       <h1>TODO</h1>
       <TodoForm addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos}
+                deleteTodo={deleteTodo}
+      />
     </div>
   );
 };
