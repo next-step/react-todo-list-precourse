@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import handleChange from './handlers/handleChange';
+import handleSubmit from './handlers/handleSubmit';
 
 function TodoForm({ addTodo }) {
   const [input, setInput] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (input.trim()) {
-      addTodo(input);
-      setInput('');
-    }
-  };
-
   return (
-    <form onSubmit={handleSubmit} className="todo-form">
+    <form onSubmit={(e) => handleSubmit(e, input, addTodo, setInput)} className="todo-form">
       <div className="input-container">
         <input
           type="text"

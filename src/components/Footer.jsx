@@ -1,12 +1,12 @@
 import React from 'react';
 import TodoFilters from './TodoFilters';
 
-function Footer() {
-  return (
-    <footer className="footer">
-    
-    </footer>
-  );
+function Footer({ filter, changeFilter }) {
+    return (
+        <footer className="footer">
+            <TodoFilters currentFilter={filter} changeFilter={changeFilter} />
+        </footer>
+    );
 }
 
 export default Footer;

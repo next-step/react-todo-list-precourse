@@ -1,25 +1,33 @@
-import React, { useState } from 'react';
-import handleChange from '../handlers/handleChange';
-import handleSubmit from '../handlers/handleSubmit';
+import { useState, useEffect } from 'react';
+import addTodo from '../feature/addTodo';
+import changeFilter from '../feature/changeFilter';
+import clearCompleted from '../feature/clearCompleted';
+import deleteTodo from '../feature/deleteTodo';
+import filterTodos from '../feature/filterTodos';
+import toggleComplete from '../feature/toggleComplete';
 
-function TodoForm({ addTodo }) {
-  const [input, setInput] = useState('');
+const useTodoState = () => {
+  const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState('all');
+  const [activeCount, setActiveCount] = useState(0);
 
-  return (
-    <form onSubmit={(e) => handleSubmit(e, input, addTodo, setInput)} className="todo-form">
-      <div className="input-container">
-        <input
-          type="text"
-          className="new-todo"
-          value={input}
-          onChange={(e) => handleChange(e, setInput)}
-          placeholder="What needs to be done?"
-          autoFocus
-        />
-        <button type="submit" className="add-todo">Add</button>
-      </div>
-    </form>
-  );
-}
+  useEffect(() => {
+    setActiveCount(todos.filter(todo => !todo.completed).length);
+  }, [todos]);
 
-export default TodoForm;
+  const filteredTodos = filterTodos(todos, filter);
+
+  return {
+    todos,
+    filter,
+    activeCount,
+    filteredTodos,
+    addTodo: (text) => addTodo(todos, setTodos, text),
+    toggleComplete: (index) => toggleComplete(todos, setTodos, index),
+    deleteTodo: (index) => deleteTodo(todos, setTodos, index),
+    clearCompleted: () => clearCompleted(todos, setTodos),
+    changeFilter: (newFilter) => changeFilter(setFilter, newFilter),
+  };
+};
+
+export default useTodoState;
