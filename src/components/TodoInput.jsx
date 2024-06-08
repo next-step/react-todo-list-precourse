@@ -8,7 +8,7 @@ function TodoInput() {
     };
 
     const handleKeyDown = (event) => {
-        if (event.key === "Enter") {
+        if (event.key === "Enter" && inputValue.trim() !== "" ) {
             console.log(inputValue);
             setInputValue("");
         }
