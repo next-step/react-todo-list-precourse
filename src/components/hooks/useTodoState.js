@@ -1,14 +1,25 @@
-import { useState } from "react";
-import handleChange from "../handlers/handleChange";
+import React, { useState } from 'react';
+import handleChange from '../handlers/handleChange';
+import handleSubmit from '../handlers/handleSubmit';
 
-const useTodoState = () => {
-  const [text, setText] = useState("");
+function TodoForm({ addTodo }) {
+  const [input, setInput] = useState('');
 
-  const onChangeInput = (e) => handleChange(e, setText);
+  return (
+    <form onSubmit={(e) => handleSubmit(e, input, addTodo, setInput)} className="todo-form">
+      <div className="input-container">
+        <input
+          type="text"
+          className="new-todo"
+          value={input}
+          onChange={(e) => handleChange(e, setInput)}
+          placeholder="What needs to be done?"
+          autoFocus
+        />
+        <button type="submit" className="add-todo">Add</button>
+      </div>
+    </form>
+  );
+}
 
-  return {
-    text, onChangeInput, setText
-  };
-};
-
-export default useTodoState;
+export default TodoForm;
