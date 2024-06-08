@@ -1,10 +1,11 @@
 import React from 'react';
-import TodoFilters from './TodoFilters';
 
 function Footer({ filter, changeFilter }) {
     return (
         <footer className="footer">
-            <TodoFilters currentFilter={filter} changeFilter={changeFilter} />
+            <div className="footer-content">
+                created by TAEHONG-LEE
+            </div>
         </footer>
     );
 }
