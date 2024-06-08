@@ -12,7 +12,7 @@
     - 사용자가 해야 할 일들을 마쳤다면 완료 상태로 전환할 수 있습니다.
       
 3. 프로젝트 사진
-![할일 목록 추가](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/87636f46-89e7-4d99-a09f-b7425c359ceb)
+  ![할일 목록 추가](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/87636f46-89e7-4d99-a09f-b7425c359ceb)
 
 4. 추가하고 싶은 기능
    - 새로고침해도 데이터가 계속 남아있는 기능
