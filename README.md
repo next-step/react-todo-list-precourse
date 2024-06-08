@@ -9,6 +9,7 @@
     - 사용자가 입력창에 아무것도 작성하지 않는다면, 경고창이 뜨고 해당 목록은 추가되지 않습니다.
     - 사용자가 잘못 입력했다면 해당 부분을 삭제할 수 있습니다.
     - 사용자가 해야 할 일들을 마쳤다면 완료 상태로 전환할 수 있습니다.
+      
 3. 프로젝트 사진
    ![할일 목록 추가](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/edffd898-c52a-42e5-a5e3-9de02675bc7d)
    ![할일 목록 삭제](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/d67df599-341f-4d36-9c3c-673d3972fc1f)
