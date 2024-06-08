@@ -1,5 +1,5 @@
 .todoList {
-  background-color: #feedba;
+  background-color: var(--orange);
   border-radius: 5px;
   width: 410px;
 }

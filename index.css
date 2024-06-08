@@ -5,19 +5,16 @@
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
+:root {
+  --yellow: #fffca5;
+  --darkblue: #00083b;
+  --orange: #ff4b15;
 }
-
 * {
   margin: 0;
 }
 body {
-  background-color: #00b499;
+  background-color: var(--darkblue);
 }
 button {
   border-style: none;
@@ -30,5 +27,5 @@ button {
 h1 {
   font-family: "HSGooltokki";
   font-size: 42px;
-  color: #e51088;
+  color: var(--orange);
 }

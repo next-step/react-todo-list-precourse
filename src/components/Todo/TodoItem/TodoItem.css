@@ -36,5 +36,5 @@
   font-size: 16px;
   position: absolute;
   right: 5px;
-  color: #00b499;
+  color: var(--darkblue);
 }
