@@ -12,7 +12,7 @@ export interface InputFieldProps {
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const InputField = ({
+const renderInput = ({
   type,
   placeholder,
   checked,
@@ -21,16 +21,17 @@ const InputField = ({
   onChange,
   onKeyDown,
 }: InputFieldProps) => {
+  if (type === 'text')
+    return <TextInput {...{ type, placeholder, label, value, onChange, onKeyDown }} />;
+  if (type === 'checkbox') return <Checkbox {...{ type, checked, onChange, label }} />;
+};
+
+const InputField = (props: InputFieldProps) => {
   return (
     <>
-      {type === 'text' && (
-        <TextInput {...{ type, placeholder, label, value, onChange, onKeyDown }} />
-      )}
-      {type === 'checkbox' && (
-        <Checkbox type={type} checked={checked} onChange={onChange} label={label} />
-      )}
-      <label htmlFor={label} className={type === 'text' ? styles['sr-only'] : ''}>
-        {type === 'text' && label}
+      {renderInput(props)}
+      <label htmlFor={props.label} className={props.type === 'text' ? styles['sr-only'] : ''}>
+        {props.type === 'text' && props.label}
       </label>
     </>
   );
