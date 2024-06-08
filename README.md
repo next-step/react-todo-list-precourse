@@ -10,11 +10,17 @@
     - 사용자가 잘못 입력했다면 해당 부분을 삭제할 수 있습니다.
     - 사용자가 해야 할 일들을 마쳤다면 완료 상태로 전환할 수 있습니다.
 3. 프로젝트 사진
-   
+   ![할일 목록 추가](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/edffd898-c52a-42e5-a5e3-9de02675bc7d)
+   ![할일 목록 삭제](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/d67df599-341f-4d36-9c3c-673d3972fc1f)
+   ![할일 완료 상태](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/45c45bf6-f2cb-4b24-b04a-260ffe8857e7)
+
 4. 추가하고 싶은 기능
    - 새로고침해도 데이터가 계속 남아있는 기능
    - 전체 목록, 진행 중인 목록, 완료 목록을 볼 수 있도록 하는 필터링 기능
    - 해야 할 일의 총 개수를 볼 수 있도록 하는 기능
+     
+## Resource
+- https://fonts.google.com/?subset=korean&noto.script=Kore
 
 ## 회고
 - React를 처음 배웠는데 어려웠습니다. 그래서 React강의를 두번 정도 다시 돌려봤습니다.
