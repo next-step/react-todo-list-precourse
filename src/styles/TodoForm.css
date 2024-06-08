@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&family=Nanum+Myeongjo&display=swap');
+
 .form-container {
-    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +12,6 @@
     padding: 0 10px;
     border: 2px solid #F5F5DC;
     border-radius: 5px;
-    font-family: 'Hi Melody', serif;
     font-size: x-large;
     color: #666666;
     outline:none;
@@ -28,7 +26,6 @@
     color:#666666;
     border:none;
     border-radius: 5px;
-    font-family: 'Hi Melody', serif;
     font-size: large;
     font-weight: bold;
     cursor: pointer;

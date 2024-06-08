@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&family=Nanum+Myeongjo&display=swap');
+
 .todoList {
     display: flex;
     flex-direction: column;
@@ -22,7 +22,6 @@
     overflow: hidden; 
     white-space: nowrap; 
     text-overflow: ellipsis; 
-    font-family: 'Hi Melody', serif;
     font-size:x-large;
   }
 
