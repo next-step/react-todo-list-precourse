@@ -10,7 +10,10 @@ const Main = () => {
     if (newTodo.trim() === "") {
       alert("오늘 할 일을 작성해보자!");
     } else {
-      setTodos([...todos, { id: Date.now(), text: newTodo }]);
+      setTodos([
+        ...todos,
+        { id: Date.now(), text: newTodo, isTodoCompleted: false },
+      ]);
       setNewTodo("");
     }
   };
@@ -23,6 +26,16 @@ const Main = () => {
     if (e.key === "Enter") {
       addTodo();
     }
+  };
+
+  const checkTodoComplete = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id
+          ? { ...todo, isTodoCompleted: !todo.isTodoCompleted }
+          : todo
+      )
+    );
   };
   return (
     <div className="wrapper">
@@ -40,7 +53,11 @@ const Main = () => {
           추가!
         </button>
       </div>
-      <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <TodoList
+        todos={todos}
+        deleteTodo={deleteTodo}
+        checkTodoComplete={checkTodoComplete}
+      />
     </div>
   );
 };

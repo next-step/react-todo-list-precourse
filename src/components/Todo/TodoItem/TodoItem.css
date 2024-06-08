@@ -20,12 +20,14 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border: 2px solid #000;
+  border: 2px dotted var(--darkblue);
   background-color: transparent;
   transition: background-color 0.3s;
 }
 .checkBox:checked + label::before {
-  /* background-color: #000; */
+  background-color: var(--darkblue);
+  background-image: url("../../../assets//image/radix-icons_check.png");
+  background-size: cover;
 }
 .todoText {
   font-size: 24px;
