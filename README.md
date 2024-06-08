@@ -12,7 +12,6 @@
     - 사용자가 해야 할 일들을 마쳤다면 완료 상태로 전환할 수 있습니다.
       
 3. 프로젝트 사진
-![할일 완료 상태](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/e68427e5-1cee-4da6-add5-d50264c6f782)
 
 
 4. 추가하고 싶은 기능
