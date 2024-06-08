@@ -1,0 +1,57 @@
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition-property: background-color;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+/* button variant */
+.btn-variant-default {
+  background-color: var(--primary-color);
+}
+.btn-variant-default:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.btn-variant-destructive {
+  border: 1.5px solid;
+  color: var(--destructive-color);
+}
+.btn-variant-destructive:hover {
+  color: var(--destructive-color-hover);
+}
+
+.btn-variant-ghost {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+.btn-active-false.btn-variant-ghost:hover {
+  background-color: #ececec;
+}
+
+/* button size */
+.btn-size-sm {
+  padding: 0.3rem 1rem;
+  font-size: medium;
+}
+
+.btn-size-md {
+  padding: 0.5rem 2rem;
+  font-size: medium;
+}
+
+.btn-size-round {
+  border-radius: 100%;
+}
+
+/* active button */
+.btn-active-true {
+  background-color: var(--border-color);
+}

@@ -1,0 +1,14 @@
+/* text size */
+.text-size-2xl {
+  font-size: xxx-large;
+  font-weight: 600;
+}
+
+.text-size-sm {
+  font-size: medium;
+}
+
+/* text variant */
+.text-variant-primary {
+  color: var(--primary-color);
+}
