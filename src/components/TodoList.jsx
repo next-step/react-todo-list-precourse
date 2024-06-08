@@ -1,4 +1,3 @@
-// TodoList.jsx
 import React from 'react';
 
 function TodoList({ todos, toggleComplete, deleteTodo }) {

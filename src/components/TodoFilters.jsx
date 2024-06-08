@@ -1,4 +1,3 @@
-// TodoFilters.jsx
 import React from 'react';
 
 function TodoFilters({ currentFilter, changeFilter }) {
