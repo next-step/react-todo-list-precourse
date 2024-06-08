@@ -30,7 +30,7 @@ const TodoFilter = ({
             <button
               onClick={() => setFilterState(state)}
               style={{
-                backgroundColor: (filter === state && "black") || "white",
+                backgroundColor: (filter === state && "gray") || "white",
               }}
             >
               {state}

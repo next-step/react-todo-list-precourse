@@ -1,7 +1,0 @@
-#TodoLists > li {
-  flex: 1;
-  font-size: 1.2rem;
-  font-weight: 500;
-  border-bottom: 1px solid gray;
-  padding: 1rem;
-}
