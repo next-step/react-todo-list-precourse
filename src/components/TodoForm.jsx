@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
+import handleChange from './handlers/handleChange';
 
 function TodoForm({ addTodo }) {
   const [input, setInput] = useState('');
-
-  const handleChange = (e) => {
-    setInput(e.target.value);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +19,7 @@ function TodoForm({ addTodo }) {
           type="text"
           className="new-todo"
           value={input}
-          onChange={handleChange}
+          onChange={(e) => handleChange(e, setInput)}
           placeholder="What needs to be done?"
           autoFocus
         />
