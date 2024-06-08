@@ -4,6 +4,7 @@
 ## 프로젝트 설명 
 1. 프로젝트 개발 동기
    - 해당 어플을 만들게 된 계기는 JS와 리액트를 익힌 계기로 만들어보고 싶었고, 카카오테크 2차 미니과제 였기에 만들게 되었습니다.
+    
 2. 동작 원리
     - 사용자가 입력창에 해야 할 일들을 적으면 추가됩니다.
     - 사용자가 입력창에 아무것도 작성하지 않는다면, 경고창이 뜨고 해당 목록은 추가되지 않습니다.
@@ -12,8 +13,6 @@
       
 3. 프로젝트 사진
    ![할일 목록 추가](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/edffd898-c52a-42e5-a5e3-9de02675bc7d)
-   ![할일 목록 삭제](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/d67df599-341f-4d36-9c3c-673d3972fc1f)
-   ![할일 완료 상태](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/45c45bf6-f2cb-4b24-b04a-260ffe8857e7)
 
 4. 추가하고 싶은 기능
    - 새로고침해도 데이터가 계속 남아있는 기능
