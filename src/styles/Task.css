@@ -1,0 +1,56 @@
+.task {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.task.completed {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.task .task-content {
+  color: black;
+  font-size: 16px;
+  padding: 20px 0 20px 15px;
+}
+
+.task.completed .task-content {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.task .task-button--complete {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s linear;
+}
+
+.task .task-button--complete:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.task .task-button--complete .task__checkmark {
+  margin-top: 3px;
+  font-size: 24px;
+}
+
+.task .task-button--delete {
+  position: absolute;
+  margin-top: 3px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
