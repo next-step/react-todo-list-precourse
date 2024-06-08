@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TodoBoard from './components/TodoBoard';
 import AddItem from './components/AddItem';
+import './index.css'
 
 function App() {
   const [inputValue, setInputValue] = useState('');
