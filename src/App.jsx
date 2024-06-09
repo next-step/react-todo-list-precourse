@@ -1,9 +1,9 @@
+import React, { useState, useEffect } from "react";
 import "./styles/App.css";
 import Title from "./components/Title";
 import TextField from "./components/TextField";
 import FilterButton from "./components/FilterButton";
 import TodoList from "./components/TodoList";
-import { React, useState } from "react";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -41,6 +41,13 @@ const App = () => {
     const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
   };
+
+  const filteredTasks = tasks.filter((task) => {
+    if (selectedRole === "All") return true;
+    if (selectedRole === "Active") return !task.completed;
+    if (selectedRole === "Completed") return task.completed;
+    return true;
+  });
 
   return (
     <div id="app">
