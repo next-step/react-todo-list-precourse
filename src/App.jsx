@@ -21,4 +21,11 @@ function App() {
   const addTodo = (text) => {
     setTodos([...todos, { text, completed: false }]);
   };
+
+  const deleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
 }
