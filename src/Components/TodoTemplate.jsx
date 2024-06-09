@@ -43,6 +43,11 @@ const TodoTemplate = () => {
     return (
       <>
         <AddTodo appendTodo={appendTodo}/>
+        <TodoList
+        todos={filteredItems}
+        handleComplete={handleComplete}
+        handleDelete={handleDelete}
+      />
       </>
     )
   }
