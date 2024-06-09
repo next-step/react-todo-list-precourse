@@ -15,7 +15,7 @@ function App(){
     setTodoList(TodoList.filter((todo) => todo.id !== id))
   }
 
-  const checkpush = (id, content) => {
+  const checkPush = (id, content) => {
     const newcheck = {
       id : id,
       isDone : true,
@@ -43,7 +43,7 @@ function App(){
    <button className="checkbtn" onClick={toggleCheckedList}>
     {showChecked ? "모든 항목 보기" : "완료한 항목 보기"}
    </button>
-   <List TodoList = {showChecked ? checkTodoList : TodoList} onRemove={onRemove} checkpush = {checkpush}/>
+   <List TodoList = {showChecked ? checkTodoList : TodoList} onRemove={onRemove} checkPush = {checkPush}/>
     </div>
     )
 }

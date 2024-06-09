@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import "./TodoThing.css"
-const TodoThing = ({todo, onRemove, checkpush}) => {
+const TodoThing = ({todo, onRemove, checkPush}) => {
 const [isChecked, setIsChecked] = useState(todo.isdone);
 const removeHandler = () => {
     onRemove(todo.id)
@@ -11,7 +11,7 @@ useEffect(() => {
 },[todo.isdone])
 
 const checkHandler = () => {
-    checkpush(todo.id, todo.content)
+    checkPush(todo.id, todo.content)
     setIsChecked(!isChecked)
 }
 

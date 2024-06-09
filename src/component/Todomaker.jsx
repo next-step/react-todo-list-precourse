@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import "./Maker.css"
+import "./Todomaker.css"
 
 
 const Todomaker = ({addNewTodo}) => {
 
     const [inputvalue, setinputvalue] = useState('')
 
-    const handlechange = (e) =>  setinputvalue(e.target.value);
+    const handleChange = (e) =>  setinputvalue(e.target.value);
     const handleSubmit = (e) => {
       e.preventDefault();
       if (inputvalue === "")  alert("할 일을 입력하세요📝");
@@ -18,7 +18,7 @@ const Todomaker = ({addNewTodo}) => {
 
     return (
         <form className="Todomaker" onSubmit={handleSubmit}>
-          <input type="text" value={inputvalue}  onChange={handlechange} placeholder="할 일을 입력하세요" />
+          <input type="text" value={inputvalue}  onChange={handleChange} placeholder="할 일을 입력하세요" />
         </form>
       );
 };
