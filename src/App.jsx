@@ -32,6 +32,11 @@ const App = () => {
     setSelectedRole(role);
   };
 
+  const toggleTaskCompletion = (id) => {
+    const newTasks = tasks.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task));
+    setTasks(newTasks);
+  };
+
   return (
     <div id="app">
       <Title />
@@ -41,7 +46,7 @@ const App = () => {
         <FilterButton role="Active" selectedRole={selectedRole} onClick={handleFilterClick} />
         <FilterButton role="Completed" selectedRole={selectedRole} onClick={handleFilterClick} />
       </div>
-      <TodoList tasks={tasks} />
+      <TodoList tasks={filteredTasks} toggleTaskCompletion={toggleTaskCompletion} deleteTask={deleteTask} />
     </div>
   );
 };
