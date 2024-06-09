@@ -5,6 +5,7 @@ import Footer from './components/Footer.jsx';
 
 function App() {
     const [todos, setTodos] = useState([]);
+    const [filter, setFilter] = useState('all');
 
     const addTodo = (text) => {
         setTodos([...todos, { id: Date.now(), text, completed: false }]);
@@ -31,15 +32,23 @@ function App() {
         setTodos(todos.filter((todo) => !todo.completed));
     };
 
+    const filteredTodos = todos.filter((todo) => {
+        if (filter === 'active') return !todo.completed;
+        if (filter === 'completed') return todo.completed;
+        return true;
+    });
+
     return React.createElement(
         'div',
         { className: 'App' },
         React.createElement(Header, { addTodo: addTodo, toggleAllTodos: toggleAllTodos }),
-        React.createElement(TodoList, { todos: todos, toggleTodo: toggleTodo, deleteTodo: deleteTodo }),
+        React.createElement(TodoList, { todos: filteredTodos, toggleTodo: toggleTodo, deleteTodo: deleteTodo }),
         React.createElement(Footer, {
             hasTodos: todos.length > 0,
             remainingCount: todos.filter((todo) => !todo.completed).length,
-            clearCompleted: clearCompleted
+            clearCompleted: clearCompleted,
+            currentFilter: filter,
+            setFilter: setFilter
         })
     );
 }

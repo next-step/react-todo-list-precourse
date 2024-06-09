@@ -1,23 +1,31 @@
 import React from 'react';
 
-function Footer({ hasTodos, remainingCount, clearCompleted }) {
+function Footer({ hasTodos, remainingCount, clearCompleted, currentFilter, setFilter }) {
   return (
     <footer className="footer">
       <span className="todo-count">
-        <strong>0</strong> items left
+        <strong>{remainingCount}</strong> {remainingCount === 1 ? 'item' : 'items'} left
       </span>
       <ul className="filters">
         <li>
-          <a href="#/" className="selected">All</a>
+          <a href="#/" className={currentFilter === 'all' ? 'selected' : ''} onClick={() => setFilter('all')}>
+            All
+          </a>
         </li>
         <li>
-          <a href="#/active">Active</a>
+          <a href="#/active" className={currentFilter === 'active' ? 'selected' : ''} onClick={() => setFilter('active')}>
+            Active
+          </a>
         </li>
         <li>
-          <a href="#/completed">Completed</a>
+          <a href="#/completed" className={currentFilter === 'completed' ? 'selected' : ''} onClick={() => setFilter('completed')}>
+            Completed
+          </a>
         </li>
       </ul>
-      <button className="clear-completed" onClick={clearCompleted}>Clear completed</button>
+      <button className="clear-completed" onClick={clearCompleted}>
+        Clear completed
+      </button>
     </footer>
   );
 }
