@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from './TodoList';
 import TodoCount from './TodoCount'; 
+import './styles.css';
 
 // App 컴포넌트: 전체 Todo 앱을 관리하는 컴포넌트
 function App() {
-    // todos: 할 일 목록 상태
-    // input: 입력 필드 상태
-    // filter: 필터 상태 (all, active, completed)
     const [todos, setTodos] = useState(() => {
         // 로컬 스토리지에서 초기 할 일 목록 불러오기
         const savedTodos = localStorage.getItem('todos');
         return savedTodos ? JSON.parse(savedTodos) : [];
-      });
+    });
   const [input, setInput] = useState('');
   const [filter, setFilter] = useState('all'); 
 
@@ -67,8 +65,8 @@ function App() {
   const activeTodoCount = todos.filter(todo => !todo.completed).length;
 
   return (
-    <div className="App">
-      <h1>todos</h1>
+    <div className="App container">
+      <h1>TODO LIST</h1>
       <input
         type="text"
         value={input}
@@ -77,13 +75,13 @@ function App() {
         placeholder="What needs to be done?"
       />
       {/* 필터 버튼들 */}
-      <div>
-        <button onClick={() => { setFilter('all'); console.log('Filter set to all'); }}>All</button>
-        <button onClick={() => { setFilter('active'); console.log('Filter set to active'); }}>Active</button>
-        <button onClick={() => { setFilter('completed'); console.log('Filter set to completed'); }}>Completed</button>
+      <div className="filters">
+        <button className={`filter ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>All</button>
+        <button className={`filter ${filter === 'active' ? 'active' : ''}`} onClick={() => setFilter('active')}>Active</button>
+        <button className={`filter ${filter === 'completed' ? 'active' : ''}`} onClick={() => setFilter('completed')}>Completed</button>
       </div>
-      {/* TodoList 컴포넌트에 할 일 목록, 삭제 함수, 완료 상태 토글 함수 전달 */}
-      <TodoList todos={todos} deleteTodo={deleteTodo} toggleComplete={toggleComplete} />
+      {/* TodoList 컴포넌트에 필터링된 할 일 목록, 삭제 함수, 완료 상태 토글 함수 전달 */}
+      <TodoList todos={filterTodos()} deleteTodo={deleteTodo} toggleComplete={toggleComplete} />
       {/* TodoCount 컴포넌트에 완료되지 않은 할 일의 개수 전달 */}
       <TodoCount count={activeTodoCount} />
     </div>
