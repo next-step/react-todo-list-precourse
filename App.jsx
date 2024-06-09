@@ -13,6 +13,7 @@ function App(){
 
   const onRemove = (id) => {
     setTodoList(TodoList.filter((todo) => todo.id !== id))
+    setCheckTodoList(checkTodoList.filter((todo) => todo.id !== id));
   }
 
   const checkPush = (id, content) => {
