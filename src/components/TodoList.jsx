@@ -8,9 +8,9 @@ function TodoList() {
     const { filter } = useContext(FilterContext);
 
     const filterTodos = todos.filter((todo) => {
-        if (filter === "completed") {
+        if (filter === "Active") {
           return todo.done;
-        } else if (filter === "uncompleted") {
+        } else if (filter === "Completed") {
           return !todo.done;
         } else {
           return true;
