@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Todo } from "./interfaces/todo";
+
+import { Todo } from "./interfaces";
 import TodoView from "./components/TodoView";
 
 /**
@@ -9,11 +10,11 @@ import TodoView from "./components/TodoView";
 const Home = () => {
     const [todoList, setTodoList] = useState<Todo[]>([]);
     /**
-     * todoList의 n번째 todo의 done 여부를 토글하는 함수
+     * todoList의 n번째 todo를 변경하는 함수
      * @param index 
      */
-    const toggleTodoDone = (index: number) => {
-        todoList[index].done=!todoList[index].done;
+    const changeNthTodo = (index: number, value: Todo) => {
+        todoList[index]=value;
         setTodoList([...todoList]);
     }
 
@@ -37,7 +38,7 @@ const Home = () => {
     return <div>
         {/* <Header />
         <Input /> */}
-        <TodoView todoList={todoList} toggleTodoDone={toggleTodoDone}/>
+        <TodoView todoList={todoList} changeNthTodo={changeNthTodo}/>
     </div>;
 };
 

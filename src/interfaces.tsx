@@ -3,3 +3,7 @@ export interface Todo {
     done: boolean;
     content: string;
 }
+
+export interface ChangeNthTodo{
+    (index: number, value: Todo): void;
+}
