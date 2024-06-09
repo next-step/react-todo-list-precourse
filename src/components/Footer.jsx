@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer({ hasTodos, remainingCount, clearCompleted, currentFilter, setFilter }) {
   return (
-    <footer className="footer">
+    <footer className={`footer ${hasTodos ? '' : 'hidden'}`}>
       <span className="todo-count">
         <strong>{remainingCount}</strong> {remainingCount === 1 ? 'item' : 'items'} left
       </span>
