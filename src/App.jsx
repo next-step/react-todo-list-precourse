@@ -6,14 +6,15 @@ import UseTodoState from './hooks/useTodo.jsx';
 
 function App() {
     const { todos, addTodo, deleteTodo, changeCompleted } = UseTodoState();
+    const [filter, useFilter] = useState('All');
 
     return (
         <div className="app">
             <h1>TODO</h1>
             <div className="mainframe">
                 <Header addTodo={addTodo}/>
-                <TodoList todos={todos} deleteTodo={deleteTodo} changeCompleted={changeCompleted}/>
-                <Footer/>
+                <TodoList filter={filter} todos={todos} deleteTodo={deleteTodo} changeCompleted={changeCompleted}/>
+                <Footer changeFilter={useFilter}/>
             </div>
         </div>
     );
