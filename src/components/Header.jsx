@@ -21,7 +21,7 @@ function Header({ addTodo }) {
       <h1>todos</h1>
       <div className="input-container">
         <input
-          class="todo-input"
+          className="todo-input"
           type="text"
           placeholder="할 일 입력"
           value={newTodo}
