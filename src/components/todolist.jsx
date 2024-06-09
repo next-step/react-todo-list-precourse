@@ -1,10 +1,10 @@
 import React from 'react';
 import TodoElement from './todoelement.jsx';
 
-function makelist(todos, deleteTodo) {
+function makelist(elementProps) {
     return (
-        todos.map(function(element, index) {
-            return ( <TodoElement todo={element} key={index} deleteTodo={deleteTodo}/> )
+        elementProps.todos.map(function(element) {
+            return ( <TodoElement todo={element} deleteTodo={elementProps.deleteTodo} changeCompleted={elementProps.changeCompleted}/> )
         })
     )
 }
@@ -12,7 +12,7 @@ function makelist(todos, deleteTodo) {
 function TodoList(props) {
     return (
         <div className="todolist">
-            { makelist(props.todos, props.deleteTodo) }
+            { makelist(props) }
         </div>
     );
 }

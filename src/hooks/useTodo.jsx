@@ -1,19 +1,23 @@
 import { useState } from 'react';
 
 const useTodoState = () => {
-    const [todos, setTodos] = useState([{'content':'test1', 'isCompleted':true}, {'content':'test2', 'isCompleted':false}]);
+    const [todos, setTodos] = useState([]);
+    const [next, setNext] = useState(0);
 
     const addTodo = (todo) => {
-        setTodos((prev) => [...prev, {'content':todo, 'isCompleted':false}]);
+        setNext(next+1);
+        setTodos((prev) => [...prev, {'content':todo, 'isCompleted':false, 'id':next}]);
     };
 
-    const deleteTodo = (index) => {
-        var prev = [...todos];
-        prev.splice(index, 1);
-        setTodos(prev);
+    const deleteTodo = (target) => {
+        setTodos((prev) => prev.filter((todo) => todo.id !== target));
     };
 
-    return { todos, addTodo, deleteTodo };
+    const changeCompleted = (target) => {
+
+    }
+
+    return { todos, addTodo, deleteTodo, changeCompleted };
 }
 
 export default useTodoState;

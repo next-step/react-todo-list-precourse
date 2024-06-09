@@ -5,14 +5,14 @@ import Footer from './components/footer.jsx';
 import UseTodoState from './hooks/useTodo.jsx';
 
 function App() {
-    const { todos, addTodo, deleteTodo } = UseTodoState();
+    const { todos, addTodo, deleteTodo, changeCompleted } = UseTodoState();
 
     return (
         <div className="app">
             <h1>TODO</h1>
             <div className="mainframe">
                 <Header addTodo={addTodo}/>
-                <TodoList todos={todos} deleteTodo={deleteTodo}/>
+                <TodoList todos={todos} deleteTodo={deleteTodo} changeCompleted={changeCompleted}/>
                 <Footer/>
             </div>
         </div>

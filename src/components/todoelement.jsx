@@ -1,10 +1,14 @@
 import React from 'react';
 
-function makeCheckbox(todo) {
+function makeCheckbox(todo, changeCompleted) {
+    const handleClick = e => {
+        // changeCompleted();
+    };
+
     if (todo.isCompleted) {
-        return (<input type="checkbox" className="completebtn" checked/>)
+        return (<input type="checkbox" className="completebtn" onClick={handleClick}checked/>)
     } else {
-        return (<input type="checkbox" className="completebtn"/>)
+        return (<input type="checkbox" className="completebtn" onClick={handleClick}/>)
     }
 }
 
@@ -18,12 +22,12 @@ function makeContent(todo) {
 
 function TodoElement(props) {
     const handleClick = e => {
-        props.deleteTodo(props.key);
+        props.deleteTodo(props.todo.id);
     };
 
     return (
         <div className="todoelement">
-            { makeCheckbox(props.todo) }
+            { makeCheckbox(props.todo, props.changeCompleted) }
             { makeContent(props.todo) }
             <button className="deletebtn" onClick={handleClick}>x</button>
         </div>
