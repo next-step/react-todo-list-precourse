@@ -4,7 +4,7 @@ import TodoBox from "./components/TodoBox";
 import TodoHead from "./components/TodoHead";
 import TodoList from "./components/TodoList";
 import TodoCreate from "./components/TodoCreate";
-import { TodoProvider } from "./components/TodoContext";
+import { TodoProvider } from "./TodoContext";
 
 function App() {
   return (
