@@ -3,3 +3,6 @@ export interface Todo {
     done: boolean;
     content: string;
 }
+export interface ToggleTodoDone{
+    (index: number): void;
+}

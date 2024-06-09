@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Todo } from "./interfaces/todo";
+
+import { Todo, ToggleTodoDone } from "./interfaces";
 import TodoView from "./components/TodoView";
 
 /**
@@ -12,7 +13,7 @@ const Home = () => {
      * todoList의 n번째 todo의 done 여부를 토글하는 함수
      * @param index 
      */
-    const toggleTodoDone = (index: number) => {
+    const toggleTodoDone: ToggleTodoDone = index => {
         todoList[index].done=!todoList[index].done;
         setTodoList([...todoList]);
     }
