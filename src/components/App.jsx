@@ -45,6 +45,17 @@ const App = () => {
   const deleteTodo = (index) => {
     setTodos(todos.filter((_, i) => i !== index));
   };
+
+  // (할 일 Filtered 목록 가져오는 함수) 호출
+  const filteredTodos = filteredTodo(todos, filter);
+
+  return (
+    <div>
+      <Header addTodo={addTodo} />
+      <TodoList todos={filteredTodos} toTodo={toTodo} deleteTodo={deleteTodo} />
+      <Footer setFilter={setFilter} filter={filter} totalCount={todos.length} />
+    </div>
+  );
 };
 
 export default App;
