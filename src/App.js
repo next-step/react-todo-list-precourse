@@ -43,15 +43,23 @@ function App() {
         'div',
         { className: 'App' },
         React.createElement(Header, { addTodo: addTodo, toggleAllTodos: toggleAllTodos }),
-        React.createElement(TodoList, { todos: filteredTodos, toggleTodo: toggleTodo, deleteTodo: deleteTodo }),
-        React.createElement(Footer, {
-            hasTodos: todos.length > 0,
+        React.createElement(
+          'div',
+          { className: 'todo-list-wrapper' },
+          React.createElement(
+            'div',
+            { className: 'todo-list-container' },
+            React.createElement(TodoList, { todos: filteredTodos, toggleTodo: toggleTodo, deleteTodo: deleteTodo })
+          ),
+          React.createElement(Footer, {
+            hasTodos: todos.length,
             remainingCount: todos.filter((todo) => !todo.completed).length,
             clearCompleted: clearCompleted,
             currentFilter: filter,
             setFilter: setFilter
-        })
-    );
+          })
+        )
+      );
 }
 
 export default App;
