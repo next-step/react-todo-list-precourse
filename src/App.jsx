@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from '../components/TodoList';
+import AddTodo from '../components/AddTodo';
 import './App.css';
 
 function App() {
@@ -16,4 +17,8 @@ function App() {
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
+
+  const addTodo = (text) => {
+    setTodos([...todos, { text, completed: false }]);
+  };
 }
