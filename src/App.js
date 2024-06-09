@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Header from './components/Header.jsx';
-import TodoItem from './components/TodoItem.jsx';
 import TodoList from './components/TodoList.jsx';
 import Footer from './components/Footer.jsx';
 
@@ -15,7 +14,6 @@ function App() {
       'div',
       { className: 'App' },
       React.createElement(Header, { addTodo: addTodo }),
-      React.createElement(TodoItem, null),
       React.createElement(TodoList, { todos: todos }),
       React.createElement(Footer, null)
     );
