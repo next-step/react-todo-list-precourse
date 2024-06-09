@@ -32,6 +32,13 @@ const TodoTemplate = () => {
       );
     };
 
+    // Todo 아이템 지우는 함수 핸들링
+    const handleDelete = (id) => {
+      setTodos(
+        todos.filter((todo) => todo.id !== id)
+      );
+    };
+
   
     return (
       <>
