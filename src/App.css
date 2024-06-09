@@ -95,3 +95,10 @@ li button {
 li button:hover {
   background-color: #c82333;
 }
+
+.todo-footer {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}

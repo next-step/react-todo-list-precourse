@@ -27,9 +27,10 @@ function App() {
     if (e.key === "Enter") {
       e.preventDefault();
       addTodo();
-      setNewTodo("");
     }
   };
+
+  const incompleteTodosCount = todos.filter((todo) => !todo.completed).length;
 
   return (
     <div className="container">
@@ -59,6 +60,9 @@ function App() {
           </li>
         ))}
       </ul>
+      <div className="todo-footer">
+        {incompleteTodosCount} item{incompleteTodosCount !== 1 ? "s" : ""} left
+      </div>
     </div>
   );
 }
