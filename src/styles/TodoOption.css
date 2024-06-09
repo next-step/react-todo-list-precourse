@@ -1,0 +1,25 @@
+.footer {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    bottom: 0;
+    height: 70px;
+    width: 700px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.option-menu {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+.option-menu > *:nth-child(2) {
+    margin: 0 20px; 
+}
+
+.removeall{
+    cursor: pointer;
+}
