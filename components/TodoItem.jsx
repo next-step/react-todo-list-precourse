@@ -6,7 +6,12 @@ function TodoItem({ todo, index, deleteTodo, toggleComplete }) {
       <span onClick={() => toggleComplete(index)} style={{ cursor: 'pointer' }}>
         {todo.text}
       </span>
-      <button onClick={() => deleteTodo(index)}>Delete</button>
+      <div className="todo-buttons">
+        <button onClick={() => toggleComplete(index)}>
+          {todo.completed ? 'Undo' : 'Complete'}
+        </button>
+        <button onClick={() => deleteTodo(index)}>Delete</button>
+      </div>
     </div>
   );
 }
