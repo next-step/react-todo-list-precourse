@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TodoList from './TodoList';
+import TodoCount from './TodoCount'; 
 
 // App 컴포넌트: 전체 Todo 앱을 관리하는 컴포넌트
 function App() {
@@ -53,6 +54,9 @@ function App() {
     }
   };
 
+  // 완료되지 않은 할 일의 개수 계산
+  const activeTodoCount = todos.filter(todo => !todo.completed).length;
+
   return (
     <div className="App">
       <h1>todos</h1>
@@ -71,7 +75,10 @@ function App() {
       </div>
       {/* TodoList 컴포넌트에 할 일 목록, 삭제 함수, 완료 상태 토글 함수 전달 */}
       <TodoList todos={todos} deleteTodo={deleteTodo} toggleComplete={toggleComplete} />
+      {/* TodoCount 컴포넌트에 완료되지 않은 할 일의 개수 전달 */}
+      <TodoCount count={activeTodoCount} />
     </div>
+    
   );
 }
 
