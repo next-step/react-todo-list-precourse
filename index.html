@@ -3,10 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <style>
+      #myVideo {
+        display: none;
+      }
+    </style>
+    
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <video id="myVideo" src="video.mp4" controls></video>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    <script>
+      var videoElement = document.getElementById("myVideo");
+      window.addEventListener("beforeunload", function() {
+        videoElement.style.display = "none"; // 새로 고침할 때 비디오를 숨김
+      });
+    </script>
+    <script type="module" src="/src/App.js"></script>
   </body>
+  
 </html>
