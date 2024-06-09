@@ -21,3 +21,10 @@ const filteredTodo = (todos, filter) => {
     filter === 'all' ? true : filter === 'completed' ? todo.completed : !todo.completed
   );
 };
+
+const App = () => {
+  const [todos, setTodos] = useState(InitTodo()); // 초기 할 일 List 설정
+  const [filter, setFilter] = useState('all'); // 필터 설정
+};
+
+export default App;
