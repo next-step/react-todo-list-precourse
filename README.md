@@ -51,20 +51,11 @@ npm run start
 
 ### Todo List UI 구성
 
-- [ ] Todo Header
-- [ ] Todo Footer
 - [x] ❗️Todo List
   - [x] ❗️Todo Item 제목
   - [x] ❗️Todo Item 상태 ( 완료, 진행중 )
   - [x] ❗️Todo Item 삭제
   - [x] ❗️Todo Item 생성
-- [ ] Todo Detail
-  - [ ] Todo Item 내용 ( 제목, 메모 )
-  - [ ] Todo Item 삭제
-  - [ ] Todo Item 수정 ( 제목, 메모, 상태 )
-- [ ] Todo View 전환
-  - [ ] Todo List View
-  - [ ] Todo Grid View
 
 ### Todo List 기능 삽입
 
@@ -78,14 +69,3 @@ npm run start
 - [ ] Todo 필터링
   - [ ] All, Todo, onProgress, Done ( 상태별 필터링 )
   - [ ] Drag & Drop can change status and order ( 상태 및 순서 변경 )
-- [ ] Todo Deadline
-  - [ ] Deadline 설정
-  - [ ] 오늘 할일 + Deadline이 지난 목록 조회
-  - [ ] Deadline 표시 ( D-Day 표시 )
-- [ ] Todo 카테고리 CRUD
-  - [ ] 카테고리 생성
-  - [ ] 카테고리 조회
-  - [ ] 카테고리 수정 ( 이름 변경, 색 변경 )
-  - [ ] 카테고리 삭제
-- [ ] Todo 카테고리 연결
-  - [ ] 카테고리별 Todo 필터링
