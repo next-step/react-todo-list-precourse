@@ -9,7 +9,6 @@ import addTodo from "./utils/addTodo.jsx";
 function Main() {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
-
   return (
     <div className="inner">
       <h1>&#127872; todos</h1>

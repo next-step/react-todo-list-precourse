@@ -3,7 +3,7 @@ import deleteTodo from "../utils/deleteTodo";
 
 function DeleteButton({index, todos, setTodos}) {
   const handleClick = () => {
-    deleteTodo(index, todos, setTodos); // 클릭 이벤트가 발생했을 때 실행될 함수
+    deleteTodo(index, todos, setTodos);
   };
 
   return(

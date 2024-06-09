@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CheckBox from "./CheckBox";
 import toggleTodo from "../utils/toggleTodo";
 import DeleteButton from "./DeleteButton";
