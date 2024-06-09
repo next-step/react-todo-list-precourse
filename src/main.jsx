@@ -20,6 +20,7 @@ const Main = () => {
             />
             <TodoList
                 todoList={todoList}
+                setTodoList={setTodoList}
             />
         </div>
     );
