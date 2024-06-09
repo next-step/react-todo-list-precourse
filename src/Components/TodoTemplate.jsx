@@ -2,10 +2,13 @@ import { React, useState, useEffect } from "react";
 import "../Styles/TodoTemplate.css";
 import AddTodo from "./AddTodos";
 import TodoList from "./ListTodos";
+import Filters from "./Filter";
 
 
 const TodoTemplate = () => {
   const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState('all');
+
 
     // 유저의 Todo 인풋값 추가하는 함수
     const appendTodo = (todoInput) => {
@@ -41,6 +44,18 @@ const TodoTemplate = () => {
       );
     };
 
+
+    // Todo 아이템들 진행상황 필터링
+    const filteredItems = todos.filter((todo) => {
+      if (filter == "completed") {
+        return todo.isCompleted;
+      } else if (filter == "active") {
+        return !todo.isCompleted;
+      } else {    // 진행여부 관계없이 모두 보여주기!
+        return true;
+      }
+    });
+
   
     return (
       <>
@@ -50,8 +65,12 @@ const TodoTemplate = () => {
         handleComplete={handleComplete}
         handleDelete={handleDelete}
       />
+        <Filters 
+        filter={filter}
+        setFilter={setFilter}
+      />
       </>
-    )
+    );
   }
   
   export default TodoTemplate;
