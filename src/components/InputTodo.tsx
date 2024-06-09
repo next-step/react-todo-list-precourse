@@ -6,6 +6,7 @@ const InputTodo = ({ addTodo }: { addTodo: AddTodo }) => {
     const [content, setContent] = useState<string>("");
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if(""===content) return;
         addTodo(content);
         setContent("");
     }
