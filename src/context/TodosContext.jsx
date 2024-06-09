@@ -6,17 +6,25 @@ const TodoProvider = ({ children }) => {
     const [todos, setTodos] = useState([]);
     
     const addTodo = (todo) => {
-        setTodos([...todos, todo]);
-        console.log(todos);
+        const newTodo = { text: todo, done: false };
+        setTodos([...todos, newTodo]);
     };
 
     const removeTodo = (index) => {
-        setTodos(todos.filter((_, i) => i !== index));
-        console.log(todos);
+        setTodos(todos.filter((todo, i) => i !== index));
+    };
+
+
+    const toggleTodo = (index) => {
+        setTodos(
+            todos.map((todo, i) => 
+                i === index ? { ...todo, done: !todo.done } : todo
+            )
+        );
     };
 
     return (
-        <TodoContext.Provider value={{ todos, addTodo, removeTodo }}>
+        <TodoContext.Provider value={{ todos, addTodo, removeTodo, toggleTodo }}>
             {children}
         </TodoContext.Provider>
     );

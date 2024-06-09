@@ -1,16 +1,20 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../context/TodosContext";
+import TodoItem from "./TodoItem";
 
 function TodoList() {
-    const {todos, removeTodo} = useContext(TodoContext);
+    const { todos, removeTodo, toggleTodo } = useContext(TodoContext);
 
     return(
         <div>
             {todos.map((todo, index) => (
-                <div key={index}> 
-                    {todo}
-                    <button onClick={() => removeTodo(index)}>X</button> 
-                </div>
+                <TodoItem 
+                 key={index}
+                 todo={todo} 
+                 index={index} 
+                 removeTodo={removeTodo}
+                 toggleTodo={toggleTodo}
+                />
             ))}
         </div>
     );  
