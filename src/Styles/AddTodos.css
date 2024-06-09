@@ -1,0 +1,10 @@
+#todoInput {
+  width: 40vw;
+  min-width: 100%;
+  height: auto;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: auto;
+}
