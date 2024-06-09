@@ -35,6 +35,11 @@ const App = () => {
     if (text.trim().length === 0) return;
     setTodos([...todos, { text, completed: false }]);
   };
+
+  // 할 일 완료 업데이트 함수
+  const toTodo = (index) => {
+    setTodos(updateTodo(todos, index));
+  };
 };
 
 export default App;
