@@ -1,0 +1,11 @@
+#TodoFilter {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+#TodoFilter > ul {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+}

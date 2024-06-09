@@ -1,0 +1,40 @@
+#TodoListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#TodoListItem:hover {
+  background-color: #f9f9f9;
+}
+
+#TodoListItem > button {
+  outline: none;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+#TodoListItem-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid black;
+  background-color: black;
+  font-size: 1.2rem;
+  gap: 1rem;
+}
+
+#TodoListItem-delete:hover {
+  color: red;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #ccc;
+}

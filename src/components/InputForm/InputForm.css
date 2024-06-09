@@ -1,0 +1,9 @@
+#InputForm {
+  display: flex;
+}
+#InputForm > input {
+  flex: 1;
+  font-size: 1.5rem;
+  padding-block: 1rem;
+  padding-inline: 3rem;
+}
