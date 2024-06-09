@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from '../components/TodoList';
 import AddTodo from '../components/AddTodo';
+import TodoFilter from '../components/TodoFilter';
 import './App.css';
 
 function App() {
@@ -34,5 +35,10 @@ function App() {
     setTodos(newTodos);
   };
 
-
+  const filteredTodos = todos.filter(todo => {
+    if (filter === 'all') return true;
+    if (filter === 'active') return !todo.completed;
+    if (filter === 'completed') return todo.completed;
+    return true;
+  });
 }
