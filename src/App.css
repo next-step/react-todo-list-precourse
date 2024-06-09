@@ -65,9 +65,22 @@ li {
   margin-bottom: 10px;
 }
 
-li.completed {
+li span {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.completed span {
   text-decoration: line-through;
   color: #888;
+}
+
+.completed input[type="checkbox"] {
+  pointer-events: none;
 }
 
 li button {
@@ -81,8 +94,4 @@ li button {
 
 li button:hover {
   background-color: #c82333;
-}
-
-li span {
-  cursor: pointer;
 }
