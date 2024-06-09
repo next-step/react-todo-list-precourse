@@ -2,9 +2,10 @@ import React from 'react';
 
 function TodoItem({ todo, index, deleteTodo, toggleComplete }) {
   return (
-    <div style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-      {todo.text}
-      <button onClick={() => toggleComplete(index)}>Complete</button>
+    <div className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+      <span onClick={() => toggleComplete(index)} style={{ cursor: 'pointer' }}>
+        {todo.text}
+      </span>
       <button onClick={() => deleteTodo(index)}>Delete</button>
     </div>
   );

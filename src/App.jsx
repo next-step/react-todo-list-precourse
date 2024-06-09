@@ -42,13 +42,13 @@ function App() {
     return true;
   });
 
-return (
-  <div className="App">
-    <h1>Todo List</h1>
-    <AddTodo addTodo={addTodo} />
-    <TodoFilter filter={filter} setFilter={setFilter} />
-    <TodoList todos={filteredTodos} deleteTodo={deleteTodo} toggleComplete={toggleComplete} />
-  </div>
+  return (
+    <div className="App">
+      <h1>Todo List</h1>
+      <AddTodo addTodo={addTodo} />
+      <TodoList todos={filteredTodos} deleteTodo={deleteTodo} toggleComplete={toggleComplete} />
+      <TodoFilter filter={filter} setFilter={setFilter} />
+    </div>
   );
 }
 
