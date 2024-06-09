@@ -40,6 +40,11 @@ const App = () => {
   const toTodo = (index) => {
     setTodos(updateTodo(todos, index));
   };
+
+  // 할 일 삭제 함수
+  const deleteTodo = (index) => {
+    setTodos(todos.filter((_, i) => i !== index));
+  };
 };
 
 export default App;
