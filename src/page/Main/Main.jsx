@@ -26,6 +26,25 @@ const Main = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#/", "");
+      if (hash === "active" || hash === "complete" || hash === "all") {
+        setFilter(hash);
+      } else {
+        setFilter("all");
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    handleHashChange();
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
   const addTodo = () => {
     if (newTodo.trim() === "") {
       alert("오늘 할 일을 작성해보자!");
@@ -69,6 +88,7 @@ const Main = () => {
 
   const filterTodos = (filter) => {
     setFilter(filter);
+    window.location.hash = `#/${filter}`;
   };
 
   const filteredTodos = todos.filter((todo) => {
