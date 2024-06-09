@@ -25,6 +25,10 @@ const filteredTodo = (todos, filter) => {
 const App = () => {
   const [todos, setTodos] = useState(InitTodo()); // 초기 할 일 List 설정
   const [filter, setFilter] = useState('all'); // 필터 설정
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos)); // 할 일 목록이 변경될 때마다 로컬에 저장
+  }, [todos]);
 };
 
 export default App;
