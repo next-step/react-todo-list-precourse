@@ -1,7 +1,9 @@
+import Status from "./Status";
+
 type Todo = {
   id: string;
   title: string;
-  status: "Todo" | "Done";
+  status: Status;
 };
 
 export default Todo;

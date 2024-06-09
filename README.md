@@ -53,12 +53,12 @@ npm run start
 
 - [ ] Todo Header
 - [ ] Todo Footer
-- [ ] ❗️Todo List
-  - [ ] ❗️Todo Item
-    - [ ] ❗️Todo Item 제목
-    - [ ] ❗️Todo Item 상태 ( 완료, 진행중 )
-    - [ ] ❗️Todo Item 삭제
-    - [ ] ❗️Todo Item 생성
+- [x] ❗️Todo List
+  - [x] ❗️Todo Item
+    - [x] ❗️Todo Item 제목
+    - [x] ❗️Todo Item 상태 ( 완료, 진행중 )
+    - [x] ❗️Todo Item 삭제
+    - [x] ❗️Todo Item 생성
 - [ ] Todo Detail
   - [ ] Todo Item 내용 ( 제목, 메모 )
   - [ ] Todo Item 삭제
@@ -69,11 +69,12 @@ npm run start
 
 ### Todo List 기능 삽입
 
-- [ ] ❗️Todo CRUD
-  - [ ] ❗️Todo 생성
-  - [ ] ❗️Todo 조회
-  - [ ] ❗️Todo 수정 ( 상태 변경, 내용 변경 )
-  - [ ] ❗️Todo 삭제 ( 단일 삭제, 전체 삭제 )
+- [x] ❗️Todo CRUD
+  - [x] ❗️Todo 생성
+  - [x] ❗️Todo 조회
+  - [x] ❗️Todo 수정 ( 상태 변경, 내용 변경 )
+  - [x] ❗️Todo 단일 삭제
+  - [ ] Todo 전체 삭제
 - [ ] Todo 목록 캐싱 ( 새로고침시에도 유지 )
 - [ ] Todo 필터링
   - [ ] All, Todo, onProgress, Done ( 상태별 필터링 )
