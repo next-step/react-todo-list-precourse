@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -23,6 +23,14 @@ function App() {
     setTodos(newTodos);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      addTodo();
+      setNewTodo("");
+    }
+  };
+
   return (
     <div className="container">
       <h1>Todos📋</h1>
@@ -31,6 +39,7 @@ function App() {
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
+          onKeyDown={handleKeyDown}
           placeholder="Add a new task..."
         />
         <button onClick={addTodo}>Add</button>
