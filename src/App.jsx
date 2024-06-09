@@ -8,17 +8,29 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
-    setTodos([...todos, { id: Date.now(), text: todo }]);
+    setTodos([...todos, { id: Date.now(), text: todo, completed: false }]);
   };
 
   const delTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, completed: !todo.completed };
+        } else {
+          return todo;
+        }
+      })
+    );
+  };
+
   return (
     <>
       <Header addTodo={addTodo} />
-      <TodoList todos={todos} delTodo={delTodo} />
+      <TodoList todos={todos} delTodo={delTodo} toggleTodo={toggleTodo} />
     </>
   );
 }
