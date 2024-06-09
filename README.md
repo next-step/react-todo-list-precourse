@@ -17,9 +17,6 @@
    - 해야 할 일의 총 개수를 볼 수 있도록 하는 기능
 
 ![할일 목록 추가](https://github.com/HeHelee/react-todo-list-precourse/assets/119719994/87636f46-89e7-4d99-a09f-b7425c359ceb)
-     
-## Resource
-- https://fonts.google.com/?subset=korean&noto.script=Kore
 
 ## 회고
 - React를 처음 배웠는데 어려웠습니다. 그래서 React강의를 두번 정도 다시 돌려봤습니다.
