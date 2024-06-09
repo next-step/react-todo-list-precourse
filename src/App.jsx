@@ -11,10 +11,14 @@ function App() {
     setTodos([...todos, { id: Date.now(), text: todo }]);
   };
 
+  const delTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <>
       <Header addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} delTodo={delTodo} />
     </>
   );
 }
