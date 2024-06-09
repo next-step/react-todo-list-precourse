@@ -22,10 +22,15 @@ function App() {
         setTodos(todos.filter((todo) => todo.id !== id));
     };
 
+    const toggleAllTodos = () => {
+        const allCompleted = todos.every((todo) => todo.completed);
+        setTodos(todos.map((todo) => ({ ...todo, completed: !allCompleted })));
+    };
+
     return React.createElement(
       'div',
       { className: 'App' },
-      React.createElement(Header, { addTodo: addTodo }),
+      React.createElement(Header, { addTodo: addTodo, toggleAllTodos: toggleAllTodos }),
       React.createElement(TodoList, { todos: todos, toggleTodo: toggleTodo, deleteTodo: deleteTodo }),
       React.createElement(Footer, null)
     );

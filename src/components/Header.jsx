@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Header({ addTodo }) {
+function Header({ addTodo, toggleAllTodos }) {
   const [input, setInput] = useState("");
 
   const handleInputChange = (e) => setInput(e.target.value);
@@ -15,6 +15,7 @@ function Header({ addTodo }) {
     <header className="header">
       <h1>todos</h1>
       <div className="new-todo-wrapper">
+        <span className="toggle-all" tabIndex="0" onClick={toggleAllTodos}>▼</span>
         <input
           className="new-todo"
           placeholder="What needs to be done?"
