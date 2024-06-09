@@ -13,6 +13,7 @@ body {
 
 .app-container {
   width: 600px;
+  max-width: 600px;
   padding: 20px;
   background: #ffffff;
   border-radius: 10px;
@@ -108,6 +109,10 @@ li:hover {
   background-color: #f1f1f1;
 }
 
+li.completed {
+  background-color: #e0ffe0;
+}
+
 li.completed span {
   text-decoration: line-through;
   color: #888;
@@ -116,6 +121,42 @@ li.completed span {
 .todo-field {
   word-wrap: break-word;
   max-width: 85%;
+}
+
+li div.button-group {
+  display: flex;
+  align-items: center;
+}
+
+li span {
+  word-wrap: break-word;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+button.action-button {
+  width: 70px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-right: 5px;
+}
+
+.complete-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.complete-button:hover {
+  background-color: #218838;
 }
 
 .delete-button {
@@ -127,8 +168,6 @@ li.completed span {
   border-radius: 5px;
   font-size: 1em;
   transition: background-color 0.3s ease;
-  width: 60px; /* 고정된 너비 */
-  height: 30px; /* 고정된 높이 */
   display: flex;
   justify-content: center;
   align-items: center;
