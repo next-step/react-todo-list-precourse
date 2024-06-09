@@ -19,21 +19,35 @@ const Main = () => {
     setActiveCount(todos.filter((todo) => !todo.isTodoCompleted).length);
   }, [todos]);
 
+  useEffect(() => {
+    const storedTodos = JSON.parse(sessionStorage.getItem("todos"));
+    if (storedTodos) {
+      setTodos(storedTodos);
+    }
+  }, []);
+
   const addTodo = () => {
     if (newTodo.trim() === "") {
       alert("오늘 할 일을 작성해보자!");
     } else {
-      setTodos([
-        ...todos,
-        { id: Date.now(), text: newTodo, isTodoCompleted: false },
-      ]);
+      const newTodoItem = {
+        id: Date.now(),
+        text: newTodo,
+        isTodoCompleted: false,
+      };
+      const updatedTodos = [...todos, newTodoItem];
+      setTodos(updatedTodos);
+
+      sessionStorage.setItem("todos", JSON.stringify(updatedTodos));
       setNewTodo("");
     }
   };
 
   const deleteTodo = (id) => {
-    const todoUpdate = todos.filter((todo) => todo.id !== id);
-    setTodos(todos.filter((todo) => todo.id !== id));
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
+
+    sessionStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
   const handleEnterPress = (e) => {
@@ -43,13 +57,14 @@ const Main = () => {
   };
 
   const checkTodoComplete = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id
-          ? { ...todo, isTodoCompleted: !todo.isTodoCompleted }
-          : todo
-      )
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id
+        ? { ...todo, isTodoCompleted: !todo.isTodoCompleted }
+        : todo
     );
+    setTodos(updatedTodos);
+
+    sessionStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
   const filterTodos = (filter) => {
