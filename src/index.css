@@ -95,7 +95,6 @@ button {
     float: right;
     margin-left: auto;
     margin-right: 15px;
-    color: transparent;
 }
 .app .mainframe .todolist .todoelement button:hover {
     color:dodgerblue;

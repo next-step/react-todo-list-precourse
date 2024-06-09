@@ -7,7 +7,13 @@ const useTodoState = () => {
         setTodos((prev) => [...prev, {'content':todo, 'isCompleted':false}]);
     };
 
-    return { todos, addTodo };
+    const deleteTodo = (index) => {
+        var prev = [...todos];
+        prev.splice(index, 1);
+        setTodos(prev);
+    };
+
+    return { todos, addTodo, deleteTodo };
 }
 
 export default useTodoState;

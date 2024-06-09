@@ -17,11 +17,15 @@ function makeContent(todo) {
 }
 
 function TodoElement(props) {
+    const handleClick = e => {
+        props.deleteTodo(props.key);
+    };
+
     return (
         <div className="todoelement">
             { makeCheckbox(props.todo) }
             { makeContent(props.todo) }
-            <button className="deletebtn">x</button>
+            <button className="deletebtn" onClick={handleClick}>x</button>
         </div>
     );
 }
