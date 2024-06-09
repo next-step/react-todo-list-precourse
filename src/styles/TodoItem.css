@@ -8,10 +8,6 @@
   display: none;
 }
 
-.remove:hover {
-  color: #ff6b6b;
-}
-
 .todo-item-block {
   display: flex;
   align-items: center;
