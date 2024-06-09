@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-import { Todo, ToggleTodoDone } from "./interfaces";
+import { Todo, ToggleTodoDone, AddTodo } from "./interfaces";
 import TodoView from "./components/TodoView";
+import InputTodo from "./components/InputTodo";
 
 /**
  * Todo 홈페이지 컴포넌트
@@ -9,35 +10,19 @@ import TodoView from "./components/TodoView";
  */
 const Home = () => {
     const [todoList, setTodoList] = useState<Todo[]>([]);
-    /**
-     * todoList의 n번째 todo의 done 여부를 토글하는 함수
-     * @param index 
-     */
     const toggleTodoDone: ToggleTodoDone = index => {
         todoList[index].done=!todoList[index].done;
         setTodoList([...todoList]);
     }
-
-    // TODO 테스트 용 데이터 지우기
-    const dummyData: Todo[] = [
-        {
-            id: 1,
-            done: false,
-            content: 'make todo project'
-        },
-        {
-            id: 2,
-            done: true,
-            content: 'clean room'
-        },
-    ];
-    useEffect(() => {
-        setTodoList(dummyData);
-    },[]);
+    const addTodo: AddTodo = content => {
+        let nextId: number = todoList.length>0 ? todoList[todoList.length-1].id+1 : 0;
+        todoList.push({id: nextId, done: false, content: content});
+        setTodoList([...todoList]);
+    }
 
     return <div>
-        {/* <Header />
-        <Input /> */}
+        {/* <Header /> */}
+        <InputTodo addTodo={addTodo}/>
         <TodoView todoList={todoList} toggleTodoDone={toggleTodoDone}/>
     </div>;
 };

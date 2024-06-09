@@ -1,12 +1,11 @@
-import React from "react";
 import { Todo, ToggleTodoDone } from "../interfaces";
 
-const TodoEl = React.memo(({ todo, index, toggleTodoDone }: { todo: Todo, index: number, toggleTodoDone: ToggleTodoDone }) => {
+const TodoEl = ({ todo, index, toggleTodoDone }: { todo: Todo, index: number, toggleTodoDone: ToggleTodoDone }) => {
     return <li>
         <input type="checkbox" checked={todo.done} onChange={() => toggleTodoDone(index)} name={`todo${todo.id}`}/>
         <label htmlFor={`todo${todo.id}`}>{todo.content}</label>
     </li>
-});
+};
 
 /**
  * todo 리스트 컴포넌트
