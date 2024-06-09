@@ -4,7 +4,7 @@ import AddTodo from "./AddTodos";
 
 const TodoTemplate = () => {
   const [todos, setTodos] = useState([]);
-  
+
     // 유저의 Todo 인풋값 추가하는 함수
     const appendTodo = (todoInput) => {
       // inputBox에 아무것도 입력하지 않았을 때, alert 띄우기.
@@ -21,6 +21,18 @@ const TodoTemplate = () => {
         };
       setTodos([...todos, appendTodoItem])
     };
+
+
+    // 완료여부 핸들링
+    const handleComplete = (id) => {
+      setTodos(
+        todos.map((todo) =>
+        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted} : todo
+        )
+      );
+    };
+
+  
     return (
       <>
         <AddTodo appendTodo={appendTodo}/>
