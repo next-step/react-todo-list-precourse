@@ -9,6 +9,17 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
   const [selectedRole, setSelectedRole] = useState("All");
 
+  useEffect(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const handleEnter = (newTask) => {
     setTasks([...tasks, newTask]);
   };
