@@ -1,0 +1,17 @@
+.allCheck {
+  position: absolute;
+  top: -57px;
+  left: 68px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label {
+  display: block;
+  cursor: pointer;
+  color: grey;
+}
+input[type="checkbox"]:checked + label {
+  display: block;
+  color: rgb(77, 77, 202);
+}

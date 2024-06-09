@@ -1,0 +1,30 @@
+.list-container {
+  display: flex;
+  position: relative;
+  gap: 18px;
+  align-items: center;
+  font-size: 18px;
+  padding: 8px 0px 8px 8px;
+  border-bottom: 1px solid rgb(228, 225, 225);
+}
+.list-container > button {
+  display: none;
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: rgb(56, 56, 180);
+}
+.list-container:hover > button {
+  cursor: pointer;
+  display: block;
+}
+.list-container > span {
+  color: black;
+  text-decoration: none;
+}
+.list-container > .done {
+  color: grey;
+  text-decoration: line-through;
+}
