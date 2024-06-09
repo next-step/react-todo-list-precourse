@@ -29,6 +29,12 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos)); // 할 일 목록이 변경될 때마다 로컬에 저장
   }, [todos]);
+
+  // 할 일 추가 함수
+  const addTodo = (text) => {
+    if (text.trim().length === 0) return;
+    setTodos([...todos, { text, completed: false }]);
+  };
 };
 
 export default App;
