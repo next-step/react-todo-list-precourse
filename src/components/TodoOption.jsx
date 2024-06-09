@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { FilterContext } from "../context/FilterContext";
 import { TodoContext } from "../context/TodosContext";
+import "../styles/TodoOption.css";
 
 function TodoOption() {
   const { filter, setFilter } = useContext(FilterContext);
@@ -13,16 +14,16 @@ function TodoOption() {
   const activeTodos = todos.filter((todo) =>!todo.done).length;
 
   return (
-    <div>
+    <div className="footer">
       {todos.length > 0 ? (
-        <div>
+        <div className="option-menu">
           <div>{activeTodos} items left!</div>
           <select value={filter} onChange={handleFilterChange}>
             <option value="All">All</option>
             <option value="Active">Active</option>
             <option value="Completed">Completed</option>
           </select>
-          <div onClick={removeAllTodo}>Clear completed </div>
+          <div className="removeall" onClick={removeAllTodo}>Clear completed </div>
         </div>
       ) : (
         <></>

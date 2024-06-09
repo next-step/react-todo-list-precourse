@@ -1,21 +1,18 @@
 import React from "react";
-import { FilterProvider } from "../context/FilterContext";
-import { TodoProvider } from "../context/TodosContext";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
 import TodoOption from "./TodoOption";
+import "../styles/TodoTemplate.css";
 
 function TodoTemplate() {
 
     return(
-        <TodoProvider>
-            <FilterProvider>
-                <div>TO DO</div>
-                <TodoInput/>
-                <TodoList/>
-                <TodoOption/>
-            </FilterProvider>
-        </TodoProvider>
+        <div className="container">
+            <div className="title">TO DO</div>
+            <TodoInput/>
+            <TodoList/>
+            <TodoOption/>
+        </div>
     );  
 }
 

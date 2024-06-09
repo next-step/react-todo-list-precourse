@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { FilterContext } from "../context/FilterContext";
 import { TodoContext } from "../context/TodosContext";
 import TodoItem from "./TodoItem";
+import "../styles/TodoList.css";
 
 function TodoList() {
     const { todos, removeTodo, toggleTodo } = useContext(TodoContext);
@@ -9,16 +10,16 @@ function TodoList() {
 
     const filterTodos = todos.filter((todo) => {
         if (filter === "Active") {
-          return todo.done;
-        } else if (filter === "Completed") {
           return !todo.done;
+        } else if (filter === "Completed") {
+          return todo.done;
         } else {
           return true;
         }
     });
 
     return(
-        <div>
+        <div className="todo-list">
             {filterTodos.map((todo, index) => (
                 <TodoItem 
                 key={index}
@@ -26,8 +27,8 @@ function TodoList() {
                 index={index} 
                 removeTodo={removeTodo}
                 toggleTodo={toggleTodo}
-            />
-      ))}
+                />
+            ))}
         </div>
     );  
 }

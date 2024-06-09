@@ -1,11 +1,12 @@
 import React from "react";
+import "../styles/TodoItem.css";
 
 function TodoItem({ todo, index, removeTodo, toggleTodo }) {
   return (
-    <div style={{ textDecoration: todo.done ? "line-through" : "none" }}>
-        <span onClick={() => toggleTodo(index)}>O</span>
+    <div className="todo" style={{ textDecoration: todo.done ? "line-through" : "none" }}>
+        <input type="checkbox" onClick={() => toggleTodo(index)}/>
         {todo.text}
-        <button onClick={() => removeTodo(index)}>X</button>
+        <div onClick={() => removeTodo(index)}>X</div>
     </div>
   );
 }

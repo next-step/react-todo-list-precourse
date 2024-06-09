@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { TodoContext } from "../context/TodosContext";
+import "../styles/TodoInput.css";
 
 function TodoInput() {
     const [inputValue, setInputValue] = useState("");
@@ -18,6 +19,7 @@ function TodoInput() {
 
     return(
         <input 
+         className="todo-input"
          type="text"
          value={inputValue}
          onChange={handleInputChange}
