@@ -3,6 +3,7 @@ import "./App.css"
 import Header from "./src/component/Header"
 import List from "./src/component/List"
 import Todomaker from "./src/component/Todomaker"
+import ReactDOM from "react-dom/client";
 function App(){
 
 
@@ -47,5 +48,11 @@ function App(){
    <List TodoList = {showChecked ? checkTodoList : TodoList} onRemove={onRemove} checkPush = {checkPush}/>
     </div>
     )
+
+
+
+
 }
+const root = ReactDOM.createRoot(document.getElementById("App"));
+root.render(<App />);
 export default App;
