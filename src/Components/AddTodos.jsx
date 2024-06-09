@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Styles/AddTodo.css"
+import "../Styles/AddTodos.css"
 
 const AddTodo = ({ appendTodo }) => {
   const [todoInput, setTodoInput] = useState("");
