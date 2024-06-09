@@ -20,7 +20,7 @@ React 라이브러리를 사용한 투두리스트 웹앱 구현
 
 ![alt text](./src/assets/image/readme/image.png)
 
-#### Todo 추가, 삭제 기능
+### ✍️ Todo 추가, 삭제 기능
 
 - 사용자가 아무것도 입력하지 않은 경우 입력할 수 없고 alert까지!
 
@@ -44,7 +44,7 @@ const addTodo = () => {
 };
 ```
 
-#### Enter 키를 눌러도 투두 추가가 되도록.
+### ☑️ Enter 키를 눌러도 투두 추가가 되도록.
 
 ```javascript
 const handleEnterPress = (e) => {
@@ -54,7 +54,7 @@ const handleEnterPress = (e) => {
 };
 ```
 
-#### 필터링 기능 및 투두 개수 확인
+### 👻필터링 기능 및 투두 개수 확인
 
 ```javascript
 //src/components/Todo/Filters
@@ -76,7 +76,7 @@ const Filters = ({ filterTodos, allCount, completeCount, activeCount }) => {
 };
 ```
 
-#### sessionStorge를 사용하여 새로고침시 데이터 유지
+### ✨sessionStorge를 사용하여 새로고침시에도 데이터 유지
 
 ![alt text](./src/assets/image/readme/image2.png)
 
