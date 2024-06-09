@@ -1,0 +1,8 @@
+.todo-container {
+  position: relative;
+}
+.todo-wrapper {
+  width: 80%;
+  padding: 2px 0px;
+  margin: 20px auto;
+}

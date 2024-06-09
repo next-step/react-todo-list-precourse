@@ -1,0 +1,31 @@
+.input-container {
+  display: flex;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+}
+.input-container > input:focus {
+  outline: 2px solid rgb(56, 56, 180);
+  outline-offset: -2px;
+}
+.input-container > input {
+  height: 50px;
+  width: 85%;
+  border: none;
+  padding: 0;
+  padding-left: 50px;
+  box-shadow: 0 -2px 1px rgba(0, 0, 0, 0.03);
+}
+
+.input-container > button {
+  width: 15%;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(214, 214, 214);
+}
+
+.input-container > button:hover {
+  border: 2px solid rgb(56, 56, 180);
+}

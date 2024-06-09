@@ -1,0 +1,14 @@
+.filter-container {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  align-items: center;
+  padding: 0;
+  gap: 10px;
+}
+.filter-container > li {
+  padding: 0px 4px;
+  border: 2px solid rgb(250, 250, 255);
+  border-radius: 4px;
+  cursor: pointer;
+}
