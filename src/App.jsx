@@ -19,7 +19,6 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  // 특정 ID를 가진 할 일의 완료 상태를 토글하는 함수
   const completeTodo = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -37,6 +36,11 @@ function App() {
       return todos.filter((todo) => todo.completed);
     }
     return todos;
+  };
+
+  // 완료되지 않은 할 일의 개수를 반환하는 함수
+  const getActiveTodoCount = () => {
+    return todos.filter((todo) => !todo.completed).length;
   };
 
   return (
@@ -62,9 +66,9 @@ function App() {
           Completed
         </button>
       </div>
-
       <TodoInput onAdd={addTodo} />
 
+      <p className="todo-count">Active Todos: {getActiveTodoCount()}</p>
       <TodoList
         todos={getFilteredTodos()}
         onRemove={removeTodo}
