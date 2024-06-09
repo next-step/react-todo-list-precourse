@@ -14,6 +14,10 @@ const TodoProvider = ({ children }) => {
         setTodos(todos.filter((todo, i) => i !== index));
     };
 
+    const removeAllTodo = () => {
+        setTodos(todos.filter(todo => !todo.done));
+    };
+
     const toggleTodo = (index) => {
         setTodos(
             todos.map((todo, i) => 
@@ -23,7 +27,7 @@ const TodoProvider = ({ children }) => {
     };
 
     return (
-        <TodoContext.Provider value={{ todos, addTodo, removeTodo, toggleTodo }}>
+        <TodoContext.Provider value={{ todos, addTodo, removeTodo, removeAllTodo, toggleTodo }}>
             {children}
         </TodoContext.Provider>
     );
