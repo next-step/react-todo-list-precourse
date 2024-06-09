@@ -18,11 +18,15 @@ function App() {
         );
       };
 
+    const deleteTodo = (id) => {
+        setTodos(todos.filter((todo) => todo.id !== id));
+    };
+
     return React.createElement(
       'div',
       { className: 'App' },
       React.createElement(Header, { addTodo: addTodo }),
-      React.createElement(TodoList, { todos: todos, toggleTodo: toggleTodo }),
+      React.createElement(TodoList, { todos: todos, toggleTodo: toggleTodo, deleteTodo: deleteTodo }),
       React.createElement(Footer, null)
     );
   }

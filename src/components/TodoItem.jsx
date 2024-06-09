@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TodoItem({ todo, toggleTodo }) {
+function TodoItem({ todo, toggleTodo, deleteTodo }) {
   return (
     <li className={todo.completed ? 'completed' : ''}>
       <div className="view">
@@ -11,6 +11,7 @@ function TodoItem({ todo, toggleTodo }) {
           onChange={() => toggleTodo(todo.id)}
         />
         <label>{todo.text}</label>
+        <button className="destroy" onClick={() => deleteTodo(todo.id)}>×</button>
       </div>
     </li>
   );
