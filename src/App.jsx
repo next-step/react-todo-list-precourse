@@ -6,6 +6,7 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
   const [nextId, setNextId] = useState(0);
+  const [filter, setFilter] = useState("all");
 
   // 할 일을 추가하는 함수
   const addTodo = (text) => {
@@ -18,6 +19,7 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  // 특정 ID를 가진 할 일의 완료 상태를 토글하는 함수
   const completeTodo = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -26,11 +28,48 @@ function App() {
     );
   };
 
+  // 필터에 따라 할 일 목록을 필터링하는 함수
+  const getFilteredTodos = () => {
+    if (filter === "active") {
+      return todos.filter((todo) => !todo.completed);
+    }
+    if (filter === "completed") {
+      return todos.filter((todo) => todo.completed);
+    }
+    return todos;
+  };
+
   return (
     <div className="app-container">
       <h1>Todo List</h1>
+      <div className="filter-buttons">
+        <button
+          className={`filter-button ${filter === "all" ? "active" : ""}`}
+          onClick={() => setFilter("all")}
+        >
+          All
+        </button>
+        <button
+          className={`filter-button ${filter === "active" ? "active" : ""}`}
+          onClick={() => setFilter("active")}
+        >
+          Active
+        </button>
+        <button
+          className={`filter-button ${filter === "completed" ? "active" : ""}`}
+          onClick={() => setFilter("completed")}
+        >
+          Completed
+        </button>
+      </div>
+
       <TodoInput onAdd={addTodo} />
-      <TodoList todos={todos} onRemove={removeTodo} onComplete={completeTodo} />
+
+      <TodoList
+        todos={getFilteredTodos()}
+        onRemove={removeTodo}
+        onComplete={completeTodo}
+      />
     </div>
   );
 }
