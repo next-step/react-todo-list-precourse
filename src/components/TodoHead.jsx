@@ -20,7 +20,7 @@ function TodoHead() {
       <div className="day">
         {dateString} {dayName}
       </div>
-      <div className="tasks-left">할 일 {undoneTasks.length}개 남음</div>
+      <div className="tasks-left">남은 일 : {undoneTasks.length}개</div>
     </div>
   );
 }
