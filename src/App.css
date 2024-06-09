@@ -66,6 +66,10 @@ header h1 {
     outline: none;
 }
 
+.hidden-toggle-all {
+    display: none;
+}
+
 /* TODOLIST */
 .todo-list-wrapper {
     position: relative;
@@ -76,6 +80,34 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 4px 4px;
 }
+
+
+.todo-list-container:after {
+    content: "";
+    position: absolute;
+    left: 1%;
+    right: 1%;
+    bottom: -7px;
+    height: 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    z-index: -1;
+}
+
+.todo-list-container:before {
+    content: "";
+    position: absolute;
+    left: 2%;
+    right: 2%;
+    bottom: -14px;
+    height: 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    z-index: -2;
+}
+  
 
 .todo-list {
     margin: 0;

@@ -35,4 +35,3 @@ export const addTodo = (setTodos) => (text) => {
       return true;
     });
   };
-  

@@ -10,19 +10,20 @@ import {
     toggleAllTodos,
     clearCompleted,
     getFilteredTodos,
-  } from './utils/todoUtils';
+  } from './utils/todoUtils.js';
 
 function App() {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('all');
   const filteredTodos = getFilteredTodos(todos, filter);
+  const hasTodos = todos.length > 0;
   return React.createElement(
     'div', { className: 'App' },
     React.createElement(Header, {
       addTodo: addTodo(setTodos),
       toggleAllTodos: toggleAllTodos(todos, setTodos),
     }),
-    React.createElement(
+    hasTodos && React.createElement(
         'div', { className: 'todo-list-wrapper' },
         React.createElement(
             'div', { className: 'todo-list-container' },
@@ -33,7 +34,7 @@ function App() {
             })
         ),
       React.createElement(Footer, {
-        hasTodos: todos.length,
+        hasTodos: hasTodos,
         remainingCount: todos.filter((todo) => !todo.completed).length,
         clearCompleted: clearCompleted(setTodos),
         currentFilter: filter,
