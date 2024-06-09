@@ -19,11 +19,15 @@ const Home = () => {
         todoList.push({id: nextId, done: false, content: content});
         setTodoList([...todoList]);
     }
+    const removeTodo = (index: number) => {
+        todoList.splice(index, 1);
+        setTodoList([...todoList]);
+    }
 
     return <div>
         {/* <Header /> */}
         <InputTodo addTodo={addTodo}/>
-        <TodoView todoList={todoList} toggleTodoDone={toggleTodoDone}/>
+        <TodoView todoList={todoList} toggleTodoDone={toggleTodoDone} removeTodo={removeTodo} />
     </div>;
 };
 
