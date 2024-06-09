@@ -27,13 +27,21 @@ function App() {
         setTodos(todos.map((todo) => ({ ...todo, completed: !allCompleted })));
     };
 
+    const clearCompleted = () => {
+        setTodos(todos.filter((todo) => !todo.completed));
+    };
+
     return React.createElement(
-      'div',
-      { className: 'App' },
-      React.createElement(Header, { addTodo: addTodo, toggleAllTodos: toggleAllTodos }),
-      React.createElement(TodoList, { todos: todos, toggleTodo: toggleTodo, deleteTodo: deleteTodo }),
-      React.createElement(Footer, null)
+        'div',
+        { className: 'App' },
+        React.createElement(Header, { addTodo: addTodo, toggleAllTodos: toggleAllTodos }),
+        React.createElement(TodoList, { todos: todos, toggleTodo: toggleTodo, deleteTodo: deleteTodo }),
+        React.createElement(Footer, {
+            hasTodos: todos.length > 0,
+            remainingCount: todos.filter((todo) => !todo.completed).length,
+            clearCompleted: clearCompleted
+        })
     );
-  }
+}
 
 export default App;

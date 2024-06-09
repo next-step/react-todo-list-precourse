@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+function Footer({ hasTodos, remainingCount, clearCompleted }) {
   return (
     <footer className="footer">
       <span className="todo-count">
@@ -17,7 +17,7 @@ function Footer() {
           <a href="#/completed">Completed</a>
         </li>
       </ul>
-      <button className="clear-completed">Clear completed</button>
+      <button className="clear-completed" onClick={clearCompleted}>Clear completed</button>
     </footer>
   );
 }
