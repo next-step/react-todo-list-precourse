@@ -1,0 +1,42 @@
+.itemBox {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+}
+.checkBox {
+  display: none;
+}
+.checkBox + label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.checkBox + label::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px dotted var(--darkblue);
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+.checkBox:checked + label::before {
+  background-color: var(--darkblue);
+  background-image: url("../../../assets//image/radix-icons_check.png");
+  background-size: cover;
+}
+.todoText {
+  font-size: 24px;
+  font-family: "BMKIRANGHAERANG";
+  font-weight: 400;
+}
+.deleteBtn {
+  font-size: 18px;
+  position: absolute;
+  right: 5px;
+  color: var(--darkblue);
+}

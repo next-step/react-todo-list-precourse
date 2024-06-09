@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "BMKIRANGHAERANG";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMKIRANGHAERANG.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --yellow: #fffca5;
+  --darkblue: #00083b;
+  --orange: #ff4b15;
+}
+* {
+  margin: 0;
+}
+body {
+  background-color: var(--darkblue);
+}
+button {
+  border-style: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "BMKIRANGHAERANG";
+  background-color: transparent;
+}
+
+h1 {
+  font-family: "BMKIRANGHAERANG";
+  font-size: 52px;
+  font-weight: 500;
+  color: var(--orange);
+}
