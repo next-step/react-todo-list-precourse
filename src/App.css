@@ -19,6 +19,12 @@ header h1 {
     color: rgb(50, 150, 50);
 }
   
+.header {
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
 .new-todo-wrapper {
     position: relative;
     width: 100%;
