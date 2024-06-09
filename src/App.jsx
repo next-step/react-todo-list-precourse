@@ -28,4 +28,11 @@ function App() {
     setTodos(newTodos);
   };
 
+  const toggleComplete = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].completed = !newTodos[index].completed;
+    setTodos(newTodos);
+  };
+
+
 }
