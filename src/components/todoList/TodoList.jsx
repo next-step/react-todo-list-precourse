@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './todoList.styles.css';
 
 const TodoList = ({ todoList, setTodoList }) => {
     const [doneStatus, setDoneStatus] = useState(Array(todoList.length).fill(false));
@@ -14,7 +15,7 @@ const TodoList = ({ todoList, setTodoList }) => {
     return (
         <div className="todolist">
             {todoList ? todoList.map((todo, idx) => (
-                <div className={`todolist-boxs-${idx}${doneStatus[idx] ? '-done' : ''}`}>
+                <div className={`todolist-boxs${doneStatus[idx] ? '-done' : ''}`}>
                     {todo}
                     <button onClick={() => toggleDone(idx)}>✓</button>
                     <button onClick={() => onDeleteButtonHandler(idx)}>X</button>
