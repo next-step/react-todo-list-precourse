@@ -7,3 +7,10 @@ import Footer from './Footer';
 const InitTodo = () => {
   return JSON.parse(localStorage.getItem('todos')) || [];
 };
+
+// 할 일 완료 업데이트 함수
+const updateTodo = (todos, index) => {
+  return todos.map((todo, i) =>
+    i === index ? { ...todo, completed: !todo.completed } : todo
+  );
+};
