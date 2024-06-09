@@ -1,4 +1,5 @@
 import React, { useCallback, useState, useEffect } from "react";
+import './newTodo.styles.css';
 
 const NewTodo = ({ newText, setNewTodo }) => {
     const [texting, setTexting] = useState('');
