@@ -1,0 +1,43 @@
+.FooterLayout {
+	display: flex;
+	height: 2.5rem;
+	width: 40rem;
+	background-color: #fff;
+}
+
+.FooterContainer {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	color: #989898;
+	font-size: 1rem;
+	margin: 0 1rem;
+}
+
+.StateContainer button {
+	background-color: #fff;
+	border: 1px solid #fff;
+	color: #989898;
+	padding: 2px 3px;
+	border-radius: 5px;
+}
+
+.StateContainer button:active,
+.StateContainer button:focus {
+	border-color: #b83f46;
+	border-width: 2px;
+}
+button#Clear {
+	border: none;
+	background-color: #fff;
+	color: #989898;
+}
+.StateContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+}

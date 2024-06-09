@@ -1,0 +1,65 @@
+.ListLayout {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 3rem;
+	width: 40rem;
+	background-color: #fff;
+	color: #989898;
+}
+
+.ListLayout:focus {
+	border: 2px solid #b83f46;
+}
+
+.ListLayout button {
+	display: flex;
+	height: 80%;
+	width: 4rem;
+	align-items: center;
+	justify-content: center;
+	/* margin-right: 1rem; */
+	border: none;
+	background-color: #fff;
+}
+
+input.Input-Item {
+	display: flex;
+	width: 100%;
+	height: 80%;
+	border: none;
+	font-size: 1.2rem;
+	font-weight: 100;
+}
+
+input.Input-Item::placeholder {
+	font-size: 1.2rem;
+	font-weight: 100;
+	font-style: italic;
+	color: #989898;
+}
+
+input.Input-Item:focus {
+	outline: none;
+}
+
+#add-Item {
+	background-color: #fff;
+	color: #b93f46;
+	border: 2px solid #989898;
+	height: 100%;
+	border-radius: 5px;
+	border-color: #b93f46;
+	text-align: center;
+	align-items: center;
+	font-weight: 700;
+}
+
+#add-Item:active,
+/* #add-Item:focus, */
+#add-Item:hover {
+	background-color: #b93f46;
+	color: #fff;
+	transition: all 0.3s ease;
+}
