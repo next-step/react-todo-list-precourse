@@ -1,0 +1,32 @@
+.filterButton-container {
+  position: fixed;
+  top: 360px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.filterButton {
+  width: 100px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s linear;
+  user-select: none;
+}
+
+.filterButton:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.filterButton--selected {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
