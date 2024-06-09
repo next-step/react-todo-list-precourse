@@ -1,7 +1,10 @@
 import React from "react";
 import "../styles/TodoHead.css";
+import { useTodoState } from "./TodoContext";
 
 function TodoHead() {
+  const todos = useTodoState();
+  console.log(todos);
   return (
     <div className="todo-head-block">
       <h1>2024년 6월 9일</h1>
