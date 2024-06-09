@@ -1,11 +1,14 @@
 import React from "react";
 import TodoBox from "./components/TodoBox";
+import TodoHead from "./components/TodoHead";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <TodoBox>안녕하세요</TodoBox>
+      <TodoBox>
+        <TodoHead></TodoHead>
+      </TodoBox>
     </>
   );
 }
