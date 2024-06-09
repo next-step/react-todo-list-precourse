@@ -1,14 +1,15 @@
 import React from "react";
+import styles from "./TodoList.module.css";
 import HandleDeleteItem from "../handlers/HandleDeleteItem";
 import HandleToggleComplete from "../handlers/HandleToggleComplete";
 
 const TodoList = ({ lists, HandleToggleComplete, HandleDeleteItem}) => {
   return (
-    <ul className="todo-list">
+    <ul className={styles.todoList}>
       {lists.map((item, index) => (
-        <li key={item.id} className="todo-item">
+        <li key={item.id} className={styles.todoItem}>
           <input
-            className="todo-check"
+            className={styles.todoCheck}
             type="checkbox"
             id={`check${index + 1}`}
             value=""
@@ -16,10 +17,10 @@ const TodoList = ({ lists, HandleToggleComplete, HandleDeleteItem}) => {
           <label
             htmlFor={`check${index + 1}`}
             onClick={() => HandleToggleComplete(item.id)}
-            className="checkbox-label"
+            className={styles.checkboxLabel}
           ></label>
           <p className={item.completed ? "completed" : ""}>{item.text}</p>
-          <span onClick={() => HandleDeleteItem(item.id)} className="material-icons">
+          <span onClick={() => HandleDeleteItem(item.id)} className={styles.materialIcons}>
             close
           </span>
         </li>

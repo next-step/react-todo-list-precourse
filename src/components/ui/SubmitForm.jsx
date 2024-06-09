@@ -1,24 +1,24 @@
 import React, { useRef } from "react";
-// import HandleSubmit from "../feat/HandleSubmit";
+import styles from "./SubmitForm.module.css";
 
 const SubmitForm = ({e, onSubmit, inputRef, lists, setLists}) => {
 
   return (
-    <form className="todo-input-wrapper" onSubmit={onSubmit}>
-      <div className="todo-input-item">
-        <div className="todo-input-check">
+    <form className={styles.todoInputWrapper} onSubmit={onSubmit}>
+      <div className={styles.todoInputItem}>
+        <div className={styles.todoInputCheck}>
           <input
-            className="todo-check"
+            className={styles.todoCheck}
             type="checkbox"
             id="check"
             value=""
           ></input>
-          <label htmlFor="check" className="checkbox-label"></label>
+          <label htmlFor="check" className={styles.checkboxLabel}></label>
         </div>
         <input
           ref={inputRef}
           type="text"
-          className="todo-input"
+          className={styles.todoInput}
           placeholder="Create a new todo…"
         ></input>
       </div>

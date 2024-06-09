@@ -6,7 +6,7 @@ import TodoList from "./components/ui/TodoList";
 import Footer from "./components/ui/Footer";
 
 function Main() {
-  window.addEventListener('load', () => {
+  window.addEventListener("load", () => {
     localStorage.clear();
   });
 
@@ -14,7 +14,7 @@ function Main() {
 
   return (
     <div id="root">
-      <section className="todoapp">
+      <section className="todoapp container">
         <SubmitForm onSubmit={onSubmit} inputRef={inputRef} />
         <TodoList lists={lists} HandleToggleComplete={onToggle} HandleDeleteItem={onDelete} />
         <Footer ShowCompletedToggle={showConditionToggle} lists={lists} ClearCompleted={filteredTodoList} />
