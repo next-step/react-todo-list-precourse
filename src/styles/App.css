@@ -52,7 +52,15 @@ body {
   width: 300px;
 }
 .todo-item .delete {
-  margin-left: auto;
   all: unset;
+  color: grey;
+}
+.todo-item .delete:hover {
+  color: pink;
   cursor: pointer;
+}
+.completed .todo-item-label {
+  text-decoration: line-through;
+  text-decoration-color: pink;
+  color: grey;
 }
