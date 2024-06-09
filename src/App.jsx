@@ -1,8 +1,9 @@
 import React from "react";
+import "./App.css";
 import TodoBox from "./components/TodoBox";
 import TodoHead from "./components/TodoHead";
 import TodoList from "./components/TodoList";
-import "./App.css";
+import TodoCreate from "./components/TodoCreate";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <TodoBox>
         <TodoHead />
         <TodoList />
+        <TodoCreate />
       </TodoBox>
     </>
   );
