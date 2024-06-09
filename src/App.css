@@ -1,0 +1,98 @@
+.App {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ededed;
+  font-size: 16px;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  color: #d9d9d9;
+}
+
+.todo-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.filters button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #e6e6e6;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filters button:hover {
+  background-color: #f0f0f0;
+}
+
+.filters button.selected {
+  border-color: rgba(175, 47, 47, 0.2);
+  color: #5cb85c;
+}
+
+.clear-completed {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.clear-completed:hover {
+  text-decoration: underline;
+}
