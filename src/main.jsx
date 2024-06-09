@@ -5,7 +5,10 @@ import Footer from "./components/main/Footer";
 import "./style/Global.css";
 
 export default function Main() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todos")));
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
   return (
     <>
       <div className="todo">
