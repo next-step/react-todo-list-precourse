@@ -1,4 +1,8 @@
-const App = () => {
+/**
+ * Todo 홈페이지 컴포넌트
+ * + todoList state 관리
+ */
+const Home = () => {
     return(
         <div>
             dldl
@@ -9,4 +13,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Home;
