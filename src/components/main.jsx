@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
+import FilterButtons from './FilterButtons';
 import './main.css';
 
-const App = () => {
+const Main = () => {
   const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState('all');
 
   const addTodo = (text) => {
     if (text.trim() === '') return;
@@ -22,13 +24,22 @@ const App = () => {
     setTodos(newTodos);
   };
 
+  const filteredTodos = todos.filter(todo => {
+    if (filter === 'completed') return todo.completed;
+    if (filter === 'active') return !todo.completed;
+    return true;
+  });
+
   return (
     <div className="todoapp">
-      <h1 className="header">todos</h1>
+      <h1 className="header">Todo List</h1>
       <TodoInput addTodo={addTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <TodoList todos={filteredTodos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <div className="footer">
+        <FilterButtons setFilter={setFilter} />
+      </div>
     </div>
   );
 };
 
-export default App;
+export default Main;
