@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 
 const NewTodo = ({ newText, setNewTodo }) => {
     const [texting, setTexting] = useState('');
@@ -13,6 +13,9 @@ const NewTodo = ({ newText, setNewTodo }) => {
     const onButtonSubmitHandler = useCallback(() => {
         setNewTodo(texting);
     }, [texting, newText])
+    useEffect(() => {
+        setTexting('');
+    }, [newText])
     return (
         <div className="newtodo">
             <input
