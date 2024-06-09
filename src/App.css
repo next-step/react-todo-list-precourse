@@ -141,3 +141,55 @@ header h1 {
     cursor: pointer;
     outline: none;
 }
+
+/* FOOTER */
+.footer {
+    padding: 5px 15px;
+    height: 30px;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+    position: relative;
+    background: #ffffff;
+    border-radius: 0 0 2px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer .todo-count {
+    text-align: left;
+    width: 100px;
+}
+
+.footer .filters {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .filters li a {
+    color: inherit;
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+
+.footer .filters li a.selected {
+    border-color: rgba(50, 150, 50, 0.7);
+}
+
+.footer .clear-completed {
+    right: 0%;
+    line-height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    color: inherit;
+    background: none;
+}
