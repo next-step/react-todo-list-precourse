@@ -14,7 +14,6 @@ const TodoProvider = ({ children }) => {
         setTodos(todos.filter((todo, i) => i !== index));
     };
 
-
     const toggleTodo = (index) => {
         setTodos(
             todos.map((todo, i) => 
@@ -29,6 +28,5 @@ const TodoProvider = ({ children }) => {
         </TodoContext.Provider>
     );
 };
-
 
 export { TodoContext, TodoProvider };

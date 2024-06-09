@@ -1,4 +1,5 @@
 import React from "react";
+import { FilterProvider } from "../context/FilterContext";
 import { TodoProvider } from "../context/TodosContext";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
@@ -8,10 +9,12 @@ function TodoTemplate() {
 
     return(
         <TodoProvider>
-            <div>TO DO</div>
-            <TodoInput/>
-            <TodoList/>
-            <TodoOption/>
+            <FilterProvider>
+                <div>TO DO</div>
+                <TodoInput/>
+                <TodoList/>
+                <TodoOption/>
+            </FilterProvider>
         </TodoProvider>
     );  
 }

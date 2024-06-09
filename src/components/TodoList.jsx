@@ -1,21 +1,33 @@
 import React, { useContext } from "react";
+import { FilterContext } from "../context/FilterContext";
 import { TodoContext } from "../context/TodosContext";
 import TodoItem from "./TodoItem";
 
 function TodoList() {
     const { todos, removeTodo, toggleTodo } = useContext(TodoContext);
+    const { filter } = useContext(FilterContext);
+
+    const filterTodos = todos.filter((todo) => {
+        if (filter === "completed") {
+          return todo.done;
+        } else if (filter === "uncompleted") {
+          return !todo.done;
+        } else {
+          return true;
+        }
+    });
 
     return(
         <div>
-            {todos.map((todo, index) => (
+            {filterTodos.map((todo, index) => (
                 <TodoItem 
-                 key={index}
-                 todo={todo} 
-                 index={index} 
-                 removeTodo={removeTodo}
-                 toggleTodo={toggleTodo}
-                />
-            ))}
+                key={index}
+                todo={todo} 
+                index={index} 
+                removeTodo={removeTodo}
+                toggleTodo={toggleTodo}
+            />
+      ))}
         </div>
     );  
 }
