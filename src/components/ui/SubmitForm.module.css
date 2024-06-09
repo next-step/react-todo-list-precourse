@@ -1,0 +1,55 @@
+.todoCheck {
+  display: none;
+}
+.checkboxLabel {
+  width: 24px;
+  height: 24px;
+  background-color: #fff; /* 체크박스의 배경색 */
+  border: 1px solid #e3e4f1; /* 체크박스의 테두리 스타일 */
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todoCheck:checked + .checkboxLabel {
+  background-size: cover;
+}
+.todoInputWrapper {
+  display: flex;
+  align-items: center; /* 수직 정렬 추가 */
+  gap: 24px; /* 요소들 사이의 간격 조정 */
+  width: 540px;
+  height: 64px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.todoInput {
+  width: calc(100% - 24px); /* 텍스트 입력 필드의 너비 조정 */
+  height: 100%;
+  border: none;
+  font-family: "Josefin Sans";
+  font-size: 18px;
+  color: #494c6b;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+  outline: none;
+}
+
+.todoInputItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.todoInput::placeholder {
+  font-family: "Josefin Sans";
+  color: #9495a5;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+}

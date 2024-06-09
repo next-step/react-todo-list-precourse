@@ -1,0 +1,60 @@
+.footer{
+	width: 540px;
+	height: 51px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-left:24px ;
+  }
+  
+  .count{
+	display: flex;
+	flex-direction: row;
+	font-family: "Josefin Sans";
+	color: #9495A5;
+	font-size: 14px;
+  }
+  
+  .buttons{
+	width: 166px;
+	height: 14px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+  }
+  
+  .buttons button{
+	font-family: "Josefin Sans";
+	font-weight: 700px;
+	color: #9495A5;
+	border:0;
+	background-color: transparent;
+	cursor: pointer;
+  }
+  
+  .buttons button:hover {
+	color: #494C6B;
+  }
+  
+  .buttons button:active {
+	color: #3A7CFD;
+  }
+  
+  .buttons button:focus {
+	color: #3A7CFD;
+  }
+  
+  .clear button{
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+	margin-right: 24px;
+	font-family: "Josefin Sans";
+	font-weight: 350;
+  }
+  
+  .clear button:hover{
+	color: #494C6B;
+  }
+  

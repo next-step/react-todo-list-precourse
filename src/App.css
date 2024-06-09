@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.completed{
+  text-decoration: line-through;
+}
+
+.container{
+  width: 640px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  /* 화면 끝에서 50% 좌측으로 이동한 것 면적에서 x축기준 -50만큼 이동 */
+  transform: translateX(-50%);
+}
