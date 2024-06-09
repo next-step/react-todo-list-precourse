@@ -6,7 +6,7 @@ const useTodoState = () => {
 
     const addTodo = (todo) => {
         setNext(next+1);
-        setTodos((prev) => [...prev, {'content':todo, 'isCompleted':false, 'id':next}]);
+        setTodos((prev) => [...prev, {content:todo, isCompleted:false, id:next}]);
     };
 
     const deleteTodo = (target) => {
@@ -14,7 +14,9 @@ const useTodoState = () => {
     };
 
     const changeCompleted = (target) => {
-
+        setTodos((prev) => prev.map((todo) =>
+            todo.id === target ? {...todo, isCompleted:!todo.isCompleted} : todo
+        ));
     }
 
     return { todos, addTodo, deleteTodo, changeCompleted };

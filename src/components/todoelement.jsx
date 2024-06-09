@@ -2,7 +2,7 @@ import React from 'react';
 
 function makeCheckbox(todo, changeCompleted) {
     const handleClick = e => {
-        // changeCompleted();
+        changeCompleted(todo.id);
     };
 
     if (todo.isCompleted) {
