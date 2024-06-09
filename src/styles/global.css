@@ -10,13 +10,6 @@
     --side-c: #c2cf7d;
 }
 
-body{
-    font-family: 'Pretendard-Regular';
-    font-size: 16px;
-    background-color: #111111;
-    color: #f9f9f9;
-}
-
 html,
 body,
 div,
@@ -146,7 +139,7 @@ a:hover{
 }
 
 button{
-	background: none;
+    background: none;
 	color: inherit;
 	border: none;
 	padding: 0;
@@ -163,4 +156,16 @@ input, textarea, select{
 	cursor: text;
 	outline: inherit;
     resize: none;
+}
+
+body{
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    background-color: #111111;
+    color: #f9f9f9;
+}
+button{
+    padding: 5px 10px;
+    border: 3px solid var(--side-c);
+    border-radius: 10px;
 }

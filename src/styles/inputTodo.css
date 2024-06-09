@@ -1,0 +1,8 @@
+.inputTodo input{
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 8px;
+    border: 2px solid var(--side-c);
+
+    color: #111111;
+}
