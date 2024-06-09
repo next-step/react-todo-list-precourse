@@ -3,39 +3,24 @@ import "./styles/App.css";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import TodoList from "./components/TodoList";
+import {
+  loadTodos,
+  saveTodos,
+  createAddTodo,
+  createDelTodo,
+  createToggleTodo,
+} from "./utils/utils.js";
 
 function App() {
-  const [todos, setTodos] = useState(() => {
-    const savedTodos = JSON.parse(localStorage.getItem("todos-app"));
-    if (savedTodos != null) {
-      return savedTodos;
-    }
-    return [];
-  });
+  const [todos, setTodos] = useState(loadTodos);
 
   useEffect(() => {
-    localStorage.setItem("todos-app", JSON.stringify(todos));
+    saveTodos(todos);
   }, [todos]);
 
-  const addTodo = (todo) => {
-    setTodos([...todos, { id: Date.now(), text: todo, completed: false }]);
-  };
-
-  const delTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-
-  const toggleTodo = (id) => {
-    setTodos(
-      todos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, completed: !todo.completed };
-        } else {
-          return todo;
-        }
-      })
-    );
-  };
+  const addTodo = createAddTodo(setTodos);
+  const delTodo = createDelTodo(setTodos);
+  const toggleTodo = createToggleTodo(setTodos);
 
   return (
     <>
