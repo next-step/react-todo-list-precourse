@@ -82,3 +82,62 @@ header h1 {
     text-decoration: line-through;
     color: #d9d9d9;
 }
+
+
+/* TODOITEM */
+.view {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.view .toggle {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background: none;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.view .toggle:checked {
+    border-color: rgba(50, 150, 50, 0.5);
+}
+
+.view .toggle:checked:before {
+    content: '✔';
+    color: rgba(50, 150, 50, 0.5);
+    position: absolute;
+    font-size: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.view label {
+    width: 450px;
+    word-wrap: break-word;
+    line-height: 1.25em;
+}
+
+.todo-list li .destroy {
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: rgba(50, 150, 50, 0.5);
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
