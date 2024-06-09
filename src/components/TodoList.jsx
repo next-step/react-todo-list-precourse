@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import CheckBox from "./CheckBox";
 import toggleTodo from "../utils/toggleTodo";
+import DeleteButton from "./DeleteButton";
+import deleteTodo from "../utils/deleteTodo";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, setTodos}) => {
   const [completedTodos, setCompletedTodos] = useState([]);
 
   return (
@@ -13,6 +15,7 @@ const TodoList = ({ todos }) => {
             isChecked={completedTodos.includes(index)}
             onChange={() => toggleTodo(index, completedTodos, setCompletedTodos)}/>
           <div className="todo">{todo}</div>
+          <DeleteButton index={index} todos={todos} setTodos={setTodos}/>
         </li>
       ))}
     </ul>

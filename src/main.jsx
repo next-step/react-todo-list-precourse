@@ -20,7 +20,7 @@ function Main() {
           handleKeyPress(e, todos, setTodos, inputValue, setInputValue)
         }
       />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
