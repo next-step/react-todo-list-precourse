@@ -1,0 +1,25 @@
+.header h1{
+	width: fit-content;
+    margin-bottom: 20px;
+
+    background: linear-gradient(40deg, var(--main-c), var(--side-c));
+	color: transparent;
+	-webkit-background-clip: text;
+
+	font-weight: 800;
+    font-size: 30px;
+}
+.header p{
+    padding: 10px 10px 0px 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-style: italic;
+    background-color: #181818;
+}
+.header p::before, .header p::after{
+    content: "‟";
+    display: block;
+    
+    color: var(--side-c);
+    font-size: 30px;
+}
