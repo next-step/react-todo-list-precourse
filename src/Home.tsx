@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Todo, ToggleTodoDone, AddTodo, RemoveTodo } from "./interfaces";
 import TodoView from "./components/TodoView";
 import InputTodo from "./components/InputTodo";
+import Header from "./components/Header";
+import "./styles/Home.css";
 
 /**
  * todo state 관련된 CRUD 함수
@@ -34,8 +36,8 @@ const Home = () => {
     const [todoList, setTodoList] = useState<Todo[]>([]);
     const {toggleTodoDone, addTodo, removeTodo} = TodoListFunc(todoList, setTodoList);
 
-    return <div>
-        {/* <Header /> */}
+    return <div className="homepage">
+        <Header />
         <InputTodo addTodo={addTodo}/>
         <TodoView todoList={todoList} toggleTodoDone={toggleTodoDone} removeTodo={removeTodo} />
     </div>;
