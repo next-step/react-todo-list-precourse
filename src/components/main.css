@@ -76,15 +76,16 @@ li span.completed {
 }
 
 li button {
-  background: #ff6b6b;
+  background: white;
   border: none;
   padding: 10px;
   cursor: pointer;
-  color: white;
+  color: black;
 }
 
 li button:hover {
   background: #ff4d4d;
+  color: white;
 }
 
 .footer {
@@ -104,11 +105,13 @@ li button:hover {
 .filter-buttons button {
   padding: 10px;
   border: none;
-  background: #ddd;
+  background: #ffffff;
+  border-radius: 4px 4px 4px 4px;
   cursor: pointer;
   font-size: 14px;
 }
 
 .filter-buttons button:hover {
-  background: #ccc;
+  background: #ffffff;
+  border: 1px solid #ddd;
 }
