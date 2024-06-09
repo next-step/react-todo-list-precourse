@@ -20,8 +20,12 @@ const App = () => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  const generateId = () => {
+    return Date.now() + Math.random().toString(36);
+  };
+
   const handleEnter = (newTask) => {
-    setTasks([...tasks, newTask]);
+    setTasks([...tasks, { id: generateId(), text: newTask, completed: false }]);
   };
 
   const handleFilterClick = (role) => {
