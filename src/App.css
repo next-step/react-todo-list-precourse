@@ -98,6 +98,27 @@ li button:hover {
   background-color: #c82333;
 }
 
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.filters button {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.filters button:not(:last-child) {
+  border-right: none;
+}
+
+.filters button.active {
+  background-color: #ddd;
+}
+
 .todo-footer {
   text-align: left;
   margin-top: 20px;

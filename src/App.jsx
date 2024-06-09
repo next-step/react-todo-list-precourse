@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
+  const [filter, setFilter] = useState("all"); // 'all', 'active', 'completed'
 
   const addTodo = () => {
     if (newTodo.trim() === "") return;
@@ -32,6 +33,13 @@ function App() {
 
   const incompleteTodosCount = todos.filter((todo) => !todo.completed).length;
 
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "all") return true;
+    if (filter === "active") return !todo.completed;
+    if (filter === "completed") return todo.completed;
+    return true;
+  });
+
   return (
     <div className="container">
       <h1>Todos📋</h1>
@@ -46,7 +54,7 @@ function App() {
         <button onClick={addTodo}>Add</button>
       </div>
       <ul>
-        {todos.map((todo, index) => (
+        {filteredTodos.map((todo, index) => (
           <li key={index} className={todo.completed ? "completed" : ""}>
             <input
               type="checkbox"
@@ -62,6 +70,23 @@ function App() {
       </ul>
       <div className="todo-footer">
         {incompleteTodosCount} item{incompleteTodosCount !== 1 ? "s" : ""} left
+      </div>
+      <div className="filters">
+        <button onClick={() => setFilter("all")} className={filter === "all" ? "active" : ""}>
+          All
+        </button>
+        <button
+          onClick={() => setFilter("active")}
+          className={filter === "active" ? "active" : ""}
+        >
+          Active
+        </button>
+        <button
+          onClick={() => setFilter("completed")}
+          className={filter === "completed" ? "active" : ""}
+        >
+          Completed
+        </button>
       </div>
     </div>
   );
