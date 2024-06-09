@@ -1,0 +1,17 @@
+.newtodo {
+    width: 100vw;
+    text-align: center;
+    height: 50px;
+}
+
+.newtodo input {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: 1.7px solid rgb(167, 44, 54);
+    border-radius: 10px;
+}
+
+.newtodo button {
+    margin-left: 10px;
+    padding: 5px 10px;
+}

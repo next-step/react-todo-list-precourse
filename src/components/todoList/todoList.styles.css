@@ -1,0 +1,25 @@
+.todolist-boxs button {
+    margin-left: 10px;
+}
+
+.todolist-boxs-done button {
+    margin-left: 10px;
+}
+
+.todolist-boxs-done button:nth-child(1) {
+    color: #ccc;
+}
+
+.todolist-boxs {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+}
+
+.todolist-boxs-done {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    text-decoration: line-through;
+    color: #ccc;
+}
