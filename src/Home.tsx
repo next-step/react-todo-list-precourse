@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Todo } from "./interfaces/todo";
+import TodoView from "./components/TodoView";
 
 /**
  * Todo 홈페이지 컴포넌트
@@ -20,19 +21,16 @@ const Home = () => {
             done: true,
             content: 'clean room'
         },
-    ]
+    ];
     useEffect(() => {
         setTodoList(dummyData);
-    },[])
+    },[]);
 
-    return(
-        <div>
-            dldl
-            {/* <Header />
-            <Input />
-            <TodoView /> */}
-        </div>
-    );
+    return <div>
+        {/* <Header />
+        <Input /> */}
+        <TodoView todoList={todoList} />
+    </div>;
 };
 
 export default Home;
