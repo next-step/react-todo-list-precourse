@@ -4,53 +4,58 @@ body {
   color: #333;
   margin: 0;
   padding: 20px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 .app-container {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  width: 600px;
   padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .app-container h1 {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 30px;
   color: #333;
-  font-size: 2em;
+  font-size: 2.5em;
+  font-weight: bold;
 }
 
 form {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-}
-
-input[type="text"],
-button {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 4px;
+  margin-bottom: 30px;
 }
 
 input[type="text"] {
   flex-grow: 1;
+  padding: 10px;
   border: 2px solid #ccc;
-  margin-right: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-right: 10px;
 }
 
 button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
   background-color: #007bff;
   color: white;
-  border: none;
   cursor: pointer;
-  white-space: nowrap;
-  padding: 10px 20px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -60,30 +65,76 @@ button:hover {
 ul {
   list-style-type: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 0;
+  flex-grow: 1;
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+ul::-webkit-scrollbar {
+  width: 12px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 6px;
+  border: 3px solid #e8f0fe;
+}
+
+ul::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
 }
 
 li {
   background-color: #ffffff;
   margin-top: 10px;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 15px;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+}
+
+li:first-child {
+  margin-top: 0;
 }
 
 li:hover {
-  background-color: #f8f8f8;
+  background-color: #f1f1f1;
 }
 
-li button {
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-field {
+  word-wrap: break-word;
+  max-width: 85%;
+}
+
+.delete-button {
   background-color: #ff6347;
   color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  width: 60px; /* 고정된 너비 */
+  height: 30px; /* 고정된 높이 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-li button:hover {
+.delete-button:hover {
   background-color: #c04830;
 }
