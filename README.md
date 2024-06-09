@@ -5,7 +5,7 @@
 ### 필수 기능
 
 - [참고](https://todomvc.com/examples/react/dist/)
-- [ ] 할 일 목록 뷰
+- [x] 할 일 목록 뷰
 - [ ] 할 일 추가
   - input에 입력한 후 Enter나 추가 버튼을 이용해 목록에 추가
   - 아무것도 입력되 있지 않은 경우 추가 불가

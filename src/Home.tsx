@@ -8,6 +8,14 @@ import TodoView from "./components/TodoView";
  */
 const Home = () => {
     const [todoList, setTodoList] = useState<Todo[]>([]);
+    /**
+     * todoList의 n번째 todo의 done 여부를 토글하는 함수
+     * @param index 
+     */
+    const toggleTodoDone = (index: number) => {
+        todoList[index].done=!todoList[index].done;
+        setTodoList([...todoList]);
+    }
 
     // TODO 테스트 용 데이터 지우기
     const dummyData: Todo[] = [
@@ -29,7 +37,7 @@ const Home = () => {
     return <div>
         {/* <Header />
         <Input /> */}
-        <TodoView todoList={todoList} />
+        <TodoView todoList={todoList} toggleTodoDone={toggleTodoDone}/>
     </div>;
 };
 
