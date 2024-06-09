@@ -18,17 +18,22 @@ function App() {
     if (e.key === 'Enter') addTodo();
   };
 
+  const deleteTodo = (index) => {
+    const newTodos = todos.filter((_, idx) => idx !== index);
+    setTodos(newTodos);
+  };
+
   return (
     <div className="App">
-      <h1>todos</h1>
+      <h1>Todo List</h1>
       <input
         type="text"
         value={input}
         onChange={handleInputChange}
         onKeyPress={handleKeyPress}
-        placeholder="What needs to be done?"
+        placeholder="Enter your todo"
       />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
 }
