@@ -85,6 +85,9 @@ button {
 .app .mainframe .todolist .todoelement p {
 
 }
+.app .mainframe .todolist .todoelement .completed {
+    text-decoration: line-through;
+}
 .app .mainframe .todolist .todoelement button {
     font-size: 20px;
     width: 50px;
