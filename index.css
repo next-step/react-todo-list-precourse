@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "HSGooltokki";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/HSGooltokki.woff2")
-    format("woff2");
+  font-family: "BMKIRANGHAERANG";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMKIRANGHAERANG.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -20,12 +20,13 @@ button {
   border-style: none;
   cursor: pointer;
   border-radius: 5px;
-  font-family: "HSGooltokki";
+  font-family: "BMKIRANGHAERANG";
   background-color: transparent;
 }
 
 h1 {
-  font-family: "HSGooltokki";
-  font-size: 42px;
+  font-family: "BMKIRANGHAERANG";
+  font-size: 52px;
+  font-weight: 500;
   color: var(--orange);
 }

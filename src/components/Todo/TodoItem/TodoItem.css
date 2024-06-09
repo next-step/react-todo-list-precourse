@@ -31,11 +31,11 @@
 }
 .todoText {
   font-size: 24px;
-  font-family: "HSGooltokki";
+  font-family: "BMKIRANGHAERANG";
   font-weight: 400;
 }
 .deleteBtn {
-  font-size: 16px;
+  font-size: 18px;
   position: absolute;
   right: 5px;
   color: var(--darkblue);
