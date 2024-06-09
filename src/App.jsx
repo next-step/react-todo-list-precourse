@@ -41,4 +41,15 @@ function App() {
     if (filter === 'completed') return todo.completed;
     return true;
   });
+
+return (
+  <div className="App">
+    <h1>Todo List</h1>
+    <AddTodo addTodo={addTodo} />
+    <TodoFilter filter={filter} setFilter={setFilter} />
+    <TodoList todos={filteredTodos} deleteTodo={deleteTodo} toggleComplete={toggleComplete} />
+  </div>
+  );
 }
+
+export default App;
