@@ -12,7 +12,7 @@ function Main() {
 
   return (
     <div className="inner">
-      <h1>todos</h1>
+      <h1>&#127872; todos</h1>
       <Input
         value={inputValue}
         onChange={(e) => handleInputChange(e, setInputValue)}

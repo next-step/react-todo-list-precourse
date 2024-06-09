@@ -7,7 +7,7 @@ function Input({ value, onChange, onKeyPress }) {
       value={value}
       onChange={onChange}
       onKeyPress={onKeyPress}
-      placeholder="What needs to be done?"
+      placeholder="What needs to be done? &#128149;"
       id="todoInput"
     />
   );
