@@ -36,6 +36,7 @@ const Main = () => {
       <TodoInput addTodo={addTodo} />
       <TodoList todos={filteredTodos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       <div className="footer">
+        <span>{todos.filter(todo => !todo.completed).length} items left!</span>
         <FilterButtons setFilter={setFilter} />
       </div>
     </div>
