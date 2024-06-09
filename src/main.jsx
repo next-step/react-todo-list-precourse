@@ -8,6 +8,7 @@ function App() {
     // filter: 필터 상태 (all, active, completed)
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
+  const [filter, setFilter] = useState('all'); 
 
   // 할 일 추가 함수
   const addTodo = () => {
@@ -40,7 +41,17 @@ function App() {
     );
   };
 
-
+  // 필터링된 할 일 목록 반환 함수
+  const filterTodos = () => {
+    switch (filter) {
+      case 'completed':
+        return todos.filter(todo => todo.completed);
+      case 'active':
+        return todos.filter(todo => !todo.completed);
+      default:
+        return todos;
+    }
+  };
 
   return (
     <div className="App">
@@ -52,6 +63,12 @@ function App() {
         onKeyPress={handleKeyPress}
         placeholder="What needs to be done?"
       />
+      {/* 필터 버튼들 */}
+      <div>
+        <button onClick={() => { setFilter('all'); console.log('Filter set to all'); }}>All</button>
+        <button onClick={() => { setFilter('active'); console.log('Filter set to active'); }}>Active</button>
+        <button onClick={() => { setFilter('completed'); console.log('Filter set to completed'); }}>Completed</button>
+      </div>
       {/* TodoList 컴포넌트에 할 일 목록, 삭제 함수, 완료 상태 토글 함수 전달 */}
       <TodoList todos={todos} deleteTodo={deleteTodo} toggleComplete={toggleComplete} />
     </div>
