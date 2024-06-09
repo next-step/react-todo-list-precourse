@@ -54,11 +54,10 @@ npm run start
 - [ ] Todo Header
 - [ ] Todo Footer
 - [x] ❗️Todo List
-  - [x] ❗️Todo Item
-    - [x] ❗️Todo Item 제목
-    - [x] ❗️Todo Item 상태 ( 완료, 진행중 )
-    - [x] ❗️Todo Item 삭제
-    - [x] ❗️Todo Item 생성
+  - [x] ❗️Todo Item 제목
+  - [x] ❗️Todo Item 상태 ( 완료, 진행중 )
+  - [x] ❗️Todo Item 삭제
+  - [x] ❗️Todo Item 생성
 - [ ] Todo Detail
   - [ ] Todo Item 내용 ( 제목, 메모 )
   - [ ] Todo Item 삭제
