@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TodoContext } from "../context/TodosContext";
 
 function TodoList() {
+    const {todos} = useContext(TodoContext);
 
     return(
-        <div>투두 목록</div>
+        <div>
+            {todos.map((todo, index) => (
+                <div key={index}> {todo} </div>
+            ))}
+        </div>
     );  
 }
 
