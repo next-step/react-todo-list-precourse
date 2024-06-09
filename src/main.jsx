@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoList from './TodoList';
 import TodoCount from './TodoCount'; 
 
@@ -7,9 +7,18 @@ function App() {
     // todos: 할 일 목록 상태
     // input: 입력 필드 상태
     // filter: 필터 상태 (all, active, completed)
-  const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(() => {
+        // 로컬 스토리지에서 초기 할 일 목록 불러오기
+        const savedTodos = localStorage.getItem('todos');
+        return savedTodos ? JSON.parse(savedTodos) : [];
+      });
   const [input, setInput] = useState('');
   const [filter, setFilter] = useState('all'); 
+
+   // 할 일 목록이 변경될 때마다 로컬 스토리지에 저장
+   useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   // 할 일 추가 함수
   const addTodo = () => {
