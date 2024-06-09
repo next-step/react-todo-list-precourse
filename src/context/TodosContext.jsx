@@ -10,8 +10,13 @@ const TodoProvider = ({ children }) => {
         console.log(todos);
     };
 
+    const removeTodo = (index) => {
+        setTodos(todos.filter((_, i) => i !== index));
+        console.log(todos);
+    };
+
     return (
-        <TodoContext.Provider value={{ todos, addTodo }}>
+        <TodoContext.Provider value={{ todos, addTodo, removeTodo }}>
             {children}
         </TodoContext.Provider>
     );
