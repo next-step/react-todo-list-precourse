@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { TodoContext } from "../context/TodosContext";
 
 function TodoInput() {
     const [inputValue, setInputValue] = useState("");
+    const { addTodo } = useContext(TodoContext);
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
@@ -9,7 +11,7 @@ function TodoInput() {
 
     const handleKeyDown = (event) => {
         if (event.key === "Enter" && inputValue.trim() !== "" ) {
-            console.log(inputValue);
+            addTodo(inputValue.trim());
             setInputValue("");
         }
     };
