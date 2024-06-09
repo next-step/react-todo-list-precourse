@@ -23,9 +23,9 @@ function TextField({ onEnter }) {
     if (event.isComposing || event.keyCode === 229) {
       return;
     }
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && event.target.value.trim() !== "") {
       setIsPushed(true);
-      onEnter(event.target.value);
+      onEnter(event.target.value.trim());
       event.target.value = "";
       inputRef.current.focus();
     }
