@@ -8,11 +8,8 @@ const Input = ({ todos, setTodos }) => {
   return (
     <div className="input-container">
       <input
-        type="text"
-        placeholder="할 일을 입력해주세요!"
-        ref={inputRef}
-        value={text}
-        onChange={onChange}
+        type="text" placeholder="할 일을 입력해주세요!"
+        ref={inputRef} value={text} onChange={onChange}
         onKeyDown={(e) => {
           if (e.key === "Enter") handleText(inputRef.current.value);
         }}
