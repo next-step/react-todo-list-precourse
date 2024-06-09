@@ -14,3 +14,10 @@ const updateTodo = (todos, index) => {
     i === index ? { ...todo, completed: !todo.completed } : todo
   );
 };
+
+// 할 일 Filtered 목록 가져오는 함수
+const filteredTodo = (todos, filter) => {
+  return todos.filter(todo =>
+    filter === 'all' ? true : filter === 'completed' ? todo.completed : !todo.completed
+  );
+};
