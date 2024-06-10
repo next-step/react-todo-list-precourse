@@ -1,0 +1,138 @@
+body {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    color: #707070;
+}
+h1 {
+    text-align: center;
+    color:midnightblue;
+    margin-bottom: 50px;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    color: #707070;
+}
+
+.app {
+    width: 700px;
+    font-size: 25px;
+}
+@media screen and (max-width: 710px) {
+    .app {
+        width: 90vw;
+        font-size: 25px;
+    }
+}
+
+.app .exitbtn {
+    margin-top: 50px;
+    float: right;
+    height: 30px;
+    width: 120px;
+    background-color: white;
+    border: 1px solid;
+    border-color: lightslategray;
+}
+.app .exitbtn:hover {
+    color: dodgerblue;
+    border-color: dodgerblue;
+}
+.app .mainframe {
+    background-color: white;
+    width: 100%;
+    border: 1px solid;
+    border-color: lightslategray;
+}
+
+.app .mainframe .header {
+    width: 100%;
+    border-bottom: 1px solid;
+    border-color: lightslategray;
+}
+.app .mainframe .header .inputform {
+    width: 100%;
+    display: flex;
+}
+.app .mainframe .header .inputtext {
+    font-size: 25px;
+    flex: 1 0 auto;
+    outline: none;
+    border-width: 0;
+    margin-left: 10px;
+}
+.app .mainframe .header .inputbtn {
+    font-size: 35px;
+    width: 45px;
+    height: auto;
+    border: 0;
+    color: #707070;
+}
+.app .mainframe .header .inputbtn:hover {
+    background-color: dodgerblue;
+    color:white;
+}
+
+.app .mainframe .todolist .todoelement {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.app .mainframe .todolist .todoelement:hover {
+    background-color: azure;
+    color: black;
+}
+.app .mainframe .todolist .todoelement input[type="checkbox"] {
+    margin: 15px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border:3px solid #707070;
+    position: relative;
+}
+
+.app .mainframe .todolist .todoelement .completed {
+    text-decoration: line-through;
+}
+.app .mainframe .todolist .todoelement button {
+    font-size: 20px;
+    width: 50px;
+    height: 60px;
+    float: right;
+    margin-left: auto;
+    margin-right: 15px;
+}
+.app .mainframe .todolist .todoelement button:hover {
+    color:dodgerblue;
+}
+
+.app .mainframe .footer {
+    display: flex;
+    font-size: 15px;
+    width: 100%;
+    border-top: 1px solid;
+    border-color: lightslategray;
+}
+.app .mainframe .footer .itemleft {
+    margin-left: 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.app .mainframe .footer .filter {
+    margin-left: auto;
+}
+.app .mainframe .footer .filter button {
+    width: 100px;
+    height: 100%;
+}
+.app .mainframe .footer .filter .choosen {
+    font-weight: bold;
+}
+.app .mainframe .footer .filter button:hover {
+    color:dodgerblue;
+    font-weight: bold;
+}
