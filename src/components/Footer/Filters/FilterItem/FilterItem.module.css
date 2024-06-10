@@ -1,0 +1,14 @@
+.filter-item {
+  cursor: pointer;
+  margin: 3px;
+  padding: 3px 7px;
+}
+
+.filter-item.selected {
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+
+.filter-item:last-of-type {
+  margin-right: 0;
+}
