@@ -14,7 +14,7 @@ function App() {
             <div className="mainframe">
                 <Header addTodo={addTodo}/>
                 <TodoList filter={filter} todos={todos} deleteTodo={deleteTodo} changeCompleted={changeCompleted}/>
-                <Footer changeFilter={useFilter}/>
+                <Footer filter={filter} changeFilter={useFilter}/>
             </div>
         </div>
     );

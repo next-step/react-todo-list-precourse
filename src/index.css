@@ -120,6 +120,9 @@ button {
     width: 100px;
     height: 100%;
 }
+.app .mainframe .footer .filter .choosen {
+    font-weight: bold;
+}
 .app .mainframe .footer .filter button:hover {
     color:dodgerblue;
     font-weight: bold;
