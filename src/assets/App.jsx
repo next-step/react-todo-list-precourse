@@ -13,6 +13,12 @@ function App() {
         setTodo(todoList);
     };
 
+    //할 일 삭제 함수
+    const remove = (index) => {
+        const todoList = [...Todo];
+        todoList.splice(index, 1);
+        setTodo(todoList);   
+    };
 
   return (
       <div className='board'> 
@@ -20,6 +26,11 @@ function App() {
           <InputForm
               Todo={Todo}
               setTodo={setTodo}
+          />
+          <ListContainer
+              Todo={Todo}
+              remove={remove}
+              complete={complete}
           />
       </div>
   )
