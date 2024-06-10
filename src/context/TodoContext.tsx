@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { ReactNode } from 'react';
-import { TodoListContextValueTypes } from './types/TodoTypes';
+import { TodoListContextValueTypes } from '../types/todoTypes';
 import { useTodoState } from '../hooks/useTodoState';
 import { useTodoActions } from '../hooks/useTodoActions';
 

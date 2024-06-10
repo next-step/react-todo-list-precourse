@@ -1,4 +1,4 @@
-import { TodoListItemTypes } from '../types/TodoTypes';
+import { TodoListItemTypes } from '../../types/todoTypes';
 
 export const addTodo = (
   todoList: TodoListItemTypes[],

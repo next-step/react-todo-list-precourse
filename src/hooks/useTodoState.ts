@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TodoListItemTypes, FilterType } from '../context/types/TodoTypes';
+import { TodoListItemTypes, FilterType } from '../types/todoTypes';
 import { useLocalStorage } from './useLocalStorage';
 
 export const useTodoState = () => {

@@ -1,6 +1,6 @@
 import * as TodoActions from '../context/actions';
 
-import { TodoListItemTypes, FilterType } from '../context/types/TodoTypes';
+import { TodoListItemTypes, FilterType } from '../types/todoTypes';
 
 export const useTodoActions = (
   todoList: Array<TodoListItemTypes>,
