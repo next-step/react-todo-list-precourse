@@ -6,9 +6,7 @@ export interface CheckboxProps extends InputFieldProps {
 }
 
 const Checkbox = ({ type, onChange, checked, label }: CheckboxProps) => {
-  return (
-    <input type={type} id={label} onChange={onChange} checked={checked} className={styles.toggle} />
-  );
+  return <input {...{ type, onChange, checked }} id={label} className={styles.toggle} />;
 };
 
 export default Checkbox;
