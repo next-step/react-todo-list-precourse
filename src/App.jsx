@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/header.jsx';
 import TodoList from './components/todolist.jsx';
 import Footer from './components/footer.jsx';
@@ -10,8 +10,12 @@ function activeLen(todos) {
 }
 
 function App() {
-    const { todos, addTodo, deleteTodo, changeCompleted } = UseTodoState();
+    const { todos, setTodos, addTodo, deleteTodo, changeCompleted } = UseTodoState();
     const [filter, useFilter] = useState('All');
+
+    useEffect(() => {
+        localStorage.setItem("todoItem", JSON.stringify(todos));
+    }, [todos]);
 
     return (
         <div className="app">

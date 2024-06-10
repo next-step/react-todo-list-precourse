@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
 const useTodoState = () => {
-    const [todos, setTodos] = useState([]);
-    const [next, setNext] = useState(0);
+    const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todoItem")));
+    const [next, setNext] = useState(1+parseInt(JSON.parse(localStorage.getItem("todoID"))));
 
     const addTodo = (todo) => {
         setNext(next+1);
         setTodos((prev) => [...prev, {content:todo, isCompleted:false, id:next}]);
+        localStorage.setItem("todoID", JSON.stringify(next));
     };
 
     const deleteTodo = (target) => {
@@ -19,7 +20,7 @@ const useTodoState = () => {
         ));
     }
 
-    return { todos, addTodo, deleteTodo, changeCompleted };
+    return { todos, setTodos, addTodo, deleteTodo, changeCompleted };
 }
 
 export default useTodoState;
