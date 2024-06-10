@@ -15,7 +15,7 @@ function makeFilter(filter, changeFilter) {
 function Footer(props) {
     return (
         <div className="footer">
-            <div className="itemleft">X items left</div>
+            <div className="itemleft">{props.todoLeft} items left</div>
             <div className="filter">
                 { makeFilter(props.filter, props.changeFilter) }
             </div>
