@@ -1,0 +1,55 @@
+/* todoItem.css */
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+  }
+  
+  .todo-item:first-child {
+    margin-top: 0; /* 첫 번째 아이템의 상단 마진 제거 */
+  }
+  
+  .todo-item:last-child {
+    margin-bottom: 0; /* 마지막 아이템의 하단 마진 제거 */
+  }
+  
+  .todo-item:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toggle-button,
+  .delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .toggle-button:hover,
+  .delete-button:hover {
+    color: #b83f45;
+    transform: scale(1.2);
+  }
+  
+  .todo-text {
+    flex-grow: 1;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+  
+  .todo-text.completed {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+  
