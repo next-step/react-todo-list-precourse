@@ -12,9 +12,28 @@ function change(setTodos, target) {
     ));
 }
 
+function initTodo() {
+    const data = localStorage.getItem("todoItem");
+
+    if(data)
+        return JSON.parse(data);
+    else
+        return [];
+}
+
+function initNext() {
+    const data = localStorage.getItem("todoID");
+
+    if(data)
+        return 1+parseInt(JSON.parse(data));
+    else
+        return 0;
+}
+
 const useTodoState = () => {
-    const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todoItem")));
-    const [next, setNext] = useState(1+parseInt(JSON.parse(localStorage.getItem("todoID"))));
+    const [todos, setTodos] = useState(initTodo());
+    const [next, setNext] = useState(initNext());
+    
     const addTodo = (todo) => {
         add(next, setNext, setTodos, todo);
     };
