@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import styles from './Filters.module.css';
 import FilterItem from './FilterItem/FilterItem';
-import TodoContext, { FilterType } from '../../../context/TodoContext';
+import { FilterType } from '../../../context/types/TodoTypes';
+import TodoContext from '../../../context/TodoContext';
 
 const filters: Array<{ label: string; value: FilterType }> = [
   { label: 'All', value: 'all' },

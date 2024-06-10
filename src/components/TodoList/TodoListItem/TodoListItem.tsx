@@ -1,4 +1,4 @@
-import { TodoListItemTypes } from '../../../context/TodoContext';
+import { TodoListItemTypes } from '../../../context/types/TodoTypes';
 import styles from './TodoListItem.module.css';
 import TodoContext from '../../../context/TodoContext';
 import { useContext } from 'react';

@@ -1,5 +1,4 @@
 import { InputFieldProps } from '../InputField/InputField';
-
 import styles from './Checkbox.module.css';
 
 export interface CheckboxProps extends InputFieldProps {
