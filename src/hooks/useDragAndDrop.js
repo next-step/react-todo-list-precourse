@@ -8,7 +8,7 @@ const initState = {
 
 const createDragStartHandler = (setDragAndDrop, ref) => (itemId) => (e) => {
     e.target.style.opacity = "0.4";
-    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.effectAllowed = "move";
     if (ref.current) {
         const { width } = e.target.parentElement.getBoundingClientRect()
         ref.current.style.width = `${width}px`;
@@ -32,7 +32,7 @@ const createDragOverHandler = (setDragAndDrop, ref) => (itemId) => {
 
 const createDragEndHandler = (setDragAndDrop, ref) => (itemId) => (e) => {
     if (ref.current) {
-        ref.current.style.top = `-9999px`;
+        ref.current.style.top = "-9999px";
         ref.current.style.width = "0px";
     }
     e.target.style.opacity = "1";
