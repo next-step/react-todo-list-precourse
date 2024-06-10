@@ -5,9 +5,23 @@ export default function InputForm({ Todo, setTodo }) {
 
     const [value, setValue] = useState('');
     
+    //할 일을 State에 추가 
+    const add = (text) => {
+      if(text === '')
+          return;
+
+      setTodo([...Todo, {value: text, completed: false}]);
+      setValue('');        
+    }
+    
+    //add 호출
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      add(value); 
+  }
 
   return (
-    <form className='inputForm'>
+    <form className='inputForm' onSubmit={handleSubmit}>
       <input
         className='inputTodo'
         type='text'
