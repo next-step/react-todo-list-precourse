@@ -1,6 +1,7 @@
 # react-todo-list-precourse
 ## 하루 또는 한 주의 할 일 목록을 업데이트하는 목록을 구현
 #### React 라이브러리를 사용하여 웹 앱으로 구현
+![Uploading image.png…]()
 
 ### <기능>
 - 할 일을 추가하고 삭제하는 기능
