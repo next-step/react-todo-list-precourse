@@ -5,7 +5,6 @@ function makeCheckbox(todo, changeCompleted) {
         changeCompleted(todo.id);
     };
 
-    
     return (<input type="checkbox" className="completebtn" onClick={handleClick} checked={todo.isCompleted}/>);
 }
 
