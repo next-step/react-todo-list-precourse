@@ -1,0 +1,38 @@
+.todoitem {
+  border-radius: 15px;
+  background-color: #ffffff;
+  width: 800px;
+  height: 40px;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.todoitem * {
+  font-size: 32px;
+}
+
+.todoitem input {
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  outline: none;
+  width: 100%;
+}
+
+.todoitem p {
+  font-size: 24px;
+  width: 100%;
+}
+
+.todoitem--delete {
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.todoitem--delete:after {
+  content: "X";
+}

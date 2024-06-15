@@ -1,0 +1,20 @@
+.todolist {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: #cdf0ea;
+}
+
+.todolist h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.todolist > .todoitem {
+  margin-bottom: 40px;
+}
+
+.todolist .todoitem {
+  margin-top: 10px;
+}

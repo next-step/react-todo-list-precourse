@@ -1,0 +1,12 @@
+@import url("./styles/reset.css");
+@import url("./styles/todoitem.css");
+@import url("./styles/todolist.css");
+@import url("./styles/statuscircle.css");
+
+* {
+  color: #1f4e5f;
+}
+
+*:not(.material-icons) {
+  font-family: "Jua", sans-serif !important;
+}
