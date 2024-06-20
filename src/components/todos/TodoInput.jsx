@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from "react";
+import {forwardRef, memo, useRef} from "react";
 import styles from "../../styles/todos/TodoInput.module.css";
 
 const handleBlur = (e) => {
@@ -40,7 +40,7 @@ const handleSubmit = (e, addTodo, inputRef) => {
     inputRef.current.blur();
 }
 
-export function TodoInput({ addTodo }) {
+function TodoInput({ addTodo }) {
     const inputRef = useRef();
     return (
         <form className={styles.todoInput} onSubmit={(e) => handleSubmit(e, addTodo, inputRef)}>
@@ -50,3 +50,6 @@ export function TodoInput({ addTodo }) {
         </form>
     );
 }
+
+
+export default memo(TodoInput);

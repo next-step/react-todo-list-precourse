@@ -1,5 +1,5 @@
 import TodoHeader from "./todos/TodoHeader.jsx";
-import { TodoInput } from "./todos/TodoInput.jsx";
+import TodoInput from "./todos/TodoInput.jsx";
 import { useTodoList } from "../hooks/useTodoList.js";
 import { usePath } from "../hooks/usePath.js";
 import styles from "../styles/TodoList.module.css"
