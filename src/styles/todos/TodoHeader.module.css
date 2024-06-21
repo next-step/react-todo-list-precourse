@@ -1,0 +1,22 @@
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+    width: 50%;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.filter input {
+    display: none;
+}
+
+.todolist_dragDest {
+    width: 800px;
+    height: 6px;
+    background-color: lightskyblue;
+    position: absolute;
+    top: -9999px;
+    transition: .1s;
+}
